@@ -1,10 +1,15 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Blog from "./pages/Blog/Blog";
+import Layout from "./Component/layout/Layout";
 
 function App() {
   return (
     <>
-      <Blog />
+      <Layout>
+        <Routes>
+          <Route></Route>
+        </Routes>
+      </Layout>
     </>
   );
 }
