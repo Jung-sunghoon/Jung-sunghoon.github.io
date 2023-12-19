@@ -1,0 +1,86 @@
+article {
+  display: block;
+}
+
+#aboutme {
+  margin-top: 70px;
+}
+
+.AboutMe__AboutMeSection,
+.AboutMe__SkillsSection {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  max-width: 71.25rem;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+}
+
+.AboutMe__AboutMeSection__Title,
+.AboutMe__SkillsSection__Title {
+  display: table;
+  position: relative;
+  margin: 0 auto 3rem;
+}
+
+.AboutMe__AboutMeSection__Title__Text,
+.AboutMe__SkillsSection__Title__Text {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  font-family: Black Han Sans, sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.AboutMe__AboutMe .AboutMe__AboutMeSection .AboutMe__Infos {
+  display: flex;
+  display: -ms-flexbox;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+
+.AboutMe__Info__Wrapper {
+  width: 33.333%;
+}
+.AboutMe__Info__Wrapper:first-child,
+.AboutMe__Info__Wrapper:nth-child(2),
+.AboutMe__Info__Wrapper:nth-child(3) {
+  margin-bottom: 2rem;
+}
+
+.AboutMe__Info {
+  display: flex;
+  display: -ms-flexbox;
+  flex-flow: row nowrap;
+  width: 100%;
+  max-width: 14rem;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.AboutMe__Info__Icon {
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  margin-top: 0.2rem;
+  margin-right: 2rem;
+}
+
+.AboutMe__Info__Icon__img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.AboutMe__Info__Label {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.AboutMe__Info__Value {
+  font-weight: 400;
+  font-size: 1rem;
+}

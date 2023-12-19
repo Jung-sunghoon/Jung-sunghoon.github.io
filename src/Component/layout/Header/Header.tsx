@@ -1,7 +1,6 @@
-import React from "react";
-// import { Link } from "react-router-dom";
-import "./header.css";
-import { Link } from "react-router-dom";
+import React from 'react'
+import './header.css'
+import { Link } from 'react-router-dom'
 
 const Header: React.FC = () => {
   return (
@@ -13,8 +12,8 @@ const Header: React.FC = () => {
           </Link>
         </li>
         <li className="h__menu">
-          <Link to="/introduce" className="h__link">
-            Introduce
+          <Link to="/aboutme" className="h__link">
+            About me
           </Link>
         </li>
         <li className="h__menu">
@@ -31,9 +30,14 @@ const Header: React.FC = () => {
             Github
           </Link>
         </li>
+        <li className="h__menu">
+          <Link to="/calendar" className="h__link">
+            Calendar
+          </Link>
+        </li>
       </ul>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
