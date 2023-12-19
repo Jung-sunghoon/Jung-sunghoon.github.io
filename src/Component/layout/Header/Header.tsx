@@ -22,6 +22,15 @@ const Header: React.FC = () => {
             Projects
           </Link>
         </li>
+        <li className="h__menu">
+          <Link
+            to="https://github.com/Jung-sunghoon"
+            target="_blank"
+            className="h__link"
+          >
+            Github
+          </Link>
+        </li>
       </ul>
     </header>
   );

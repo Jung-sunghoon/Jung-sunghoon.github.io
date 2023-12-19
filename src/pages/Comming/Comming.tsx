@@ -1,5 +1,5 @@
 const Comming = () => {
-  return <div></div>;
+  return <div>Comming</div>;
 };
 
 export default Comming;

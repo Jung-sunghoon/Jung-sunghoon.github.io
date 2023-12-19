@@ -13,10 +13,13 @@
 }
 
 .h__menu {
+  font-size: 20px;
+  margin-left: 10px;
   margin-right: 10px;
   align-items: center;
 }
 
 .h__link {
   text-decoration: none;
+  color: white;
 }
