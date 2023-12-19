@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Layout from "./Component/layout/Layout";
-import Blog from "./pages/Blog/Blog";
-import Projects from "./pages/Projects/Projects";
-import Introduce from "./pages/Introduce/Introduce";
-import Comming from "./pages/Comming/Comming";
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import Layout from './Component/layout/Layout'
+import Blog from './pages/Blog/Blog'
+import Projects from './pages/Projects/Projects'
+import Introduce from './pages/Introduce/Introduce'
+import Comming from './pages/Comming/Comming'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         </Routes>
       </Layout>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

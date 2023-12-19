@@ -6,10 +6,10 @@
 // import { formatDate } from "../../utils/common";
 
 const Blog: React.FC = () => {
-  return <>hello</>;
-};
+  return <>hello !!! </>
+}
 
-export default Blog;
+export default Blog
 
 // const Info: React.FC = () => {
 //   const [searchText, setSearchText] = useState<string>("");
