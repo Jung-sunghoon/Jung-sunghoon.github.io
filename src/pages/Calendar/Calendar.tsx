@@ -1,7 +1,13 @@
-import { Calendar as AntdCalendar, Modal, Button, Input, Space } from 'antd'
-import './calendar.css'
+import React, { useState } from 'react'
+import {
+  Calendar as AntdCalendar,
+  Modal,
+  Button,
+  Input,
+  Space,
+  List,
+} from 'antd'
 import dayjs from 'dayjs'
-import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 interface Event {
@@ -10,14 +16,12 @@ interface Event {
   date: Date
 }
 
-const Calendar = () => {
+const Calendar: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([])
   const [visible, setVisible] = useState(false)
-  const [editVisible, setEditVisible] = useState(false)
   const [selectedDate, setSelectedDate] = useState<dayjs.Dayjs | null>(null)
   const [eventTitle, setEventTitle] = useState<string>('')
-  const [selectedEventId, setSelectedEventId] = useState<string | null>(null)
-  const [editedEventTitle, setEditedEventTitle] = useState<string>('')
+  const [editingEvent, setEditingEvent] = useState<Event | null>(null)
 
   const onSelect = (value: dayjs.Dayjs) => {
     setSelectedDate(value)
@@ -26,54 +30,44 @@ const Calendar = () => {
 
   const onModalOk = () => {
     if (selectedDate && eventTitle) {
-      const newEvent: Event = {
-        id: uuidv4(),
-        title: eventTitle,
-        date: selectedDate.toDate(),
+      if (editingEvent) {
+        // If editing an existing event
+        const updatedEvents = events.map(event =>
+          event.id === editingEvent.id
+            ? { ...event, title: eventTitle }
+            : event,
+        )
+        setEvents(updatedEvents)
+      } else {
+        // If adding a new event
+        const newEvent: Event = {
+          id: uuidv4(),
+          title: eventTitle,
+          date: selectedDate.toDate(),
+        }
+        setEvents([...events, newEvent])
       }
-      setEvents([...events, newEvent])
     }
 
     setEventTitle('')
+    setEditingEvent(null)
     setVisible(false)
   }
 
   const onModalCancel = () => {
     setEventTitle('')
+    setEditingEvent(null)
     setVisible(false)
   }
 
-  const onEditModalOk = () => {
-    if (selectedEventId && editedEventTitle) {
-      setEvents(prevEvents =>
-        prevEvents.map(event =>
-          event.id === selectedEventId
-            ? { ...event, title: editedEventTitle }
-            : event,
-        ),
-      )
-    }
-
-    setEditedEventTitle('')
-    setEditVisible(false)
-  }
-
-  const onEditModalCancel = () => {
-    setEditedEventTitle('')
-    setEditVisible(false)
+  const onEdit = (event: Event) => {
+    setEditingEvent(event)
+    setEventTitle(event.title)
+    setVisible(true)
   }
 
   const onDelete = (eventId: string) => {
     setEvents(prevEvents => prevEvents.filter(event => event.id !== eventId))
-  }
-
-  const onEdit = (eventId: string) => {
-    const selectedEvent = events.find(event => event.id === eventId)
-    if (selectedEvent) {
-      setSelectedEventId(selectedEvent.id)
-      setEditedEventTitle(selectedEvent.title)
-      setEditVisible(true)
-    }
   }
 
   const dateCellRender = (value: dayjs.Dayjs) => {
@@ -88,10 +82,10 @@ const Calendar = () => {
           <li key={index}>
             <Space>
               {event.title}
-              <Button onClick={() => onEdit(event.id)}>Edit</Button>
+              {/* <Button onClick={() => onEdit(event)}>Edit</Button>
               <Button onClick={() => onDelete(event.id)} danger>
                 Delete
-              </Button>
+              </Button> */}
             </Space>
           </li>
         ))}
@@ -100,59 +94,48 @@ const Calendar = () => {
   }
 
   return (
-    <div id="calendar">
-      <div>
-        <div>
-          <AntdCalendar onSelect={onSelect} dateCellRender={dateCellRender} />
+    <div>
+      <AntdCalendar onSelect={onSelect} dateCellRender={dateCellRender} />
 
-          <Modal
-            title="Add Event"
-            visible={visible}
-            onOk={onModalOk}
-            onCancel={onModalCancel}
-            footer={[
-              <Button key="back" onClick={onModalCancel}>
-                Cancel
-              </Button>,
-              <Button key="submit" type="primary" onClick={onModalOk}>
-                Add
-              </Button>,
-            ]}
-          >
-            {selectedDate && (
-              <>
-                <p>{selectedDate.format('YYYY-MM-DD')}</p>
-                <Input
-                  placeholder="Enter event title"
-                  value={eventTitle}
-                  onChange={e => setEventTitle(e.target.value)}
-                />
-              </>
-            )}
-          </Modal>
-
-          <Modal
-            title="Edit Event"
-            visible={editVisible}
-            onOk={onEditModalOk}
-            onCancel={onEditModalCancel}
-            footer={[
-              <Button key="back" onClick={onEditModalCancel}>
-                Cancel
-              </Button>,
-              <Button key="submit" type="primary" onClick={onEditModalOk}>
-                Save
-              </Button>,
-            ]}
-          >
+      <Modal
+        title={editingEvent ? 'Edit Event' : 'Add Event'}
+        visible={visible}
+        onOk={onModalOk}
+        onCancel={onModalCancel}
+        footer={[
+          <Button key="back" onClick={onModalCancel}>
+            Cancel
+          </Button>,
+          <Button key="submit" type="primary" onClick={onModalOk}>
+            {editingEvent ? 'Save' : 'Add'}
+          </Button>,
+        ]}
+      >
+        {selectedDate && (
+          <>
+            <p>{selectedDate.format('YYYY-MM-DD')}</p>
             <Input
-              placeholder="Edit event title"
-              value={editedEventTitle}
-              onChange={e => setEditedEventTitle(e.target.value)}
+              placeholder="Enter event title"
+              value={eventTitle}
+              onChange={e => setEventTitle(e.target.value)}
             />
-          </Modal>
-        </div>
-      </div>
+          </>
+        )}
+        <List
+          dataSource={events}
+          renderItem={event => (
+            <List.Item>
+              <Space>
+                {event.title}
+                <Button onClick={() => onEdit(event)}>Edit</Button>
+                <Button onClick={() => onDelete(event.id)} danger>
+                  Delete
+                </Button>
+              </Space>
+            </List.Item>
+          )}
+        />
+      </Modal>
     </div>
   )
 }
