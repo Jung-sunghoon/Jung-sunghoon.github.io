@@ -6,9 +6,11 @@ import {
   Input,
   Space,
   List,
+  message,
 } from 'antd'
 import dayjs from 'dayjs'
 import { v4 as uuidv4 } from 'uuid'
+import './calendar.css'
 
 interface Event {
   id: string
@@ -22,6 +24,7 @@ const Calendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<dayjs.Dayjs | null>(null)
   const [eventTitle, setEventTitle] = useState<string>('')
   const [editingEvent, setEditingEvent] = useState<Event | null>(null)
+  const [messageApi, ContextHolder] = message.useMessage()
 
   const onSelect = (value: dayjs.Dayjs) => {
     setSelectedDate(value)
@@ -67,7 +70,11 @@ const Calendar: React.FC = () => {
   }
 
   const onDelete = (eventId: string) => {
-    setEvents(prevEvents => prevEvents.filter(event => event.id !== eventId))
+    const confirmDelete = window.confirm('일정을 삭제하시겠습니까?')
+    if (confirmDelete) {
+      setEvents(prevEvents => prevEvents.filter(event => event.id !== eventId))
+      messageApi.success('일정이 삭제되었습니다.')
+    }
   }
 
   const dateCellRender = (value: dayjs.Dayjs) => {
@@ -80,13 +87,7 @@ const Calendar: React.FC = () => {
       <ul>
         {dayEvents.map((event, index) => (
           <li key={index}>
-            <Space>
-              {event.title}
-              {/* <Button onClick={() => onEdit(event)}>Edit</Button>
-              <Button onClick={() => onDelete(event.id)} danger>
-                Delete
-              </Button> */}
-            </Space>
+            <Space>{event.title}</Space>
           </li>
         ))}
       </ul>
@@ -94,48 +95,53 @@ const Calendar: React.FC = () => {
   }
 
   return (
-    <div>
-      <AntdCalendar onSelect={onSelect} dateCellRender={dateCellRender} />
+    <div id="calendar">
+      <div>
+        {ContextHolder}
+        <div>
+          <AntdCalendar onSelect={onSelect} dateCellRender={dateCellRender} />
 
-      <Modal
-        title={editingEvent ? 'Edit Event' : 'Add Event'}
-        visible={visible}
-        onOk={onModalOk}
-        onCancel={onModalCancel}
-        footer={[
-          <Button key="back" onClick={onModalCancel}>
-            Cancel
-          </Button>,
-          <Button key="submit" type="primary" onClick={onModalOk}>
-            {editingEvent ? 'Save' : 'Add'}
-          </Button>,
-        ]}
-      >
-        {selectedDate && (
-          <>
-            <p>{selectedDate.format('YYYY-MM-DD')}</p>
-            <Input
-              placeholder="Enter event title"
-              value={eventTitle}
-              onChange={e => setEventTitle(e.target.value)}
+          <Modal
+            title={editingEvent ? 'Edit Event' : 'Add Event'}
+            visible={visible}
+            onOk={onModalOk}
+            onCancel={onModalCancel}
+            footer={[
+              <Button key="back" onClick={onModalCancel}>
+                Cancel
+              </Button>,
+              <Button key="submit" type="primary" onClick={onModalOk}>
+                {editingEvent ? 'Save' : 'Add'}
+              </Button>,
+            ]}
+          >
+            {selectedDate && (
+              <>
+                <p>{selectedDate.format('YYYY-MM-DD')}</p>
+                <Input
+                  placeholder="Enter event title"
+                  value={eventTitle}
+                  onChange={e => setEventTitle(e.target.value)}
+                />
+              </>
+            )}
+            <List
+              dataSource={events}
+              renderItem={event => (
+                <List.Item>
+                  <Space>
+                    {event.title}
+                    <Button onClick={() => onEdit(event)}>Edit</Button>
+                    <Button onClick={() => onDelete(event.id)} danger>
+                      Delete
+                    </Button>
+                  </Space>
+                </List.Item>
+              )}
             />
-          </>
-        )}
-        <List
-          dataSource={events}
-          renderItem={event => (
-            <List.Item>
-              <Space>
-                {event.title}
-                <Button onClick={() => onEdit(event)}>Edit</Button>
-                <Button onClick={() => onDelete(event.id)} danger>
-                  Delete
-                </Button>
-              </Space>
-            </List.Item>
-          )}
-        />
-      </Modal>
+          </Modal>
+        </div>
+      </div>
     </div>
   )
 }
