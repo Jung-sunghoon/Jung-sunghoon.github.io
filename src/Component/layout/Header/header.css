@@ -1,4 +1,4 @@
-#header {
+#Header {
   position: fixed;
   left: 0;
   top: 0;
@@ -6,7 +6,7 @@
   z-index: 100;
 }
 
-.h__menu__inner {
+.H__Menu__Inner {
   background-color: gray;
   display: flex;
   align-items: center;
@@ -14,14 +14,14 @@
   justify-content: space-between;
 }
 
-.h__menu {
+.H__Menu {
   font-size: 20px;
   margin-left: 10px;
   margin-right: 10px;
   align-items: center;
 }
 
-.h__link {
+.H__Link {
   text-decoration: none;
   color: white;
 }

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Layout from './Component/layout/Layout'
-import Blog from './pages/Blog/Blog'
+import Blogs from './pages/Blog/Blogs'
 import Projects from './pages/Projects/Projects'
 import Aboutme from './pages/Aboutme/Aboutme'
 import Comming from './pages/Comming/Comming'
@@ -12,7 +12,7 @@ function App() {
     <>
       <Layout>
         <Routes>
-          <Route path="/blog/*" element={<Blog />} />
+          <Route path="/blogs/*" element={<Blogs />} />
           <Route path="/aboutme/*" element={<Aboutme />} />
           <Route path="/calendar/*" element={<Calendar />} />
           <Route path="/projects/*" element={<Projects />} />

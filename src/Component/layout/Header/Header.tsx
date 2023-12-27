@@ -4,34 +4,34 @@ import { Link } from 'react-router-dom'
 
 const Header: React.FC = () => {
   return (
-    <header id="header">
-      <ul className="h__menu__inner">
-        <li className="h__menu">
-          <Link to="/blog" className="h__link">
+    <header id="Header">
+      <ul className="H__Menu__Inner">
+        <li className="H__Menu">
+          <Link to="/blogs" className="H__Link">
             Blog
           </Link>
         </li>
-        <li className="h__menu">
-          <Link to="/aboutme" className="h__link">
+        <li className="H__Menu">
+          <Link to="/aboutme" className="H__Link">
             About me
           </Link>
         </li>
-        <li className="h__menu">
-          <Link to="/projects" className="h__link">
+        <li className="H__Menu">
+          <Link to="/projects" className="H__Link">
             Projects
           </Link>
         </li>
-        <li className="h__menu">
+        <li className="H__Menu">
           <Link
             to="https://github.com/Jung-sunghoon"
             target="_blank"
-            className="h__link"
+            className="H__Link"
           >
             Github
           </Link>
         </li>
-        <li className="h__menu">
-          <Link to="/calendar" className="h__link">
+        <li className="H__Menu">
+          <Link to="/calendar" className="H__Link">
             Calendar
           </Link>
         </li>
