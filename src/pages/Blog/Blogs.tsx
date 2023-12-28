@@ -12,6 +12,7 @@ export interface BlogType {
   title: string
   views: number
   creation_date: string
+  content: string
 }
 
 export type BlogTypes = BlogType[]
@@ -50,7 +51,6 @@ const Blog: React.FC = () => {
         const response = await axios.get(
           `${import.meta.env.VITE_API_ENDPOINT}/api/blog/list`,
         )
-        console.log(response.data)
 
         const data = response.data.blogPosts.reverse()
         setBlogs(data)
@@ -66,20 +66,18 @@ const Blog: React.FC = () => {
     performSearchAndSort()
   }, [setBlogs, searchText, performSearchAndSort])
 
-  const handleNewPost = () => navigate('/generate')
+  const handleNewPost = () => navigate('/create')
 
   const renderGenerateBtn = () => {
-    if (localStorage.userId === 'master') {
-      return (
-        <div className="Floating__Btn">
-          <Button
-            type="primary"
-            icon={<PlusOutlined />}
-            onClick={handleNewPost}
-          />
-        </div>
-      )
-    }
+    return (
+      <div className="Floating__Btn">
+        <Button
+          type="primary"
+          icon={<PlusOutlined />}
+          onClick={handleNewPost}
+        />
+      </div>
+    )
   }
 
   return (

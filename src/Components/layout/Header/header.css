@@ -1,4 +1,5 @@
 #Header {
+  background-color: gray;
   position: fixed;
   left: 0;
   top: 0;
@@ -6,11 +7,14 @@
   z-index: 100;
 }
 
+.H__Menu_Nav li {
+  display: inline;
+}
+
 .H__Menu__Inner {
-  background-color: gray;
   display: flex;
   align-items: center;
-  min-height: 60px;
+  min-height: 40px;
   justify-content: space-between;
 }
 
@@ -22,6 +26,10 @@
 }
 
 .H__Link {
-  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 14px;
+  font-weight: 600;
+  position: relative;
   color: white;
 }

@@ -22,17 +22,17 @@ tbody {
 }
 
 #Blog {
-  margin-top: 80px;
+  margin-top: 90px;
 }
 
 .Blog__Search {
   display: flex;
   justify-content: end;
-  margin-right: 10px;
+  margin-right: 40px;
 }
 
 .Blog__Wrapper {
-  margin: 20px 10px 0 10px;
+  margin: 20px 40px 0 40px;
 }
 
 .Blog__Page {
