@@ -8,6 +8,10 @@ import {
   EnvironmentOutlined,
   MailOutlined,
 } from '@ant-design/icons'
+import frontendImg from '@src/assets/img/skillImg/frontendImg.png'
+import backendImg from '@src/assets/img/skillImg/backendImg.png'
+import deploymentImg from '@src/assets/img/skillImg/deploymentImg.png'
+import versionControllImg from '@src/assets/img/skillImg/versionControllImg.png'
 
 const Aboutme: React.FC = () => {
   return (
@@ -96,8 +100,48 @@ const Aboutme: React.FC = () => {
         <div className="AboutMe__SkillsSection">
           <div className="AboutMe__SkillsSection__Title">
             <div className="AboutMe__SkillsSection__Title__Text">Skills</div>
-            <div>Frontend</div>
-            <div>Version Control</div>
+          </div>
+          <div className="AboutMe__SkillsSection__Container">
+            <section>
+              <div>Frontend</div>
+              <img
+                className="AboutMe__SkillsSection__Techstacks"
+                src={frontendImg}
+                alt={frontendImg}
+              />
+            </section>
+            <section>
+              <div>Backend</div>
+              <img
+                className="AboutMe__SkillsSection__Techstacks"
+                src={backendImg}
+                alt={backendImg}
+              />
+            </section>
+            <section>
+              <div>Versoin Controll</div>
+              <img
+                className="AboutMe__SkillsSection__Techstacks"
+                src={versionControllImg}
+                alt={versionControllImg}
+              />
+            </section>
+            <section>
+              <div>Deployment</div>
+              <img
+                className="AboutMe__SkillsSection__Techstacks"
+                src={deploymentImg}
+                alt={deploymentImg}
+              />
+            </section>
+            <section>
+              <div>Communication</div>
+              {/* <img className="AboutMe__SkillsSection__Techstacks" src={frontendImg} alt={frontendImg} /> */}
+            </section>
+            <section>
+              <div>Certificate</div>
+              {/* <img className="AboutMe__SkillsSection__Techstacks" src={frontendImg} alt={frontendImg} /> */}
+            </section>
           </div>
         </div>
       </article>

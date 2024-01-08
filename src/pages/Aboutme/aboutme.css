@@ -84,3 +84,15 @@ article {
   font-weight: 400;
   font-size: 1rem;
 }
+
+.AboutMe__SkillsSection__Container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-around;
+  height: calc(100% - (7.5rem + 1px));
+}
+
+.AboutMe__SkillsSection__Techstacks {
+  max-width: 300px;
+  max-height: 500px;
+}

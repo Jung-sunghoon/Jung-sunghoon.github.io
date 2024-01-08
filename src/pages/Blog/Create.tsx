@@ -10,7 +10,7 @@ const Create: React.FC = () => {
   const [form] = Form.useForm()
   const [initialValue] = useState({
     title: '',
-    description: '',
+    content: '',
   })
   const [messageApi, contextHolder] = message.useMessage()
   const [textEditor, setTextEditor] = useState('')
@@ -31,23 +31,22 @@ const Create: React.FC = () => {
     }
   }, [currentURL])
 
-  // 프로젝트 디테일 정보 데이터를 가져오는 함수
+  // 블로그 디테일 정보 데이터를 가져오는 함수
   const fetchBlogData = async () => {
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_ENDPOINT}/api/?itInfoId=${post_id}`,
-        { post_id },
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_ENDPOINT}/api/blog-detail/${post_id}`,
       )
 
       // 정상으로 가져옴
       if (response.status === 200) {
-        const blog = response?.data
+        const blog = response?.data.blogPostDetail
 
         form.setFieldsValue({
           title: blog.title,
-          description: blog.description,
+          content: blog.content,
         })
-        setTextEditor(blog.description)
+        setTextEditor(blog.content)
       }
     } catch (error) {
       console.error('Error fetching project list:', error)
@@ -64,7 +63,7 @@ const Create: React.FC = () => {
     const requestData = {
       postId: type === 'edit' ? post_id : null,
       title: values.title,
-      description: textEditor,
+      content: textEditor,
     }
 
     const response = await axios.post(
@@ -125,7 +124,7 @@ const Create: React.FC = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item name="description" label="내용">
+          <Form.Item name="content" label="내용">
             <div>
               {type === 'create' ? (
                 <TextEditor
