@@ -1,5 +1,12 @@
+a:hover {
+  color: #3a59f4;
+}
+a:focus {
+  color: white;
+}
+
 #Header {
-  background-color: gray;
+  background-color: black;
   position: fixed;
   left: 0;
   top: 0;

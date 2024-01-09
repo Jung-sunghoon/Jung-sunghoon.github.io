@@ -8,27 +8,18 @@ const Header: React.FC = () => {
       <div className="H__Menu_Nav">
         <ul className="H__Menu__Inner">
           <li className="H__Menu">
-            <Link to="/blogs" className="H__Link">
-              Blog
-            </Link>
-          </li>
-          <li className="H__Menu">
             <Link to="/aboutme" className="H__Link">
               About me
             </Link>
           </li>
           <li className="H__Menu">
-            <Link to="/projects" className="H__Link">
-              Projects
+            <Link to="/blogs" className="H__Link">
+              Blog
             </Link>
           </li>
           <li className="H__Menu">
-            <Link
-              to="https://github.com/Jung-sunghoon"
-              target="_blank"
-              className="H__Link"
-            >
-              Github
+            <Link to="/projects" className="H__Link">
+              Projects
             </Link>
           </li>
           <li className="H__Menu">

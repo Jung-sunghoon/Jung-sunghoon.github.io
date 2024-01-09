@@ -1,26 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import './blogs.css'
-import { Button, Pagination } from 'antd'
-import { Link, useNavigate } from 'react-router-dom'
+import { Button, List, Pagination } from 'antd'
+import { useNavigate } from 'react-router-dom'
 import { PlusOutlined } from '@ant-design/icons'
-import { formatDate } from '../../utils/common'
 import axios from 'axios'
 import Search from './Search'
+import { BlogType, BlogsType } from '@src/types/types'
+import Blogcard from '@src/Components/BlogCard/Blogcard'
 
-export interface BlogType {
-  post_id: number
-  title: string
-  views: number
-  creation_date: string
-  content: string
-}
-
-export type BlogTypes = BlogType[]
-
-const Blog: React.FC = () => {
+const Blogs: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('')
-  const [blogs, setBlogs] = useState<BlogTypes>([])
-  const [filteredData, setFilteredData] = useState<BlogTypes>([])
+  const [blogs, setBlogs] = useState<BlogsType>([])
+  const [filteredData, setFilteredData] = useState<BlogsType>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [pageSize] = useState<number>(10)
   const handlePageChange = (page: number) => setCurrentPage(page)
@@ -64,7 +55,7 @@ const Blog: React.FC = () => {
 
   useEffect(() => {
     performSearchAndSort()
-  }, [setBlogs, searchText, performSearchAndSort])
+  }, [blogs, searchText])
 
   const handleNewPost = () => navigate('/create')
 
@@ -86,42 +77,20 @@ const Blog: React.FC = () => {
         <div className="Blog__Search">
           <Search onSearch={handleSearch} />
         </div>
-        <div className="Blog__Wrapper">
-          <table className="BlogTable">
-            <colgroup>
-              <col className="Col__Id"></col>
-              <col className="Col__Title"></col>
-              <col className="Col__Date"></col>
-              <col className="Col__View"></col>
-            </colgroup>
-            <thead>
-              <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성일</th>
-                <th>조회수</th>
-              </tr>
-            </thead>
-            <tbody>
-              {slicedData?.map(item => (
-                <tr key={item?.post_id}>
-                  <td>{item?.post_id}</td>
-                  <td>
-                    <Link to={`/blogdetails/${item?.post_id}`}>
-                      {item?.title}
-                    </Link>
-                  </td>
-                  <td>
-                    {item?.creation_date
-                      ? formatDate(new Date(item?.creation_date))
-                      : ''}
-                  </td>
-                  <td>{item?.views}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <List
+          style={{
+            marginTop: '30px',
+            marginLeft: '30px',
+            marginRight: '30px',
+          }}
+          grid={{ gutter: 12, xs: 1, sm: 2, md: 3, lg: 3, xl: 4, xxl: 6 }}
+          dataSource={slicedData} // 페이지네이션에 따라 잘라낸 데이터를 사용
+          renderItem={(item: BlogType) => (
+            <List.Item>
+              <Blogcard blogData={item} />
+            </List.Item>
+          )}
+        />
       </div>
       <div style={{ marginTop: '10px' }}>
         <Pagination
@@ -138,29 +107,4 @@ const Blog: React.FC = () => {
   )
 }
 
-export default Blog
-
-// const Info: React.FC = () => {
-//
-//   };
-
-//   return (
-//     <div>
-//       <div
-//         style={{
-//           margin: "50px 100px 0 100px",
-//           paddingLeft: "30px",
-//           paddingRight: "30px",
-//         }}
-//       >
-//         <div style={{ display: "flex", justifyContent: "space-between" }}>
-//           <h2>IT 정보</h2>
-//
-//         </div>
-
-//
-//         {renderGenerateBtn()}
-//       </div>
-//     </div>
-//   );
-// };
+export default Blogs

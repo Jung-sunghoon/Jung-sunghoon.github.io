@@ -102,46 +102,58 @@ const Aboutme: React.FC = () => {
             <div className="AboutMe__SkillsSection__Title__Text">Skills</div>
           </div>
           <div className="AboutMe__SkillsSection__Container">
-            <section>
-              <div>Frontend</div>
+            <div className="AboutMe__SkillsSection__Contents">
+              <div className="AboutMe__SkillsSection__Techstacks__Title">
+                Frontend
+              </div>
               <img
-                className="AboutMe__SkillsSection__Techstacks"
+                className="AboutMe__SkillsSection__Techstacks__Img"
                 src={frontendImg}
                 alt={frontendImg}
               />
-            </section>
-            <section>
-              <div>Backend</div>
+            </div>
+            <div className="AboutMe__SkillsSection__Contents">
+              <div className="AboutMe__SkillsSection__Techstacks__Title">
+                Backend
+              </div>
               <img
-                className="AboutMe__SkillsSection__Techstacks"
+                className="AboutMe__SkillsSection__Techstacks__Img"
                 src={backendImg}
                 alt={backendImg}
               />
-            </section>
-            <section>
-              <div>Versoin Controll</div>
+            </div>
+            <div className="AboutMe__SkillsSection__Contents">
+              <div className="AboutMe__SkillsSection__Techstacks__Title">
+                Versoin Controll
+              </div>
               <img
-                className="AboutMe__SkillsSection__Techstacks"
+                className="AboutMe__SkillsSection__Techstacks__Img"
                 src={versionControllImg}
                 alt={versionControllImg}
               />
-            </section>
-            <section>
-              <div>Deployment</div>
+            </div>
+            <div className="AboutMe__SkillsSection__Contents">
+              <div className="AboutMe__SkillsSection__Techstacks__Title">
+                Deployment
+              </div>
               <img
-                className="AboutMe__SkillsSection__Techstacks"
+                className="AboutMe__SkillsSection__Techstacks__Img"
                 src={deploymentImg}
                 alt={deploymentImg}
               />
-            </section>
-            <section>
-              <div>Communication</div>
-              {/* <img className="AboutMe__SkillsSection__Techstacks" src={frontendImg} alt={frontendImg} /> */}
-            </section>
-            <section>
-              <div>Certificate</div>
-              {/* <img className="AboutMe__SkillsSection__Techstacks" src={frontendImg} alt={frontendImg} /> */}
-            </section>
+            </div>
+            <div className="AboutMe__SkillsSection__Contents">
+              <div className="AboutMe__SkillsSection__Techstacks__Title">
+                Communication
+              </div>
+              {/* <img className="AboutMe__SkillsSection__Techstacks__Img" src={frontendImg} alt={frontendImg} /> */}
+            </div>
+            <div className="AboutMe__SkillsSection__Contents">
+              <div className="AboutMe__SkillsSection__Techstacks__Title">
+                Certificate
+              </div>
+              {/* <img className="AboutMe__SkillsSection__Techstacks__Img" src={frontendImg} alt={frontendImg} /> */}
+            </div>
           </div>
         </div>
       </article>

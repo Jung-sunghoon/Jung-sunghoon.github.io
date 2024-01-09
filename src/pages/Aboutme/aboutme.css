@@ -85,14 +85,47 @@ article {
   font-size: 1rem;
 }
 
+.AboutMe__SkillsSection {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  max-width: 71.25rem;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  height: 78rem;
+}
+
 .AboutMe__SkillsSection__Container {
   display: flex;
+  display: -ms-flexbox;
   flex-flow: column wrap;
   align-content: space-around;
+  -ms-flex-line-pack: distribute;
   height: calc(100% - (7.5rem + 1px));
 }
 
-.AboutMe__SkillsSection__Techstacks {
-  max-width: 300px;
-  max-height: 500px;
+.AboutMe__SkillsSection__Contents {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  flex-shrink: 0;
+  width: 17rem;
+  padding: 1.5rem;
+  margin: 0 auto 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
+  -webkit-box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
+}
+
+.AboutMe__SkillsSection__Techstacks__Title {
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ccc;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #3a59f4;
+}
+
+.AboutMe__SkillsSection__Techstacks__Img {
+  max-width: 14rem;
 }

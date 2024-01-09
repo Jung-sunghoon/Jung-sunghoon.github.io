@@ -1,5 +1,6 @@
 #root {
   min-height: 100%;
+  margin-top: 60px;
 }
 
 * {
@@ -55,7 +56,7 @@ button {
   margin: 0em;
 }
 
-.infoDeatils__wrapper {
+.BlogDeatils__wrapper {
   max-width: 900px;
   width: 100%;
   height: 100%;
@@ -66,34 +67,34 @@ button {
   background-color: #fff;
 }
 
-.infoDetails__header {
+.BlogDetails__header {
   margin-top: 30px;
   position: relative;
   margin-bottom: 0.5em;
   font-size: 16px;
 }
 
-.infoDetails__dateAndViews {
+.BlogDetails__dateAndViews {
   display: flex;
   text-align: right;
   float: right;
 }
-.infoDetails__generateDate {
+.BlogDetails__generateDate {
   padding: 0 0.5em;
   border-right: 1px #ccc solid;
   font-weight: 700;
 }
-.infoDetails__views {
+.BlogDetails__views {
   font-weight: 700;
 }
 
-.infoDetails__titleWrap {
+.BlogDetails__titleWrap {
   border-top: 2px #241055 solid;
   border-bottom: 1px #241055 solid;
   background-color: #f5f3fc;
 }
 
-.infoDetails__title {
+.BlogDetails__title {
   font-size: 20px;
   line-height: 1.5;
   text-align: center;
@@ -102,13 +103,40 @@ button {
   background-image: none;
 }
 
-.infoDetails__description {
+.BlogDetails__description {
   font-size: 1em;
   margin: 25px 0;
 }
 
-.infoDetails__btnWrapper {
+.BlogDetails__BtnWrapper {
   display: flex;
   margin-top: 10px;
   justify-content: end;
+}
+
+.BlogDetails__BlogEditBtn {
+  color: green;
+  margin-right: 10px;
+  border-color: green;
+}
+
+.BlogDetails__BlogDeleteBtn {
+  color: red;
+  border-color: red;
+}
+
+.BlogDetails__commentBtnWrapper {
+  display: flex;
+  justify-content: end;
+  margin: 16px 0 24px;
+}
+
+.BlogDetails__commentBtn {
+  padding: 12px 24px;
+  height: 40px;
+  background: #333;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
 }

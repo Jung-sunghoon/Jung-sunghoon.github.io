@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import Footer from './Footer/Footer'
+import Header from './Header/Header'
 
 const Layout = ({ children }: any) => {
   return (
@@ -12,7 +10,7 @@ const Layout = ({ children }: any) => {
 
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

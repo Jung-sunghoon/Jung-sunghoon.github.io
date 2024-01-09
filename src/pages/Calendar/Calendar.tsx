@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Calendar as AntdCalendar,
   Modal,
@@ -28,8 +28,11 @@ const Calendar: React.FC = () => {
 
   const onSelect = (value: dayjs.Dayjs) => {
     setSelectedDate(value)
-    setVisible(true)
   }
+
+  useEffect(() => {
+    if (selectedDate) setVisible(true)
+  }, [selectedDate])
 
   const onModalOk = () => {
     if (selectedDate && eventTitle) {
@@ -99,7 +102,16 @@ const Calendar: React.FC = () => {
       <div>
         {ContextHolder}
         <div>
-          <AntdCalendar onSelect={onSelect} dateCellRender={dateCellRender} />
+          <AntdCalendar
+            onSelect={onSelect}
+            // fullscreen={false}
+            onPanelChange={() => {
+              console.log('dd')
+              setSelectedDate(null)
+              setVisible(false)
+            }}
+            dateCellRender={dateCellRender}
+          />
 
           <Modal
             title={editingEvent ? 'Edit Event' : 'Add Event'}

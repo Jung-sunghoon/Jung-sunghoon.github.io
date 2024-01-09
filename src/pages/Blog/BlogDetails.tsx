@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Button, message } from 'antd'
 import axios from 'axios'
-import { BlogType } from './Blogs'
+import { BlogType } from '@src/types/types'
 import './blogDetails.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
@@ -10,7 +10,7 @@ import { formatDate } from '@src/utils/common'
 
 export interface BlogDetails {}
 
-const InfoDetails: React.FC<BlogDetails> = () => {
+const BlogDetails: React.FC<BlogDetails> = () => {
   const currentURL = window.location.href
   const segments = currentURL.split('/')
   const post_id = segments[segments.length - 1]
@@ -40,76 +40,71 @@ const InfoDetails: React.FC<BlogDetails> = () => {
     }
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_ENDPOINT}/api/blog-detail/${post_id}`,
-        )
-        const BlogData = response.data.blogPostDetail
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_ENDPOINT}/api/blog-detail/${post_id}`,
+      )
+      const BlogData = response.data.blogPostDetail
 
-        setBlogDetails(BlogData)
-      } catch (error) {
-        messageApi.error('오류입니다.')
-      }
+      setBlogDetails(BlogData)
+    } catch (error) {
+      messageApi.error('오류입니다.')
     }
+  }
 
+  useEffect(() => {
     fetchData()
   }, [])
 
   const renderBlogEditAndDeleteBtn = () => {
-    if (localStorage.userId === 'master') {
-      return (
-        <div className="infoDetails__btnWrapper">
-          <Button
-            className="projectDetails__projectEditBtn"
-            onClick={handleEditBlog}
-          >
-            <EditOutlined />
-          </Button>
-          <Button
-            onClick={handleDeleteBlog}
-            className="projectDetails__projectDeleteBtn"
-          >
-            <DeleteOutlined />
-          </Button>
-        </div>
-      )
-    }
+    return (
+      <div className="BlogDetails__BtnWrapper">
+        <Button className="BlogDetails__BlogEditBtn" onClick={handleEditBlog}>
+          <EditOutlined />
+        </Button>
+        <Button
+          onClick={handleDeleteBlog}
+          className="BlogDetails__BlogDeleteBtn"
+        >
+          <DeleteOutlined />
+        </Button>
+      </div>
+    )
   }
 
   return (
     <div id="root">
       {contextHolder}
-      <div className="infoDetails__all">
-        <div className="infoDeatils__wrapper">
-          <div className="infoDetails__header">
-            <div className="infoDetails__dateAndViews">
+      <div className="BlogDetails__all">
+        <div className="BlogDeatils__wrapper">
+          <div className="BlogDetails__header">
+            <div className="BlogDetails__dateAndViews">
               <span>작성일</span>
-              <div className="infoDetails__generateDate">
+              <div className="BlogDetails__generateDate">
                 {blogDetails?.creation_date
                   ? formatDate(new Date(blogDetails?.creation_date))
                   : ''}
               </div>
               <span style={{ padding: '0 0.5em' }}>조회수</span>
-              <div className="infoDetails__views">{blogDetails?.views}</div>
+              <div className="BlogDetails__views">{blogDetails?.views}</div>
             </div>
           </div>
-          <div className="infoDetails__titleWrap">
-            <div className="infoDetails__title">{blogDetails?.title}</div>
+          <div className="BlogDetails__titleWrap">
+            <div className="BlogDetails__title">{blogDetails?.title}</div>
           </div>
           {renderBlogEditAndDeleteBtn()}
-          <div className="infoDetails__description">
+          <div className="BlogDetails__description">
             <div
               dangerouslySetInnerHTML={{
                 __html: blogDetails?.content || '',
               }}
             />
           </div>
-          <div className="projectDetails__commentBtnWrapper">
+          <div className="BlogDetails__commentBtnWrapper">
             <Link to="/blogs">
               <button
-                className="projectDetails__commentBtn"
+                className="BlogDetails__commentBtn"
                 style={{
                   marginRight: '5px',
                 }}
@@ -125,4 +120,4 @@ const InfoDetails: React.FC<BlogDetails> = () => {
   )
 }
 
-export default InfoDetails
+export default BlogDetails
