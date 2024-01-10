@@ -31,7 +31,7 @@ class TextEditor extends Component<TextEditorProps> {
         ['style', ['style']],
         ['font', ['bold', 'underline', 'italic']],
         ['fontname', ['fontname', 'fontsize', 'color']],
-        ['para', ['ul', 'ol', 'paragraph']],
+        ['para', ['ul', 'paragraph']],
         ['insert', ['link', 'picture', 'video']],
         ['table', ['table']],
         ['view', ['fullscreen']],
@@ -42,6 +42,9 @@ class TextEditor extends Component<TextEditorProps> {
         },
       },
     })
+
+    // @ts-ignore
+    $('.dropdown-toggle').dropdown()
   }
 
   onEditNew() {
@@ -54,7 +57,7 @@ class TextEditor extends Component<TextEditorProps> {
         ['style', ['style']],
         ['font', ['bold', 'underline', 'italic']],
         ['fontname', ['fontname', 'fontsize', 'color']],
-        ['para', ['ul', 'ol', 'paragraph']],
+        ['para', ['ul', 'paragraph']],
         ['insert', ['link', 'picture', 'video']],
         ['table', ['table']],
         ['view', ['fullscreen']],
@@ -65,6 +68,9 @@ class TextEditor extends Component<TextEditorProps> {
         },
       },
     })
+
+    // @ts-ignore
+    $('.dropdown-toggle').dropdown()
   }
 
   onDisplay() {

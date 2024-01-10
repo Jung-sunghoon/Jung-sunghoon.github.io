@@ -1,5 +1,11 @@
-const Comming = () => {
-  return <div>Comming</div>;
-};
+import GoogleLoginButton from '@src/Components/Login/Login'
 
-export default Comming;
+const Comming = () => {
+  return (
+    <div style={{ marginTop: '100px' }}>
+      <GoogleLoginButton />
+    </div>
+  )
+}
+
+export default Comming
