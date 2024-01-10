@@ -888,3 +888,7 @@
   outline: 0;
   cursor: pointer;
 }
+
+.form-control {
+  width: 95%;
+}

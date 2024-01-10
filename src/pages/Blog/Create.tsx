@@ -61,7 +61,7 @@ const Create: React.FC = () => {
     textEditor: string,
   ) => {
     const requestData = {
-      postId: type === 'edit' ? post_id : null,
+      post_id: type === 'edit' ? post_id : null,
       title: values.title,
       content: textEditor,
     }
@@ -99,7 +99,7 @@ const Create: React.FC = () => {
   }
 
   return (
-    <div>
+    <div id="root">
       {contextHolder}
       <Form
         form={form}
@@ -112,7 +112,7 @@ const Create: React.FC = () => {
       >
         <div
           style={{
-            marginTop: '80px',
+            marginTop: '100px',
             justifyContent: 'center',
             marginRight: '10px',
           }}

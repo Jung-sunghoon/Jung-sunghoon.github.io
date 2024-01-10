@@ -23,22 +23,22 @@ const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
         maxWidth: '400px',
         maxHeight: '300px',
       }}
-      // cover={
-      //   //@ts-ignore
-      //   <img
-      //     height={160}
-      //     style={{
-      //       objectFit: 'cover',
-      //       cursor: 'pointer',
-      //     }}
-      //     alt="example"
-      //     //@ts-ignore
-      //     src={blogInfo?.thumbnail}
-      //     onClick={() => {
-      //       navigate(`/blogdetails/${blogInfo?.post_id}`)
-      //     }}
-      //   />
-      // }
+      cover={
+        //@ts-ignore
+        <img
+          height={160}
+          style={{
+            objectFit: 'cover',
+            cursor: 'pointer',
+          }}
+          alt="example"
+          //@ts-ignore
+          src={blogInfo?.thumbnail}
+          onClick={() => {
+            navigate(`/blogdetails/${blogInfo?.post_id}`)
+          }}
+        />
+      }
       actions={[
         <div
           style={{

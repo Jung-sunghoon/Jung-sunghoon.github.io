@@ -23,7 +23,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   }
 
   const handleDeleteBlog = async () => {
-    const confirmDelete = window.confirm('프로젝트를 삭제하시겠습니까?')
+    const confirmDelete = window.confirm('게시물을 삭제하시겠습니까?')
     if (confirmDelete) {
       try {
         await axios.delete(
@@ -35,7 +35,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
         navigate('/blogs')
       } catch (error) {
         // 오류 처리
-        messageApi.error('게시물 삭제 오류:')
+        messageApi.error('게시물 삭제 오류')
       }
     }
   }
