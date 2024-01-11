@@ -83,15 +83,11 @@ const Create: React.FC = () => {
     try {
       if (type !== 'create' && type !== 'edit') return
 
-      const response = await createOrUpdateBlog(type, values, textEditor)
+      await createOrUpdateBlog(type, values, textEditor)
 
-      if (response.status === 201) {
-        messageApi.success('게시물이 성공적으로 생성되었습니다.')
-        form.resetFields()
-        navigate('/blogs')
-      } else {
-        messageApi.error('게시물 생성 중 오류가 발생했습니다.')
-      }
+      messageApi.success('게시물이 성공적으로 생성되었습니다.')
+      form.resetFields()
+      navigate('/blogs')
     } catch (error) {
       messageApi.error('게시물 생성 중 오류가 발생했습니다.')
       console.error('게시물 생성 중 오류:', error)
