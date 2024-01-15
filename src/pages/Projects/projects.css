@@ -1,8 +1,6 @@
-#root {
-  margin-left: 30px;
-  margin-right: 30px;
+.Projects__Wrapper {
+  margin: 100px 30px 0 30px;
 }
 
 .Projects__Container {
-  margin-top: 40px;
 }

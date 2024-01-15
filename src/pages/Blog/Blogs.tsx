@@ -13,7 +13,8 @@ const Blogs: React.FC = () => {
   const [blogs, setBlogs] = useState<BlogsType>([])
   const [filteredData, setFilteredData] = useState<BlogsType>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
-  const [pageSize] = useState<number>(10)
+  const [pageSize] = useState<number>(20)
+  const [hasCookie, setHasCookie] = useState<boolean>(false)
   const handlePageChange = (page: number) => setCurrentPage(page)
   const navigate = useNavigate()
 
@@ -45,6 +46,9 @@ const Blogs: React.FC = () => {
 
         const data = response.data.blogPosts.reverse()
         setBlogs(data)
+
+        // 쿠키가 있는지 확인
+        setHasCookie(document.cookie.includes('token'))
       } catch (error) {
         console.error('Error fetching data:', error)
       }
@@ -60,20 +64,23 @@ const Blogs: React.FC = () => {
   const handleNewPost = () => navigate('/create')
 
   const renderGenerateBtn = () => {
-    return (
-      <div className="Floating__Btn">
-        <Button
-          type="primary"
-          icon={<PlusOutlined />}
-          onClick={handleNewPost}
-        />
-      </div>
-    )
+    if (hasCookie) {
+      return (
+        <div className="Floating__Btn">
+          <Button
+            type="primary"
+            icon={<PlusOutlined />}
+            onClick={handleNewPost}
+          />
+        </div>
+      )
+    }
+    return null
   }
 
   return (
     <div id="Blog">
-      <div>
+      <div className="Blog__Container">
         <div className="Blog__Search">
           <Search onSearch={handleSearch} />
         </div>

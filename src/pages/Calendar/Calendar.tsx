@@ -1,157 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import {
-  Calendar as AntdCalendar,
-  Modal,
-  Button,
-  Input,
-  Space,
-  List,
-  message,
-} from 'antd'
-import dayjs from 'dayjs'
-import { v4 as uuidv4 } from 'uuid'
+import React, { useState } from 'react'
+import type { Dayjs } from 'dayjs'
+import { Calendar as AntdCalendar } from 'antd'
+import type { CalendarProps } from 'antd'
 import './calendar.css'
 
-interface Event {
-  id: string
-  title: string
-  date: Date
-}
-
 const Calendar: React.FC = () => {
-  const [events, setEvents] = useState<Event[]>([])
-  const [visible, setVisible] = useState(false)
-  const [selectedDate, setSelectedDate] = useState<dayjs.Dayjs | null>(null)
-  const [eventTitle, setEventTitle] = useState<string>('')
-  const [editingEvent, setEditingEvent] = useState<Event | null>(null)
-  const [messageApi, ContextHolder] = message.useMessage()
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
+  const [eventList, setEventList] = useState<string[]>([])
 
-  const onSelect = (value: dayjs.Dayjs) => {
+  const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
+    console.log(value.format('YYYY-MM-DD'), mode)
+  }
+
+  const onSelect = (value: Dayjs) => {
+    // 여기서 해당 날짜의 이벤트 리스트를 가져와서 업데이트
+    const eventsForSelectedDate = getEventsForSelectedDate(value)
+    setEventList(eventsForSelectedDate)
+
+    // 선택된 날짜 업데이트
     setSelectedDate(value)
   }
 
-  useEffect(() => {
-    if (selectedDate) setVisible(true)
-  }, [selectedDate])
-
-  const onModalOk = () => {
-    if (selectedDate && eventTitle) {
-      if (editingEvent) {
-        // If editing an existing event
-        const updatedEvents = events.map(event =>
-          event.id === editingEvent.id
-            ? { ...event, title: eventTitle }
-            : event,
-        )
-        setEvents(updatedEvents)
-      } else {
-        // If adding a new event
-        const newEvent: Event = {
-          id: uuidv4(),
-          title: eventTitle,
-          date: selectedDate.toDate(),
-        }
-        setEvents([...events, newEvent])
-      }
-    }
-
-    setEventTitle('')
-    setEditingEvent(null)
-    setVisible(false)
-  }
-
-  const onModalCancel = () => {
-    setEventTitle('')
-    setEditingEvent(null)
-    setVisible(false)
-  }
-
-  const onEdit = (event: Event) => {
-    setEditingEvent(event)
-    setEventTitle(event.title)
-    setVisible(true)
-  }
-
-  const onDelete = (eventId: string) => {
-    const confirmDelete = window.confirm('일정을 삭제하시겠습니까?')
-    if (confirmDelete) {
-      setEvents(prevEvents => prevEvents.filter(event => event.id !== eventId))
-      messageApi.success('일정이 삭제되었습니다.')
-    }
-  }
-
-  const dateCellRender = (value: dayjs.Dayjs) => {
-    const dayEvents = events.filter(event => {
-      const eventDate = dayjs(event.date)
-      return eventDate.isSame(value, 'day')
-    })
-
-    return (
-      <ul>
-        {dayEvents.map((event, index) => (
-          <li key={index}>
-            <Space>{event.title}</Space>
-          </li>
-        ))}
-      </ul>
-    )
+  const getEventsForSelectedDate = (selectedDate: Dayjs): string[] => {
+    // 여기서 해당 날짜에 대한 이벤트 리스트를 가져오는 로직을 작성
+    // 임시로 더미 데이터를 반환하도록 작성하였습니다.
+    return ['Event 1', 'Event 2', 'Event 3']
   }
 
   return (
-    <div id="calendar">
-      <div>
-        {ContextHolder}
-        <div>
-          <AntdCalendar
-            onSelect={onSelect}
-            // fullscreen={false}
-            onPanelChange={() => {
-              console.log('dd')
-              setSelectedDate(null)
-              setVisible(false)
-            }}
-            dateCellRender={dateCellRender}
-          />
-
-          <Modal
-            title={editingEvent ? 'Edit Event' : 'Add Event'}
-            visible={visible}
-            onOk={onModalOk}
-            onCancel={onModalCancel}
-            footer={[
-              <Button key="back" onClick={onModalCancel}>
-                Cancel
-              </Button>,
-              <Button key="submit" type="primary" onClick={onModalOk}>
-                {editingEvent ? 'Save' : 'Add'}
-              </Button>,
-            ]}
-          >
-            {selectedDate && (
-              <>
-                <p>{selectedDate.format('YYYY-MM-DD')}</p>
-                <Input
-                  placeholder="Enter event title"
-                  value={eventTitle}
-                  onChange={e => setEventTitle(e.target.value)}
-                />
-              </>
-            )}
-            <List
-              dataSource={events}
-              renderItem={event => (
-                <List.Item>
-                  <Space>
-                    {event.title}
-                    <Button onClick={() => onEdit(event)}>Edit</Button>
-                    <Button onClick={() => onDelete(event.id)} danger>
-                      Delete
-                    </Button>
-                  </Space>
-                </List.Item>
-              )}
-            />
-          </Modal>
+    <div id="Calendar">
+      <div className="Calendar__Wrapper">
+        <div className="Calendar__Calendar__Container">
+          <AntdCalendar onPanelChange={onPanelChange} onSelect={onSelect} />
+        </div>
+        <div className="Calendar__Contents__Container">
+          <div>
+            <p>Selected Date: {selectedDate?.format('YYYY-MM-DD')}</p>
+            <ul>
+              {eventList.map((event, index) => (
+                <li key={index}>{event}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

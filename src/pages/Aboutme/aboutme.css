@@ -2,12 +2,23 @@ article {
   display: block;
 }
 
+b {
+  font-weight: bolder;
+}
+
+.Aboutme__ArchiveSection__Contents a {
+  text-decoration: none;
+}
+
 #aboutme {
   margin-top: 70px;
+  background-color: white;
+  color: black;
 }
 
 .AboutMe__AboutMeSection,
-.AboutMe__SkillsSection {
+.AboutMe__SkillsSection,
+.Aboutme__ArchiveSection {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   width: 100%;
@@ -17,17 +28,19 @@ article {
 }
 
 .AboutMe__AboutMeSection__Title,
-.AboutMe__SkillsSection__Title {
+.AboutMe__SkillsSection__Title,
+.Aboutme__ArchiveSection__Title {
   display: table;
   position: relative;
   margin: 0 auto 3rem;
 }
 
 .AboutMe__AboutMeSection__Title__Text,
-.AboutMe__SkillsSection__Title__Text {
+.AboutMe__SkillsSection__Title__Text,
+.Aboutme__ArchiveSection__Title__Text {
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  font-family: Black Han Sans, sans-serif;
+  font-family: black Han Sans, sans-serif;
   font-weight: 500;
   font-size: 3rem;
   line-height: 1.5;
@@ -112,9 +125,17 @@ article {
   padding: 1.5rem;
   margin: 0 auto 2rem;
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: white;
   box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
-  -webkit-box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
+  -webkit-box-shadow: 1rem 1rem 1rem 1rem rgba(68, 68, 68, 0.2);
+}
+.AboutMe__SkillsSection__Contents:hover {
+  transform: translateY(0.5rem);
+  -webkit-transform: translateY(0.5rem);
+  -ms-transform: translateY(0.5rem);
+  transition: transform 0.2s ease;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
 }
 
 .AboutMe__SkillsSection__Techstacks__Title {
@@ -123,8 +144,66 @@ article {
   border-bottom: 1px solid #ccc;
   font-weight: 700;
   font-size: 1.5rem;
+  color: black;
 }
 
 .AboutMe__SkillsSection__Techstacks__Img {
   max-width: 14rem;
+}
+
+.Aboutme__ArchiveSection {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  max-width: 71.25rem;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  height: 40rem;
+}
+
+.Aboutme__ArchiveSection__Contents {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: center;
+}
+
+.Aboutme__ArchiveSection__Contents__Container {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 26rem;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
+  -webkit-box-shadow: 1rem 1rem 1rem 1rem rgba(68, 68, 68, 0.2);
+  color: black;
+}
+.Aboutme__ArchiveSection__Contents__Container:hover {
+  color: black;
+  transform: translateY(0.5rem);
+  -webkit-transform: translateY(0.5rem);
+  -ms-transform: translateY(0.5rem);
+  transition: transform 0.2s ease;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+}
+.Aboutme__ArchiveSection__Contents__Container:hover
+  .Aboutme__ArchiveSection__Contents__Url {
+  text-decoration: underline;
+}
+
+.Aboutme__ArchiveSection__Contents__Img__Wrapper {
+  display: block;
+  width: 12rem;
+  margin-bottom: 1rem;
+}
+
+.Aboutme__ArchiveSection__Contents__Url {
+  color: #3a59f4;
+  margin-bottom: 1rem;
+}
+
+.Aboutme__ArchiveSection__Contents__Description p {
+  margin-bottom: 1rem;
 }

@@ -1,6 +1,17 @@
-#calendar {
-  margin-top: 70px;
+#Calendar {
+  margin-top: 80px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.Calendar__Wrapper {
+  display: flex;
+}
+
+.Calendar__Calendar__Container {
+  width: 50%;
+}
+
+.Calendar__Contents__Container {
   width: 50%;
 }

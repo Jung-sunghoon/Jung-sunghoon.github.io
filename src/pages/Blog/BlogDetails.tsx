@@ -15,6 +15,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   const segments = currentURL.split('/')
   const post_id = segments[segments.length - 1]
   const [blogDetails, setBlogDetails] = useState<BlogType>()
+  const [hasCookie, setHasCookie] = useState<boolean>(false)
   const [messageApi, contextHolder] = message.useMessage()
   const navigate = useNavigate()
 
@@ -48,6 +49,8 @@ const BlogDetails: React.FC<BlogDetails> = () => {
       const BlogData = response.data.blogPostDetail
 
       setBlogDetails(BlogData)
+      // 쿠키가 있는지 확인
+      setHasCookie(document.cookie.includes('token'))
     } catch (error) {
       messageApi.error('오류입니다.')
     }
@@ -58,19 +61,22 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   }, [])
 
   const renderBlogEditAndDeleteBtn = () => {
-    return (
-      <div className="BlogDetails__BtnWrapper">
-        <Button className="BlogDetails__BlogEditBtn" onClick={handleEditBlog}>
-          <EditOutlined />
-        </Button>
-        <Button
-          onClick={handleDeleteBlog}
-          className="BlogDetails__BlogDeleteBtn"
-        >
-          <DeleteOutlined />
-        </Button>
-      </div>
-    )
+    if (hasCookie) {
+      return (
+        <div className="BlogDetails__BtnWrapper">
+          <Button className="BlogDetails__BlogEditBtn" onClick={handleEditBlog}>
+            <EditOutlined />
+          </Button>
+          <Button
+            onClick={handleDeleteBlog}
+            className="BlogDetails__BlogDeleteBtn"
+          >
+            <DeleteOutlined />
+          </Button>
+        </div>
+      )
+    }
+    return null
   }
 
   return (
@@ -91,7 +97,9 @@ const BlogDetails: React.FC<BlogDetails> = () => {
             </div>
           </div>
           <div className="BlogDetails__titleWrap">
-            <div className="BlogDetails__title">{blogDetails?.title}</div>
+            <div className="BlogDetails__title">
+              <h1>{blogDetails?.title}</h1>
+            </div>
           </div>
           {renderBlogEditAndDeleteBtn()}
           <div className="BlogDetails__description">
@@ -110,7 +118,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
                 }}
                 name="register"
               >
-                뒤로 가기
+                목록으로 가기
               </button>
             </Link>
           </div>

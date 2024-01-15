@@ -25,6 +25,10 @@ tbody {
   margin-top: 90px;
 }
 
+.Blog__Container {
+  height: 100vh;
+}
+
 .Blog__Search {
   display: flex;
   justify-content: end;

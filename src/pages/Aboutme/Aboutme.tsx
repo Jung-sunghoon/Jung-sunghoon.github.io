@@ -12,6 +12,7 @@ import frontendImg from '@src/assets/img/skillImg/frontendImg.png'
 import backendImg from '@src/assets/img/skillImg/backendImg.png'
 import deploymentImg from '@src/assets/img/skillImg/deploymentImg.png'
 import versionControllImg from '@src/assets/img/skillImg/versionControllImg.png'
+import githubImg from '@src/assets/img/skillImg/github.png'
 
 const Aboutme: React.FC = () => {
   return (
@@ -154,6 +155,37 @@ const Aboutme: React.FC = () => {
               </div>
               {/* <img className="AboutMe__SkillsSection__Techstacks__Img" src={frontendImg} alt={frontendImg} /> */}
             </div>
+          </div>
+        </div>
+      </article>
+      <article className="Aboutme__Archive">
+        <div className="Aboutme__ArchiveSection">
+          <div className="Aboutme__ArchiveSection__Title">
+            <div className="Aboutme__ArchiveSection__Title__Text">Archive</div>
+          </div>
+          <div className="Aboutme__ArchiveSection__Contents">
+            <a
+              href="https://github.com/Jung-sunghoon"
+              className="Aboutme__ArchiveSection__Contents__Container"
+              target="_blank"
+            >
+              <div className="Aboutme__ArchiveSection__Contents__Img__Wrapper">
+                <img
+                  src={githubImg}
+                  alt={githubImg}
+                  className="Aboutme__ArchiveSection__Contents__Img"
+                ></img>
+              </div>
+              <div className="Aboutme__ArchiveSection__Contents__Url">
+                github.com/Jung-sunghoon
+              </div>
+              <div className="Aboutme__ArchiveSection__Contents__Description">
+                <p>
+                  <b>소스 코드 저장소</b>입니다.
+                </p>
+                <p>과거 프로젝트 및 코딩 학습을 위한 코드가 있습니다.</p>
+              </div>
+            </a>
           </div>
         </div>
       </article>

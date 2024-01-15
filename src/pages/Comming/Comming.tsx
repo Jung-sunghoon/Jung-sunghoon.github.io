@@ -1,4 +1,4 @@
-import GoogleLoginButton from '@src/Components/Login/Login'
+import GoogleLoginButton from '@src/Components/Googlelogin/Googlelogin'
 
 const Comming = () => {
   return (
