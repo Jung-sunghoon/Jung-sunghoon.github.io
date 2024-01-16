@@ -80,7 +80,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   }
 
   return (
-    <div id="root">
+    <div id="BlogDetails">
       {contextHolder}
       <div className="BlogDetails__all">
         <div className="BlogDeatils__wrapper">

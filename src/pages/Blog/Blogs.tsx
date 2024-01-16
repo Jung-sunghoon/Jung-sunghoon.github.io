@@ -6,7 +6,7 @@ import { PlusOutlined } from '@ant-design/icons'
 import axios from 'axios'
 import Search from './Search'
 import { BlogType, BlogsType } from '@src/types/types'
-import Blogcard from '@src/Components/BlogCard/Blogcard'
+import Blogcard from '@src/Components/Blogcard/Blogcard'
 
 const Blogs: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('')

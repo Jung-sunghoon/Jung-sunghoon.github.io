@@ -1,209 +1,192 @@
-article {
-  display: block;
+/* 공통 스타일 */
+#Aboutme {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #ffffff;
+  line-height: 1.6;
 }
 
-b {
-  font-weight: bolder;
-}
-
-.Aboutme__ArchiveSection__Contents a {
-  text-decoration: none;
-}
-
-#aboutme {
-  margin-top: 70px;
-  background-color: white;
-  color: black;
-}
-
-.AboutMe__AboutMeSection,
-.AboutMe__SkillsSection,
-.Aboutme__ArchiveSection {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  width: 100%;
-  max-width: 71.25rem;
-  padding: 4rem 2rem;
-  margin: 0 auto;
-}
-
-.AboutMe__AboutMeSection__Title,
-.AboutMe__SkillsSection__Title,
-.Aboutme__ArchiveSection__Title {
-  display: table;
-  position: relative;
-  margin: 0 auto 3rem;
-}
-
+/* 섹션 타이틀 */
 .AboutMe__AboutMeSection__Title__Text,
 .AboutMe__SkillsSection__Title__Text,
 .Aboutme__ArchiveSection__Title__Text {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  font-family: black Han Sans, sans-serif;
-  font-weight: 500;
-  font-size: 3rem;
-  line-height: 1.5;
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a3042;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.AboutMe__AboutMe .AboutMe__AboutMeSection .AboutMe__Infos {
-  display: flex;
-  display: -ms-flexbox;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-}
-
-.AboutMe__Info__Wrapper {
-  width: 33.333%;
-}
-.AboutMe__Info__Wrapper:first-child,
-.AboutMe__Info__Wrapper:nth-child(2),
-.AboutMe__Info__Wrapper:nth-child(3) {
-  margin-bottom: 2rem;
-}
-
+/* 개인 정보 스타일 */
 .AboutMe__Info {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin: 10px;
   display: flex;
-  display: -ms-flexbox;
-  flex-flow: row nowrap;
-  width: 100%;
-  max-width: 14rem;
-  margin: 0 auto;
-  opacity: 0.8;
-}
-
-.AboutMe__Info__Icon {
-  width: 2rem;
-  min-width: 2rem;
-  height: 2rem;
-  margin-top: 0.2rem;
-  margin-right: 2rem;
+  align-items: center;
 }
 
 .AboutMe__Info__Icon__img {
-  width: 100%;
-  vertical-align: middle;
+  color: #2a3042;
+  font-size: 50px;
+  margin-right: 15px;
 }
 
 .AboutMe__Info__Label {
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .AboutMe__Info__Value {
-  font-weight: 400;
-  font-size: 1rem;
+  color: #555;
 }
 
-.AboutMe__SkillsSection {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  width: 100%;
-  max-width: 71.25rem;
-  padding: 4rem 2rem;
-  margin: 0 auto;
-  height: 78rem;
-}
-
-.AboutMe__SkillsSection__Container {
-  display: flex;
-  display: -ms-flexbox;
-  flex-flow: column wrap;
-  align-content: space-around;
-  -ms-flex-line-pack: distribute;
-  height: calc(100% - (7.5rem + 1px));
-}
-
+/* 기술 스택 섹션 */
 .AboutMe__SkillsSection__Contents {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  flex-shrink: 0;
-  width: 17rem;
-  padding: 1.5rem;
-  margin: 0 auto 2rem;
-  border-radius: 1rem;
-  background-color: white;
-  box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
-  -webkit-box-shadow: 1rem 1rem 1rem 1rem rgba(68, 68, 68, 0.2);
-}
-.AboutMe__SkillsSection__Contents:hover {
-  transform: translateY(0.5rem);
-  -webkit-transform: translateY(0.5rem);
-  -ms-transform: translateY(0.5rem);
-  transition: transform 0.2s ease;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  -o-transition: transform 0.2s ease;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #cacaca;
+  transition: transform 0.3s ease;
 }
 
 .AboutMe__SkillsSection__Techstacks__Title {
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #ccc;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 2rem;
+  border-bottom: 1px solid #cacaca;
+}
+
+.AboutMe__SkillsSection__Techstacks__Img__Wrraper {
+  max-width: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 세로 2열 */
+  grid-template-rows: repeat(2, auto); /* 가로 2행 */
+  justify-content: center;
+  align-items: center;
 }
 
 .AboutMe__SkillsSection__Techstacks__Img {
-  max-width: 14rem;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 10px;
+  height: auto;
+  object-fit: contain;
 }
 
-.Aboutme__ArchiveSection {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  width: 100%;
-  max-width: 71.25rem;
-  padding: 4rem 2rem;
-  margin: 0 auto;
-  height: 40rem;
+.AboutMe__SkillsSection__Contents:hover,
+.Aboutme__ArchiveSection__Contents:hover {
+  transform: translateY(-10px);
 }
 
+/* 아카이브 섹션 */
 .Aboutme__ArchiveSection__Contents {
-  display: flex;
-  display: -ms-flexbox;
+  transition: transform 0.3s ease;
   justify-content: center;
 }
 
 .Aboutme__ArchiveSection__Contents__Container {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  width: 26rem;
-  padding: 2rem;
-  cursor: pointer;
-  border-radius: 1rem;
-  background-color: white;
-  box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, 0.2);
-  -webkit-box-shadow: 1rem 1rem 1rem 1rem rgba(68, 68, 68, 0.2);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #cacaca;
+  text-decoration: none;
+  color: #333;
+}
+
+.Aboutme__ArchiveSection__Contents__Img {
+  width: 80%;
+}
+
+.Aboutme__ArchiveSection__Contents__Description {
   color: black;
 }
-.Aboutme__ArchiveSection__Contents__Container:hover {
-  color: black;
-  transform: translateY(0.5rem);
-  -webkit-transform: translateY(0.5rem);
-  -ms-transform: translateY(0.5rem);
-  transition: transform 0.2s ease;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  -o-transition: transform 0.2s ease;
-}
-.Aboutme__ArchiveSection__Contents__Container:hover
-  .Aboutme__ArchiveSection__Contents__Url {
-  text-decoration: underline;
+
+.Aboutme__ArchiveSection__Contents__Description b {
+  font-weight: bold;
 }
 
-.Aboutme__ArchiveSection__Contents__Img__Wrapper {
-  display: block;
-  width: 12rem;
-  margin-bottom: 1rem;
+/* 데스크탑 화면을 위한 미디어 쿼리 */
+@media (min-width: 769px) and (max-width: 1120px) {
+  .AboutMe__SkillsSection__Container,
+  .Aboutme__ArchiveSection__Contents__Container,
+  .AboutMe__Infos {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .AboutMe__SkillsSection__Container,
+  .Aboutme__ArchiveSection__Contents__Container,
+  .AboutMe__Infos {
+    display: grid;
+    gap: 20px;
+  }
+
+  .AboutMe__SkillsSection__Container,
+  .AboutMe__Infos {
+    grid-template-columns: repeat(2, 1fr); /* 세로 2열 */
+    grid-template-rows: repeat(3, auto); /* 가로 3행 */
+  }
 }
 
-.Aboutme__ArchiveSection__Contents__Url {
-  color: #3a59f4;
-  margin-bottom: 1rem;
-}
+@media (min-width: 1121px) {
+  #aboutme {
+    padding: 20px;
+  }
 
-.Aboutme__ArchiveSection__Contents__Description p {
-  margin-bottom: 1rem;
+  .AboutMe__Infos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 세로 3열 */
+    grid-template-rows: repeat(2, auto); /* 가로 2행 */
+    gap: 20px; /* 그리드 아이템 간의 간격 */
+  }
+
+  .AboutMe__Info__Wrapper {
+    height: 140px;
+  }
+
+  .AboutMe__Info {
+    height: 120px;
+  }
+
+  .AboutMe__AboutMeSection,
+  .AboutMe__SkillsSection,
+  .Aboutme__ArchiveSection {
+    max-width: 100%; /* 최대 너비 설정 */
+    margin: auto; /* 중앙 정렬 */
+    padding: 20px;
+  }
+
+  .AboutMe__Info__Wrapper,
+  .AboutMe__SkillsSection__Contents,
+  .Aboutme__ArchiveSection__Contents__Container {
+    max-width: 400px; /* 각 요소의 최대 너비 설정 */
+    min-width: 300px;
+    margin: 20px auto; /* 상하 여백 및 중앙 정렬 */
+  }
+
+  .AboutMe__SkillsSection__Techstacks__Img,
+  .Aboutme__ArchiveSection__Contents__Img {
+    max-width: 100%; /* 이미지 너비 설정 */
+    width: 150px;
+  }
+
+  .AboutMe__SkillsSection__Container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 세로 3열 */
+    grid-template-rows: repeat(2, auto); /* 가로 2행 */
+    gap: 20px; /* 그리드 아이템 간의 간격 */
+  }
+
+  .AboutMe__SkillsSection__Techstacks__Img {
+    max-width: 100%; /* 이미지 너비 설정 */
+  }
 }

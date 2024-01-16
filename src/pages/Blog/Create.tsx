@@ -95,7 +95,7 @@ const Create: React.FC = () => {
   }
 
   return (
-    <div id="root">
+    <div id="Blog__Create">
       {contextHolder}
       <Form
         form={form}
