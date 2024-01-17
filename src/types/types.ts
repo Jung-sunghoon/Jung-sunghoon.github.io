@@ -8,3 +8,13 @@ export interface BlogType {
 }
 
 export type BlogsType = BlogType[]
+
+export interface EventType {
+  event_id: string
+  event_title: string
+  event_date: string
+  event_type: string
+  event_text: string
+}
+
+export type EventsType = EventType[]
