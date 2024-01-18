@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import type { Dayjs } from 'dayjs'
-import { Calendar as AntdCalendar, Button, Form, Input, Modal } from 'antd'
+import {
+  Calendar as AntdCalendar,
+  Button,
+  Form,
+  Input,
+  Modal,
+  Select,
+} from 'antd'
 import type { CalendarProps } from 'antd'
 import './calendar.css'
 import axios from 'axios'
 import { EventType } from '@src/types/types'
+import locale from 'antd/es/date-picker/locale/ko_KR'
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 
 const eventTypeColors: { [key: string]: string } = {
   평범: 'blue',
@@ -30,9 +39,8 @@ const Calendar: React.FC = () => {
     // 해당 날짜의 이벤트 리스트 가져와서 업데이트
     const eventsForSelectedDate = getEventsForSelectedDate(value)
     setEventList(eventsForSelectedDate)
-
-    // 위에서 날짜를 선택했을 때 해당 날짜의 이벤트 리스트를 가져오는 로직을 호출하고, eventList를 업데이트합니다.
   }
+  console.log(eventList)
 
   const dateCellRender = (value: Dayjs) => {
     // 날짜에 대한 이벤트를 가져와서 이벤트가 있으면 표시
@@ -111,6 +119,33 @@ const Calendar: React.FC = () => {
     }
   }
 
+  const handleEditEvent = async () => {
+    try {
+      const response = await axios.put(
+        `${
+          import.meta.env.VITE_API_ENDPOINT
+        }/api/calendar-admin/update/${event_id}`,
+      )
+    } catch (error) {}
+  }
+
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`)
+  }
+
+  const eventDelandEditBtn = () => {
+    return (
+      <div style={{ marginLeft: 'auto' }}>
+        <Button>
+          <EditOutlined />
+        </Button>
+        <Button style={{ marginLeft: '10px' }}>
+          <DeleteOutlined />
+        </Button>
+      </div>
+    )
+  }
+
   const renderAddEventBtn = () => {
     if (selectedDate?.format('YYYY-MM-DD')) {
       return (
@@ -151,7 +186,16 @@ const Calendar: React.FC = () => {
                   },
                 ]}
               >
-                <Input />
+                <Select
+                  defaultValue="중요도 선택하기"
+                  style={{ width: '100%' }}
+                  onChange={handleChange}
+                  options={[
+                    { value: '평범', label: '평범' },
+                    { value: '중요', label: '중요' },
+                    { value: '매우 중요', label: '매우 중요' },
+                  ]}
+                />
               </Form.Item>
               <Form.Item label="설명" name="event_text">
                 <Input.TextArea />
@@ -170,18 +214,26 @@ const Calendar: React.FC = () => {
       <div className="Calendar__Wrapper">
         <div className="Calendar__Calendar__Container">
           <AntdCalendar
+            locale={locale}
             onPanelChange={onPanelChange}
             onSelect={onSelect}
-            dateCellRender={dateCellRender}
+            cellRender={dateCellRender}
+            style={{}}
           />
         </div>
         <div className="Calendar__Contents__Container">
-          <div>
+          <div className="Calendar__Contents__Header">
             <p>{selectedDate?.format('YYYY-MM-DD')}</p>
-            {eventList.length > 0 ? (
+            {renderAddEventBtn()}
+          </div>
+          {eventList.length > 0 ? (
+            <>
               <ul>
                 {eventList.map((event, index) => (
-                  <div key={index}>
+                  <div
+                    key={index}
+                    style={{ display: 'flex', marginTop: '5px' }}
+                  >
                     <span
                       style={{
                         fontSize: '20px',
@@ -191,13 +243,23 @@ const Calendar: React.FC = () => {
                       &#8226;
                     </span>
                     {event.event_title}
+                    {eventDelandEditBtn()}
                   </div>
                 ))}
               </ul>
-            ) : (
-              <>{renderAddEventBtn()}</>
-            )}
-          </div>
+            </>
+          ) : (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100%',
+              }}
+            >
+              일정을 클릭하고 일정을 관리해보세요
+            </div>
+          )}
         </div>
       </div>
     </div>

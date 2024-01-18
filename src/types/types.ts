@@ -10,7 +10,7 @@ export interface BlogType {
 export type BlogsType = BlogType[]
 
 export interface EventType {
-  event_id: string
+  event_id: number
   event_title: string
   event_date: string
   event_type: string

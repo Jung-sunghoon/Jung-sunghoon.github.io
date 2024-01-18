@@ -16,3 +16,16 @@
   width: 50%;
   margin-left: 10px;
 }
+
+.Calendar__Contents__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:where(
+    .css-dev-only-do-not-override-1blxs0b
+  ).ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-calendar-date-content {
+  overflow: hidden;
+}
