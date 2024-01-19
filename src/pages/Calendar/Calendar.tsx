@@ -23,6 +23,7 @@ const eventTypeColors: { [key: string]: string } = {
 
 const Calendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>()
   const [eventList, setEventList] = useState<EventType[]>([])
   const [eventData, setEventData] = useState<EventType[]>([])
   const [open, setOpen] = useState(false)
@@ -32,7 +33,7 @@ const Calendar: React.FC = () => {
     console.log(value.format('YYYY-MM-DD'), mode)
   }
 
-  const onSelect = (value: Dayjs) => {
+  const onSelectDate = (value: Dayjs) => {
     // 선택된 날짜 업데이트
     setSelectedDate(value)
 
@@ -40,7 +41,13 @@ const Calendar: React.FC = () => {
     const eventsForSelectedDate = getEventsForSelectedDate(value)
     setEventList(eventsForSelectedDate)
   }
-  console.log(eventList)
+  console.log(eventList, 'eventList')
+
+  const onSelectEvent = (event: EventType) => {
+    setSelectedEvent(event)
+  }
+
+  const event_id = selectedEvent?.event_id
 
   const dateCellRender = (value: Dayjs) => {
     // 날짜에 대한 이벤트를 가져와서 이벤트가 있으면 표시
@@ -94,59 +101,127 @@ const Calendar: React.FC = () => {
     fetchData()
   }, [])
 
-  const handleAddEvent = async () => {
-    try {
-      // API 호출
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_ENDPOINT}/api/calendar-admin/create`,
-        {
-          event_date: selectedDate?.format('YYYY-MM-DD'),
-          event_title: form.getFieldValue('event_title'),
-          event_type: form.getFieldValue('event_type'),
-          event_text: form.getFieldValue('event_text'),
-        },
-      )
+  useEffect(() => {
+    if (selectedEvent) {
+      form.setFieldsValue({
+        event_title: selectedEvent.event_title,
+        event_type: selectedEvent.event_type,
+        event_text: selectedEvent.event_text,
+      })
+    }
+  }, [selectedEvent])
 
-      // 추가된 이벤트를 상태에 반영
-      setEventData(prevData => [...prevData, response.data.CalendarEvent])
+  const handleActionEvent = async () => {
+    if (selectedEvent) {
+      try {
+        const response = await axios.put(
+          `${
+            import.meta.env.VITE_API_ENDPOINT
+          }/api/calendar-admin/update/${event_id}`,
+          {
+            event_id,
+            event_date: selectedDate?.format('YYYY-MM-DD'),
+            event_title: form.getFieldValue('event_title') || '', // 기본값으로 빈 문자열 설정
+            event_type: form.getFieldValue('event_type') || '', // 기본값으로 빈 문자열 설정
+            event_text: form.getFieldValue('event_text') || '', // 기본값으로 빈 문자열 설정
+          },
+        )
 
-      // Form 및 모달 상태 초기화
-      form.resetFields()
-      // 모달 닫기
-      setOpen(false)
-    } catch (error) {
-      console.error('Error adding event:', error)
+        // 추가된 이벤트를 상태에 반영
+        setEventData(prevData => [...prevData, response.data.CalendarEvent])
+
+        // Form 및 모달 상태 초기화
+        form.resetFields()
+        // 모달 닫기
+        setOpen(false)
+        fetchData()
+      } catch (error) {}
+    } else {
+      try {
+        // API 호출
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_ENDPOINT}/api/calendar-admin/create`,
+          {
+            event_date: selectedDate?.format('YYYY-MM-DD'),
+            event_title: form.getFieldValue('event_title') || '',
+            event_type: form.getFieldValue('event_type') || '',
+            event_text: form.getFieldValue('event_text') || '',
+          },
+        )
+
+        // 추가된 이벤트를 상태에 반영
+        setEventData(prevData => [...prevData, response.data.CalendarEvent])
+
+        // Form 및 모달 상태 초기화
+        form.resetFields()
+        // 모달 닫기
+        setOpen(false)
+        fetchData()
+      } catch (error) {
+        console.error('Error adding event:', error)
+      }
     }
   }
 
-  const handleEditEvent = async () => {
-    try {
-      const response = await axios.put(
-        `${
-          import.meta.env.VITE_API_ENDPOINT
-        }/api/calendar-admin/update/${event_id}`,
-      )
-    } catch (error) {}
+  const handleDelEvent = async () => {
+    const confirmDelete = window.confirm('일정을 삭제하시겠습니까?')
+    if (selectedEvent) {
+      if (confirmDelete) {
+        try {
+          await axios.delete(
+            `${
+              import.meta.env.VITE_API_ENDPOINT
+            }/api/calendar-admin/delete/${event_id}`,
+          )
+
+          // 삭제된 이벤트를 상태에서 제거
+          setEventData(prevData =>
+            prevData.filter(event => event.event_id !== event_id),
+          )
+          // 선택한 날짜의 이벤트 리스트 업데이트
+          const updatedEventsForSelectedDate = selectedDate
+            ? getEventsForSelectedDate(selectedDate)
+            : []
+          setEventList(updatedEventsForSelectedDate)
+        } catch (error) {
+          console.error('Error deleting event:', error)
+        } finally {
+          // Form 및 모달 상태 초기화
+          form.resetFields()
+        }
+      }
+    }
   }
 
   const handleChange = (value: string) => {
     console.log(`selected ${value}`)
   }
 
-  const eventDelandEditBtn = () => {
+  const eventDelandEditBtn = (event: EventType) => {
     return (
       <div style={{ marginLeft: 'auto' }}>
-        <Button>
+        <Button
+          onClick={() => {
+            onSelectEvent(event)
+            setOpen(true)
+          }}
+        >
           <EditOutlined />
         </Button>
-        <Button style={{ marginLeft: '10px' }}>
+        <Button
+          style={{ marginLeft: '10px' }}
+          onClick={() => {
+            onSelectEvent(event)
+            handleDelEvent()
+          }}
+        >
           <DeleteOutlined />
         </Button>
       </div>
     )
   }
 
-  const renderAddEventBtn = () => {
+  const renderEventModalBtn = () => {
     if (selectedDate?.format('YYYY-MM-DD')) {
       return (
         <div>
@@ -156,7 +231,7 @@ const Calendar: React.FC = () => {
           <Modal
             centered
             open={open}
-            onOk={handleAddEvent}
+            onOk={handleActionEvent}
             onCancel={() => setOpen(false)}
             width={800}
           >
@@ -216,7 +291,7 @@ const Calendar: React.FC = () => {
           <AntdCalendar
             locale={locale}
             onPanelChange={onPanelChange}
-            onSelect={onSelect}
+            onSelect={onSelectDate}
             cellRender={dateCellRender}
             style={{}}
           />
@@ -224,7 +299,7 @@ const Calendar: React.FC = () => {
         <div className="Calendar__Contents__Container">
           <div className="Calendar__Contents__Header">
             <p>{selectedDate?.format('YYYY-MM-DD')}</p>
-            {renderAddEventBtn()}
+            {renderEventModalBtn()}
           </div>
           {eventList.length > 0 ? (
             <>
@@ -243,7 +318,7 @@ const Calendar: React.FC = () => {
                       &#8226;
                     </span>
                     {event.event_title}
-                    {eventDelandEditBtn()}
+                    {eventDelandEditBtn(event)}
                   </div>
                 ))}
               </ul>
