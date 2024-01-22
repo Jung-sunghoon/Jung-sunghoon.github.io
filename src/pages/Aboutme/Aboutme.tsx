@@ -1,18 +1,18 @@
 import React from 'react'
-import './aboutme.css'
+import styles from './aboutme.module.css'
 import { infoData, Myinfo } from '@src/Components/Myinfo/Myinfo'
 import img from '@src/assets/img/index'
 import { techstackData, Techstack } from '@src/Components/Techstack/Techstack'
 
 const Aboutme: React.FC = () => {
   return (
-    <div id="Aboutme">
-      <article className="AboutMe__AboutMe">
-        <div className="AboutMe__AboutMeSection">
-          <div className="AboutMe__AboutMeSection__Title">
-            <div className="AboutMe__AboutMeSection__Title__Text">About Me</div>
+    <div id={styles.Aboutme}>
+      <article className={styles.AboutMe}>
+        <div className={styles.AboutMeSection}>
+          <div className={styles.AboutMe__Title}>
+            <div className={styles.Title__Text}>About Me</div>
           </div>
-          <div className="AboutMe__Infos">
+          <div className={styles.Info__Container}>
             {infoData.map((info, index) => (
               <Myinfo
                 key={index}
@@ -24,12 +24,12 @@ const Aboutme: React.FC = () => {
           </div>
         </div>
       </article>
-      <article className="AboutMe__Skills">
-        <div className="AboutMe__SkillsSection">
-          <div className="AboutMe__SkillsSection__Title">
-            <div className="AboutMe__SkillsSection__Title__Text">Skills</div>
+      <article className={styles.Skills}>
+        <div className={styles.SkillsSection}>
+          <div className={styles.Skills__Title}>
+            <div className={styles.Title__Text}>Skills</div>
           </div>
-          <div className="AboutMe__SkillsSection__Container">
+          <div className={styles.Skills__Container}>
             {techstackData.map((techstack, index) => (
               <Techstack
                 key={index}
@@ -41,28 +41,28 @@ const Aboutme: React.FC = () => {
           </div>
         </div>
       </article>
-      <article className="Aboutme__Archive">
-        <div className="Aboutme__ArchiveSection">
-          <div className="Aboutme__ArchiveSection__Title">
-            <div className="Aboutme__ArchiveSection__Title__Text">Archive</div>
+      <article className={styles.Archive}>
+        <div className={styles.ArchiveSection}>
+          <div className={styles.Archive__Title}>
+            <div className={styles.Title__Text}>Archive</div>
           </div>
-          <div className="Aboutme__ArchiveSection__Contents">
+          <div className={styles.Archive__Contents}>
             <a
               href="https://github.com/Jung-sunghoon"
-              className="Aboutme__ArchiveSection__Contents__Container"
+              className={styles.Archive__Container}
               target="_blank"
             >
-              <div className="Aboutme__ArchiveSection__Contents__Img__Wrapper">
+              <div className={styles.Archive__Img__Wrapper}>
                 <img
                   src={img['aghimg']}
                   alt={'agithubImg'}
-                  className="Aboutme__ArchiveSection__Contents__Img"
+                  className={styles.Archive__Img}
                 ></img>
               </div>
-              <div className="Aboutme__ArchiveSection__Contents__Url">
+              <div className={styles.Archive__Url}>
                 github.com/Jung-sunghoon
               </div>
-              <div className="Aboutme__ArchiveSection__Contents__Description">
+              <div className={styles.Archive__Description}>
                 <p>
                   <b>소스 코드 저장소</b>입니다.
                 </p>

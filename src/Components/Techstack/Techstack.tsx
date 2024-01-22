@@ -1,5 +1,6 @@
 import React from 'react'
 import img from '@src/assets/img'
+import styles from '@src/pages/Aboutme/aboutme.module.css'
 
 interface TechstackProps {
   title: string
@@ -30,16 +31,11 @@ export const techstackData = [
 
 export const Techstack: React.FC<TechstackProps> = ({ title, imgs, alt }) => {
   return (
-    <div className="AboutMe__SkillsSection__Contents">
-      <div className="AboutMe__SkillsSection__Techstacks__Title">{title}</div>
-      <div className="AboutMe__SkillsSection__Techstacks__Img__Wrraper">
+    <div className={styles.Skills__Contents}>
+      <div className={styles.Skills__Title}>{title}</div>
+      <div className={styles.Skills__Img__Wrraper}>
         {imgs.map((img, index) => (
-          <img
-            key={index}
-            className="AboutMe__SkillsSection__Techstacks__Img"
-            src={img}
-            alt={alt}
-          />
+          <img key={index} className={styles.Skills__Img} src={img} alt={alt} />
         ))}
       </div>
     </div>

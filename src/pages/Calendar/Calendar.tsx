@@ -22,6 +22,7 @@ const eventTypeColors: { [key: string]: string } = {
 }
 
 const Calendar: React.FC = () => {
+  const [hasCookie, setHasCookie] = useState<boolean>(false)
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
   const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>()
   const [eventList, setEventList] = useState<EventType[]>([])
@@ -84,6 +85,7 @@ const Calendar: React.FC = () => {
       const data = response.data.CalendarEvents
       setEventData(data)
       console.log(data)
+      setHasCookie(document.cookie.includes('token'))
     } catch (error) {
       console.error('Error fetching data:', error)
     }
@@ -198,87 +200,91 @@ const Calendar: React.FC = () => {
   }
 
   const eventDelandEditBtn = (event: EventType) => {
-    return (
-      <div style={{ marginLeft: 'auto' }}>
-        <Button
-          onClick={() => {
-            onSelectEvent(event)
-            setOpen(true)
-          }}
-        >
-          <EditOutlined />
-        </Button>
-        <Button
-          style={{ marginLeft: '10px' }}
-          onClick={() => {
-            onSelectEvent(event)
-            handleDelEvent()
-          }}
-        >
-          <DeleteOutlined />
-        </Button>
-      </div>
-    )
+    if (hasCookie) {
+      return (
+        <div style={{ marginLeft: 'auto' }}>
+          <Button
+            onClick={() => {
+              onSelectEvent(event)
+              setOpen(true)
+            }}
+          >
+            <EditOutlined />
+          </Button>
+          <Button
+            style={{ marginLeft: '10px' }}
+            onClick={() => {
+              onSelectEvent(event)
+              handleDelEvent()
+            }}
+          >
+            <DeleteOutlined />
+          </Button>
+        </div>
+      )
+    }
   }
 
   const renderEventModalBtn = () => {
     if (selectedDate?.format('YYYY-MM-DD')) {
-      return (
-        <div>
-          <Button type="primary" onClick={() => setOpen(true)}>
-            일정 추가하기
-          </Button>
-          <Modal
-            centered
-            open={open}
-            onOk={handleActionEvent}
-            onCancel={() => setOpen(false)}
-            width={800}
-          >
-            <Form form={form} layout="vertical">
-              <Form.Item label="날짜" name="event_date">
-                {selectedDate?.format('YYYY-MM-DD')}
-              </Form.Item>
-              <Form.Item
-                label="제목"
-                name="event_title"
-                rules={[
-                  {
-                    required: true,
-                    message: '제목을 입력하세요',
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-              <Form.Item
-                label="상태"
-                name="event_type"
-                rules={[
-                  {
-                    required: true,
-                    message: '상태를 선택하세요',
-                  },
-                ]}
-              >
-                <Select
-                  defaultValue="중요도 선택하기"
-                  style={{ width: '100%' }}
-                  onChange={handleChange}
-                  options={[
-                    { value: '평범', label: '평범' },
-                    { value: '중요', label: '중요' },
-                    { value: '매우 중요', label: '매우 중요' },
+      if (hasCookie) {
+        return (
+          <div>
+            <Button type="primary" onClick={() => setOpen(true)}>
+              일정 추가하기
+            </Button>
+            <Modal
+              centered
+              open={open}
+              onOk={handleActionEvent}
+              onCancel={() => setOpen(false)}
+              width={800}
+            >
+              <Form form={form} layout="vertical">
+                <Form.Item label="날짜" name="event_date">
+                  {selectedDate?.format('YYYY-MM-DD')}
+                </Form.Item>
+                <Form.Item
+                  label="제목"
+                  name="event_title"
+                  rules={[
+                    {
+                      required: true,
+                      message: '제목을 입력하세요',
+                    },
                   ]}
-                />
-              </Form.Item>
-              <Form.Item label="설명" name="event_text">
-                <Input.TextArea />
-              </Form.Item>
-            </Form>
-          </Modal>
-        </div>
-      )
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  label="상태"
+                  name="event_type"
+                  rules={[
+                    {
+                      required: true,
+                      message: '상태를 선택하세요',
+                    },
+                  ]}
+                >
+                  <Select
+                    defaultValue="중요도 선택하기"
+                    style={{ width: '100%' }}
+                    onChange={handleChange}
+                    options={[
+                      { value: '평범', label: '평범' },
+                      { value: '중요', label: '중요' },
+                      { value: '매우 중요', label: '매우 중요' },
+                    ]}
+                  />
+                </Form.Item>
+                <Form.Item label="설명" name="event_text">
+                  <Input.TextArea />
+                </Form.Item>
+              </Form>
+            </Modal>
+          </div>
+        )
+      }
     }
 
     return null

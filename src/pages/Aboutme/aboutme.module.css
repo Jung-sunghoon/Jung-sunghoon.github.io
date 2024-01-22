@@ -4,22 +4,23 @@
   color: #333;
   background-color: #ffffff;
   line-height: 1.6;
+  margin-top: 60px;
 }
 
 /* 섹션 타이틀 */
-.AboutMe__AboutMeSection__Title__Text,
-.AboutMe__SkillsSection__Title__Text,
-.Aboutme__ArchiveSection__Title__Text {
+.Title__Text {
+  display: flex;
   padding-top: 10px;
   font-size: 24px;
   font-weight: bold;
   color: #2a3042;
   text-align: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 /* 개인 정보 스타일 */
-.AboutMe__Info {
+.Info {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
@@ -28,22 +29,22 @@
   align-items: center;
 }
 
-.AboutMe__Info__Icon__img {
+.Info__Icon {
   color: #2a3042;
   font-size: 50px;
   margin-right: 15px;
 }
 
-.AboutMe__Info__Label {
+.Info__Label {
   font-weight: bold;
 }
 
-.AboutMe__Info__Value {
+.Info__Value {
   color: #555;
 }
 
 /* 기술 스택 섹션 */
-.AboutMe__SkillsSection__Contents {
+.Skills__Contents {
   text-align: center;
   background-color: #fff;
   padding: 20px;
@@ -53,12 +54,12 @@
   transition: transform 0.3s ease;
 }
 
-.AboutMe__SkillsSection__Techstacks__Title {
+.Skills__Title {
   font-size: 2rem;
   border-bottom: 1px solid #cacaca;
 }
 
-.AboutMe__SkillsSection__Techstacks__Img__Wrraper {
+.Skills__Img__Wrraper {
   max-width: 100%;
   max-height: 100%;
   display: grid;
@@ -68,26 +69,26 @@
   align-items: center;
 }
 
-.AboutMe__SkillsSection__Techstacks__Img {
+.Skills__Img {
   max-width: 100%;
   max-height: 100%;
-  margin-top: 10px;
+  margin: 10px;
   height: auto;
   object-fit: contain;
 }
 
-.AboutMe__SkillsSection__Contents:hover,
-.Aboutme__ArchiveSection__Contents:hover {
+.Skills__Contents:hover,
+.Archive__Contents:hover {
   transform: translateY(-10px);
 }
 
 /* 아카이브 섹션 */
-.Aboutme__ArchiveSection__Contents {
+.Archive__Contents {
   transition: transform 0.3s ease;
   justify-content: center;
 }
 
-.Aboutme__ArchiveSection__Contents__Container {
+.Archive__Container {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -101,92 +102,87 @@
   color: #333;
 }
 
-.Aboutme__ArchiveSection__Contents__Img {
+.Archive__Img {
   width: 80%;
 }
 
-.Aboutme__ArchiveSection__Contents__Description {
+.Archive__Description {
   color: black;
 }
 
-.Aboutme__ArchiveSection__Contents__Description b {
+.Archive__Description b {
   font-weight: bold;
 }
 
 /* 데스크탑 화면을 위한 미디어 쿼리 */
 @media (min-width: 769px) and (max-width: 1120px) {
-  .AboutMe__SkillsSection__Container,
-  .Aboutme__ArchiveSection__Contents__Container,
-  .AboutMe__Infos {
+  .Skills__Container,
+  .Archive__Container,
+  .Info__Container {
     max-width: 80%;
     margin: auto;
     padding: 20px;
-  }
-
-  .AboutMe__SkillsSection__Container,
-  .Aboutme__ArchiveSection__Contents__Container,
-  .AboutMe__Infos {
     display: grid;
     gap: 20px;
   }
 
-  .AboutMe__SkillsSection__Container,
-  .AboutMe__Infos {
+  .Skills__Container,
+  .Info__Container {
     grid-template-columns: repeat(2, 1fr); /* 세로 2열 */
     grid-template-rows: repeat(3, auto); /* 가로 3행 */
   }
 }
 
 @media (min-width: 1121px) {
-  #aboutme {
+  #Aboutme {
     padding: 20px;
   }
 
-  .AboutMe__Infos {
+  .Info__Container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 세로 3열 */
     grid-template-rows: repeat(2, auto); /* 가로 2행 */
     gap: 20px; /* 그리드 아이템 간의 간격 */
   }
 
-  .AboutMe__Info__Wrapper {
+  .Info__Wrapper {
     height: 140px;
   }
 
-  .AboutMe__Info {
+  .Info {
     height: 120px;
   }
 
-  .AboutMe__AboutMeSection,
-  .AboutMe__SkillsSection,
-  .Aboutme__ArchiveSection {
+  .AboutMeSection,
+  .SkillsSection,
+  .ArchiveSection {
     max-width: 100%; /* 최대 너비 설정 */
     margin: auto; /* 중앙 정렬 */
     padding: 20px;
   }
 
-  .AboutMe__Info__Wrapper,
-  .AboutMe__SkillsSection__Contents,
-  .Aboutme__ArchiveSection__Contents__Container {
+  .Info__Wrapper,
+  .Skills__Contents,
+  .Archive__Container {
     max-width: 400px; /* 각 요소의 최대 너비 설정 */
-    min-width: 300px;
+    min-width: 350px;
     margin: 20px auto; /* 상하 여백 및 중앙 정렬 */
   }
 
-  .AboutMe__SkillsSection__Techstacks__Img,
-  .Aboutme__ArchiveSection__Contents__Img {
+  .Skills__Img,
+  .Archive__Img {
     max-width: 100%; /* 이미지 너비 설정 */
     width: 150px;
   }
 
-  .AboutMe__SkillsSection__Container {
+  .Skills__Container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 세로 3열 */
     grid-template-rows: repeat(2, auto); /* 가로 2행 */
     gap: 20px; /* 그리드 아이템 간의 간격 */
   }
 
-  .AboutMe__SkillsSection__Techstacks__Img {
+  .Skills__Img {
     max-width: 100%; /* 이미지 너비 설정 */
   }
 }

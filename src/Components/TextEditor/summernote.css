@@ -892,3 +892,11 @@
 .form-control {
   width: 95%;
 }
+
+.note-editable b {
+  font-weight: 800;
+}
+
+.note-editable i {
+  font-style: italic; /* Italic */
+}
