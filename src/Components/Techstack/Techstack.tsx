@@ -31,11 +31,11 @@ export const techstackData = [
 
 export const Techstack: React.FC<TechstackProps> = ({ title, imgs, alt }) => {
   return (
-    <div className={styles.Skills__Contents}>
-      <div className={styles.Skills__Title}>{title}</div>
-      <div className={styles.Skills__Img__Wrraper}>
+    <div className={styles.skillsContents}>
+      <div className={styles.skillsTitle}>{title}</div>
+      <div className={styles.skills_mgWrraper}>
         {imgs.map((img, index) => (
-          <img key={index} className={styles.Skills__Img} src={img} alt={alt} />
+          <img key={index} className={styles.skillsImg} src={img} alt={alt} />
         ))}
       </div>
     </div>

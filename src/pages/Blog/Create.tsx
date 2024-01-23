@@ -4,6 +4,7 @@ import axios from 'axios'
 import TextEditor from '@src/Components/TextEditor'
 import { useNavigate } from 'react-router-dom'
 import { FormOutlined } from '@ant-design/icons'
+import styles from './blogs.module.css'
 
 const Create: React.FC = () => {
   const [editButton, setEditButton] = useState(false)
@@ -95,7 +96,7 @@ const Create: React.FC = () => {
   }
 
   return (
-    <div id="Blog__Create">
+    <div id={styles.blogCreate}>
       {contextHolder}
       <Form
         form={form}

@@ -50,12 +50,12 @@ export const infoData: InfoItemProps[] = [
 
 export const Myinfo: React.FC<InfoItemProps> = ({ icon, label, value }) => {
   return (
-    <div className={styles.Info__Wrapper}>
-      <div className={styles.Info}>
-        <div className={styles.Info__Icon}>{icon}</div>
-        <div className={styles.Info__Field}>
-          <div className={styles.Info__Label}>{label}</div>
-          <div className={styles.Info__Value}>{value}</div>
+    <div className={styles.infoWrapper}>
+      <div className={styles.info}>
+        <div className={styles.infoIcon}>{icon}</div>
+        <div className={styles.infoField}>
+          <div className={styles.infoLabel}>{label}</div>
+          <div className={styles.infoValue}>{value}</div>
         </div>
       </div>
     </div>

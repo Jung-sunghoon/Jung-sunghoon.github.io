@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import './blogs.css'
+import styles from './blogs.module.css'
 import { Button, List, Pagination } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { PlusOutlined } from '@ant-design/icons'
@@ -66,7 +66,7 @@ const Blogs: React.FC = () => {
   const renderGenerateBtn = () => {
     if (hasCookie) {
       return (
-        <div className="Floating__Btn">
+        <div className={styles.floatingBtn}>
           <Button
             type="primary"
             icon={<PlusOutlined />}
@@ -79,9 +79,9 @@ const Blogs: React.FC = () => {
   }
 
   return (
-    <div id="Blog">
-      <div className="Blog__Container">
-        <div className="Blog__Search">
+    <div id={styles.blog}>
+      <div className={styles.blogContainer}>
+        <div className={styles.blogSearch}>
           <Search onSearch={handleSearch} />
         </div>
         <List
@@ -101,7 +101,7 @@ const Blogs: React.FC = () => {
       </div>
       <div style={{ marginTop: '10px' }}>
         <Pagination
-          className="Blog__Page"
+          className={styles.blogPage}
           current={currentPage}
           total={filteredData?.length}
           pageSize={pageSize}

@@ -6,13 +6,13 @@ import { techstackData, Techstack } from '@src/Components/Techstack/Techstack'
 
 const Aboutme: React.FC = () => {
   return (
-    <div id={styles.Aboutme}>
-      <article className={styles.AboutMe}>
-        <div className={styles.AboutMeSection}>
-          <div className={styles.AboutMe__Title}>
-            <div className={styles.Title__Text}>About Me</div>
+    <div id={styles.aboutMe}>
+      <article className={styles.aboutMe}>
+        <div className={styles.aboutMeSection}>
+          <div className={styles.aboutMeTitle}>
+            <div className={styles.titleText}>About Me</div>
           </div>
-          <div className={styles.Info__Container}>
+          <div className={styles.infoContainer}>
             {infoData.map((info, index) => (
               <Myinfo
                 key={index}
@@ -24,12 +24,12 @@ const Aboutme: React.FC = () => {
           </div>
         </div>
       </article>
-      <article className={styles.Skills}>
-        <div className={styles.SkillsSection}>
-          <div className={styles.Skills__Title}>
-            <div className={styles.Title__Text}>Skills</div>
+      <article className={styles.skills}>
+        <div className={styles.skillsSection}>
+          <div className={styles.skillsTitle}>
+            <div className={styles.titleText}>Skills</div>
           </div>
-          <div className={styles.Skills__Container}>
+          <div className={styles.skillsContainer}>
             {techstackData.map((techstack, index) => (
               <Techstack
                 key={index}
@@ -41,28 +41,26 @@ const Aboutme: React.FC = () => {
           </div>
         </div>
       </article>
-      <article className={styles.Archive}>
-        <div className={styles.ArchiveSection}>
-          <div className={styles.Archive__Title}>
-            <div className={styles.Title__Text}>Archive</div>
+      <article className={styles.archive}>
+        <div className={styles.archiveSection}>
+          <div className={styles.archiveTitle}>
+            <div className={styles.titleText}>Archive</div>
           </div>
-          <div className={styles.Archive__Contents}>
+          <div className={styles.archiveContents}>
             <a
               href="https://github.com/Jung-sunghoon"
-              className={styles.Archive__Container}
+              className={styles.archiveContainer}
               target="_blank"
             >
-              <div className={styles.Archive__Img__Wrapper}>
+              <div className={styles.archiveImgWrapper}>
                 <img
                   src={img['aghimg']}
                   alt={'agithubImg'}
-                  className={styles.Archive__Img}
+                  className={styles.archiveImg}
                 ></img>
               </div>
-              <div className={styles.Archive__Url}>
-                github.com/Jung-sunghoon
-              </div>
-              <div className={styles.Archive__Description}>
+              <div className={styles.archiveUrl}>github.com/Jung-sunghoon</div>
+              <div className={styles.archiveDescription}>
                 <p>
                   <b>소스 코드 저장소</b>입니다.
                 </p>

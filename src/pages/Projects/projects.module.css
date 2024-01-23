@@ -1,4 +1,4 @@
-#Projects {
+#projects {
   margin-top: 60px;
   padding: 20px;
   font-family: 'Arial', sans-serif;
@@ -7,21 +7,15 @@
   line-height: 1.6;
 }
 
-.Description__Text p {
+.descriptionText p {
   margin-bottom: 1rem;
 }
 
-.Project__Description {
+.projectDescription {
   margin-bottom: 30px;
 }
 
-.Projects__Wrapper {
-}
-
-.Projects__Container {
-}
-
-.Description__Title {
+.descriptionTitle {
   padding-bottom: 0.5rem;
   font-family: Black Han Sans, sans-serif;
   font-weight: 400;
@@ -30,7 +24,7 @@
   text-align: center;
 }
 
-.Description__Date {
+.descriptionDate {
   margin-bottom: 2rem;
   font-weight: 400;
   font-size: 1rem;
@@ -39,26 +33,31 @@
   opacity: 0.8;
 }
 
-.Description__Img__Section {
+.descriptionImgSection {
   overflow: hidden;
   position: relative;
   width: 50%;
   margin-right: 3rem;
 }
 
-.Description__Text__Section {
+.descriptionTextSection {
   width: calc(50% - 3rem);
 }
 
-.Description__Text {
+.descriptionText {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
   font-weight: 400;
   font-size: 1rem;
 }
 
-.Description__Contents {
+.descriptionModal {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.descriptionContents {
   display: flex;
   display: -ms-flexbox;
   flex-flow: row wrap;
@@ -67,7 +66,7 @@
   -ms-flex-pack: center;
 }
 
-.Projects__Title {
+.projectsTitle {
   display: flex;
   padding-top: 10px;
   font-size: 24px;
@@ -78,24 +77,24 @@
   margin-bottom: 20px;
 }
 
-.Projects__Contents {
+.projectsContents {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
 
-.Project__Description {
+.projectDescription {
   border: 1px solid red;
   padding: 20px;
   width: 1000px;
 }
 
-.Project__info {
+.projectInfo {
   display: flex;
 }
 
-.info__title {
+.infoTitle {
   display: inline-block;
   vertical-align: top;
   width: 8.4rem;
@@ -103,10 +102,14 @@
   font-size: 1rem;
 }
 
-.info__text {
+.infoText {
   display: inline-block;
   vertical-align: bottom;
   width: calc(100% - 8.4rem);
   font-weight: 400;
   font-size: 1rem;
+}
+
+.readMeTitle {
+  font-size: 30px;
 }

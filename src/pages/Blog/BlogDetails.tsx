@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Button, message } from 'antd'
 import axios from 'axios'
 import { BlogType } from '@src/types/types'
-import './blogDetails.css'
+import styles from './blogDetails.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import { formatDate } from '@src/utils/common'
@@ -63,13 +63,16 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   const renderBlogEditAndDeleteBtn = () => {
     if (hasCookie) {
       return (
-        <div className="BlogDetails__BtnWrapper">
-          <Button className="BlogDetails__BlogEditBtn" onClick={handleEditBlog}>
+        <div className={styles.blogDetailsBtnWrapper}>
+          <Button
+            className={styles.blogDetailsBlogEditBtn}
+            onClick={handleEditBlog}
+          >
             <EditOutlined />
           </Button>
           <Button
             onClick={handleDeleteBlog}
-            className="BlogDetails__BlogDeleteBtn"
+            className={styles.blogDetailsBlogDeleteBtn}
           >
             <DeleteOutlined />
           </Button>
@@ -80,39 +83,41 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   }
 
   return (
-    <div id="BlogDetails">
+    <div id={styles.blogDetails}>
       {contextHolder}
-      <div className="BlogDetails__all">
-        <div className="BlogDeatils__wrapper">
-          <div className="BlogDetails__header">
-            <div className="BlogDetails__dateAndViews">
+      <div className={styles.blogDetailsAll}>
+        <div className={styles.blogDeatilsWrapper}>
+          <div className={styles.blogDetailsHeader}>
+            <div className={styles.blogDetailsDateAndViews}>
               <span>작성일</span>
-              <div className="BlogDetails__generateDate">
+              <div className={styles.blogDetailsGenerateDate}>
                 {blogDetails?.creation_date
                   ? formatDate(new Date(blogDetails?.creation_date))
                   : ''}
               </div>
               <span style={{ padding: '0 0.5em' }}>조회수</span>
-              <div className="BlogDetails__views">{blogDetails?.views}</div>
+              <div className={styles.blogDetailsViews}>
+                {blogDetails?.views}
+              </div>
             </div>
           </div>
-          <div className="BlogDetails__titleWrap">
-            <div className="BlogDetails__title">
+          <div className={styles.blogDetailsTitleWrap}>
+            <div className={styles.blogDetailsTitle}>
               <h1>{blogDetails?.title}</h1>
             </div>
           </div>
           {renderBlogEditAndDeleteBtn()}
-          <div className="BlogDetails__description">
+          <div className={styles.blogDetailsDescription}>
             <div
               dangerouslySetInnerHTML={{
                 __html: blogDetails?.content || '',
               }}
             />
           </div>
-          <div className="BlogDetails__commentBtnWrapper">
+          <div className={styles.blogDetailsCommentBtnWrapper}>
             <Link to="/blogs">
               <button
-                className="BlogDetails__commentBtn"
+                className={styles.blogDetailsCommentBtn}
                 style={{
                   marginRight: '5px',
                 }}

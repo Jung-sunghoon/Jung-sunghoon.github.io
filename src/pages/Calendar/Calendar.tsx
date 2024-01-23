@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import type { Dayjs } from 'dayjs'
+import { Dayjs } from 'dayjs'
 import {
   Calendar as AntdCalendar,
   Button,
@@ -9,7 +9,7 @@ import {
   Select,
 } from 'antd'
 import type { CalendarProps } from 'antd'
-import './calendar.css'
+import styles from './calendar.module.css'
 import axios from 'axios'
 import { EventType } from '@src/types/types'
 import locale from 'antd/es/date-picker/locale/ko_KR'
@@ -22,7 +22,9 @@ const eventTypeColors: { [key: string]: string } = {
 }
 
 const Calendar: React.FC = () => {
-  const [hasCookie, setHasCookie] = useState<boolean>(false)
+  const [hasCookie, setHasCookie] = useState<boolean>(
+    document.cookie.includes('token'),
+  )
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
   const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>()
   const [eventList, setEventList] = useState<EventType[]>([])
@@ -42,11 +44,14 @@ const Calendar: React.FC = () => {
     const eventsForSelectedDate = getEventsForSelectedDate(value)
     setEventList(eventsForSelectedDate)
   }
-  console.log(eventList, 'eventList')
 
   const onSelectEvent = (event: EventType) => {
     setSelectedEvent(event)
   }
+
+  useEffect(() => {
+    if (selectedDate) onSelectDate(selectedDate)
+  }, [eventData])
 
   const event_id = selectedEvent?.event_id
 
@@ -84,8 +89,7 @@ const Calendar: React.FC = () => {
 
       const data = response.data.CalendarEvents
       setEventData(data)
-      console.log(data)
-      setHasCookie(document.cookie.includes('token'))
+      // setHasCookie(document.cookie.includes('token'))
     } catch (error) {
       console.error('Error fetching data:', error)
     }
@@ -164,33 +168,25 @@ const Calendar: React.FC = () => {
       }
     }
   }
-
-  const handleDelEvent = async () => {
+  const handleDelEvent = async (id: number) => {
     const confirmDelete = window.confirm('일정을 삭제하시겠습니까?')
-    if (selectedEvent) {
-      if (confirmDelete) {
-        try {
-          await axios.delete(
-            `${
-              import.meta.env.VITE_API_ENDPOINT
-            }/api/calendar-admin/delete/${event_id}`,
-          )
+    if (confirmDelete) {
+      try {
+        await axios.delete(
+          `${
+            import.meta.env.VITE_API_ENDPOINT
+          }/api/calendar-admin/delete/${id}`,
+        )
 
-          // 삭제된 이벤트를 상태에서 제거
-          setEventData(prevData =>
-            prevData.filter(event => event.event_id !== event_id),
-          )
-          // 선택한 날짜의 이벤트 리스트 업데이트
-          const updatedEventsForSelectedDate = selectedDate
-            ? getEventsForSelectedDate(selectedDate)
-            : []
-          setEventList(updatedEventsForSelectedDate)
-        } catch (error) {
-          console.error('Error deleting event:', error)
-        } finally {
-          // Form 및 모달 상태 초기화
-          form.resetFields()
-        }
+        // 삭제된 이벤트를 상태에서 제거
+        setEventData(prevData =>
+          prevData.filter(event => event.event_id !== id),
+        )
+      } catch (error) {
+        console.error('Error deleting event:', error)
+      } finally {
+        // Form 및 모달 상태 초기화
+        form.resetFields()
       }
     }
   }
@@ -208,15 +204,16 @@ const Calendar: React.FC = () => {
               onSelectEvent(event)
               setOpen(true)
             }}
+            className={styles.calendarEditBtn}
           >
             <EditOutlined />
           </Button>
           <Button
             style={{ marginLeft: '10px' }}
             onClick={() => {
-              onSelectEvent(event)
-              handleDelEvent()
+              handleDelEvent(event.event_id)
             }}
+            className={styles.calendarDelBtn}
           >
             <DeleteOutlined />
           </Button>
@@ -291,19 +288,19 @@ const Calendar: React.FC = () => {
   }
 
   return (
-    <div id="Calendar">
-      <div className="Calendar__Wrapper">
-        <div className="Calendar__Calendar__Container">
+    <div id={styles.calendar}>
+      <div className={styles.calendarWrapper}>
+        <div className={styles.calendarContainer}>
           <AntdCalendar
+            className={styles.antdCalendar}
             locale={locale}
             onPanelChange={onPanelChange}
             onSelect={onSelectDate}
             cellRender={dateCellRender}
-            style={{}}
           />
         </div>
-        <div className="Calendar__Contents__Container">
-          <div className="Calendar__Contents__Header">
+        <div className={styles.contentsContainer}>
+          <div className={styles.contentsHeader}>
             <p>{selectedDate?.format('YYYY-MM-DD')}</p>
             {renderEventModalBtn()}
           </div>
