@@ -14,12 +14,18 @@ import axios from 'axios'
 import { EventType } from '@src/types/types'
 import locale from 'antd/es/date-picker/locale/ko_KR'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
+import './calendar.css'
 
 const eventTypeColors: { [key: string]: string } = {
-  평범: 'blue',
-  중요: 'yellow',
+  평범: 'green',
+  중요: '#FFBB00',
   '매우 중요': 'red',
 }
+const options = [
+  { value: '평범', label: '평범' },
+  { value: '중요', label: '중요' },
+  { value: '매우 중요', label: '매우 중요' },
+]
 
 const Calendar: React.FC = () => {
   const [hasCookie, setHasCookie] = useState<boolean>(
@@ -267,12 +273,34 @@ const Calendar: React.FC = () => {
                     defaultValue="중요도 선택하기"
                     style={{ width: '100%' }}
                     onChange={handleChange}
-                    options={[
-                      { value: '평범', label: '평범' },
-                      { value: '중요', label: '중요' },
-                      { value: '매우 중요', label: '매우 중요' },
-                    ]}
-                  />
+                    optionLabelProp="label"
+                  >
+                    {options.map(option => (
+                      <Select.Option
+                        key={option.value}
+                        value={option.value}
+                        label={option.label}
+                      >
+                        <div
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontSize: '25px',
+                              color: eventTypeColors[option.value],
+                              marginRight: '8px',
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          {option.label}
+                        </div>
+                      </Select.Option>
+                    ))}
+                  </Select>
                 </Form.Item>
                 <Form.Item label="설명" name="event_text">
                   <Input.TextArea />
@@ -310,11 +338,15 @@ const Calendar: React.FC = () => {
                 {eventList.map((event, index) => (
                   <div
                     key={index}
-                    style={{ display: 'flex', marginTop: '5px' }}
+                    style={{
+                      display: 'flex',
+                      marginTop: '5px',
+                      alignItems: 'center',
+                    }}
                   >
                     <span
                       style={{
-                        fontSize: '20px',
+                        fontSize: '30px',
                         color: eventTypeColors[event.event_type],
                       }}
                     >

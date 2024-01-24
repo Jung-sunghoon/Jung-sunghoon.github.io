@@ -49,7 +49,6 @@ export const Project: React.FC<ProjectsProp> = ({
                 README 보기
               </Button>
               <Drawer
-                closeIcon={null}
                 title={<div className={styles.readMeTitle}>README.md</div>}
                 placement="top"
                 width="100%"

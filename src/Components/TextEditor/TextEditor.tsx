@@ -27,6 +27,10 @@ class TextEditor extends Component<TextEditorProps> {
     $('.rte').summernote({
       height: 600,
       dialogsInBody: true,
+      codemirror: {
+        // codemirror options
+        theme: 'monokai',
+      },
       toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'italic']],
@@ -34,7 +38,7 @@ class TextEditor extends Component<TextEditorProps> {
         ['para', ['ul', 'paragraph']],
         ['insert', ['link', 'picture', 'video']],
         ['table', ['table']],
-        ['view', ['fullscreen']],
+        ['view', ['fullscreen', 'codeview']],
       ],
       callbacks: {
         onChange: function (contents: any) {
@@ -53,6 +57,10 @@ class TextEditor extends Component<TextEditorProps> {
     $('.add').summernote({
       height: 600,
       dialogsInBody: true,
+      codemirror: {
+        // codemirror options
+        theme: 'monokai',
+      },
       toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'italic']],

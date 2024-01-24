@@ -900,3 +900,7 @@
 .note-editable i {
   font-style: italic; /* Italic */
 }
+
+.note-editor .note-editable {
+  line-height: 2;
+}

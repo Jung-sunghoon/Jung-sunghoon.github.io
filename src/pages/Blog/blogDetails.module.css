@@ -92,6 +92,11 @@ button {
   font-weight: 700;
 }
 
+.blogDetailsHeader {
+  display: flex;
+  flex-flow: column wrap;
+}
+
 .blogDetailsTitle {
   font-size: 3rem;
   line-height: 1.5;
@@ -102,12 +107,16 @@ button {
   margin-bottom: 2rem;
   word-break: keep-all;
   transition: color 0.125s ease-in 0s;
-  border-bottom: 1px solid black;
 }
 
 .blogDetailsDescription {
   font-size: 1em;
   margin: 25px 0;
+}
+
+.blogDetailsDescription p,
+.blogDetailsDescription span {
+  line-height: 2;
 }
 
 .blogDetailsBtnWrapper {
@@ -120,11 +129,15 @@ button {
   color: green;
   margin-right: 10px;
   border-color: green;
+  display: flex;
+  align-items: center;
 }
 
 .blogDetailsBlogDeleteBtn {
   color: red;
   border-color: red;
+  display: flex;
+  align-items: center;
 }
 
 .blogDetailsCommentBtnWrapper {

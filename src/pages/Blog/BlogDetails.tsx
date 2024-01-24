@@ -88,6 +88,11 @@ const BlogDetails: React.FC<BlogDetails> = () => {
       <div className={styles.blogDetailsAll}>
         <div className={styles.blogDeatilsWrapper}>
           <div className={styles.blogDetailsHeader}>
+            <div className={styles.blogDetailsTitleWrap}>
+              <div className={styles.blogDetailsTitle}>
+                <h1>{blogDetails?.title}</h1>
+              </div>
+            </div>
             <div className={styles.blogDetailsDateAndViews}>
               <span>작성일</span>
               <div className={styles.blogDetailsGenerateDate}>
@@ -101,11 +106,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
               </div>
             </div>
           </div>
-          <div className={styles.blogDetailsTitleWrap}>
-            <div className={styles.blogDetailsTitle}>
-              <h1>{blogDetails?.title}</h1>
-            </div>
-          </div>
+
           {renderBlogEditAndDeleteBtn()}
           <div className={styles.blogDetailsDescription}>
             <div
