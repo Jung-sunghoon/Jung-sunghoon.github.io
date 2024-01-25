@@ -1,135 +1,87 @@
-import { Component } from 'react'
+import React, { useEffect } from 'react'
 import './summernote.css'
 import './bootstrap.css'
 
-type TextEditorProps = {
+export type TextEditorProps = {
   edit: boolean
   isNew: boolean
   html: string
-  setTextEditor: any
+  setTextEditor: (contents: string) => void
 }
-class TextEditor extends Component<TextEditorProps> {
-  constructor(props: TextEditorProps) {
-    super(props)
-  }
 
-  componentDidMount() {
-    if (this.props.isNew) {
-      this.props.isNew === true ? this.onEditNew() : this.onDisplayNew()
-    } else {
-      this.props.edit === true ? this.onEdit() : this.onDisplay()
-    }
-  }
-
-  onEdit() {
-    const OnSave = this.props.setTextEditor
-    // @ts-ignore
-    $('.rte').summernote({
+const TextEditor: React.FC<TextEditorProps> = ({
+  edit,
+  isNew,
+  html,
+  setTextEditor,
+}) => {
+  useEffect(() => {
+    const options = {
       height: 600,
-      dialogsInBody: true,
       codemirror: {
-        // codemirror options
         theme: 'monokai',
+        lineNumbers: true,
       },
+      tabDisable: true,
       toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'italic']],
         ['fontname', ['fontname', 'fontsize', 'color']],
-        ['para', ['ul', 'paragraph']],
+        ['para', ['ul', 'ol', 'paragraph']],
         ['insert', ['link', 'picture', 'video']],
         ['table', ['table']],
         ['view', ['fullscreen', 'codeview']],
       ],
+      disableResizeEditor: true,
       callbacks: {
         onChange: function (contents: any) {
-          OnSave(contents)
+          setTextEditor(contents)
         },
       },
-    })
-
-    // @ts-ignore
-    $('.dropdown-toggle').dropdown()
-  }
-
-  onEditNew() {
-    const OnSave = this.props.setTextEditor
-    // @ts-ignore
-    $('.add').summernote({
-      height: 600,
-      dialogsInBody: true,
-      codemirror: {
-        // codemirror options
-        theme: 'monokai',
-      },
-      toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'italic']],
-        ['fontname', ['fontname', 'fontsize', 'color']],
-        ['para', ['ul', 'paragraph']],
-        ['insert', ['link', 'picture', 'video']],
-        ['table', ['table']],
-        ['view', ['fullscreen']],
-      ],
-      callbacks: {
-        onChange: function (contents: any) {
-          OnSave(contents)
-        },
-      },
-    })
-
-    // @ts-ignore
-    $('.dropdown-toggle').dropdown()
-  }
-
-  onDisplay() {
-    // @ts-ignore
-    if (this.props?.html) {
-      // @ts-ignore
-      $('.rte').summernote('code', this.props?.html)
-    } else {
-      // @ts-ignore
-      $('.rte').summernote('code', '')
-    }
-    // @ts-ignore
-    $('.rte').summernote('destroy')
-  }
-
-  onDisplayNew() {
-    // @ts-ignore
-    if (this.props?.html) {
-      // @ts-ignore
-      $('.add').summernote('code', this.props?.html)
-    } else {
-      // @ts-ignore
-      $('.add').summernote('code', '')
-    }
-    // @ts-ignore
-    $('.add').summernote('destroy')
-  }
-
-  render() {
-    if (this.props.isNew) {
-      // @ts-ignore
-      if (this.props.edit) this.onEditNew()
-      // @ts-ignore
-      else this.onDisplayNew()
-    } else {
-      // @ts-ignore
-      if (this.props.edit) this.onEdit()
-      // @ts-ignore
-      else this.onDisplay()
     }
 
-    return (
-      <div>
-        {this.props.isNew ? (
-          <div className="add"></div>
-        ) : (
-          <div className="rte"></div>
-        )}
-      </div>
-    )
-  }
+    const initEditor = (selector: string) => {
+      const $editor = $(selector)
+      //@ts-ignore
+      $editor.summernote(options)
+      //@ts-ignore
+      $('.dropdown-toggle').dropdown()
+
+      return $editor
+    }
+
+    const destroyEditor = (selector: string) => {
+      const $editor = $(selector)
+      //@ts-ignore
+      $editor.summernote('destroy')
+    }
+
+    if (isNew) {
+      const $editor = edit ? initEditor('.add') : initEditor('.add')
+      if (html) {
+        //@ts-ignore
+        $editor.summernote('code', html)
+      }
+    } else {
+      const $editor = edit ? initEditor('.rte') : initEditor('.rte')
+      if (html) {
+        //@ts-ignore
+        $editor.summernote('code', html)
+      }
+    }
+
+    return () => {
+      if (isNew) {
+        destroyEditor('.add')
+      } else {
+        destroyEditor('.rte')
+      }
+    }
+  }, [edit, isNew, html, setTextEditor])
+
+  return (
+    <>{isNew ? <div className="add"></div> : <div className="rte"></div>}</>
+  )
 }
 
 export default TextEditor

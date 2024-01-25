@@ -904,3 +904,12 @@
 .note-editor .note-editable {
   line-height: 2;
 }
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.note-editable ol {
+  list-style: decimal;
+  list-style-position: inside;
+}

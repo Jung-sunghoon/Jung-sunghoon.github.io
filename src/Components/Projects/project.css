@@ -1,7 +1,6 @@
 .ant-drawer-wrapper-body {
   display: flex;
   justify-content: center;
-  max-width: 1500px;
 }
 
 .ant-drawer-header,

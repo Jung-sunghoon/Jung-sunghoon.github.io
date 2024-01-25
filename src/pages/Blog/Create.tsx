@@ -3,11 +3,9 @@ import { Form, Input, Button, message } from 'antd'
 import axios from 'axios'
 import TextEditor from '@src/Components/TextEditor'
 import { useNavigate } from 'react-router-dom'
-import { FormOutlined } from '@ant-design/icons'
 import styles from './blogs.module.css'
 
 const Create: React.FC = () => {
-  const [editButton, setEditButton] = useState(false)
   const [form] = Form.useForm()
   const [initialValue] = useState({
     title: '',
@@ -122,39 +120,21 @@ const Create: React.FC = () => {
             <Input />
           </Form.Item>
           <Form.Item name="content" label="내용">
-            <div>
-              {type === 'create' ? (
-                <TextEditor
-                  isNew={false}
-                  edit={true}
-                  setTextEditor={setTextEditor}
-                  html={''}
-                />
-              ) : (
-                <div>
-                  <div>
-                    <Button
-                      style={{
-                        display: editButton ? 'none' : 'block',
-                        marginBottom: '10px',
-                      }}
-                      onClick={() => {
-                        setEditButton(true)
-                      }}
-                      icon={<FormOutlined />}
-                    >
-                      수정 시 클릭
-                    </Button>
-                  </div>
-                  <TextEditor
-                    isNew={false}
-                    edit={editButton}
-                    setTextEditor={setTextEditor}
-                    html={textEditor}
-                  />
-                </div>
-              )}
-            </div>
+            {type === 'create' ? (
+              <TextEditor
+                isNew={false}
+                edit={true}
+                setTextEditor={setTextEditor}
+                html={''}
+              />
+            ) : (
+              <TextEditor
+                isNew={false}
+                edit={true}
+                setTextEditor={setTextEditor}
+                html={textEditor}
+              />
+            )}
           </Form.Item>
         </div>
         <div
@@ -172,6 +152,7 @@ const Create: React.FC = () => {
           </Form.Item>
         </div>
       </Form>
+      <div></div>
     </div>
   )
 }

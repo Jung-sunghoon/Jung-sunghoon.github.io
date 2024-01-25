@@ -501,6 +501,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@popperjs/core@^2.11.8":
+  version "2.11.8"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
 "@rc-component/color-picker@~1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@rc-component/color-picker/-/color-picker-1.5.1.tgz#5d41a10f96aab8eb020999bd397fb4419431814c"
@@ -675,7 +680,7 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/draft-js@^0.11.17":
+"@types/draft-js@*", "@types/draft-js@^0.11.17":
   version "0.11.17"
   resolved "https://registry.yarnpkg.com/@types/draft-js/-/draft-js-0.11.17.tgz#32a68cac3e4e3d5c8f2cd5e22409d7dbf28887f1"
   integrity sha512-th0OwSPftG2r5rvGxS7nt8I7hcWMlrQ9OJcNx6MdXAwO797W78IGEsGWonO+turVBWEd3qylZRGBVtpEX9vSYQ==
@@ -683,10 +688,24 @@
     "@types/react" "*"
     immutable "~3.7.4"
 
+"@types/draftjs-to-html@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@types/draftjs-to-html/-/draftjs-to-html-0.8.4.tgz#b25ce6145973c431369ec011e75bebf9c78d533e"
+  integrity sha512-5FZcjFoJL57N/IttLCTCNI0krX+181oCl5hf76u3TqPkqBAphHrJAO9ReYesx9138kcObaYmpnWC2Yrqxoqd2Q==
+  dependencies:
+    "@types/draft-js" "*"
+
 "@types/estree@1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.5.tgz#a6ce3e556e00fd9895dd872dd172ad0d4bd687f4"
   integrity sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==
+
+"@types/html-to-draftjs@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@types/html-to-draftjs/-/html-to-draftjs-1.4.3.tgz#57d33d999cdf3f688d9e08cdaa68669a26908b79"
+  integrity sha512-8TAgtzFA/sfwjGNXJ7Zod5tgnqsfJFQZYB8Nmu9GIoF7AVSwRm2quF1Ve09dHgHxSVsTSSy2diZSVdeSvTe7vg==
+  dependencies:
+    "@types/draft-js" "*"
 
 "@types/jquery@*", "@types/jquery@^3.5.29":
   version "3.5.29"
@@ -1360,6 +1379,11 @@ draft-js@^0.11.7:
     fbjs "^2.0.0"
     immutable "~3.7.4"
     object-assign "^4.1.1"
+
+draftjs-to-html@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/draftjs-to-html/-/draftjs-to-html-0.9.1.tgz#1c870fbb588d2390204cb4d0ee7e04ad0c709969"
+  integrity sha512-fFstE6+IayaVFBEvaFt/wN8vdj8FsTRzij7dy7LI9QIwf5LgfHFi9zSpvCg+feJ2tbYVqHxUkjcibwpsTpgFVQ==
 
 draftjs-utils@^0.10.2:
   version "0.10.2"
@@ -3628,6 +3652,11 @@ uuid@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
+
+vite-plugin-bootstrap@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-bootstrap/-/vite-plugin-bootstrap-5.2.3.tgz#381daf9678e12add2ae2db3676d1cdaf45755111"
+  integrity sha512-c/HjJeSFtEXQUmCnVq5H3s02gC+ELojoyMFNNEKymUFyRwSQQLqyEyNjm+1kIPJqyiS/kFf65bVYM0xNByhS+g==
 
 vite@^5.0.12:
   version "5.0.12"
