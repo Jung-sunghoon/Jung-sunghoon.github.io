@@ -33,7 +33,7 @@ export const Techstack: React.FC<TechstackProps> = ({ title, imgs, alt }) => {
   return (
     <div className={styles.skillsContents}>
       <div className={styles.skillsTitle}>{title}</div>
-      <div className={styles.skills_mgWrraper}>
+      <div className={styles.skillsImgWrraper}>
         {imgs.map((img, index) => (
           <img key={index} className={styles.skillsImg} src={img} alt={alt} />
         ))}

@@ -34,7 +34,7 @@ const TextEditor: React.FC<TextEditorProps> = ({
       ],
       disableResizeEditor: true,
       callbacks: {
-        onChange: function (contents: any) {
+        onSave: function (contents: any) {
           setTextEditor(contents)
         },
       },

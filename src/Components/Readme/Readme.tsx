@@ -43,7 +43,7 @@ export const Readme: React.FC = () => {
             <li>활동으로 얻은 포인트를 활용한 랭킹 보기</li>
           </ul>
           <br />
-          <h3>⚙️환경 세팅</h3>
+          <h2>⚙️환경 세팅</h2>
           <pre>
             <p># 패키지 설치</p>
             <p>yarn add</p>
