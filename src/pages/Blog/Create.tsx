@@ -122,15 +122,13 @@ const Create: React.FC = () => {
           <Form.Item name="content" label="내용">
             {type === 'create' ? (
               <TextEditor
-                isNew={false}
-                edit={true}
+                isNew={true}
                 setTextEditor={setTextEditor}
                 html={''}
               />
             ) : (
               <TextEditor
                 isNew={false}
-                edit={true}
                 setTextEditor={setTextEditor}
                 html={textEditor}
               />

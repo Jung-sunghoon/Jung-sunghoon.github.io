@@ -44,14 +44,14 @@ export const Readme: React.FC = () => {
           </ul>
           <br />
           <h2>⚙️환경 세팅</h2>
-          <pre>
+          <blockquote>
             <p># 패키지 설치</p>
             <p>yarn add</p>
             <br />
             <br />
             <p># 프론트 서버 구동</p>
             <p>yarn dev</p>
-          </pre>
+          </blockquote>
         </div>
       </div>
     </div>

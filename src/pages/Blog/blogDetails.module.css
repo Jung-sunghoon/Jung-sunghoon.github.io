@@ -155,3 +155,19 @@ button {
   color: #fff;
   font-size: 16px;
 }
+
+.blogDetailsListContainer {
+  position: absolute;
+  left: 70%;
+}
+
+.blogDetailsList {
+  position: fixed;
+  top: 120px;
+  width: 240px;
+  margin-left: 5rem;
+  padding: 0.25rem 0.75rem;
+  line-height: 1.5;
+  font-size: 20px;
+  overflow: hidden auto;
+}

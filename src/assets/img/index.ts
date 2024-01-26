@@ -10,6 +10,7 @@ import nodeimg from '@src/assets/img/skillImg/node-js.png'
 import reactimg from '@src/assets/img/skillImg/react.png'
 import tsimg from '@src/assets/img/skillImg/typescript.png'
 import vsimg from '@src/assets/img/skillImg/visual-studio-code.png'
+import velogimg from '@src/assets/img/skillImg/velog.png'
 
 export default {
   cssimg,
@@ -24,4 +25,5 @@ export default {
   reactimg,
   tsimg,
   vsimg,
+  velogimg,
 }

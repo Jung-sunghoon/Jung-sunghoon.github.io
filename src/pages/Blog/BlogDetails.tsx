@@ -106,7 +106,15 @@ const BlogDetails: React.FC<BlogDetails> = () => {
               </div>
             </div>
           </div>
-
+          <div className={styles.blogDetailsListContainer}>
+            <div className={styles.blogDetailsList}>
+              <div>gigigigi</div>
+              <div>gigigigi</div>
+              <div>gigigigi</div>
+              <div>gigigigi</div>
+              <div>gigigigi</div>
+            </div>
+          </div>
           {renderBlogEditAndDeleteBtn()}
           <div className={styles.blogDetailsDescription}>
             <div
