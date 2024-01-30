@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Input, Button, message } from 'antd'
+import { Form, Input, Button, message, Upload } from 'antd'
 import axios from 'axios'
 import TextEditor from '@src/Components/TextEditor'
 import { useNavigate } from 'react-router-dom'
 import styles from './blogs.module.css'
+import type { UploadFile, UploadProps } from 'antd/es/upload/interface'
+import { UploadOutlined } from '@ant-design/icons'
 
 const Create: React.FC = () => {
   const [form] = Form.useForm()
@@ -18,6 +20,7 @@ const Create: React.FC = () => {
   const currentURL = window.location.href
   const segments = currentURL.split('/')
   const post_id = segments[segments.length - 1]
+  const [fileList, setFileList] = useState<UploadFile[]>([])
 
   // 컴포넌트가 마운트될 때와 URL이 변경될 때 데이터를 가져오기 위한 useEffect
   // type 별로 실행 되기 위한 분기
@@ -58,12 +61,15 @@ const Create: React.FC = () => {
     type: 'create' | 'edit',
     values: any,
     textEditor: string,
+    fileList: any,
   ) => {
     const requestData = {
       post_id: type === 'edit' ? post_id : null,
       title: values.title,
       content: textEditor,
+      thumbnail: fileList && fileList[0]?.thumbUrl,
     }
+    console.log(requestData, 'requestData')
 
     const response = await axios.post(
       `${import.meta.env.VITE_API_ENDPOINT}/api/blog-admin/create`,
@@ -82,7 +88,7 @@ const Create: React.FC = () => {
     try {
       if (type !== 'create' && type !== 'edit') return
 
-      await createOrUpdateBlog(type, values, textEditor)
+      await createOrUpdateBlog(type, values, textEditor, fileList)
 
       messageApi.success('게시물이 성공적으로 생성되었습니다.')
       form.resetFields()
@@ -91,6 +97,13 @@ const Create: React.FC = () => {
       messageApi.error('게시물 생성 중 오류가 발생했습니다.')
       console.error('게시물 생성 중 오류:', error)
     }
+  }
+
+  // 업로드 변경 시 실행되는 콜백 함수
+  const onChange: UploadProps['onChange'] = async ({
+    fileList: newFileList,
+  }) => {
+    setFileList(newFileList)
   }
 
   return (
@@ -118,6 +131,24 @@ const Create: React.FC = () => {
             rules={[{ required: true, message: '제목을 입력해주세요' }]}
           >
             <Input />
+          </Form.Item>
+          <Form.Item label="대표 이미지">
+            <Upload
+              beforeUpload={f => {
+                f
+              }}
+              action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+              listType="picture"
+              fileList={fileList}
+              onChange={onChange}
+              onPreview={() => {
+                return
+              }}
+            >
+              {fileList.length < 1 && (
+                <Button icon={<UploadOutlined />}>Click to Image Upload</Button>
+              )}
+            </Upload>
           </Form.Item>
           <Form.Item name="content" label="내용">
             {type === 'create' ? (

@@ -3,6 +3,10 @@ import { Button, Drawer } from 'antd'
 import { useState } from 'react'
 import Readme from '../Readme/Readme'
 import './project.css'
+import Slider from 'react-slick' // react-slick 라이브러리 추가
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 
 export interface ProjectsProp {
   title: string
@@ -18,7 +22,9 @@ export interface ProjectsProp {
   deployment?: string
 }
 
-export const Project: React.FC<ProjectsProp> = ({
+export const Project: React.FC<
+  ProjectsProp & { readTitle: string; readDescription: string }
+> = ({
   title,
   imgs,
   url,
@@ -30,15 +36,49 @@ export const Project: React.FC<ProjectsProp> = ({
   backend,
   database,
   deployment,
+  readTitle,
+  readDescription,
 }) => {
   const [open, setOpen] = useState(false)
+  const [slideIndex, setSlideIndex] = useState(0)
+
+  const CustomNextArrow: React.FC<any> = props => {
+    const { onClick } = props
+    return <RightOutlined className={styles.nextArrow} onClick={onClick} />
+  }
+
+  // Prev 버튼 컴포넌트
+  const CustomPrevArrow: React.FC<any> = props => {
+    const { onClick } = props
+    return <LeftOutlined className={styles.prevArrow} onClick={onClick} />
+  }
+
+  // slick-carousel의 설정값
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: (index: number) => setSlideIndex(index), // 슬라이더 이동 후 인덱스 설정
+    nextArrow: <CustomNextArrow />, // 사용자 정의 Next 버튼 추가
+    prevArrow: <CustomPrevArrow />,
+  }
+
   return (
     <>
       <div className={styles.projectDescription}>
         <div className={styles.descriptionTitle}>{title}</div>
         <div className={styles.descriptionDate}>{date}</div>
         <div className={styles.descriptionContents}>
-          <div className={styles.descriptionImgSection}>{imgs}</div>
+          <div className={styles.descriptionImgSection}>
+            {/* 이미지 슬라이더 추가 */}
+            <Slider {...sliderSettings}>
+              {imgs?.map((img, index) => (
+                <img key={index} src={img} alt={`project-img-${index}`} />
+              ))}
+            </Slider>
+          </div>
           <div className={styles.descriptionTextSection}>
             <div
               className={styles.descriptionText}
@@ -56,7 +96,10 @@ export const Project: React.FC<ProjectsProp> = ({
                 onClose={() => setOpen(false)}
                 open={open}
               >
-                <Readme />
+                <Readme
+                  readTitle={readTitle}
+                  readDescription={readDescription}
+                />
               </Drawer>
             </div>
             <div className={styles.projectInfo}>

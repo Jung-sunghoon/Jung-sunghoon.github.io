@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './aboutme.module.css'
 import { infoData, Myinfo } from '@src/Components/Myinfo/Myinfo'
-import img from '@src/assets/img/index'
 import { techstackData, Techstack } from '@src/Components/Techstack/Techstack'
 import { ArchiveData, Archive } from '@src/Components/Archive/Archive'
 

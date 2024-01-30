@@ -52,7 +52,7 @@ const TextEditor: React.FC<TextEditorProps> = ({
     tabDisable: true,
     toolbar: [
       ['style', ['style']],
-      ['font', ['bold', 'underline', 'italic']],
+      ['font', ['bold', 'underline', 'italic', 'clear']],
       ['fontname', ['fontname', 'fontsize', 'color']],
       ['para', ['ul', 'ol', 'paragraph']],
       ['insert', ['link', 'picture', 'video']],

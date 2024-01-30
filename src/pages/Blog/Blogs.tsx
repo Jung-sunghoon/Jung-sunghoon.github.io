@@ -90,7 +90,7 @@ const Blogs: React.FC = () => {
             marginLeft: '30px',
             marginRight: '30px',
           }}
-          grid={{ gutter: 12, xs: 1, sm: 2, md: 3, lg: 3, xl: 4, xxl: 6 }}
+          grid={{ gutter: 12, xs: 1, sm: 2, md: 3, lg: 3, xl: 4, xxl: 4 }}
           dataSource={slicedData} // 페이지네이션에 따라 잘라낸 데이터를 사용
           renderItem={(item: BlogType) => (
             <List.Item>

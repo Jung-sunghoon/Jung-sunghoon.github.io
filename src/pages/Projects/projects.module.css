@@ -113,3 +113,24 @@
 .readMeTitle {
   font-size: 30px;
 }
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  color: black;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.nextArrow {
+  right: 10px;
+}
+
+.prevArrow {
+  left: 10px;
+}

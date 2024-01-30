@@ -18,10 +18,32 @@ const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
 
   return (
     <Card
+      cover={
+        //@ts-ignore
+        <div
+          style={{
+            height: '160px',
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '10px',
+          }}
+        >
+          <img
+            style={{
+              cursor: 'pointer',
+              height: 'auto',
+              width: 'auto',
+            }}
+            alt="example"
+            //@ts-ignore
+            src={blogInfo?.thumbnail}
+          />
+        </div>
+      }
       style={{
         marginBottom: '30px',
-        maxWidth: '400px',
-        maxHeight: '300px',
+        maxWidth: '700px',
+        maxHeight: '500px',
       }}
       onClick={() => {
         navigate(`/blogdetails/${blogInfo?.post_id}`)
