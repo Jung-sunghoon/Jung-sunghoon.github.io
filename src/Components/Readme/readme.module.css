@@ -62,3 +62,9 @@ h6 {
   font-variant-caps: normal;
   font-weight: 400;
 }
+
+@media (max-width: 768px) {
+  #readMe {
+    margin: 10px;
+  }
+}

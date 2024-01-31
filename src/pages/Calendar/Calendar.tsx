@@ -336,14 +336,7 @@ const Calendar: React.FC = () => {
             <>
               <ul>
                 {eventList.map((event, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      display: 'flex',
-                      marginTop: '5px',
-                      alignItems: 'center',
-                    }}
-                  >
+                  <div key={index} className={styles.contentsEventsList}>
                     <span
                       style={{
                         fontSize: '30px',
@@ -359,14 +352,7 @@ const Calendar: React.FC = () => {
               </ul>
             </>
           ) : (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-              }}
-            >
+            <div className={styles.contentsAddText}>
               일정을 클릭하고 일정을 관리해보세요
             </div>
           )}

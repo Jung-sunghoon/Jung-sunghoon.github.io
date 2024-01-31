@@ -11,6 +11,17 @@ import reactimg from '@src/assets/img/skillImg/react.png'
 import tsimg from '@src/assets/img/skillImg/typescript.png'
 import vsimg from '@src/assets/img/skillImg/visual-studio-code.png'
 import velogimg from '@src/assets/img/skillImg/velog.png'
+import dLogin from '@src/assets/img/projectImg/deopleImg/login.png'
+import dSignup from '@src/assets/img/projectImg/deopleImg/signup.png'
+import dProjectList from '@src/assets/img/projectImg/deopleImg/projectlist.png'
+import dInfoDetail from '@src/assets/img/projectImg/deopleImg/infodetail.png'
+import dInfoList from '@src/assets/img/projectImg/deopleImg/infolist.png'
+import dProfile from '@src/assets/img/projectImg/deopleImg/profile.png'
+import dProjectApply from '@src/assets/img/projectImg/deopleImg/projectapply.png'
+import dProjectComment from '@src/assets/img/projectImg/deopleImg/projectcomment.png'
+import dProjectCreation from '@src/assets/img/projectImg/deopleImg/projectcreation.png'
+import dProjectDetail from '@src/assets/img/projectImg/deopleImg/projectdetail.png'
+import dRanking from '@src/assets/img/projectImg/deopleImg/ranking.png'
 
 export default {
   cssimg,
@@ -26,4 +37,15 @@ export default {
   tsimg,
   vsimg,
   velogimg,
+  dLogin,
+  dSignup,
+  dProfile,
+  dInfoDetail,
+  dInfoList,
+  dProjectApply,
+  dProjectComment,
+  dProjectCreation,
+  dProjectDetail,
+  dProjectList,
+  dRanking,
 }

@@ -116,15 +116,8 @@ const Create: React.FC = () => {
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 14 }}
         initialValues={initialValue}
-        style={{ marginRight: '100px' }}
       >
-        <div
-          style={{
-            marginTop: '100px',
-            justifyContent: 'center',
-            marginRight: '10px',
-          }}
-        >
+        <div className={styles.createForm}>
           <Form.Item
             name="title"
             label="제목"

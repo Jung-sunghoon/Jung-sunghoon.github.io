@@ -23,6 +23,13 @@ tbody {
 
 #blogCreate {
   margin-top: 90px;
+  margin-right: 100px;
+}
+
+.createForm {
+  margin-top: 100px;
+  margin-right: 10px;
+  justify-content: center;
 }
 
 #blog {
@@ -41,6 +48,7 @@ tbody {
 
 .blogPage {
   text-align: center;
+  margin-top: 10px;
 }
 
 .floatingBtn {
@@ -48,4 +56,18 @@ tbody {
   bottom: 30px;
   right: 35px;
   z-index: 5;
+}
+
+@media (max-width: 768px) {
+  #blog {
+    margin: 90px 0 0 0;
+  }
+
+  .blogContainer {
+    height: 100%;
+  }
+
+  #blogCreate {
+    margin: 15px;
+  }
 }

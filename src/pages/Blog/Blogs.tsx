@@ -99,9 +99,8 @@ const Blogs: React.FC = () => {
           )}
         />
       </div>
-      <div style={{ marginTop: '10px' }}>
+      <div className={styles.blogPage}>
         <Pagination
-          className={styles.blogPage}
           current={currentPage}
           total={filteredData?.length}
           pageSize={pageSize}

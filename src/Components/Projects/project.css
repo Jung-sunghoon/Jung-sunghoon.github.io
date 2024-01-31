@@ -1,8 +1,15 @@
 .ant-drawer-wrapper-body {
   display: flex;
   justify-content: center;
+  overflow-y: hidden;
 }
 
 .ant-drawer-header {
   margin: 0 150px 0 150px;
+}
+
+@media (max-width: 768px) {
+  .ant-drawer-header {
+    margin: 10px;
+  }
 }

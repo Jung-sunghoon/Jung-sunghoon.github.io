@@ -16,7 +16,7 @@ section {
   display: block;
 }
 
-ul {
+#blogDetails ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -154,4 +154,47 @@ button {
   font-weight: 700;
   color: #fff;
   font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .blogDetailsDescription img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+
+  pre {
+    width: 100%;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+
+  #blogDetails {
+    width: 100%;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+
+  .blogDeatilsWrapper {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+
+  .blogDetailsDescription {
+    margin: 15px;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+
+  .blogDetailsTitle,
+  .blogDetailsDateAndViews {
+    margin-left: 15px;
+  }
+
+  .blogDetailsBtnWrapper {
+    margin-right: 15px;
+  }
 }

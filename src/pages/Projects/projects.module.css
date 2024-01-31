@@ -122,7 +122,7 @@
   cursor: pointer;
   font-size: 24px;
   color: black;
-  padding: 10px;
+  padding: 0;
   border-radius: 50%;
   z-index: 1;
 }
@@ -133,4 +133,34 @@
 
 .prevArrow {
   left: 10px;
+}
+
+@media (max-width: 768px) {
+  #projects,
+  .projectsContents,
+  .descriptionImgSection,
+  .projectsWrapper,
+  .descriptionTextSection,
+  .projectsContainer {
+    width: 100%;
+  }
+
+  .projectDescription {
+    width: 80%;
+  }
+
+  #projects {
+    padding: 0;
+  }
+
+  .descriptionImgSection {
+    margin: 0;
+    margin-bottom: 30px;
+    overflow: visible;
+  }
+
+  .descriptionContents {
+    display: flex;
+    flex-flow: column;
+  }
 }

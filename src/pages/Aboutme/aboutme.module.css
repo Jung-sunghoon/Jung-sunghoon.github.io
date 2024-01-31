@@ -125,6 +125,12 @@
 
 /* 모바일 화면을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
+  .aboutMe,
+  .skills,
+  .archive {
+    justify-content: center;
+    display: flex;
+  }
   .archiveDataList {
     grid-template-columns: repeat(1, auto);
   }
@@ -146,6 +152,11 @@
   .infoContainer {
     grid-template-columns: repeat(2, auto); /* 세로 2열 */
     grid-template-rows: repeat(3, auto); /* 가로 3행 */
+  }
+
+  .skillsContents,
+  .archiveContainer {
+    max-width: 300px;
   }
 }
 

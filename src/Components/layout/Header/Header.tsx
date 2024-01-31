@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import styles from './header.module.css'
 import { Link } from 'react-router-dom'
+import { CloseOutlined, MenuOutlined } from '@ant-design/icons'
 
 const Header: React.FC = () => {
   const storedSelectedMenu = sessionStorage.getItem('selectedMenu')
   const [selectedMenu, setSelectedMenu] = useState<number | null>(
     storedSelectedMenu ? parseInt(storedSelectedMenu, 10) : null,
   )
+  const [open, setOpen] = useState(false)
 
   const handleMenuClick = (menuId: number) => {
     setSelectedMenu(menuId)
+    setOpen(false)
+  }
+
+  const handleMobileMenuToggle = () => {
+    setOpen(!open)
   }
 
   useEffect(() => {
@@ -31,7 +38,20 @@ const Header: React.FC = () => {
     <header id={styles.header}>
       <div className={styles.headerMenuNav}>
         <div className={styles.headerLogo}>JSH's Portfolio</div>
-        <ul className={styles.headerMenuInner}>
+        {open ? (
+          <CloseOutlined
+            className={`${styles.headerMobileMenu} ${styles.closeIcon}`}
+            onClick={handleMobileMenuToggle}
+          />
+        ) : (
+          <MenuOutlined
+            className={`${styles.headerMobileMenu} ${styles.menuIcon}`}
+            onClick={handleMobileMenuToggle}
+          />
+        )}
+        <ul
+          className={open ? styles.headerMenuInnerOpen : styles.headerMenuInner}
+        >
           {menuItems.map(menuItem => (
             <li key={menuItem.id} className={styles.headerMenu}>
               <Link

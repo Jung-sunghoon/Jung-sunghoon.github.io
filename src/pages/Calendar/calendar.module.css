@@ -24,6 +24,19 @@
   align-items: center;
 }
 
+.contentsEventsList {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.contentsAddText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .calendarEditBtn {
   color: green;
   margin-right: 10px;
@@ -33,4 +46,24 @@
 .calendarDelBtn {
   color: red;
   border-color: red;
+}
+
+@media (max-width: 768px) {
+  #calendar {
+    margin: 80px 20px;
+  }
+
+  .calendarWrapper {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .calendarContainer,
+  .contentsContainer {
+    width: 100%;
+  }
+
+  .contentsContainer {
+    min-height: 100px;
+  }
 }
