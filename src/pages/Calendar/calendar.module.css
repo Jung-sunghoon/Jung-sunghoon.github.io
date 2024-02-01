@@ -66,4 +66,8 @@
   .contentsContainer {
     min-height: 100px;
   }
+
+  .contentsAddText {
+    margin-top: 10px;
+  }
 }

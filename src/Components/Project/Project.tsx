@@ -42,6 +42,8 @@ export const Project: React.FC<
   const [open, setOpen] = useState(false)
   const [slideIndex, setSlideIndex] = useState(0)
 
+  console.log(slideIndex)
+
   const CustomNextArrow: React.FC<any> = props => {
     const { onClick } = props
     return <RightOutlined className={styles.nextArrow} onClick={onClick} />

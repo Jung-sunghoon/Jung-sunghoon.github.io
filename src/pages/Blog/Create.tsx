@@ -21,6 +21,7 @@ const Create: React.FC = () => {
   const segments = currentURL.split('/')
   const post_id = segments[segments.length - 1]
   const [fileList, setFileList] = useState<UploadFile[]>([])
+  const [thumbnail, setThumbnail] = useState('')
 
   // 컴포넌트가 마운트될 때와 URL이 변경될 때 데이터를 가져오기 위한 useEffect
   // type 별로 실행 되기 위한 분기
@@ -48,6 +49,7 @@ const Create: React.FC = () => {
           title: blog.title,
           content: blog.content,
         })
+        setThumbnail(blog.thumbnail)
         setTextEditor(blog.content)
       }
     } catch (error) {
@@ -61,13 +63,12 @@ const Create: React.FC = () => {
     type: 'create' | 'edit',
     values: any,
     textEditor: string,
-    fileList: any,
   ) => {
     const requestData = {
       post_id: type === 'edit' ? post_id : null,
       title: values.title,
       content: textEditor,
-      thumbnail: fileList && fileList[0]?.thumbUrl,
+      thumbnail: thumbnail,
     }
     console.log(requestData, 'requestData')
 
@@ -88,7 +89,7 @@ const Create: React.FC = () => {
     try {
       if (type !== 'create' && type !== 'edit') return
 
-      await createOrUpdateBlog(type, values, textEditor, fileList)
+      await createOrUpdateBlog(type, values, textEditor)
 
       messageApi.success('게시물이 성공적으로 생성되었습니다.')
       form.resetFields()
@@ -104,6 +105,24 @@ const Create: React.FC = () => {
     fileList: newFileList,
   }) => {
     setFileList(newFileList)
+    if (
+      newFileList[0]?.status === 'done' ||
+      newFileList[0]?.status === 'error'
+    ) {
+      setThumbnail(JSON.parse(JSON.stringify(fileList[0]))?.thumbUrl)
+    }
+  }
+
+  const MAX_FILE_SIZE_MB = 1000 // 원하는 최대 파일 크기 (메가바이트 단위)
+
+  const beforeUpload = (file: any) => {
+    const isSizeAllowed = file.size / 1024 / 1024 < MAX_FILE_SIZE_MB
+
+    if (!isSizeAllowed) {
+      console.error(`File must be smaller than ${MAX_FILE_SIZE_MB}MB!`)
+    }
+
+    return isSizeAllowed
   }
 
   return (
@@ -125,11 +144,14 @@ const Create: React.FC = () => {
           >
             <Input />
           </Form.Item>
+
           <Form.Item label="대표 이미지">
+            <div className={styles.thumbnailLoad}>
+              <img src={thumbnail} />
+              <div>미리보기</div>
+            </div>
             <Upload
-              beforeUpload={f => {
-                f
-              }}
+              beforeUpload={beforeUpload}
               action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
               listType="picture"
               fileList={fileList}
@@ -139,7 +161,7 @@ const Create: React.FC = () => {
               }}
             >
               {fileList.length < 1 && (
-                <Button icon={<UploadOutlined />}>Click to Image Upload</Button>
+                <Button icon={<UploadOutlined />}>썸네일 업로드</Button>
               )}
             </Upload>
           </Form.Item>

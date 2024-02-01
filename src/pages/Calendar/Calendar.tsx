@@ -28,9 +28,7 @@ const options = [
 ]
 
 const Calendar: React.FC = () => {
-  const [hasCookie, setHasCookie] = useState<boolean>(
-    document.cookie.includes('token'),
-  )
+  const [hasCookie] = useState<boolean>(document.cookie.includes('token'))
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
   const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>()
   const [eventList, setEventList] = useState<EventType[]>([])

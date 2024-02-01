@@ -58,6 +58,11 @@ tbody {
   z-index: 5;
 }
 
+.thumbnailLoad {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   #blog {
     margin: 90px 0 0 0;
