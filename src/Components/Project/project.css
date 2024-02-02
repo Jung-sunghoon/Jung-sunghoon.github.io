@@ -12,4 +12,7 @@
   .ant-drawer-header {
     margin: 10px;
   }
+  .slick-dots {
+    display: none !important;
+  }
 }

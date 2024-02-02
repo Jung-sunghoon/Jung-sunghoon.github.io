@@ -40,8 +40,15 @@ const Blogs: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const token = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('token='))
+          ?.split('=')[1]
         const response = await axios.get(
           `${import.meta.env.VITE_API_ENDPOINT}/api/blog/list`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
         )
 
         const data = response.data.blogPosts.reverse()

@@ -19,6 +19,10 @@ const Header: React.FC = () => {
     setOpen(!open)
   }
 
+  const handleLogoClick = () => {
+    setSelectedMenu(null)
+  }
+
   useEffect(() => {
     // selectedMenu가 변경될 때 sessionStorage에 저장하기
     if (selectedMenu !== null) {
@@ -37,7 +41,11 @@ const Header: React.FC = () => {
   return (
     <header id={styles.header}>
       <div className={styles.headerMenuNav}>
-        <div className={styles.headerLogo}>JSH's Portfolio</div>
+        <div className={styles.headerLogo}>
+          <Link to="/" className={styles.headerLink} onClick={handleLogoClick}>
+            JSH's Portfolio
+          </Link>
+        </div>
         {open ? (
           <CloseOutlined
             className={`${styles.headerMobileMenu} ${styles.closeIcon}`}

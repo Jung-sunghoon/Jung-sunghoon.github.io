@@ -913,3 +913,7 @@
   list-style: decimal;
   list-style-position: inside;
 }
+
+.note-editable img {
+  width: 100% !important;
+}

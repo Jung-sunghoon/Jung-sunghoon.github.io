@@ -48,7 +48,14 @@
   border-color: red;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1360px) {
+  #calendar {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 944px) {
   #calendar {
     margin: 80px 20px;
   }
