@@ -37,8 +37,15 @@ const Create: React.FC = () => {
   // 블로그 디테일 정보 데이터를 가져오는 함수
   const fetchBlogData = async () => {
     try {
+      const token = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('token='))
+        ?.split('=')[1]
       const response = await axios.get(
         `${import.meta.env.VITE_API_ENDPOINT}/api/blog-detail/${post_id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
       )
 
       // 정상으로 가져옴
@@ -72,12 +79,17 @@ const Create: React.FC = () => {
     }
     console.log(requestData, 'requestData')
 
+    const token = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('token='))
+      ?.split('=')[1]
     const response = await axios.post(
       `${import.meta.env.VITE_API_ENDPOINT}/api/blog-admin/create`,
       requestData,
       {
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
       },
     )
@@ -165,7 +177,11 @@ const Create: React.FC = () => {
               )}
             </Upload>
           </Form.Item>
-          <Form.Item name="content" label="내용">
+          <Form.Item
+            name="content"
+            label="내용"
+            rules={[{ required: true, message: '제목을 입력해주세요' }]}
+          >
             {type === 'create' ? (
               <TextEditor
                 isNew={true}

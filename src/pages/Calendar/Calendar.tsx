@@ -40,6 +40,12 @@ const Calendar: React.FC = () => {
     console.log(value.format('YYYY-MM-DD'), mode)
   }
 
+  // useEffect(() => {
+  //   if (open) {
+  //     console.log(selectedEvent)
+  //   }
+  // }, [open])
+
   const onSelectDate = (value: Dayjs) => {
     // 선택된 날짜 업데이트
     setSelectedDate(value)
@@ -124,6 +130,10 @@ const Calendar: React.FC = () => {
   const handleActionEvent = async () => {
     if (selectedEvent) {
       try {
+        const token = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('token='))
+          ?.split('=')[1]
         const response = await axios.put(
           `${
             import.meta.env.VITE_API_ENDPOINT
@@ -134,6 +144,9 @@ const Calendar: React.FC = () => {
             event_title: form.getFieldValue('event_title') || '', // 기본값으로 빈 문자열 설정
             event_type: form.getFieldValue('event_type') || '', // 기본값으로 빈 문자열 설정
             event_text: form.getFieldValue('event_text') || '', // 기본값으로 빈 문자열 설정
+          },
+          {
+            headers: { Authorization: `Bearer ${token}` },
           },
         )
 
@@ -149,6 +162,10 @@ const Calendar: React.FC = () => {
     } else {
       try {
         // API 호출
+        const token = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('token='))
+          ?.split('=')[1]
         const response = await axios.post(
           `${import.meta.env.VITE_API_ENDPOINT}/api/calendar-admin/create`,
           {
@@ -156,6 +173,9 @@ const Calendar: React.FC = () => {
             event_title: form.getFieldValue('event_title') || '',
             event_type: form.getFieldValue('event_type') || '',
             event_text: form.getFieldValue('event_text') || '',
+          },
+          {
+            headers: { Authorization: `Bearer ${token}` },
           },
         )
 
@@ -176,10 +196,17 @@ const Calendar: React.FC = () => {
     const confirmDelete = window.confirm('일정을 삭제하시겠습니까?')
     if (confirmDelete) {
       try {
+        const token = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('token='))
+          ?.split('=')[1]
         await axios.delete(
           `${
             import.meta.env.VITE_API_ENDPOINT
           }/api/calendar-admin/delete/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
         )
 
         // 삭제된 이벤트를 상태에서 제거
@@ -231,14 +258,23 @@ const Calendar: React.FC = () => {
       if (hasCookie) {
         return (
           <div>
-            <Button type="primary" onClick={() => setOpen(true)}>
+            <Button
+              type="primary"
+              onClick={() => {
+                setOpen(true)
+                setSelectedEvent(undefined)
+                form.resetFields()
+              }}
+            >
               일정 추가하기
             </Button>
             <Modal
               centered
               open={open}
               onOk={handleActionEvent}
-              onCancel={() => setOpen(false)}
+              onCancel={() => {
+                setOpen(false)
+              }}
               width={800}
             >
               <Form form={form} layout="vertical">
@@ -248,24 +284,14 @@ const Calendar: React.FC = () => {
                 <Form.Item
                   label="제목"
                   name="event_title"
-                  rules={[
-                    {
-                      required: true,
-                      message: '제목을 입력하세요',
-                    },
-                  ]}
+                  rules={[{ required: true, message: '제목을 입력해주세요' }]}
                 >
                   <Input />
                 </Form.Item>
                 <Form.Item
-                  label="상태"
+                  label="중요도"
                   name="event_type"
-                  rules={[
-                    {
-                      required: true,
-                      message: '상태를 선택하세요',
-                    },
-                  ]}
+                  rules={[{ required: true, message: '중요도를 입력해주세요' }]}
                 >
                   <Select
                     defaultValue="중요도 선택하기"
