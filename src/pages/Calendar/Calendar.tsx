@@ -40,12 +40,6 @@ const Calendar: React.FC = () => {
     console.log(value.format('YYYY-MM-DD'), mode)
   }
 
-  // useEffect(() => {
-  //   if (open) {
-  //     console.log(selectedEvent)
-  //   }
-  // }, [open])
-
   const onSelectDate = (value: Dayjs) => {
     // 선택된 날짜 업데이트
     setSelectedDate(value)
@@ -68,10 +62,11 @@ const Calendar: React.FC = () => {
   const dateCellRender = (value: Dayjs) => {
     // 날짜에 대한 이벤트를 가져와서 이벤트가 있으면 표시
     const eventsForDate = getEventsForSelectedDate(value)
+    const maxEventsToShow = 2
     if (eventsForDate.length > 0) {
       return (
         <div>
-          {eventsForDate.map((event, index) => (
+          {eventsForDate.slice(0, maxEventsToShow).map((event, index) => (
             <div key={index}>
               <span
                 style={{
@@ -84,6 +79,11 @@ const Calendar: React.FC = () => {
               {event.event_title}
             </div>
           ))}
+          {eventsForDate.length > maxEventsToShow && (
+            <div style={{ marginTop: '4px' }}>
+              + {eventsForDate.length - maxEventsToShow}
+            </div>
+          )}
         </div>
       )
 

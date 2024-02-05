@@ -27,10 +27,17 @@ const BlogDetails: React.FC<BlogDetails> = () => {
     const confirmDelete = window.confirm('게시물을 삭제하시겠습니까?')
     if (confirmDelete) {
       try {
+        const token = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('token='))
+          ?.split('=')[1]
         await axios.delete(
           `${
             import.meta.env.VITE_API_ENDPOINT
           }/api/blog-admin/delete/${post_id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
         )
         messageApi.success('게시물 삭제 성공')
         navigate('/blogs')

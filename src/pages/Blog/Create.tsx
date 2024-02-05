@@ -125,18 +125,6 @@ const Create: React.FC = () => {
     }
   }
 
-  const MAX_FILE_SIZE_MB = 1000 // 원하는 최대 파일 크기 (메가바이트 단위)
-
-  const beforeUpload = (file: any) => {
-    const isSizeAllowed = file.size / 1024 / 1024 < MAX_FILE_SIZE_MB
-
-    if (!isSizeAllowed) {
-      console.error(`File must be smaller than ${MAX_FILE_SIZE_MB}MB!`)
-    }
-
-    return isSizeAllowed
-  }
-
   return (
     <div id={styles.blogCreate}>
       {contextHolder}
@@ -163,7 +151,9 @@ const Create: React.FC = () => {
               <div>미리보기</div>
             </div>
             <Upload
-              beforeUpload={beforeUpload}
+              beforeUpload={f => {
+                f
+              }}
               action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
               listType="picture"
               fileList={fileList}

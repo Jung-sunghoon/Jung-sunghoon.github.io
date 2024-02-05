@@ -1,6 +1,3 @@
-:where(
-    .css-dev-only-do-not-override-1vv31h2
-  ).ant-picker-calendar.ant-picker-calendar-full
-  .ant-picker-calendar-date-content {
+.ant-picker-calendar-date-content {
   overflow: hidden !important;
 }
