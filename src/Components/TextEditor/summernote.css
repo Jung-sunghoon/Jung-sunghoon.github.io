@@ -914,6 +914,11 @@
   list-style-position: inside;
 }
 
+.note-editable ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
 .note-editable img {
   width: 100% !important;
 }

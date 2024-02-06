@@ -125,6 +125,11 @@ button {
   justify-content: end;
 }
 
+.blogDetailsCommmentsArticle {
+  display: block;
+  color: black;
+}
+
 .blogDetailsBlogEditBtn {
   color: green;
   margin-right: 10px;
@@ -140,13 +145,13 @@ button {
   align-items: center;
 }
 
-.blogDetailsCommentBtnWrapper {
+.blogDetailsBtnWrapper {
   display: flex;
   justify-content: end;
   margin: 16px 0 24px;
 }
 
-.blogDetailsCommentBtn {
+.blogDetailsBtn {
   padding: 12px 24px;
   height: 40px;
   background: #333;
@@ -158,7 +163,7 @@ button {
 
 .blogDetailsDescription img {
   width: 100% !important;
-  height: auto;
+  height: auto !important;
   overflow: hidden;
   white-space: pre-wrap;
 }

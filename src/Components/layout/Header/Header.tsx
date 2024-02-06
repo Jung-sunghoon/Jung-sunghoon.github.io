@@ -1,34 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './header.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons'
 
 const Header: React.FC = () => {
-  const storedSelectedMenu = sessionStorage.getItem('selectedMenu')
-  const [selectedMenu, setSelectedMenu] = useState<number | null>(
-    storedSelectedMenu ? parseInt(storedSelectedMenu, 10) : null,
-  )
   const [open, setOpen] = useState(false)
+  const location = useLocation()
 
-  const handleMenuClick = (menuId: number) => {
-    setSelectedMenu(menuId)
+  const handleMenuClick = () => {
     setOpen(false)
   }
 
   const handleMobileMenuToggle = () => {
     setOpen(!open)
   }
-
-  const handleLogoClick = () => {
-    setSelectedMenu(null)
-  }
-
-  useEffect(() => {
-    // selectedMenu가 변경될 때 sessionStorage에 저장하기
-    if (selectedMenu !== null) {
-      sessionStorage.setItem('selectedMenu', selectedMenu.toString())
-    }
-  }, [selectedMenu])
 
   // 메뉴 항목들을 배열로 정의
   const menuItems = [
@@ -42,7 +27,7 @@ const Header: React.FC = () => {
     <header id={styles.header}>
       <div className={styles.headerMenuNav}>
         <div className={styles.headerLogo}>
-          <Link to="/" className={styles.headerLink} onClick={handleLogoClick}>
+          <Link to="/" className={styles.headerLink}>
             JSH's Portfolio
           </Link>
         </div>
@@ -65,9 +50,9 @@ const Header: React.FC = () => {
               <Link
                 to={menuItem.path}
                 className={`${styles.headerLink} ${
-                  selectedMenu === menuItem.id ? styles.selected : ''
+                  location.pathname === menuItem.path ? styles.selected : ''
                 }`}
-                onClick={() => handleMenuClick(menuItem.id)}
+                onClick={handleMenuClick}
               >
                 {menuItem.label}
               </Link>

@@ -8,12 +8,14 @@ import Comming from './pages/Comming/Comming'
 import Calendar from './pages/Calendar/Calendar'
 import Create from './pages/Blog/Create'
 import BlogDetails from './pages/Blog/BlogDetails'
+import Admin from './pages/Admin/Admin'
 
 function App() {
   return (
     <>
       <Layout>
         <Routes>
+          <Route path="/admin/*" element={<Admin />} />
           <Route path="/blogs/*" element={<Blogs />} />
           <Route path="/blogdetails/:post_id" element={<BlogDetails />} />
           <Route path="/create/*" element={<Create />} />

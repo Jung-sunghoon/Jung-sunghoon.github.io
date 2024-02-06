@@ -7,6 +7,7 @@ import styles from './blogDetails.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import { formatDate } from '@src/utils/common'
+import Comment from '@src/Components/DisqusComment/Comment'
 
 export interface BlogDetails {}
 
@@ -18,6 +19,12 @@ const BlogDetails: React.FC<BlogDetails> = () => {
   const [hasCookie, setHasCookie] = useState<boolean>(false)
   const [messageApi, contextHolder] = message.useMessage()
   const navigate = useNavigate()
+
+  const pageInfo = {
+    url: window.location.href,
+    title: blogDetails?.title || '',
+    identifier: blogDetails?.post_id?.toString() || '',
+  }
 
   const handleEditBlog = async () => {
     navigate(`/edit/${post_id}`)
@@ -121,10 +128,13 @@ const BlogDetails: React.FC<BlogDetails> = () => {
               }}
             />
           </div>
-          <div className={styles.blogDetailsCommentBtnWrapper}>
+          <article className={styles.blogDetailsCommmentsArticle}>
+            <Comment shortname="jshs-portfolio" {...pageInfo} />
+          </article>
+          <div className={styles.blogDetailsBtnWrapper}>
             <Link to="/blogs">
               <button
-                className={styles.blogDetailsCommentBtn}
+                className={styles.blogDetailsBtn}
                 style={{
                   marginRight: '5px',
                 }}

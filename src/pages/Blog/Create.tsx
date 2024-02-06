@@ -167,11 +167,7 @@ const Create: React.FC = () => {
               )}
             </Upload>
           </Form.Item>
-          <Form.Item
-            name="content"
-            label="내용"
-            rules={[{ required: true, message: '제목을 입력해주세요' }]}
-          >
+          <Form.Item name="content" label="내용">
             {type === 'create' ? (
               <TextEditor
                 isNew={true}
