@@ -1,9 +1,7 @@
-import img from '@src/assets/img'
+import React from 'react'
 import styles from './comming.module.css'
 
-const comImg = img.comImg
-
-const Comming = () => {
+const Comming: React.FC = () => {
   return (
     <div id={styles.comming}>
       <div className={styles.commingWrapper}>
