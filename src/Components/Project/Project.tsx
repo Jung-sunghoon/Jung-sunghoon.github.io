@@ -14,7 +14,7 @@ export interface ProjectsProp {
   imgs?: any[]
   description: string
   skill: string
-  url?: string
+  url: string
   github: string
   frontend: string
   backend: string
@@ -110,7 +110,10 @@ export const Project: React.FC<
             </div>
             <div className={styles.projectInfo}>
               <div className={styles.infoTitle}>URL</div>
-              <div className={styles.infoText}>{url}</div>
+              <div
+                className={styles.infoText}
+                dangerouslySetInnerHTML={{ __html: url }}
+              ></div>
             </div>
             <div className={styles.projectInfo}>
               <div className={styles.infoTitle}>Github</div>

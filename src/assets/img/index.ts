@@ -22,6 +22,7 @@ import dProjectComment from '@src/assets/img/projectImg/deopleImg/projectcomment
 import dProjectCreation from '@src/assets/img/projectImg/deopleImg/projectcreation.png'
 import dProjectDetail from '@src/assets/img/projectImg/deopleImg/projectdetail.png'
 import dRanking from '@src/assets/img/projectImg/deopleImg/ranking.png'
+import comImg from '@src/assets/img/commingImg.jpg'
 
 export default {
   cssimg,
@@ -48,4 +49,5 @@ export default {
   dProjectDetail,
   dProjectList,
   dRanking,
+  comImg,
 }

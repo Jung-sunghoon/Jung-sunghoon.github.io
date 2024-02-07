@@ -59,6 +59,10 @@
   border-bottom: 1px solid #cacaca;
 }
 
+.skillsContainer {
+  margin-top: 10px;
+}
+
 .skillsImgWrraper {
   max-width: 100%;
   max-height: 100%;
@@ -124,20 +128,25 @@
 }
 
 /* 모바일 화면을 위한 미디어 쿼리 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .aboutMe,
   .skills,
   .archive {
     justify-content: center;
     display: flex;
   }
+
   .archiveDataList {
     grid-template-columns: repeat(1, auto);
+  }
+
+  .skillsImg {
+    margin: 10px 0;
   }
 }
 
 /* 데스크탑 화면을 위한 미디어 쿼리 */
-@media (min-width: 769px) and (max-width: 1551px) {
+@media (min-width: 900px) and (max-width: 1551px) {
   .skillsContainer,
   .archiveDataList,
   .infoContainer {
@@ -156,7 +165,7 @@
 
   .skillsContents,
   .archiveContainer {
-    max-width: 300px;
+    width: 250px;
   }
 }
 

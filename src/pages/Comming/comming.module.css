@@ -1,0 +1,32 @@
+#comming {
+  width: 100%;
+}
+
+.commingWrapper {
+  position: relative;
+}
+
+.commingWrapper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(/src/assets/img/commingImg.jpg) 50% no-repeat;
+  background-size: cover;
+  z-index: -1;
+  height: 100vh;
+}
+
+.commingContents {
+  width: 100%;
+}
+
+.commingTitle {
+  font-family: Black Han Sans, sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  color: #fff;
+  word-break: keep-all;
+}
