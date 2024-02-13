@@ -371,7 +371,7 @@ const Calendar: React.FC = () => {
           </div>
         </div>
         <div className={styles.calendarUpcomingEventContainer}>
-          <div>미래이벤트</div>
+          <div>이달의 일정관리</div>
           <div className={styles.calendarSelectedDateEventsListContainer}>
             <ul>
               {ComingEvents.map((event, event_date) => (

@@ -23,6 +23,10 @@ import dProjectCreation from '@src/assets/img/projectImg/deopleImg/projectcreati
 import dProjectDetail from '@src/assets/img/projectImg/deopleImg/projectdetail.png'
 import dRanking from '@src/assets/img/projectImg/deopleImg/ranking.png'
 import comImg from '@src/assets/img/commingImg.jpg'
+import pInfo1 from '@src/assets/img/projectImg/portfolioImg/info1.png'
+import pInfo2 from '@src/assets/img/projectImg/portfolioImg/info2.png'
+import pBlog from '@src/assets/img/projectImg/portfolioImg/blog.png'
+import pProject from '@src/assets/img/projectImg/portfolioImg/project.png'
 
 export default {
   cssimg,
@@ -50,4 +54,8 @@ export default {
   dProjectList,
   dRanking,
   comImg,
+  pInfo1,
+  pInfo2,
+  pBlog,
+  pProject,
 }
