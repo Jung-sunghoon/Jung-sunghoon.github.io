@@ -1,7 +1,6 @@
 .ant-drawer-wrapper-body {
   display: flex;
   justify-content: center;
-  overflow-y: hidden;
 }
 
 .ant-drawer-header {

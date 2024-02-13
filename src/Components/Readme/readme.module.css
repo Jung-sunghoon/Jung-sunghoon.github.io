@@ -53,6 +53,8 @@ h6 {
 
 .readMeSummary li {
   font-size: 20px;
+  margin-left: 30px;
+  list-style: disc;
 }
 
 .readMeSummary p {

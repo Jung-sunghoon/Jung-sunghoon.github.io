@@ -22,6 +22,7 @@
   font-size: 2.5rem;
   color: #222;
   text-align: center;
+  word-break: keep-all;
 }
 
 .descriptionDate {
@@ -162,5 +163,6 @@
   .descriptionContents {
     display: flex;
     flex-flow: column;
+    word-break: break-all;
   }
 }

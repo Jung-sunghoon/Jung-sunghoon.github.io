@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Dayjs } from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 import {
   Calendar as AntdCalendar,
   Button,
@@ -28,13 +28,21 @@ const options = [
 ]
 
 const Calendar: React.FC = () => {
-  const [hasCookie] = useState<boolean>(document.cookie.includes('token'))
+  const [hasCookie, setHasCookie] = useState<boolean>(
+    document.cookie.includes('token'),
+  )
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
   const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>()
   const [eventList, setEventList] = useState<EventType[]>([])
   const [eventData, setEventData] = useState<EventType[]>([])
   const [open, setOpen] = useState(false)
+
   const [form] = Form.useForm()
+
+  const today: Dayjs = dayjs()
+  const ComingEvents = eventData.filter(event =>
+    dayjs(event.event_date).isAfter(today, 'day'),
+  )
 
   const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
     console.log(value.format('YYYY-MM-DD'), mode)
@@ -62,30 +70,8 @@ const Calendar: React.FC = () => {
   const dateCellRender = (value: Dayjs) => {
     // 날짜에 대한 이벤트를 가져와서 이벤트가 있으면 표시
     const eventsForDate = getEventsForSelectedDate(value)
-    const maxEventsToShow = 2
     if (eventsForDate.length > 0) {
-      return (
-        <div>
-          {eventsForDate.slice(0, maxEventsToShow).map((event, index) => (
-            <div key={index}>
-              <span
-                style={{
-                  fontSize: '20px',
-                  color: eventTypeColors[event.event_type],
-                }}
-              >
-                &#8226;
-              </span>
-              {event.event_title}
-            </div>
-          ))}
-          {eventsForDate.length > maxEventsToShow && (
-            <div style={{ marginTop: '4px' }}>
-              + {eventsForDate.length - maxEventsToShow}
-            </div>
-          )}
-        </div>
-      )
+      return <span className={styles.calendarEventDot}></span>
 
       return null
     }
@@ -99,7 +85,7 @@ const Calendar: React.FC = () => {
 
       const data = response.data.CalendarEvents
       setEventData(data)
-      // setHasCookie(document.cookie.includes('token'))
+      setHasCookie(document.cookie.includes('token'))
     } catch (error) {
       console.error('Error fetching data:', error)
     }
@@ -115,6 +101,7 @@ const Calendar: React.FC = () => {
 
   useEffect(() => {
     fetchData()
+    onSelectDate(today)
   }, [])
 
   useEffect(() => {
@@ -271,13 +258,13 @@ const Calendar: React.FC = () => {
             <Modal
               centered
               open={open}
-              onOk={handleActionEvent}
+              onOk={form.submit}
               onCancel={() => {
                 setOpen(false)
               }}
               width={800}
             >
-              <Form form={form} layout="vertical">
+              <Form form={form} layout="vertical" onFinish={handleActionEvent}>
                 <Form.Item label="날짜" name="event_date">
                   {selectedDate?.format('YYYY-MM-DD')}
                 </Form.Item>
@@ -349,18 +336,45 @@ const Calendar: React.FC = () => {
             onPanelChange={onPanelChange}
             onSelect={onSelectDate}
             cellRender={dateCellRender}
+            fullscreen={false}
           />
-        </div>
-        <div className={styles.contentsContainer}>
-          <div className={styles.contentsHeader}>
-            <p>{selectedDate?.format('YYYY-MM-DD')}</p>
-            {renderEventModalBtn()}
-          </div>
-          {eventList.length > 0 ? (
-            <>
+          <div className={styles.calendarEventsContainer}>
+            <div className={styles.calendarSelectedDate}>
+              {selectedDate?.format('MM-DD')}
+              {renderEventModalBtn()}
+            </div>
+            <div className={styles.calendarSelectedDateEventsListContainer}>
               <ul>
                 {eventList.map((event, index) => (
-                  <div key={index} className={styles.contentsEventsList}>
+                  <div key={index} className={styles.calendarDateEventsList}>
+                    <div className={styles.calendarDateEventsHeader}>
+                      <span
+                        style={{
+                          fontSize: '30px',
+                          color: eventTypeColors[event.event_type],
+                        }}
+                      >
+                        &#8226;
+                      </span>
+                      <p>{event.event_title}</p>
+                      {eventDelandEditBtn(event)}
+                    </div>
+                    <div className={styles.calendarDateEventsDescription}>
+                      {event.event_text}
+                    </div>
+                  </div>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className={styles.calendarUpcomingEventContainer}>
+          <div>미래이벤트</div>
+          <div className={styles.calendarSelectedDateEventsListContainer}>
+            <ul>
+              {ComingEvents.map((event, event_date) => (
+                <div key={event_date} className={styles.calendarDateEventsList}>
+                  <div className={styles.calendarDateEventsHeader}>
                     <span
                       style={{
                         fontSize: '30px',
@@ -369,17 +383,16 @@ const Calendar: React.FC = () => {
                     >
                       &#8226;
                     </span>
-                    {event.event_title}
-                    {eventDelandEditBtn(event)}
+                    <p>{event.event_title}</p>
+                    <p>{event.event_date}</p>
                   </div>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <div className={styles.contentsAddText}>
-              일정을 클릭하고 일정을 관리해보세요
-            </div>
-          )}
+                  <div className={styles.calendarDateEventsDescription}>
+                    {event.event_text}
+                  </div>
+                </div>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

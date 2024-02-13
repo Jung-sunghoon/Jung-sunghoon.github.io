@@ -5,8 +5,9 @@ import img from '@src/assets/img'
 export const ReadMeData = [
   {
     readTitle: '포트폴리오 웹사이트',
-    readDescription: `<div className={styles.readMeSummary}>
+    readDescription: `<div>
     <h2>❗ 요약</h2>
+    <br />
     <p>
       제 자신을 표현하기 위한 <b>포트폴리오 웹사이트</b>
       입니다. 현재 보고 계시는 웹사이트에 해당합니다.
@@ -98,8 +99,9 @@ export const ReadMeData = [
   {
     readTitle: 'Deople',
     readDescription: `
-        <div className={styles.readMeSummary}>
+        <div>
           <h2>❗ 요약</h2>
+          <br />
           <p>
             <b>한신대학교 학생들을 위한 프로젝트 공유 및 팀원 구인 웹사이트</b>
             입니다. 캡스톤 디자인 수업 당시 팀 선정 과정에 있어서 불편함을 느낀

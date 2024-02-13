@@ -1,3 +1,12 @@
 .ant-picker-calendar-date-content {
   overflow: hidden !important;
 }
+
+.ant-picker-content {
+  height: 400px !important;
+}
+
+.ant-picker-panel {
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06) !important;
+  border-radius: 0 !important;
+}
