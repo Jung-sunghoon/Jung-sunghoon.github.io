@@ -40,9 +40,11 @@ const Calendar: React.FC = () => {
   const [form] = Form.useForm()
 
   const today: Dayjs = dayjs()
-  const ComingEvents = eventData.filter(event =>
-    dayjs(event.event_date).isAfter(today, 'day'),
-  )
+  const ComingEvents: EventType[] = eventData
+    .filter((event: EventType) => dayjs(event.event_date).isAfter(today, 'day'))
+    .sort((a: EventType, b: EventType) =>
+      dayjs(a.event_date).isAfter(dayjs(b.event_date)) ? 1 : -1,
+    )
 
   const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
     console.log(value.format('YYYY-MM-DD'), mode)
