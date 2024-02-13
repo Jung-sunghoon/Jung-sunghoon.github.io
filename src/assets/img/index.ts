@@ -27,6 +27,7 @@ import pInfo1 from '@src/assets/img/projectImg/portfolioImg/info1.png'
 import pInfo2 from '@src/assets/img/projectImg/portfolioImg/info2.png'
 import pBlog from '@src/assets/img/projectImg/portfolioImg/blog.png'
 import pProject from '@src/assets/img/projectImg/portfolioImg/project.png'
+import pCalendar from '@src/assets/img/projectImg/portfolioImg/calendar.png'
 
 export default {
   cssimg,
@@ -58,4 +59,5 @@ export default {
   pInfo2,
   pBlog,
   pProject,
+  pCalendar,
 }
