@@ -1,30 +1,90 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<div>
+    <h2>❗ 요약</h2>
+    <br />
+    <p>
+      제 자신을 표현하기 위한 <b>포트폴리오 웹사이트</b>
+      입니다.
+    </p>
+    <br />
+    <p>
+      이 프로젝트는 단순한 인적 사항이나 기술 스택만을 나열하는 것
+      이상으로 프론트엔드 기술의 역량을 향상시키고 동시에 백엔드
+      기술에도 도전하고자 개발하게 되었습니다.
+    </p>
+    <br />
+    <p>
+      프로젝트의 목표는 개발자의 실력 뿐만 아니라 저를 나타내기 위한
+      웹사이트를 만들어내는 것입니다. 이를 통해 프론트엔드 기술에
+      대한 이해와 백엔드 기술에 대한 경험을 쌓고자 합니다.
+    </p>
+    <br />
+    <p>
+      뿐만 아니라 웹사이트를 구성하면서 디자인과 기술의 조화로움을
+      찾는 과정을 통해 디자인적 감각의 향상을 도모하여 다양한
+      분야에서의 성장을 추구하고자 합니다.
+    </p>
+    <br />
+    <h3>※ 주요 기능</h3>
+    <ul>
+      <li>간단한 자기 소개</li>
+      <li>인적 사항</li>
+      <li>기술 스택</li>
+      <li>기술 블로그</li>
+      <li>프로젝트 경험</li>
+      <li>일정관리 앱</li>
+    </ul>
+    <br />
+    <h2>💡 프로젝트를 진행하면서 느낀 점</h2>
+    <p>
+      프론트엔드 기술에 대한 능력치가 예전보다 올라왔다고는 하지만
+      여태까지 결과물을 보여주기 위한 코딩을 위주로 하다 보니
+      기본기가 확실히 부족함을 느꼈고, 기본적인 함수형 컴포넌트를
+      만드는 것 부터 하나하나 다시 해보는 시간이었습니다.
+    </p>
+    <br />
+    <p>
+      기존에 하지 못했던 반복되는 요소들을 컴포넌트로 관리하는
+      방법과 module css 적용 등 새로운 것들을 배우고 기존에 하던
+      대로 작성하던 코드들을 가다듬어 코드 흐름을 정리할 수
+      있었습니다. 그 결과 React에 좀 더 친숙해진 것 같습니다. Module
+      css를 적용하면서 클래스 네이밍에 대해 다시 생각해보는 계기가
+      되었고 코드 가독성을 높일 수 있었습니다.
+    </p>
+    <br />
+    <p>
+      실제 라이브 서비스를 위해서는 프론트엔드 뿐만 아니라 백엔드도
+      제가 구현해야 했습니다. 제게 익숙한 자바스크립트를 사용하는,
+      그리고 개발이 빠른 Node.js를 통해 서버 측 API 구현을 할 수
+      있게 되었으며 블로그 기능을 이용하기 위해 사용자 인증 정보를
+      활용해야 했고 구글 oAuth를 통해 이를 가능하게 할 수 있게
+      되었습니다.
+    </p>
+    <br />
+    <p>
+      처음으로 풀스택으로 도전해본 프로젝트입니다. 아직
+      프론트엔드에서도 미숙한 부분도 많은 상태에서 도전했던터라
+      백엔드에 대한 두려움도 컸고 잘 해낼 수 있을까 하는 마음이
+      있었습니다. 그러나 계속해서 찾아보고 학습하고 제 손으로
+      하나하나 완성하는 모습을 보니 굉장히 뿌듯했고 프론트엔드
+      개발자로서의 능력치가 올라가는 굉장히 도움이 많이 되었던
+      프로젝트입니다.
+    </p>
+    <br />
+    <h2>💻 기술 스택</h2>
+    <ul>
+      <li>Frontend: React, Typescript</li>
+      <li>Backend: Node.js</li>
+      <li>Database: MariaDB</li>
+      <li>Deployment: Docker</li>
+    </ul>
+    <h2>⚙️ 환경 세팅</h2>
+    <pre>
+      <code>
+        <p># 패키지 설치</p>
+        <p>yarn add</p>
+        <br />
+        <p># 프론트 서버 구동</p>
+        <p>yarn dev</p>
+      </code>
+    </pre>
+  </div>
