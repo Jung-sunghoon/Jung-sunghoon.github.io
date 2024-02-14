@@ -22,9 +22,15 @@
   height: 50%;
 }
 
-.calendarUpcomingEventContainer {
+.calendarUpcomingEventsContainer {
   width: 60%;
   margin-left: 10px;
+  padding: 20px;
+}
+
+.calendarUpcomingEventsTitle {
+  padding-bottom: 13px;
+  border-bottom: 1px solid black;
 }
 
 .calendarDateEventsList {
@@ -32,6 +38,20 @@
   margin-top: 10px;
   flex-wrap: wrap;
   flex-direction: column;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.calendarDateEventsList:first-child:only-child {
+  border-bottom: none;
+}
+
+.calendarUpcomingDateEventsList {
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
 }
 
 .calendarDateEventsHeader {
@@ -39,11 +59,27 @@
   align-items: center;
 }
 
-.calendarDateEventsDescription {
+.calendarUpcomingDateEventsHeader {
+  display: flex;
+  align-items: center;
+}
+
+.calendarDateEventDescription {
   margin-left: 25px;
   margin-top: 5px;
   color: rgb(120, 120, 120);
   word-break: break-all;
+}
+
+.calendarUpcomingDateEventDescription {
+  margin-top: 5px;
+  color: rgb(120, 120, 120);
+  word-break: break-all;
+}
+
+.calendarUpcomingDateEventDescriptionWrapper {
+  display: flex;
+  align-items: center;
 }
 
 .calendarEditBtn {
@@ -102,6 +138,7 @@
   .calendarWrapper {
     display: flex;
     flex-flow: column;
+    height: auto;
   }
 
   .calendarContainer,
@@ -116,5 +153,13 @@
 
   .contentsAddText {
     margin-top: 10px;
+  }
+
+  .calendarEventsContainer {
+    margin-top: 10px;
+  }
+
+  .calendarUpcomingEventsContainer {
+    display: none;
   }
 }

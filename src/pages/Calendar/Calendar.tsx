@@ -41,7 +41,11 @@ const Calendar: React.FC = () => {
 
   const today: Dayjs = dayjs()
   const ComingEvents: EventType[] = eventData
-    .filter((event: EventType) => dayjs(event.event_date).isAfter(today, 'day'))
+    .filter(
+      (event: EventType) =>
+        dayjs(event.event_date).isSame(today, 'month') &&
+        dayjs(event.event_date).isAfter(today, 'day'),
+    )
     .sort((a: EventType, b: EventType) =>
       dayjs(a.event_date).isAfter(dayjs(b.event_date)) ? 1 : -1,
     )
@@ -361,7 +365,7 @@ const Calendar: React.FC = () => {
                       <p>{event.event_title}</p>
                       {eventDelandEditBtn(event)}
                     </div>
-                    <div className={styles.calendarDateEventsDescription}>
+                    <div className={styles.calendarDateEventDescription}>
                       {event.event_text}
                     </div>
                   </div>
@@ -370,13 +374,23 @@ const Calendar: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className={styles.calendarUpcomingEventContainer}>
-          <div>이달의 일정관리</div>
+        <div className={styles.calendarUpcomingEventsContainer}>
+          <div className={styles.calendarUpcomingEventsTitle}>이달의 일정</div>
           <div className={styles.calendarSelectedDateEventsListContainer}>
             <ul>
               {ComingEvents.map((event, event_date) => (
-                <div key={event_date} className={styles.calendarDateEventsList}>
-                  <div className={styles.calendarDateEventsHeader}>
+                <div
+                  key={event_date}
+                  className={styles.calendarUpcomingDateEventsList}
+                >
+                  <div className={styles.calendarUpcomingDateEventsHeader}>
+                    <p>{event.event_date}</p>
+                  </div>
+                  <div
+                    className={
+                      styles.calendarUpcomingDateEventDescriptionWrapper
+                    }
+                  >
                     <span
                       style={{
                         fontSize: '30px',
@@ -385,11 +399,18 @@ const Calendar: React.FC = () => {
                     >
                       &#8226;
                     </span>
-                    <p>{event.event_title}</p>
-                    <p>{event.event_date}</p>
-                  </div>
-                  <div className={styles.calendarDateEventsDescription}>
-                    {event.event_text}
+                    <div
+                      className={
+                        styles.calendarUpcomingDateEventDescriptionContainer
+                      }
+                    >
+                      <p>{event.event_title}</p>
+                      <p
+                        className={styles.calendarUpcomingDateEventDescription}
+                      >
+                        {event.event_text}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}

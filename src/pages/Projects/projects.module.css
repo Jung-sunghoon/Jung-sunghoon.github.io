@@ -86,7 +86,8 @@
 }
 
 .projectDescription {
-  border: 1px solid red;
+  border: 1px solid black;
+  border-radius: 8px;
   padding: 20px;
   width: 1000px;
 }

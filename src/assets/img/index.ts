@@ -28,6 +28,9 @@ import pInfo2 from '@src/assets/img/projectImg/portfolioImg/info2.png'
 import pBlog from '@src/assets/img/projectImg/portfolioImg/blog.png'
 import pProject from '@src/assets/img/projectImg/portfolioImg/project.png'
 import pCalendar from '@src/assets/img/projectImg/portfolioImg/calendar.png'
+import pAdmin from '@src/assets/img/projectImg/portfolioImg/Admin.png'
+import pBlogCreate from '@src/assets/img/projectImg/portfolioImg/blogCreate.png'
+import pCalendarEvent from '@src/assets/img/projectImg/portfolioImg/calendarEvent.png'
 
 export default {
   cssimg,
@@ -60,4 +63,7 @@ export default {
   pBlog,
   pProject,
   pCalendar,
+  pAdmin,
+  pBlogCreate,
+  pCalendarEvent,
 }

@@ -215,6 +215,9 @@ export const ProjectsData = [
       img['pBlog'],
       img['pProject'],
       img['pCalendar'],
+      img['pAdmin'],
+      img['pBlogCreate'],
+      img['pCalendarEvent'],
     ],
     description: `<p>제 자신을 설명하기 위해 개발한 <b>포트폴리오 웹사이트입니다</b>. Deople 프로젝트에서는 프론트엔드만 맡았다면, Node.js를 학습하여 서버 측 api도 구현할 수 있게 되었다는 점에서 의미가 큽니다.</p>
     <br>
