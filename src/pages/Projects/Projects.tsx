@@ -84,16 +84,6 @@ export const ReadMeData = [
       <li>Database: MariaDB</li>
       <li>Deployment: Docker</li>
     </ul>
-    <h2>⚙️ 환경 세팅</h2>
-    <pre>
-      <code>
-        <p># 패키지 설치</p>
-        <p>yarn add</p>
-        <br />
-        <p># 프론트 서버 구동</p>
-        <p>yarn dev</p>
-      </code>
-    </pre>
   </div>`,
   },
   {
@@ -190,16 +180,6 @@ export const ReadMeData = [
             <li>Backend: Java SpringBoot</li>
             <li>Database: MySQL</li>
           </ul>
-          <h2>⚙️ 환경 세팅</h2>
-          <pre>
-            <code>
-              <p># 패키지 설치</p>
-              <p>yarn add</p>
-              <br />
-              <p># 프론트 서버 구동</p>
-              <p>yarn dev</p>
-            </code>
-          </pre>
         </div>
     `,
   },
@@ -221,9 +201,12 @@ export const ProjectsData = [
     ],
     description: `<p>제 자신을 설명하기 위해 개발한 <b>포트폴리오 웹사이트입니다</b>. Deople 프로젝트에서는 프론트엔드만 맡았다면, Node.js를 학습하여 서버 측 api도 구현할 수 있게 되었다는 점에서 의미가 큽니다.</p>
     <br>
-    <p>서버 측에서의 Rest 통신 방법에 대해서도 알게 되었고, 반응형 웹 디자인에 대해 더 배웠으며 상태 관리 라이브러리인 Redux를 처음 경험해본 프로젝트였습니다.</p>
+    <p>반응형 웹 디자인에 대해 더 알게 되었으며 module.css를 활용한 css 관리도 경험할 수 있었습니다.</p>
     <br />
-    <p>기술 블로그 작성을 위한 <b>기본적인 CRUD</b> 뿐만 아니라 코드의 최적화를 위해 <b>컴포넌트로 관리하는 방법</b>까지 배우면서 기술적인 면이 많이 업그레이드 된 좋은 경험이었습니다.</p>`,
+    <p>기술 블로그 작성을 위한 <b>기본적인 CRUD</b> 뿐만 아니라 코드의 최적화를 위해 <b>컴포넌트로 관리하는 방법</b>까지 배우면서 기술적인 면이 많이 업그레이드 된 좋은 경험이었습니다.</p>
+    <br /><p>(Google OAuth 인증도 구현하였으나 현재 Admin 기능인 블로그 게시물 및 일정 생성, 수정, 삭제 기능은 제 구글 아이디만 가능합니다.)<p/>
+    <br />
+    Google login 컴포넌트는 <a href="https://jung-sunghoon.github.io/admin" target="_blank">https://jung-sunghoon.github.io/admin</a> 이곳으로 가시면 볼 수 있습니다.`,
     skill:
       '간단한 자기 소개, 인적 사항, 기술 스택, 기술 블로그, 프로젝트 경험, 일정관리 앱',
     url: '<a href = "https://jung-sunghoon.github.io" target="_blank">https://jung-sunghoon.github.io</a>',

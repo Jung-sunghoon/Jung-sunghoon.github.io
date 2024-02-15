@@ -8,7 +8,7 @@
 }
 
 .descriptionText p {
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 .projectDescription {
@@ -16,19 +16,19 @@
 }
 
 .descriptionTitle {
-  padding-bottom: 0.5rem;
+  padding-bottom: 10px;
   font-family: Black Han Sans, sans-serif;
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 36px;
   color: #222;
   text-align: center;
   word-break: keep-all;
 }
 
 .descriptionDate {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   color: #6c757d;
   text-align: center;
   opacity: 0.8;
@@ -38,29 +38,29 @@
   overflow: hidden;
   position: relative;
   width: 50%;
-  margin-right: 3rem;
+  margin-right: 30px;
 }
 
 .descriptionTextSection {
-  width: calc(50% - 3rem);
+  width: calc(50% - 30px);
 }
 
 .descriptionText {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
+  word-break: keep-all;
 }
 
 .descriptionModal {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .descriptionContents {
   display: flex;
-  display: -ms-flexbox;
   flex-flow: row wrap;
   justify-content: center;
   -webkit-box-pack: center;
@@ -99,17 +99,17 @@
 .infoTitle {
   display: inline-block;
   vertical-align: top;
-  width: 8.4rem;
+  width: 200px;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .infoText {
   display: inline-block;
   vertical-align: bottom;
-  width: calc(100% - 8.4rem);
+  width: calc(100% - 200px);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .readMeTitle {

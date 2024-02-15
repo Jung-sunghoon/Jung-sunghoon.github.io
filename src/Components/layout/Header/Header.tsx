@@ -22,12 +22,18 @@ const Header: React.FC = () => {
     { id: 3, path: '/projects', label: 'Projects' },
     { id: 4, path: '/calendar', label: 'Calendar' },
   ]
+  console.log(location.pathname, 'location.pathname')
 
   return (
-    <header id={styles.header}>
+    <header
+      id={styles.header}
+      className={`${
+        location.pathname === '/' ? styles.mainHeader : styles.styleHeader
+      }`}
+    >
       <div className={styles.headerMenuNav}>
         <div className={styles.headerLogo}>
-          <Link to="/" className={styles.headerLink}>
+          <Link to="/" className={`${styles.headerLink}`}>
             JSH's Portfolio
           </Link>
         </div>

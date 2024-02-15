@@ -88,10 +88,10 @@ export const Project: React.FC<
             ></div>
             <div className={styles.descriptionModal}>
               <Button type="primary" onClick={() => setOpen(true)}>
-                README 보기
+                프로젝트 후기
               </Button>
               <Drawer
-                title={<div className={styles.readMeTitle}>README.md</div>}
+                title={<div className={styles.readMeTitle}>프로젝트 후기</div>}
                 placement="top"
                 width="100%"
                 height="100%"

@@ -6,15 +6,17 @@ const Comming: React.FC = () => {
     <div id={styles.comming}>
       <div className={styles.commingWrapper}>
         <div className={styles.commingContents}>
-          <div className={styles.commingTitle}>
+          <div className={styles.commingTitleWrap}>
             정성훈
             <br />
             프론트엔드 개발자 포트폴리오
           </div>
-          <div className={styles.commingDescription}></div>
+          <div className={styles.commingDescription}>
+            안녕하세요.
+            <br />
+          </div>
         </div>
       </div>
-      <div></div>
     </div>
   )
 }

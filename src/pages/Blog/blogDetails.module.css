@@ -22,11 +22,6 @@ section {
   padding: 0;
   display: block;
   list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
 }
 
 li {
@@ -57,7 +52,7 @@ button {
   text-align: center;
   align-items: flex-start;
   box-sizing: border-box;
-  margin: 0em;
+  margin: 0;
 }
 
 .blogDeatilsWrapper {
@@ -74,7 +69,7 @@ button {
 .blogDetailsHeader {
   margin-top: 30px;
   position: relative;
-  margin-bottom: 0.5em;
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
@@ -84,7 +79,7 @@ button {
   float: right;
 }
 .blogDetailsGenerateDate {
-  padding: 0 0.5em;
+  padding: 0 10px;
   border-right: 1px #ccc solid;
   font-weight: 700;
 }
@@ -98,19 +93,16 @@ button {
 }
 
 .blogDetailsTitle {
-  font-size: 3rem;
+  font-size: 36px;
   line-height: 1.5;
-  letter-spacing: -0.004em;
   margin-top: 0px;
   font-weight: 600;
-  color: var(--text1);
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
   word-break: keep-all;
-  transition: color 0.125s ease-in 0s;
 }
 
 .blogDetailsDescription {
-  font-size: 1em;
+  font-size: 16px;
   margin: 25px 0;
 }
 
@@ -172,33 +164,33 @@ button {
   .blogDetailsDescription img {
     width: 100%;
     height: auto;
-    overflow: hidden;
-    white-space: pre-wrap;
   }
 
   pre {
     width: 100%;
     overflow: hidden;
-    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   #blogDetails {
     width: 100%;
-    overflow: hidden;
-    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   .blogDeatilsWrapper {
     padding: 0;
     margin: 0;
-    overflow: hidden;
-    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   .blogDetailsDescription {
     margin: 15px;
-    overflow: hidden;
-    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+
+  .blogDetailsCommmentsArticle {
+    margin: 15px;
+    word-break: break-all;
   }
 
   .blogDetailsTitle,

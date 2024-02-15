@@ -2,7 +2,12 @@
 포트폴리오 웹 사이트입니다.
 <br />
 현재 PM2를 활용하여 배포 중입니다.
+<br />
 <a href='https://jung-sunghoon.github.io/' target="_blank">https://jung-sunghoon.github.io/</a>
+<br />
+프로젝트 후기는 이곳에서 확인하실 수 있습니다.
+<br />
+<a href = "https://jung-sunghoon.github.io/projects" target="_blank">https://jung-sunghoon.github.io/projects</a>
 
 <h2>1. 기능 상세</h2>
 <ol>

@@ -6,7 +6,7 @@ const Layout = ({ children }: any) => {
     <div>
       <Header />
 
-      <main>{children}</main>
+      <main style={{ marginBottom: '0' }}>{children}</main>
 
       <Footer />
     </div>

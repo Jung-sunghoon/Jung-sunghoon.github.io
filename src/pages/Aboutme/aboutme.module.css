@@ -1,18 +1,17 @@
 /* 공통 스타일 */
 #aboutMe {
-  font-family: 'Arial', sans-serif;
   color: #333;
   background-color: #ffffff;
   line-height: 1.6;
   margin: 60px 150px 0 150px;
 }
 
-/* 섹션 타이틀 */
+/* 타이틀 텍스트 */
 .titleText {
   display: flex;
   padding-top: 10px;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: 400;
   color: #2a3042;
   text-align: center;
   justify-content: center;
@@ -55,7 +54,7 @@
 }
 
 .skillsTitle {
-  font-size: 2rem;
+  font-size: 24px;
   border-bottom: 1px solid #cacaca;
 }
 
@@ -96,7 +95,7 @@
 }
 
 .archiveTitle {
-  font-size: 2rem;
+  font-size: 24px;
   border-bottom: 1px solid #cacaca;
 }
 
