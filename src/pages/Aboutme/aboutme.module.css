@@ -88,7 +88,13 @@
 
 /* 아카이브 섹션 */
 
-.archiveDataList {
+.archiveData {
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: repeat(2, auto);
+}
+.archiveData:first-child:only-child {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
@@ -134,12 +140,17 @@
     display: flex;
   }
 
-  .archiveDataList {
+  .archiveData {
     grid-template-columns: repeat(1, auto);
   }
 
   .skillsImg {
     margin: 10px 0;
+  }
+
+  .archiveContainer,
+  .skillsContents {
+    min-width: 200px;
   }
 }
 

@@ -48,14 +48,16 @@ const Aboutme: React.FC = () => {
           </div>
           <div className={styles.archiveDataList}>
             {ArchiveData.map((archive, link) => (
-              <Archive
-                key={link}
-                img={archive.img}
-                alt={archive.alt}
-                link={archive.link}
-                url={archive.url}
-                description={archive.description}
-              />
+              <div className={styles.archiveData}>
+                <Archive
+                  key={link}
+                  img={archive.img}
+                  alt={archive.alt}
+                  link={archive.link}
+                  url={archive.url}
+                  description={archive.description}
+                />
+              </div>
             ))}
           </div>
         </div>
