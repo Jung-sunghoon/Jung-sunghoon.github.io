@@ -89,9 +89,8 @@
 /* 아카이브 섹션 */
 
 .archiveDataList {
-  display: grid;
-  margin-top: 10px;
-  grid-template-columns: repeat(2, auto);
+  display: flex;
+  justify-content: center;
 }
 
 .archiveTitle {

@@ -1,4 +1,4 @@
-#comming {
+.commingWrapper {
   margin: 0;
   width: 100%;
   height: 100vh;
@@ -9,37 +9,43 @@
   position: relative;
   background: url(/src/assets/img/commingImg.jpg) 50% no-repeat;
   background-size: cover;
+  z-index: -2;
 }
 
 .commingWrapper::before {
   content: '';
-  position: absolute;
-  z-index: -1;
   opacity: 0.5;
-  background-color: #000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: black;
 }
 
 .commingContents {
+  position: absolute;
   width: 100%;
-}
-
-.commingTitleWrap {
-  font-weight: 500;
-  font-size: 60px;
-  color: white;
-  word-break: keep-all;
-  display: flex;
-  flex-flow: column wrap;
-  padding-top: 100px;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   line-height: 1.5;
+  font-weight: 500;
+  color: white;
+  word-break: keep-all;
+}
+
+.commingTitle {
+  font-size: 60px;
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
 }
 
 .commingDescription {
-  font-weight: 500;
   font-size: 20px;
-  color: white;
-  word-break: keep-all;
   display: flex;
   flex-flow: column wrap;
   margin-top: 20px;

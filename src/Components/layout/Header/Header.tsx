@@ -22,7 +22,6 @@ const Header: React.FC = () => {
     { id: 3, path: '/projects', label: 'Projects' },
     { id: 4, path: '/calendar', label: 'Calendar' },
   ]
-  console.log(location.pathname, 'location.pathname')
 
   return (
     <header
