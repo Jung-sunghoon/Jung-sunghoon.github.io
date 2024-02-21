@@ -14,6 +14,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   const handleSearch = (text: string) => {
     setSearchText(text)
   }
+
   const handleSearchOnEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       onSearch(searchText, true)
@@ -29,7 +30,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
           value={searchText}
           className="srh__input"
           onChange={e => handleSearch(e.target.value)}
-          onKeyPress={handleSearchOnEnter}
+          onKeyDown={handleSearchOnEnter}
           addonBefore={<SearchOutlined />}
         />
       </form>
