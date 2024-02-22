@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const GoogleLoginButton: React.FC = () => {
-  const [token, setToken] = useState<string>('')
+  const [token, setToken] = useState<string>('') // token 유무 확인을 위한 useState
   const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID // 여기에 Google Developer Console에서 발급받은 클라이언트 ID를 입력하세요
   const navigate = useNavigate()
 

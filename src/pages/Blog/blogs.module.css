@@ -70,7 +70,7 @@ tbody {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #blog {
     margin: 90px 0 0 0;
   }

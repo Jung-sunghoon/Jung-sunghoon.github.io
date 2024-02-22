@@ -121,6 +121,10 @@ a:hover {
     padding: 0;
   }
 
+  .headerLink {
+    padding: 0;
+  }
+
   .headerMenuInner {
     display: none;
     height: 0;

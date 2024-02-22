@@ -1,5 +1,7 @@
 import GoogleLoginButton from '@src/Components/Googlelogin/GoogleLoginButton'
 
+// 구글 로그인을 위한 페이지
+
 const Admin = () => {
   return (
     <div id="admin" style={{ margin: '100px' }}>

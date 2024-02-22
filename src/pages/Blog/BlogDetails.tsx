@@ -133,13 +133,7 @@ const BlogDetails: React.FC<BlogDetails> = () => {
           </article>
           <div className={styles.blogDetailsBtnWrapper}>
             <Link to="/blogs">
-              <button
-                className={styles.blogDetailsBtn}
-                style={{
-                  marginRight: '5px',
-                }}
-                name="register"
-              >
+              <button className={styles.blogDetailsBackBtn} name="register">
                 목록으로 가기
               </button>
             </Link>

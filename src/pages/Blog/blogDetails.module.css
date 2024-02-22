@@ -1,6 +1,14 @@
+/* 전체 블로그 내용을 감싸는 부분 */
 #blogDetails {
   min-height: 100%;
   margin-top: 60px;
+}
+#blogDetails ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style-type: disc;
 }
 
 * {
@@ -8,20 +16,9 @@
   font-family: inherit;
 }
 
-div {
-  display: block;
-}
-
+div,
 section {
   display: block;
-}
-
-#blogDetails ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  list-style-type: disc;
 }
 
 li {
@@ -55,6 +52,7 @@ button {
   margin: 0;
 }
 
+/* 블로그 내용을 감싸는 wrapper의 스타일 */
 .blogDeatilsWrapper {
   max-width: 1000px;
   width: 100%;
@@ -66,32 +64,17 @@ button {
   background-color: #fff;
 }
 
+/* 블로그 내용의 헤더 스타일 */
 .blogDetailsHeader {
   margin-top: 30px;
   position: relative;
   margin-bottom: 10px;
   font-size: 16px;
-}
-
-.blogDetailsDateAndViews {
-  display: flex;
-  text-align: right;
-  float: right;
-}
-.blogDetailsGenerateDate {
-  padding: 0 10px;
-  border-right: 1px #ccc solid;
-  font-weight: 700;
-}
-.blogDetailsViews {
-  font-weight: 700;
-}
-
-.blogDetailsHeader {
   display: flex;
   flex-flow: column wrap;
 }
 
+/* 블로그 내용의 헤더 타이틀 스타일 */
 .blogDetailsTitle {
   font-size: 36px;
   line-height: 1.5;
@@ -101,27 +84,44 @@ button {
   word-break: keep-all;
 }
 
+/* 블로그 내용의 헤더 날짜와 조회수 스타일 */
+.blogDetailsDateAndViews {
+  display: flex;
+  text-align: right;
+  float: right;
+}
+
+/* 블로그 내용의 헤더 날짜 스타일 */
+.blogDetailsGenerateDate {
+  padding: 0 10px;
+  border-right: 1px #ccc solid;
+  font-weight: 700;
+}
+
+/* 블로그 내용의 헤더 조회수 스타일 */
+.blogDetailsViews {
+  font-weight: 700;
+}
+
+/* 블로그 내용의 설명 스타일 */
 .blogDetailsDescription {
   font-size: 16px;
   margin: 25px 0;
 }
 
+/* 블로그 내용의 설명 스타일 */
 .blogDetailsDescription p,
 .blogDetailsDescription span {
   line-height: 2;
 }
 
-.blogDetailsBtnWrapper {
-  display: flex;
-  margin-top: 10px;
-  justify-content: end;
-}
-
+/* 블로그 내용의 댓글 article 스타일 */
 .blogDetailsCommmentsArticle {
   display: block;
   color: black;
 }
 
+/* 블로그 내용의 수정 및 삭제 버튼 스타일 */
 .blogDetailsBlogEditBtn {
   color: green;
   margin-right: 10px;
@@ -137,13 +137,15 @@ button {
   align-items: center;
 }
 
+/* 블로그 내용의 버튼 wrapper 스타일 */
 .blogDetailsBtnWrapper {
   display: flex;
   justify-content: end;
   margin: 16px 0 24px;
 }
 
-.blogDetailsBtn {
+/* 블로그 내용의 목록으로 가기 버튼 스타일 */
+.blogDetailsBackBtn {
   padding: 12px 24px;
   height: 40px;
   background: #333;
@@ -153,6 +155,7 @@ button {
   font-size: 16px;
 }
 
+/* 블로그 내용의 이미지 스타일 */
 .blogDetailsDescription img {
   width: 100% !important;
   height: auto !important;
@@ -160,37 +163,28 @@ button {
   white-space: pre-wrap;
 }
 
-@media (max-width: 768px) {
+/* 모바일 환경을 위한 미디어 쿼리 */
+@media (max-width: 900px) {
   .blogDetailsDescription img {
     width: 100%;
     height: auto;
   }
 
-  pre {
-    width: 100%;
-    overflow: hidden;
-    word-break: break-all;
-  }
-
   #blogDetails {
     width: 100%;
-    word-break: break-all;
+    overflow: hidden;
   }
 
   .blogDeatilsWrapper {
+    width: 100%;
     padding: 0;
     margin: 0;
-    word-break: break-all;
   }
 
-  .blogDetailsDescription {
-    margin: 15px;
-    word-break: keep-all;
-  }
-
+  .blogDetailsDescription,
   .blogDetailsCommmentsArticle {
     margin: 15px;
-    word-break: break-all;
+    word-break: keep-all;
   }
 
   .blogDetailsTitle,
