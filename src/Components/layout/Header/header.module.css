@@ -93,19 +93,8 @@ a:hover {
   display: none;
 }
 
-@media (max-width: 1360px) and (min-width: 904px) {
-  .headerLogo {
-    padding: 0;
-    margin-left: 50px;
-  }
-
-  .headerMenuInner {
-    margin-right: 50px;
-  }
-}
-
 /* 모바일 화면을 위한 미디어 쿼리 */
-@media (max-width: 1360px) {
+@media (max-width: 1360px) and (min-width: 901px) {
   #header {
     background-color: black;
     position: fixed;
@@ -119,6 +108,7 @@ a:hover {
   .headerLogo {
     margin: 0;
     padding: 0;
+    margin-left: 50px;
   }
 
   .headerLink {
@@ -130,6 +120,7 @@ a:hover {
     height: 0;
     overflow: hidden;
     transition: height 0.5s ease-in-out;
+    margin-right: 50px;
   }
 
   .headerMenuInnerOpen {
@@ -146,6 +137,7 @@ a:hover {
     padding: 0;
     transition: height 0.5s ease-in-out;
   }
+
   .headerMenuInnerOpen .headerMenu {
     width: 100%;
     height: 50px;
@@ -176,5 +168,70 @@ a:hover {
     width: 100%;
     z-index: 10;
     height: 60px;
+  }
+}
+@media (max-width: 900px) {
+  #header {
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 60px;
+  }
+
+  .headerLogo {
+    margin: 0;
+    padding: 0;
+  }
+
+  .headerLink {
+    padding: 0;
+  }
+
+  .headerMenuInner {
+    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    margin-right: 50px;
+  }
+
+  .headerMenuInnerOpen {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    z-index: 9;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    transition: height 0.5s ease-in-out;
+  }
+
+  .headerMenuInnerOpen .headerMenu {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 10px 0;
+    transition: height 0.5s ease-in-out;
+  }
+
+  .headerMenuInnerOpen .headerLink {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding-left: 20px;
+  }
+
+  .headerMobileMenu {
+    color: white;
+    display: block;
+    font-size: 20px;
+    position: fixed;
+    right: 10px;
   }
 }
