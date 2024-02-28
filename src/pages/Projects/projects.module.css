@@ -166,4 +166,20 @@
     flex-flow: column;
     word-break: break-all;
   }
+
+  .infoTitle {
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  .infoText {
+    display: inline-block;
+    vertical-align: bottom;
+    width: calc(100% - 50px);
+    font-weight: 400;
+    font-size: 16px;
+  }
 }
