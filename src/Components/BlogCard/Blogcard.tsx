@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { BlogType } from '@src/types/types'
 import { formatDate } from '@src/utils/common'
 import { useNavigate } from 'react-router-dom'
+import img from '@src/assets/img'
 
 const { Meta } = Card
 
@@ -36,7 +37,7 @@ const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
             }}
             alt="example"
             //@ts-ignore
-            src={blogInfo?.thumbnail}
+            src={blogInfo?.thumbnail || img.comImg}
           />
         </div>
       }
