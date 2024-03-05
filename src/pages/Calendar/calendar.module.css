@@ -14,12 +14,8 @@
   width: 40%;
 }
 
-.antdCalendar {
-  height: 50%;
-}
-
 .calendarEventsContainer {
-  height: 50%;
+  margin-top: 10px;
 }
 
 .calendarUpcomingEventsContainer {

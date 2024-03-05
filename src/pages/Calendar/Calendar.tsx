@@ -39,16 +39,25 @@ const Calendar: React.FC = () => {
 
   const [form] = Form.useForm()
 
+  const selectedYear = selectedDate?.year()
+  const selectedMonth = selectedDate?.month()
+
   const today: Dayjs = dayjs()
-  const ComingEvents: EventType[] = eventData
+  const MonthEvents: EventType[] = eventData
     .filter(
       (event: EventType) =>
-        dayjs(event.event_date).isSame(today, 'month') &&
-        dayjs(event.event_date).isAfter(today, 'day'),
+        dayjs(event.event_date).year() === selectedYear &&
+        dayjs(event.event_date).month() === selectedMonth,
     )
-    .sort((a: EventType, b: EventType) =>
-      dayjs(a.event_date).isAfter(dayjs(b.event_date)) ? 1 : -1,
-    )
+    .sort((a: EventType, b: EventType) => {
+      if (dayjs(a.event_date).isSame(dayjs(b.event_date), 'date')) {
+        // 같은 날짜일 경우 인덱스 순으로 정렬
+        return eventData.indexOf(a) - eventData.indexOf(b)
+      } else {
+        // 다른 날짜일 경우 날짜 순으로 정렬
+        return dayjs(a.event_date).isAfter(dayjs(b.event_date)) ? 1 : -1
+      }
+    })
 
   const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
     console.log(value.format('YYYY-MM-DD'), mode)
@@ -78,9 +87,8 @@ const Calendar: React.FC = () => {
     const eventsForDate = getEventsForSelectedDate(value)
     if (eventsForDate.length > 0) {
       return <span className={styles.calendarEventDot}></span>
-
-      return null
     }
+    return null
   }
 
   const fetchData = async () => {
@@ -378,13 +386,13 @@ const Calendar: React.FC = () => {
           <div className={styles.calendarUpcomingEventsTitle}>이달의 일정</div>
           <div className={styles.calendarSelectedDateEventsListContainer}>
             <ul>
-              {ComingEvents.map((event, event_date) => (
+              {MonthEvents.map((event, event_date) => (
                 <div
                   key={event_date}
                   className={styles.calendarUpcomingDateEventsList}
                 >
                   <div className={styles.calendarUpcomingDateEventsHeader}>
-                    <p>{event.event_date}</p>
+                    <p>{dayjs(event.event_date).format('MM-DD')}</p>
                   </div>
                   <div
                     className={
@@ -405,11 +413,6 @@ const Calendar: React.FC = () => {
                       }
                     >
                       <p>{event.event_title}</p>
-                      <p
-                        className={styles.calendarUpcomingDateEventDescription}
-                      >
-                        {event.event_text}
-                      </p>
                     </div>
                   </div>
                 </div>
