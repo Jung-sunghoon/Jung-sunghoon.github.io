@@ -2,12 +2,14 @@
   margin-top: 80px;
   margin-left: 200px;
   margin-right: 200px;
+  margin-bottom: 20px;
+  min-height: 100vh;
   padding: 0 20px 0 20px;
 }
 
 .calendarWrapper {
   display: flex;
-  height: 100dvh;
+  height: auto;
 }
 
 .calendarContainer {
@@ -119,10 +121,26 @@
   align-items: center;
 }
 
+.calendarSelectedDateEventsListContainer {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.calendarSelectedDateEventsList {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
+}
+
+.calendarPage {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1360px) {
   #calendar {
-    margin-right: 50px;
-    margin-left: 50px;
+    margin: 0 50px 20px;
   }
 }
 

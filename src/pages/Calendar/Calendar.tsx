@@ -6,6 +6,7 @@ import {
   Form,
   Input,
   Modal,
+  Pagination,
   Select,
 } from 'antd'
 import type { CalendarProps } from 'antd'
@@ -36,6 +37,10 @@ const Calendar: React.FC = () => {
   const [eventList, setEventList] = useState<EventType[]>([])
   const [eventData, setEventData] = useState<EventType[]>([])
   const [open, setOpen] = useState(false)
+
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const handlePageChange = (page: number) => setCurrentPage(page)
+  const [pageSize] = useState<number>(15)
 
   const [form] = Form.useForm()
 
@@ -385,8 +390,11 @@ const Calendar: React.FC = () => {
         <div className={styles.calendarUpcomingEventsContainer}>
           <div className={styles.calendarUpcomingEventsTitle}>이달의 일정</div>
           <div className={styles.calendarSelectedDateEventsListContainer}>
-            <ul>
-              {MonthEvents.map((event, event_date) => (
+            <ul className={styles.calendarSelectedDateEventsList}>
+              {MonthEvents.slice(
+                (currentPage - 1) * pageSize,
+                currentPage * pageSize,
+              ).map((event, event_date) => (
                 <div
                   key={event_date}
                   className={styles.calendarUpcomingDateEventsList}
@@ -418,6 +426,15 @@ const Calendar: React.FC = () => {
                 </div>
               ))}
             </ul>
+          </div>
+          <div className={styles.calendarPage}>
+            <Pagination
+              current={currentPage}
+              total={MonthEvents?.length}
+              pageSize={pageSize}
+              showSizeChanger={false} // 페이지 크기 변경 옵션 숨김
+              onChange={handlePageChange}
+            />
           </div>
         </div>
       </div>
