@@ -24,6 +24,7 @@
   width: 60%;
   margin-left: 10px;
   padding: 20px;
+  border-left: 1px solid #dbdbdb;
 }
 
 .calendarUpcomingEventsTitle {
@@ -50,6 +51,7 @@
   flex-direction: row;
   border-bottom: 1px solid black;
   padding-bottom: 10px;
+  min-height: 60px;
 }
 
 .calendarDateEventsHeader {
@@ -129,7 +131,7 @@
 .calendarSelectedDateEventsList {
   display: flex;
   flex-flow: column wrap;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .calendarPage {
@@ -155,14 +157,8 @@
     height: auto;
   }
 
-  .calendarContainer,
-  .contentsContainer {
+  .calendarContainer {
     width: 100%;
-  }
-
-  .contentsContainer {
-    min-height: 100px;
-    margin-left: 0;
   }
 
   .contentsAddText {

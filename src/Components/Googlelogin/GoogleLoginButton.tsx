@@ -37,7 +37,6 @@ const GoogleLoginButton: React.FC = () => {
     <React.Fragment>
       <GoogleOAuthProvider clientId={clientId}>
         <GoogleLogin
-          width={1000}
           onSuccess={credentialResponse => {
             if (credentialResponse !== undefined) {
               googleLoginInfo(credentialResponse.credential as string)

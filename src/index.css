@@ -5,3 +5,7 @@ a {
 main {
   margin-bottom: 10px;
 }
+
+.ant-btn-icon-only {
+  border-radius: 50%;
+}

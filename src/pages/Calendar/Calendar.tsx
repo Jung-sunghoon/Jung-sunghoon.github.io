@@ -40,7 +40,7 @@ const Calendar: React.FC = () => {
 
   const [currentPage, setCurrentPage] = useState<number>(1)
   const handlePageChange = (page: number) => setCurrentPage(page)
-  const [pageSize] = useState<number>(15)
+  const [pageSize] = useState<number>(10)
 
   const [form] = Form.useForm()
 
