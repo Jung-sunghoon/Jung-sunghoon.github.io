@@ -11,7 +11,13 @@ interface TechstackProps {
 export const techstackData = [
   {
     title: 'Frontend',
-    imgs: [img['htmlimg'], img['cssimg'], img['jsimg'], img['tsimg']],
+    imgs: [
+      img['htmlimg'],
+      img['cssimg'],
+      img['jsimg'],
+      img['tsimg'],
+      img['reactimg'],
+    ],
     alt: 'Frontend_img',
   },
   {
