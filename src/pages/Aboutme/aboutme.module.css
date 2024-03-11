@@ -66,7 +66,7 @@
   max-width: 100%;
   max-height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 세로 2열 */
+  grid-template-columns: repeat(3, 1fr); /* 세로 3열 */
   grid-template-rows: repeat(2, auto); /* 가로 2행 */
   justify-content: center;
   align-items: center;
@@ -74,8 +74,8 @@
 }
 
 .skillsImg {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80%;
+  max-height: 80%;
   margin: 10px;
   height: auto;
   object-fit: contain;
@@ -210,8 +210,8 @@
   .infoContents,
   .skillsContents,
   .archiveContainer {
-    max-width: 400px; /* 각 요소의 최대 너비 설정 */
-    min-width: 400px;
+    max-width: 360px; /* 각 요소의 최대 너비 설정 */
+    min-width: 360px;
     margin: 20px auto; /* 상하 여백 및 중앙 정렬 */
   }
 

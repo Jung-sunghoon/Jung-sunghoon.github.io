@@ -3,6 +3,7 @@ import dayjs, { Dayjs } from 'dayjs'
 import {
   Calendar as AntdCalendar,
   Button,
+  Checkbox,
   Form,
   Input,
   Modal,
@@ -14,7 +15,11 @@ import styles from './calendar.module.css'
 import axios from 'axios'
 import { EventType } from '@src/types/types'
 import locale from 'antd/es/date-picker/locale/ko_KR'
-import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
+import {
+  CheckSquareOutlined,
+  DeleteOutlined,
+  EditOutlined,
+} from '@ant-design/icons'
 import './calendar.css'
 
 const eventTypeColors: { [key: string]: string } = {
@@ -96,6 +101,16 @@ const Calendar: React.FC = () => {
     return null
   }
 
+  // fetchData 함수에서 event_text를 \n을 기준으로 배열로 변환
+  const parseEventData = (data: any) => {
+    return data.map((event: any) => {
+      return {
+        ...event,
+        event_text: event.event_text.split('\n'),
+      }
+    })
+  }
+
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -103,7 +118,8 @@ const Calendar: React.FC = () => {
       )
 
       const data = response.data.CalendarEvents
-      setEventData(data)
+      const parsedData = parseEventData(data)
+      setEventData(parsedData)
       setHasCookie(document.cookie.includes('token'))
     } catch (error) {
       console.error('Error fetching data:', error)
@@ -125,14 +141,16 @@ const Calendar: React.FC = () => {
 
   useEffect(() => {
     if (selectedEvent) {
+      const newText = selectedEvent.event_text.join('\n')
       form.setFieldsValue({
         event_title: selectedEvent.event_title,
         event_type: selectedEvent.event_type,
-        event_text: selectedEvent.event_text,
+        event_text: newText,
       })
     }
   }, [selectedEvent])
 
+  // 일정 수정 및 생성 함수
   const handleActionEvent = async () => {
     if (selectedEvent) {
       try {
@@ -172,6 +190,7 @@ const Calendar: React.FC = () => {
           .split('; ')
           .find(row => row.startsWith('token='))
           ?.split('=')[1]
+
         const response = await axios.post(
           `${import.meta.env.VITE_API_ENDPOINT}/api/calendar-admin/create`,
           {
@@ -198,6 +217,8 @@ const Calendar: React.FC = () => {
       }
     }
   }
+
+  // 일정 삭제 함수
   const handleDelEvent = async (id: number) => {
     const confirmDelete = window.confirm('일정을 삭제하시겠습니까?')
     if (confirmDelete) {
@@ -235,7 +256,7 @@ const Calendar: React.FC = () => {
   const eventDelandEditBtn = (event: EventType) => {
     if (hasCookie) {
       return (
-        <div style={{ marginLeft: 'auto' }}>
+        <div style={{ marginLeft: 'auto', alignItems: 'center' }}>
           <Button
             onClick={() => {
               onSelectEvent(event)
@@ -253,6 +274,9 @@ const Calendar: React.FC = () => {
             className={styles.calendarDelBtn}
           >
             <DeleteOutlined />
+          </Button>
+          <Button className={styles.checkedBtn} disabled>
+            <CheckSquareOutlined />
           </Button>
         </div>
       )
@@ -332,8 +356,11 @@ const Calendar: React.FC = () => {
                     ))}
                   </Select>
                 </Form.Item>
-                <Form.Item label="설명" name="event_text">
-                  <Input.TextArea />
+                <Form.Item label="할 일" name="event_text">
+                  {/* <CalendarTodo /> */}
+                  <Input.TextArea
+                    style={{ resize: 'none', minHeight: '100px' }}
+                  />
                 </Form.Item>
               </Form>
             </Modal>
@@ -344,6 +371,17 @@ const Calendar: React.FC = () => {
 
     return null
   }
+
+  // MonthEvents를 날짜별로 그룹화하여 렌더링하는 부분
+  const groupedEventsByDate: { [date: string]: EventType[] } = {}
+
+  MonthEvents.forEach(event => {
+    const eventDate = dayjs(event.event_date).format('YYYY-MM-DD')
+    if (!groupedEventsByDate[eventDate]) {
+      groupedEventsByDate[eventDate] = []
+    }
+    groupedEventsByDate[eventDate].push(event)
+  })
 
   return (
     <div id={styles.calendar}>
@@ -379,7 +417,20 @@ const Calendar: React.FC = () => {
                       {eventDelandEditBtn(event)}
                     </div>
                     <div className={styles.calendarDateEventDescription}>
-                      {event.event_text}
+                      {event.event_text.map((text, idx) => (
+                        <div
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                          }}
+                        >
+                          <div key={idx}>{text}</div>
+                          {text ? (
+                            <Checkbox style={{ marginRight: '13px' }} />
+                          ) : null}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
@@ -388,49 +439,59 @@ const Calendar: React.FC = () => {
           </div>
         </div>
         <div className={styles.calendarUpcomingEventsContainer}>
-          <div className={styles.calendarUpcomingEventsTitle}>이달의 일정</div>
+          <div className={styles.calendarUpcomingEventsTitle}>
+            {selectedDate?.format('M')}월의 일정
+          </div>
           <div className={styles.calendarSelectedDateEventsListContainer}>
             <ul className={styles.calendarSelectedDateEventsList}>
-              {MonthEvents.slice(
-                (currentPage - 1) * pageSize,
-                currentPage * pageSize,
-              ).map((event, event_date) => (
-                <div
-                  key={event_date}
-                  className={styles.calendarUpcomingDateEventsList}
-                >
-                  <div className={styles.calendarUpcomingDateEventsHeader}>
-                    <p>{dayjs(event.event_date).format('MM-DD')}</p>
-                  </div>
+              {Object.entries(groupedEventsByDate)
+                .slice((currentPage - 1) * pageSize, currentPage * pageSize) // 페이지네이션을 위해 현재 페이지에 맞는 일부 데이터만 선택
+                .map(([date, events]) => (
                   <div
-                    className={
-                      styles.calendarUpcomingDateEventDescriptionWrapper
-                    }
+                    key={date}
+                    style={{
+                      marginTop: '10px',
+                      borderBottom: '1px solid #dbdbdb',
+                      padding: '10px',
+                    }}
                   >
-                    <span
-                      style={{
-                        fontSize: '30px',
-                        color: eventTypeColors[event.event_type],
-                      }}
-                    >
-                      &#8226;
-                    </span>
-                    <div
-                      className={
-                        styles.calendarUpcomingDateEventDescriptionContainer
-                      }
-                    >
-                      <p>{event.event_title}</p>
+                    <div className={styles.calendarUpcomingDateEventsHeader}>
+                      <p>{dayjs(date).format('MM-DD')}</p>
                     </div>
+                    {events.map((event, index) => (
+                      <div
+                        key={index} // 이벤트를 구분하기 위해 index를 key로 사용합니다.
+                        className={styles.calendarUpcomingDateEventsList}
+                      >
+                        <div
+                          className={styles.calendarUpcomingDateEventsHeader}
+                        >
+                          <span
+                            style={{
+                              fontSize: '30px',
+                              color: eventTypeColors[event.event_type],
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          <div
+                            className={
+                              styles.calendarUpcomingDateEventDescriptionContainer
+                            }
+                          >
+                            <p>{event.event_title}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
+                ))}
             </ul>
           </div>
           <div className={styles.calendarPage}>
             <Pagination
               current={currentPage}
-              total={MonthEvents?.length}
+              total={Object.entries(groupedEventsByDate).length}
               pageSize={pageSize}
               showSizeChanger={false} // 페이지 크기 변경 옵션 숨김
               onChange={handlePageChange}

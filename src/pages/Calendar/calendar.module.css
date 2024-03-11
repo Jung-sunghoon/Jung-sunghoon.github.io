@@ -28,8 +28,9 @@
 }
 
 .calendarUpcomingEventsTitle {
+  font-size: 24px;
   padding-bottom: 13px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .calendarDateEventsList {
@@ -37,7 +38,7 @@
   margin-top: 10px;
   flex-wrap: wrap;
   flex-direction: column;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dbdbdb;
   padding-bottom: 10px;
 }
 .calendarDateEventsList:first-child:only-child {
@@ -46,12 +47,8 @@
 
 .calendarUpcomingDateEventsList {
   display: flex;
-  margin-top: 10px;
   flex-wrap: wrap;
   flex-direction: row;
-  border-bottom: 1px solid black;
-  padding-bottom: 10px;
-  min-height: 60px;
 }
 
 .calendarDateEventsHeader {
@@ -84,22 +81,26 @@
 
 .calendarEditBtn {
   color: green;
-  margin-right: 10px;
-  border-color: green;
 }
 
 .calendarDelBtn {
   color: red;
-  border-color: red;
+}
+
+.checkedBtn {
+  color: #3a59f4 !important;
+  background: none !important;
 }
 
 .calendarEditBtn,
-.calendarDelBtn {
+.calendarDelBtn,
+.checkedBtn {
   border: none;
   box-shadow: none;
 }
 
 .calendarEditBtn,
+.checkedBtn,
 .calendarDelBtn:focus {
   outline: none !important;
 }
@@ -142,7 +143,7 @@
 
 @media (max-width: 1360px) {
   #calendar {
-    margin: 0 50px 20px;
+    margin: 80px 50px 20px;
   }
 }
 

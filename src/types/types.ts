@@ -14,7 +14,7 @@ export interface EventType {
   event_title: string
   event_date: string
   event_type: string
-  event_text: string
+  event_text: string[]
 }
 
 export type EventsType = EventType[]
