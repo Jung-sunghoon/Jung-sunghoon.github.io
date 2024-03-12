@@ -31,7 +31,11 @@ export const techstackData = [
     alt: 'VersionControl_img',
   },
   { title: 'Deployment', imgs: [img['dockerimg']], alt: 'Deployment_img' },
-  { title: 'Communication', imgs: [], alt: 'Communication_img' },
+  {
+    title: 'Tools',
+    imgs: [img['stimg'], img['gptimg'], img['sqlimg'], img['vsimg']],
+    alt: 'Tools_img',
+  },
   { title: 'Certificate', imgs: [], alt: 'Certificate_img' },
 ]
 
@@ -41,7 +45,13 @@ export const Techstack: React.FC<TechstackProps> = ({ title, imgs, alt }) => {
       <div className={styles.skillsTitle}>{title}</div>
       <div className={styles.skillsImgWrraper}>
         {imgs.map((img, index) => (
-          <img key={index} className={styles.skillsImg} src={img} alt={alt} />
+          <img
+            key={index}
+            width={80}
+            className={styles.skillsImg}
+            src={img}
+            alt={alt}
+          />
         ))}
       </div>
     </div>

@@ -9,6 +9,7 @@ const Header: React.FC = () => {
 
   const handleMenuClick = () => {
     setOpen(false)
+    window.scrollTo(0, 0)
   }
 
   const handleMobileMenuToggle = () => {
@@ -32,7 +33,11 @@ const Header: React.FC = () => {
     >
       <div className={styles.headerMenuNav}>
         <div className={styles.headerLogo}>
-          <Link to="/" className={`${styles.headerLink}`}>
+          <Link
+            to="/"
+            className={`${styles.headerLink}`}
+            onClick={handleMenuClick}
+          >
             JSH's Portfolio
           </Link>
         </div>

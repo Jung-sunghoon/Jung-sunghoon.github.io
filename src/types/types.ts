@@ -10,6 +10,7 @@ export interface BlogType {
 export type BlogsType = BlogType[]
 
 export interface EventType {
+  isChecked: boolean
   event_id: number
   event_title: string
   event_date: string

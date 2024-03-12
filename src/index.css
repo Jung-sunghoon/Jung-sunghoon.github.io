@@ -9,3 +9,7 @@ main {
 .ant-btn-icon-only {
   border-radius: 50%;
 }
+
+* {
+  font-family: 'Noto Sans KR', serif !important;
+}

@@ -71,11 +71,10 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  justify-items: center;
 }
 
 .skillsImg {
-  max-width: 80%;
-  max-height: 80%;
   margin: 10px;
   height: auto;
   object-fit: contain;
@@ -174,7 +173,7 @@
 
   .skillsContents,
   .archiveContainer {
-    width: 250px;
+    width: 300px;
   }
 }
 
@@ -215,9 +214,8 @@
     margin: 20px auto; /* 상하 여백 및 중앙 정렬 */
   }
 
-  .skillsImg,
   .archiveImg {
-    max-width: 100%; /* 이미지 너비 설정 */
+    max-width: 80%; /* 이미지 너비 설정 */
     width: 150px;
   }
 

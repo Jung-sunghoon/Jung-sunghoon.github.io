@@ -11,6 +11,9 @@ import reactimg from '@src/assets/img/skillImg/react.png'
 import tsimg from '@src/assets/img/skillImg/typescript.png'
 import vsimg from '@src/assets/img/skillImg/visual-studio-code.png'
 import velogimg from '@src/assets/img/skillImg/velog.png'
+import gptimg from '@src/assets/img/skillImg/chatgpt.png'
+import sqlimg from '@src/assets/img/skillImg/mysql-workbench.png'
+import stimg from '@src/assets/img/skillImg/sourcetree.png'
 import dLogin from '@src/assets/img/projectImg/deopleImg/login.png'
 import dSignup from '@src/assets/img/projectImg/deopleImg/signup.png'
 import dProjectList from '@src/assets/img/projectImg/deopleImg/projectlist.png'
@@ -46,6 +49,9 @@ export default {
   tsimg,
   vsimg,
   velogimg,
+  gptimg,
+  sqlimg,
+  stimg,
   dLogin,
   dSignup,
   dProfile,

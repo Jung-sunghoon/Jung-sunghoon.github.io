@@ -66,6 +66,8 @@
   margin-top: 5px;
   color: rgb(120, 120, 120);
   word-break: break-all;
+  white-space: pre-line;
+  line-height: 1.5;
 }
 
 .calendarUpcomingDateEventDescription {
@@ -139,6 +141,10 @@
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+
+.checked {
+  text-decoration: line-through;
 }
 
 @media (max-width: 1360px) {
