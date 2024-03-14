@@ -1,7 +1,7 @@
 .commingWrapper {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   top: 0;
   right: 0;
   left: 0;
@@ -24,12 +24,10 @@
 }
 
 .commingContents {
-  position: absolute;
+  position: relative;
   width: 100%;
   z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding-top: 100px;
   text-align: center;
   line-height: 1.5;
   font-weight: 500;

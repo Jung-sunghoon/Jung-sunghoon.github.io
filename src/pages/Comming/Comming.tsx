@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './comming.module.css'
+import axios from 'axios'
+import { BlogsType } from '@src/types/types'
 
 const Comming: React.FC = () => {
+  const [blogs, setBlogs] = useState<BlogsType>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_ENDPOINT}/api/blog/list`,
+        )
+
+        const data = response.data.blogPosts.reverse().slice(0, 3)
+        setBlogs(data)
+        console.log(blogs, 'blogs')
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
   return (
     <div id={styles.comming}>
       <div className={styles.commingWrapper}>
@@ -29,6 +51,7 @@ const Comming: React.FC = () => {
             <br />
           </div>
         </div>
+        <div className={styles.recentBlogs}></div>
       </div>
     </div>
   )
