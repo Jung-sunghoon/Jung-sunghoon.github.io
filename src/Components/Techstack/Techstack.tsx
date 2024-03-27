@@ -36,7 +36,7 @@ export const techstackData = [
     imgs: [img['stimg'], img['gptimg'], img['sqlimg'], img['vsimg']],
     alt: 'Tools_img',
   },
-  { title: 'Certificate', imgs: [], alt: 'Certificate_img' },
+  // { title: 'Certificate', imgs: [], alt: 'Certificate_img' },
 ]
 
 export const Techstack: React.FC<TechstackProps> = ({ title, imgs, alt }) => {
