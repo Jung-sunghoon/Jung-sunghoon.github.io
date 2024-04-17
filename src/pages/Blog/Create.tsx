@@ -77,7 +77,6 @@ const Create: React.FC = () => {
       content: textEditor,
       thumbnail: thumbnail,
     }
-    console.log(requestData, 'requestData')
 
     const token = document.cookie
       .split('; ')
@@ -122,6 +121,7 @@ const Create: React.FC = () => {
       newFileList[0]?.status === 'error'
     ) {
       setThumbnail(JSON.parse(JSON.stringify(fileList[0]))?.thumbUrl)
+      console.log(newFileList)
     }
   }
 
@@ -163,7 +163,7 @@ const Create: React.FC = () => {
               }}
             >
               {fileList.length < 1 && (
-                <Button icon={<UploadOutlined />}>썸네일 업로드</Button>
+                <Button icon={<UploadOutlined />}>썸네일</Button>
               )}
             </Upload>
           </Form.Item>

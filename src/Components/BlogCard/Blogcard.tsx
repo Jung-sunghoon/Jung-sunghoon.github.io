@@ -21,25 +21,17 @@ const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
     <Card
       cover={
         //@ts-ignore
-        <div
+        <img
           style={{
-            height: '160px',
-            display: 'flex',
-            justifyContent: 'center',
-            paddingTop: '10px',
+            cursor: 'pointer',
+            height: '200px',
+            width: '100%',
+            objectFit: 'cover',
           }}
-        >
-          <img
-            style={{
-              cursor: 'pointer',
-              height: 'auto',
-              width: 'auto',
-            }}
-            alt="example"
-            //@ts-ignore
-            src={blogInfo?.thumbnail || img.comImg}
-          />
-        </div>
+          alt="example"
+          //@ts-ignore
+          src={blogInfo?.thumbnail || img.comImg}
+        />
       }
       style={{
         marginBottom: '30px',

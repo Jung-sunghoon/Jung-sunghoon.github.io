@@ -105,6 +105,24 @@ const Blogs: React.FC = () => {
             </List.Item>
           )}
         />
+        {/* <div
+          style={{
+            display: 'flex',
+          }}
+        >
+          {slicedData &&
+            slicedData?.map((data: BlogType, index) => {
+              return (
+                <div>
+                  <div>header</div>
+                  <div>body</div>
+                  <div>footer</div>
+                </div>
+              )
+            })}
+        </div>
+      </div>
+       */}
       </div>
       <div className={styles.blogPage}>
         <Pagination
