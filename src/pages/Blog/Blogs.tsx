@@ -8,6 +8,9 @@ import Search from './Search'
 import { BlogType, BlogsType } from '@src/types/types'
 import Blogcard from '@src/Components/Blogcard/Blogcard'
 
+import useOctokit from '@src/Hooks/useOctokit'
+import useLoadImg from '@src/Hooks/useLoadImg'
+
 const Blogs: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('')
   const [blogs, setBlogs] = useState<BlogsType>([])
@@ -84,6 +87,21 @@ const Blogs: React.FC = () => {
     }
     return null
   }
+
+  const [gitData, setGitData] = useState([])
+  const [imgURL, setImgURL] = useState('')
+
+  const rawImgURL = useOctokit()
+  rawImgURL.then((value: any) => {
+    setImgURL(value)
+  })
+
+  const findImgs = useLoadImg(imgURL)
+
+  useEffect(() => {
+    setGitData(findImgs)
+    console.log(gitData, 'gitData')
+  }, [findImgs])
 
   return (
     <div id={styles.blog}>
