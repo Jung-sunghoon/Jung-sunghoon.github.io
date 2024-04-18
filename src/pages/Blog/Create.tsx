@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Input, Button, message, Upload } from 'antd'
+import { Form, Input, Button, message } from 'antd'
 import axios from 'axios'
 import TextEditor from '@src/Components/TextEditor'
 import { useNavigate } from 'react-router-dom'
 import styles from './blogs.module.css'
-import type { UploadFile, UploadProps } from 'antd/es/upload/interface'
-import { UploadOutlined } from '@ant-design/icons'
+// import type { UploadFile, UploadProps } from 'antd/es/upload/interface'
+// import { UploadOutlined } from '@ant-design/icons'
 
 const Create: React.FC = () => {
   const [form] = Form.useForm()
@@ -20,7 +20,7 @@ const Create: React.FC = () => {
   const currentURL = window.location.href
   const segments = currentURL.split('/')
   const post_id = segments[segments.length - 1]
-  const [fileList, setFileList] = useState<UploadFile[]>([])
+  // const [fileList, setFileList] = useState<UploadFile[]>([])
   const [thumbnail, setThumbnail] = useState('')
 
   // 컴포넌트가 마운트될 때와 URL이 변경될 때 데이터를 가져오기 위한 useEffect
@@ -111,18 +111,104 @@ const Create: React.FC = () => {
     }
   }
 
-  // 업로드 변경 시 실행되는 콜백 함수
-  const onChange: UploadProps['onChange'] = async ({
-    fileList: newFileList,
-  }) => {
-    setFileList(newFileList)
-    if (
-      newFileList[0]?.status === 'done' ||
-      newFileList[0]?.status === 'error'
-    ) {
-      setThumbnail(JSON.parse(JSON.stringify(fileList[0]))?.thumbUrl)
-      console.log(newFileList)
+  // // 업로드 변경 시 실행되는 콜백 함수
+  // const onChange: UploadProps['onChange'] = async ({
+  //   fileList: newFileList,
+  // }) => {
+  //   setFileList(newFileList)
+  //   if (
+  //     newFileList[0]?.status === 'done' ||
+  //     newFileList[0]?.status === 'error'
+  //   ) {
+  //     setThumbnail(JSON.parse(JSON.stringify(fileList[0]))?.thumbUrl)
+  //     console.log(newFileList)
+  //   }
+  // }
+
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [imageUrls, setImageUrls] = useState<string[]>([])
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      setSelectedFile(file)
     }
+  }
+
+  useEffect(() => {
+    const fetchRepoContents = async () => {
+      try {
+        if (location.pathname.includes('/create')) {
+          setImageUrls([])
+        } else {
+          const response = await axios.get(
+            `https://api.github.com/repos/Jung-sunghoon/portfolio_img/contents/images`,
+          )
+          const images = response.data.filter(
+            (content: any) =>
+              content.type === 'file' &&
+              content.name.match(/\.(jpeg|jpg|gif|png)$/i),
+          )
+          const urls = images.map((image: any) => image.download_url)
+          setImageUrls(urls)
+        }
+      } catch (error) {
+        console.error('Error fetching repo contents:', error)
+      }
+    }
+    fetchRepoContents()
+  }, [selectedFile])
+
+  const handleUpload = async (event: any) => {
+    event.preventDefault()
+    if (selectedFile) {
+      try {
+        const reader = new FileReader()
+        reader.onloadend = async () => {
+          if (reader.result) {
+            const base64encoded = reader.result.toString().split(',')[1]
+            const apiURL = `https://api.github.com/repos/Jung-sunghoon/portfolio_img/contents/images/${selectedFile.name}`
+            const accessToken = import.meta.env.VITE_GITHUB_KEY
+
+            const response = await axios.put(
+              apiURL,
+              {
+                message: 'Add image',
+                content: base64encoded,
+                branch: 'main',
+              },
+              {
+                headers: {
+                  Authorization: `token ${accessToken}`,
+                  'Content-Type': 'application/json',
+                },
+              },
+            )
+
+            console.log(
+              'Image uploaded successfully:',
+              response.data.content.name,
+            )
+
+            // 이미지가 성공적으로 업로드된 후에 이미지 URL을 업데이트
+            setImageUrls(prevUrls => [
+              ...prevUrls,
+              response.data.content.download_url,
+            ])
+
+            setThumbnail(response.data.content.download_url)
+          }
+        }
+        reader.readAsDataURL(selectedFile)
+      } catch (error) {
+        console.error('Error uploading image:', error)
+      }
+    }
+  }
+
+  const handleDeleteThumbnail = async (event: any) => {
+    event.preventDefault()
+    setThumbnail('')
   }
 
   return (
@@ -146,11 +232,7 @@ const Create: React.FC = () => {
           </Form.Item>
 
           <Form.Item label="대표 이미지">
-            <div className={styles.thumbnailLoad}>
-              <img src={thumbnail} />
-              <div>미리보기</div>
-            </div>
-            <Upload
+            {/* <Upload
               beforeUpload={f => {
                 f
               }}
@@ -165,8 +247,35 @@ const Create: React.FC = () => {
               {fileList.length < 1 && (
                 <Button icon={<UploadOutlined />}>썸네일</Button>
               )}
-            </Upload>
+            </Upload> */}
+            <div>
+              <div className={styles.thumbnailLoad}>
+                {type === 'create' ? (
+                  imageUrls.length > 0 && (
+                    <img
+                      src={imageUrls[imageUrls.length - 1]}
+                      style={{ maxHeight: '180px', maxWidth: '515px' }}
+                    />
+                  )
+                ) : (
+                  <img
+                    src={thumbnail}
+                    style={{ maxHeight: '180px', maxWidth: '515px' }}
+                  />
+                )}
+              </div>
+              <div style={{ display: 'flex' }}>
+                <input type="file" onChange={handleFileChange} />
+                <button type="button" onClick={handleUpload}>
+                  Upload
+                </button>
+                <button type="button" onClick={handleDeleteThumbnail}>
+                  삭제
+                </button>
+              </div>
+            </div>
           </Form.Item>
+
           <Form.Item name="content" label="내용">
             {type === 'create' ? (
               <TextEditor

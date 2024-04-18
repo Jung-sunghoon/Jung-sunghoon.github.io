@@ -34,8 +34,8 @@ const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
         />
       }
       style={{
-        marginBottom: '30px',
-        maxWidth: '700px',
+        margin: '0 15px 30px',
+        maxWidth: '350px',
         maxHeight: '500px',
       }}
       onClick={() => {

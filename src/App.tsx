@@ -10,6 +10,7 @@ import Create from './pages/Blog/Create'
 import BlogDetails from './pages/Blog/BlogDetails'
 import Admin from './pages/Admin/Admin'
 import { useEffect } from 'react'
+import ImgUpload from './Components/ImgUpload/ImgUpload'
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation()
@@ -28,6 +29,7 @@ const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/admin/*" element={<Admin />} />
+          <Route path="/test/*" element={<ImgUpload />} />
           <Route path="/blogs/*" element={<Blogs />} />
           <Route path="/blogdetails/:post_id" element={<BlogDetails />} />
           <Route path="/create/*" element={<Create />} />

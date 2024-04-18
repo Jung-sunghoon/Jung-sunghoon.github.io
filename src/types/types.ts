@@ -1,7 +1,7 @@
 export interface BlogType {
   post_id: number
   title: string
-  thumbnail: any
+  thumbnail?: any
   views: number
   creation_date: string
   content: string

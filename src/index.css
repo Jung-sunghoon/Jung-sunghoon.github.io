@@ -13,3 +13,8 @@ main {
 * {
   font-family: 'Noto Sans KR', serif !important;
 }
+
+.ant-card-cover {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px 8px 0 0;
+}

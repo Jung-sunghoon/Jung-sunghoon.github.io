@@ -8,9 +8,6 @@ import Search from './Search'
 import { BlogType, BlogsType } from '@src/types/types'
 import Blogcard from '@src/Components/Blogcard/Blogcard'
 
-import useOctokit from '@src/Hooks/useOctokit'
-import useLoadImg from '@src/Hooks/useLoadImg'
-
 const Blogs: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('')
   const [blogs, setBlogs] = useState<BlogsType>([])
@@ -88,21 +85,6 @@ const Blogs: React.FC = () => {
     return null
   }
 
-  const [gitData, setGitData] = useState([])
-  const [imgURL, setImgURL] = useState('')
-
-  const rawImgURL = useOctokit()
-  rawImgURL.then((value: any) => {
-    setImgURL(value)
-  })
-
-  const findImgs = useLoadImg(imgURL)
-
-  useEffect(() => {
-    setGitData(findImgs)
-    console.log(gitData, 'gitData')
-  }, [findImgs])
-
   return (
     <div id={styles.blog}>
       <div className={styles.blogContainer}>
@@ -112,10 +94,10 @@ const Blogs: React.FC = () => {
         <List
           style={{
             marginTop: '30px',
-            marginLeft: '30px',
-            marginRight: '30px',
+            marginLeft: '15px',
+            marginRight: '15px',
           }}
-          grid={{ gutter: 12, xs: 1, sm: 2, md: 3, lg: 3, xl: 4, xxl: 4 }}
+          grid={{ gutter: 12, xs: 1, sm: 2, md: 3, lg: 3, xl: 3, xxl: 4 }}
           dataSource={slicedData} // 페이지네이션에 따라 잘라낸 데이터를 사용
           renderItem={(item: BlogType) => (
             <List.Item>
@@ -123,24 +105,6 @@ const Blogs: React.FC = () => {
             </List.Item>
           )}
         />
-        {/* <div
-          style={{
-            display: 'flex',
-          }}
-        >
-          {slicedData &&
-            slicedData?.map((data: BlogType, index) => {
-              return (
-                <div>
-                  <div>header</div>
-                  <div>body</div>
-                  <div>footer</div>
-                </div>
-              )
-            })}
-        </div>
-      </div>
-       */}
       </div>
       <div className={styles.blogPage}>
         <Pagination
