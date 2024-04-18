@@ -4,8 +4,6 @@ import axios from 'axios'
 import TextEditor from '@src/Components/TextEditor'
 import { useNavigate } from 'react-router-dom'
 import styles from './blogs.module.css'
-// import type { UploadFile, UploadProps } from 'antd/es/upload/interface'
-// import { UploadOutlined } from '@ant-design/icons'
 
 const Create: React.FC = () => {
   const [form] = Form.useForm()
@@ -111,20 +109,6 @@ const Create: React.FC = () => {
     }
   }
 
-  // // 업로드 변경 시 실행되는 콜백 함수
-  // const onChange: UploadProps['onChange'] = async ({
-  //   fileList: newFileList,
-  // }) => {
-  //   setFileList(newFileList)
-  //   if (
-  //     newFileList[0]?.status === 'done' ||
-  //     newFileList[0]?.status === 'error'
-  //   ) {
-  //     setThumbnail(JSON.parse(JSON.stringify(fileList[0]))?.thumbUrl)
-  //     console.log(newFileList)
-  //   }
-  // }
-
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [imageUrls, setImageUrls] = useState<string[]>([])
 
@@ -159,6 +143,7 @@ const Create: React.FC = () => {
     fetchRepoContents()
   }, [selectedFile])
 
+  // 썸네일 업로드 함수
   const handleUpload = async (event: any) => {
     event.preventDefault()
     if (selectedFile) {
@@ -179,7 +164,7 @@ const Create: React.FC = () => {
               },
               {
                 headers: {
-                  Authorization: `token ${accessToken}`,
+                  Authorization: `Bearer ${accessToken}`,
                   'Content-Type': 'application/json',
                 },
               },
@@ -232,22 +217,6 @@ const Create: React.FC = () => {
           </Form.Item>
 
           <Form.Item label="대표 이미지">
-            {/* <Upload
-              beforeUpload={f => {
-                f
-              }}
-              action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-              listType="picture"
-              fileList={fileList}
-              onChange={onChange}
-              onPreview={() => {
-                return
-              }}
-            >
-              {fileList.length < 1 && (
-                <Button icon={<UploadOutlined />}>썸네일</Button>
-              )}
-            </Upload> */}
             <div>
               <div className={styles.thumbnailLoad}>
                 {type === 'create' ? (
