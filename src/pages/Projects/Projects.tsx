@@ -209,7 +209,7 @@ export const ProjectsData = [
     Google login 컴포넌트는 <a href="https://jung-sunghoon.github.io/admin" target="_blank">https://jung-sunghoon.github.io/admin</a> 이곳으로 가시면 볼 수 있습니다.`,
     skill:
       '간단한 자기 소개, 인적 사항, 기술 스택, 기술 블로그, 프로젝트 경험, 일정관리 앱',
-    url: '<a href = "https://jung-sunghoon.github.io" target="_blank">https://jung-sunghoon.github.io</a>',
+    url: '<a href = "https://jung-sunghoon.github.io/welcome" target="_blank">https://jung-sunghoon.github.io/welcome</a>',
     github: `프론트엔드 - <a href="https://github.com/Jung-sunghoon/jung-sunghoon.github.io" target="_blank">https://github.com/Jung-sunghoon/jung-sunghoon.github.io</a>, 
       <br/> 
       백엔드 - <a href="https://github.com/Jung-sunghoon/Portfolio_Be" target="_blank">https://github.com/Jung-sunghoon/Portfolio_Be</a>`,

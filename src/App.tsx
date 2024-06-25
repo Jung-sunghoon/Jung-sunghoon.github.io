@@ -6,7 +6,7 @@ import Projects from './pages/Projects/Projects'
 import Aboutme from './pages/Aboutme/Aboutme'
 import Comming from './pages/Comming/Comming'
 import Calendar from './pages/Calendar/Calendar'
-import Create from './pages/Blog/Create'
+// import Create from './pages/Blog/Create'
 import BlogDetails from './pages/Blog/BlogDetails'
 import Admin from './pages/Admin/Admin'
 import { useEffect } from 'react'
@@ -28,14 +28,14 @@ const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/admin/*" element={<Admin />} />
-          <Route path="/blogs/*" element={<Blogs />} />
+          <Route path="/blog" element={<Blogs />} />
           <Route path="/blogdetails/:post_id" element={<BlogDetails />} />
-          <Route path="/create/*" element={<Create />} />
-          <Route path="/edit/*" element={<Create />} />
+          {/* <Route path="/create/*" element={<Create />} /> */}
+          {/* <Route path="/edit/*" element={<Create />} /> */}
           <Route path="/aboutme/*" element={<Aboutme />} />
           <Route path="/calendar/*" element={<Calendar />} />
           <Route path="/projects/*" element={<Projects />} />
-          <Route path="/" element={<Comming />} />
+          <Route path="/welcome" element={<Comming />} />
         </Routes>
       </Layout>
     </>
