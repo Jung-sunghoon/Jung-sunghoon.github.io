@@ -13,7 +13,7 @@ interface BlogProps {
   blogData: BlogType
 }
 
-const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
+const BlogCard: React.FC<BlogProps> = ({ blogData }) => {
   const blogInfo = blogData
   const navigate = useNavigate()
 
@@ -67,4 +67,4 @@ const Blogcard: React.FC<BlogProps> = ({ blogData }) => {
   )
 }
 
-export default Blogcard
+export default BlogCard
