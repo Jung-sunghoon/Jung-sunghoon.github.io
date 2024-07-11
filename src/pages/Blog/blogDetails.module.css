@@ -164,6 +164,7 @@ button {
   font-weight: 700;
   color: #fff;
   font-size: 16px;
+  line-height: 1;
 }
 
 /* 블로그 내용의 이미지 스타일 */

@@ -19,7 +19,7 @@ const Header: React.FC = () => {
   // 메뉴 항목들을 배열로 정의
   const menuItems = [
     { id: 1, path: '/aboutme', label: 'About me' },
-    { id: 2, path: '/blog', label: 'Blog' },
+    { id: 2, path: '/blogs', label: 'Blog' },
     { id: 3, path: '/projects', label: 'Projects' },
     // { id: 4, path: '/calendar', label: 'Calendar' },
   ]
