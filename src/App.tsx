@@ -28,7 +28,7 @@ const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/admin/*" element={<Admin />} />
-          <Route path="/blog" element={<Blogs />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogdetails/:post_id" element={<BlogDetails />} />
           <Route path="/create/*" element={<Create />} />
           <Route path="/edit/*" element={<Create />} />
