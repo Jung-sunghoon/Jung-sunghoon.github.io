@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'antd'
-import { EyeFilled } from '@ant-design/icons'
+// import { EyeFilled } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import { BlogType } from '@src/types/types'
 import { formatDate } from '@src/utils/common'
@@ -42,21 +42,21 @@ const BlogCard: React.FC<BlogProps> = ({ blogData }) => {
         navigate(`/blogdetails/${blogInfo?.post_id}`)
       }}
       actions={[
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <EyeFilled
-            style={{
-              marginRight: '10px',
-              fontSize: '18px',
-            }}
-          />
-          {`${blogInfo?.views}`}
-        </div>,
+        // <div
+        //   style={{
+        //     display: 'flex',
+        //     justifyContent: 'center',
+        //     alignItems: 'center',
+        //   }}
+        // >
+        //   <EyeFilled
+        //     style={{
+        //       marginRight: '10px',
+        //       fontSize: '18px',
+        //     }}
+        //   />
+        //   {`${blogInfo?.views}`}
+        // </div>,
         <div>{`${formatDate(new Date(blogInfo?.creation_date))}`}</div>,
       ]}
     >

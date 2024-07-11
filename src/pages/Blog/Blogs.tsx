@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styles from './blogs.module.css'
-import { Button, List, Pagination } from 'antd'
-import { useNavigate } from 'react-router-dom'
-import { PlusOutlined } from '@ant-design/icons'
-import axios from 'axios'
+import { List, Pagination } from 'antd'
+// import { useNavigate } from 'react-router-dom'
+// import { PlusOutlined } from '@ant-design/icons'
+// import axios from 'axios'
 import Search from './Search'
 import { BlogType, BlogsType } from '@src/types/types'
-import Blogcard from '@src/Components/BlogCard'
+import BlogCard from '@src/Components/BlogCard/BlogCard'
+import { posts } from '@src/posts/posts'
 
 const Blogs: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('')
@@ -14,9 +15,9 @@ const Blogs: React.FC = () => {
   const [filteredData, setFilteredData] = useState<BlogsType>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [pageSize] = useState<number>(20)
-  const [hasCookie, setHasCookie] = useState<boolean>(false)
+  // const [hasCookie, setHasCookie] = useState<boolean>(false)
   const handlePageChange = (page: number) => setCurrentPage(page)
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const slicedData = filteredData?.slice(
     (currentPage - 1) * pageSize,
@@ -39,26 +40,29 @@ const Blogs: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const token = document.cookie
-          .split('; ')
-          .find(row => row.startsWith('token='))
-          ?.split('=')[1]
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_ENDPOINT}/api/blog/list`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        )
+      // try {
+      //   const token = document.cookie
+      //     .split('; ')
+      //     .find(row => row.startsWith('token='))
+      //     ?.split('=')[1]
+      //   const response = await axios.get(
+      //     `${import.meta.env.VITE_API_ENDPOINT}/api/blog/list`,
+      //     {
+      //       headers: { Authorization: `Bearer ${token}` },
+      //     },
+      //   )
 
-        const data = response.data.blogPosts.reverse()
-        setBlogs(data)
+      //   const data = response.data.blogPosts.reverse()
+      //   setBlogs(data)
 
-        // 쿠키가 있는지 확인
-        setHasCookie(document.cookie.includes('token'))
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
+      //   // 쿠키가 있는지 확인
+      //   setHasCookie(document.cookie.includes('token'))
+      // } catch (error) {
+      //   console.error('Error fetching data:', error)
+      // }
+
+      let postReverse = [...posts].reverse()
+      setBlogs(postReverse)
     }
 
     fetchData()
@@ -68,22 +72,22 @@ const Blogs: React.FC = () => {
     performSearchAndSort()
   }, [blogs, searchText])
 
-  const handleNewPost = () => navigate('/create')
+  // const handleNewPost = () => navigate('/create')
 
-  const renderGenerateBtn = () => {
-    if (hasCookie) {
-      return (
-        <div className={styles.floatingBtn}>
-          <Button
-            type="primary"
-            icon={<PlusOutlined />}
-            onClick={handleNewPost}
-          />
-        </div>
-      )
-    }
-    return null
-  }
+  // const renderGenerateBtn = () => {
+  //   if (hasCookie) {
+  //     return (
+  //       <div className={styles.floatingBtn}>
+  //         <Button
+  //           type="primary"
+  //           icon={<PlusOutlined />}
+  //           onClick={handleNewPost}
+  //         />
+  //       </div>
+  //     )
+  //   }
+  //   return null
+  // }
 
   return (
     <div id={styles.blog}>
@@ -101,7 +105,7 @@ const Blogs: React.FC = () => {
           dataSource={slicedData} // 페이지네이션에 따라 잘라낸 데이터를 사용
           renderItem={(item: BlogType) => (
             <List.Item>
-              <Blogcard blogData={item} />
+              <BlogCard blogData={item} />
             </List.Item>
           )}
         />
@@ -115,7 +119,7 @@ const Blogs: React.FC = () => {
           onChange={handlePageChange}
         />
       </div>
-      {renderGenerateBtn()}
+      {/* {renderGenerateBtn()} */}
     </div>
   )
 }

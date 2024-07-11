@@ -3,6 +3,7 @@
   min-height: 100%;
   margin-top: 60px;
 }
+
 #blogDetails ul {
   list-style: none;
   margin: 0;
@@ -30,6 +31,22 @@ p {
 }
 
 b {
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  line-height: 2;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-weight: 800;
 }
 
@@ -94,7 +111,7 @@ button {
 /* 블로그 내용의 헤더 날짜 스타일 */
 .blogDetailsGenerateDate {
   padding: 0 10px;
-  border-right: 1px #ccc solid;
+  /* border-right: 1px #ccc solid; */
   font-weight: 700;
 }
 
@@ -107,12 +124,6 @@ button {
 .blogDetailsDescription {
   font-size: 16px;
   margin: 25px 0;
-}
-
-/* 블로그 내용의 설명 스타일 */
-.blogDetailsDescription p,
-.blogDetailsDescription span {
-  line-height: 2;
 }
 
 /* 블로그 내용의 댓글 article 스타일 */
