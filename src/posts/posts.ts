@@ -307,13 +307,119 @@ export const posts = [
     <hr>
     <p><a href="https://velog.io/@somday/RESTful-API-%EC%9D%B4%EB%9E%80">https://velog.io/@somday/RESTful-API-%EC%9D%B4%EB%9E%80</a></p></div>`,
   },
-  //   {
-  //     post_id: 4,
-  //     title: '',
-  //     creation_date: '',
-  //     thumbnail: '',
-  //     content: ``,
-  //   },
+  {
+    post_id: 4,
+    title: 'React란?',
+    creation_date: '2024-01-30',
+    thumbnail: '',
+    content: `
+    <h2>React란</h2>
+
+    <p>React로 개발을 시작했지만 React가 무엇인지, 왜 사람들이 React를 가장 많이 사용하는지에 대해 알지 못 한 상태로 하다 보니 React가 무엇이고 사람들이 왜 사용하는지는 알고 사용해야겠다는 생각이 들어서 찾아보았습니다.
+
+따라서 이번 블로그 포스트에서는 React가 무엇인지 , 특징은 무엇인지 살펴보려고 합니다.
+
+React는 UI Javascript 라이브러리로써 싱글 페이지 애플리케이션의 UI(User Interface)를 생성하는데 집중한 라이브러리입니다. React는 Javascript에 HTML을 포함하는 JSX(Javascript XML)라는 간단한 문법과 단방향 데이터 바인딩(One-way Data Binding)을 사용하고 있습니다. 그리고 가상 돔(Virtual DOM)이라는 개념을 사용하여 웹 어플리케이션의 퍼포먼스를 최적화한 라이브러리입니다.
+
+React는 싱글 페이지 애플리케이션(Single Page Application이하 SPA)에서 UI를 만드는 Javascript 라이브러리이다 보니, SPA 제작을 하는 다른 프레임워크에 비해 부족한 부분이 있습니다. 예를 들어 React는 페이지 전환 기능을 제공하지 않기 때문에, React를 사용하여 페이지 전환을 해야한다면 react-router와 같은 추가적인 라이브러리를 사용해야 합니다.</p>
+
+<h2>React의 특징</h2>
+
+
+
+<p>가상 돔</p>
+<p>단방향 데이터 바인딩</p>
+<p>JSX</p>
+<p>Props 와 State</p>
+<p>Component 기반</p>
+
+<h3> 가상 돔</h3>
+
+<p>React는 가상 돔을 사용하여 웹 어플리케이션의 성능을 극대화 시켰습니다. 가상 돔을 이해하기 전에 먼저 HTML과 CSS의 렌더링 과정을 이해할 필요가 있습니다.</p>
+
+<h3>HTML과 CSS의 렌더링 과정</h3>
+
+<p>웹 브라우저가 네트워크를 통해 HTML을 전달 받으면 브라우저의 렌더링 엔진은 HTML을 파싱하고 돔 노드로 이루어진 트리를 만듭니다. 또한 CSS파일과 HTML의 요소들의 인라인 스타일을 파싱하여 스타일 정보를 가진 스타일 트리도 같이 생성합니다.</p>
+
+<img src=https://velog.velcdn.com/images/jsh_0218/post/c1f84f50-74af-40da-b0a0-38feb5a093b8/image.png alt="웹 브라우저 렌더링 과정 이미지" />
+
+<p>이렇게 렌더 트리가 완성되면 브라우저는 Attachment라는 과정을 통해 스타일 정보를 계산합니다. 렌더 트리로 생성된 모든 노드들은 attach라는 함수를 가지고 있는데 Attachment 과정에서이 메소드들이 호출되며 해당 메소드는 스타일 정보를 계산하고 결과값을 객체 형태로 반환하게 됩니다.
+
+이 때 이 계산 과정은 모두 동기적으로 동작하게 되며, 만약 렌더 트리에 새로운 노드가 추가된다면 해당 노드의 attach 메소드가 실행되어 계산 과정을 거치게 됩니다.
+
+렌더 트리는 Attachment 과정을 거친 후 레이아웃이라는 과정을 거치게 되는데, 이 과정에서는 브라우저가 렌더 트리의 각 노드들에게 좌표를 부여하고 정확히 어디에 어떻게 표시되는지를 결정합니다.
+
+마지막으로 브라우저는 페인팅이라는 과정을 거치게 되는데 각 노드들에 paint 함수를 호출하여 렌더링된 요소들에 색상을 입히게 됩니다.
+
+이런 과정을 거쳐 표시된 HTML을 Javascript를 사용하여 돔을 조작하게 되면 각 노드의 좌표를 계산하기 위해 레이아웃 과정이 다시 실행되고 그 이후 페인팅이 다시 진행되게 됩니다.이렇게 돔 조작으로 레이아웃 과정이 다시 진행되는 것을 Reflow, 페인팅 과정이 다시 진행되는 것을 Repaint라고 합니다. 리플로우와 리페인팅은 돔의 각 노드에 대한 연산 과정을 다시 수행하므로 이 과정이 많이 수행될수록 웹 서비스의 성능이 저하되는 문제가 발생하게 됩니다.
+
+React는 이러한 문제를 가상 돔을 만듦으로써 해결했습니다. 화면에 표시한 돔과 동일한 돔을 메모리상에 만들고 돔 조작이 발생하면 가상 돔에 모든 연산을 수행한 후 실제 돔을 갱신하여 리플로우 및 리페인트의 연산을 최소화하였습니다.
+
+만약 사용자가 Todo 리스트 앱을 사용한다고 가정했을 때, 가상 돔이 없는 경우 리스트에 할 일을 추가하려면 할 일을 하나 표시하기 위해 리플로우/리페인트가 한 번 발생하고, 전체 리스트를 표시하기 위해 리플로우/리페인트가 한 번 더 발생합니다. 그러나 React에서는 이 모든 과정을 가상 돔에서 수행하여 리플로우/리페인트를 한 번 만 수행하도록 합니다.
+
+이렇게 React에서는 가상 돔을 활용해 SPA의 리플로우/리페인트를 최소화하여 성능을 최적화 시켰습니다.</p>
+
+<h3>단방향 데이터 바인딩</h3>
+
+<p>우선 양방향 데이터 바인딩부터 살펴보겠습니다. 양방향 데이터 바인딩은 사용자 UI의 데이터 변경을 감시하는 Watcher와 Javascript 데이터의 변경을 감시하는 Watcher가 UI와 자바 스크립트 데이터를 자동으로 동기화 시켜주는 방식을 말합니다. 이를 통해 개발자는 Javascript 내의 데이터 변경과 사용자 UI의 데이터 변경에 관한 동기화를 신경쓰지 않고 프로그램을 작성할 수 있습니다.</p>
+
+
+<img src=https://velog.velcdn.com/images/jsh_0218/post/0f35e2a4-9d56-40b8-9e71-d30103a2456d/image.avif alt="양방향 데이터 바인딩 이미지" />
+
+<p>하지만 하나의 데이터 동기화에 두 개의 Watcher가 사용되고 데이터가 많아지게 되면 이 데이터의 동기화를 위한 수 많은 Watcher가 생성되므로 성능 저하가 발생할 수 있습니다.
+
+이러한 이유로 React에서는 단방향 데이터 바인딩을 사용합니다.</p>
+
+<img src=https://velog.velcdn.com/images/jsh_0218/post/12e8bf72-f1f7-42c9-9078-b0f8ef0f3b1c/image.avif alt="단방향 데이터 바인딩 이미지" />
+
+
+<p>단방향 데이터 바인딩은 단 하나의 Watcher가 Javascript의 데이터 갱신을 감지하여 사용자의 UI 데이터를 갱신합니다. 사용자가 UI를 통해 Javascript의 데이터를 갱신할 때는 이벤트를 통해 갱신하게 됩니다. 이처럼 단방향 데이터 바인딩은 하나의 Watcher를 사용하기 때문에 성능적인 이슈를 해결하고 확실하게 데이터를 추적할 수 있게 해줍니다.</p>
+
+<h3>JSX</h3>
+
+<p>JSX는 Javascript와 HTML을 동시에 사용하며 HTML에 Javascript의 변수들을 바로 사용할 수 있는 일종의 템플릿 언어(Template Language)입니다.</p>
+
+<img src="${blogPostImg.post4Img1}" alt="JSX 예시" />
+
+<p>React는 위와 같이 Javascript에서 HTML을 사용할 수 있으며 Javascript 변수를 HTML 태그에서 바로 호출하여 사용할 수 있습니다.</p>
+
+<h3>Props와 State</h3>
+
+<h4>Props</h4>
+
+<p>부모 Component에서 자식 Component로 전달해 주는 데이터를 말합니다. 자식 Component에서 전달받은 Props는 변경이 불가능하고 Props를 전달해준 최상위 부모 Component만 Props를 변경할 수 있습니다.</p>
+
+<h4>State</h4>
+
+<p>State는 Component 내부에서 선언하며 내부에서 값을 변경할 수 있습니다. State는 동적인 데이터를 다룰 때 사용하며 사용자와의 상호작용을 통해 데이터를 동적으로 변경할 때 사용합니다. 클래스형 Component에서만 사용할 수 있고, 각각의 State는 독립적입니다.</p>
+
+<h3>Component 기반</h3>
+
+<p>Component는 독립적인 단위의 소프트웨어 모듈을 말합니다.
+
+React는 UI(View)를 여러 Component를 쪼개서 만듭니다.
+
+한 페이지 내에서도 여러 각 부분들을 독립된 Component로 만들고, 이 Component를 조립해 화면을 구성합니다.
+
+Component 단위로 쪼개져 있기 때문에 전체 코드를 파악하기가 상대적으로 쉽습니다. 이렇게 기능 단위, UI 단위로 캡슐화시켜 코드를 관리하기 때문에 재사용성이 높습니다. 코드를 반복해서 입력할 필요 없이 Component를 import하여 사용하면 된다는 간편함이 있으며 코드의 유지 보수, 관리가 쉬워지는 장점이 있습니다.</p>
+
+<img src=${blogPostImg.post4Img2} alt="컴포넌트로 분할 이미지" />
+
+<p>Layout, Header와 같은 구조를 Component로 만들고, 이를 조합해서 Root Component를 만드는 방식으로 구조를 이루고 있습니다.</p>
+
+<p>오늘은 React는 무엇인지, React의 특징은 무엇인지 간단하게 알아보았습니다.</p>
+
+<p>Reference</p>
+
+<hr />
+
+<a href="https://velog.io/@jini_eun/React-React.js%EB%9E%80-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC#4-props-and-state">
+<p>https://velog.io/@jini_eun/React-React.js%EB%9E%80-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC#4-props-and-state</p></a>
+
+<a href="https://deku.posstree.com/ko/react/create-react-app/react/"><p>https://deku.posstree.com/ko/react/create-react-app/react/<p/></a>
+
+<p>이미지 출처 - <a href="https://deku.posstree.com/ko/react/create-react-app/react/">https://deku.posstree.com/ko/react/create-react-app/react/</a></p>`,
+  },
   //   {
   //     post_id: 5,
   //     title: '',

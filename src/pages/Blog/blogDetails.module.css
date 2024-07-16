@@ -124,6 +124,7 @@ button {
 .blogDetailsDescription {
   font-size: 16px;
   margin: 25px 0;
+  word-break: keep-all;
 }
 
 /* 블로그 내용의 댓글 article 스타일 */
