@@ -10,6 +10,14 @@ import Create from './pages/Blog/Create'
 import BlogDetails from './pages/Blog/BlogDetails'
 import Admin from './pages/Admin/Admin'
 import { useEffect } from 'react'
+// 구글 애널리틱스 사용
+import ReactGA from 'react-ga'
+
+const googleTag = import.meta.env.VITE_GOOGLE_TAG // 환경 변수에 저장된 추적ID 가져오기
+if (googleTag) {
+  ReactGA.initialize(googleTag, { debug: true }) // react-ga 초기화 및 debug 사용
+}
+ReactGA.pageview(window.location.pathname) // 추적하려는 page 설정
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation()
