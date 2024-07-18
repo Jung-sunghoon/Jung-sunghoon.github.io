@@ -686,7 +686,7 @@ export const posts = [
     post_id: 9,
     title: '구글 애널리틱스 적용하기',
     creation_date: '2024-03-22',
-    thumbnail: '',
+    thumbnail: blogThumbnailImg.thumbnail9,
     content: `
     <p>제 기술 블로그에 어떤 경로로 얼마나 들어왔는지 파악하고 데이터를 시각적으로 보기 위해 찾던 도중 구글 애널리틱스를 알게되었습니다.</p>
     
@@ -747,20 +747,69 @@ export const posts = [
     <p>잘 적용해서 웹사이트 관리를 효율적으로 하시길 바랍니다.</p>
     `,
   },
-  //   {
-  //     post_id: 10,
-  //     title: '',
-  //     creation_date: '',
-  //     thumbnail: '',
-  //     content: ``,
-  //   },
-  //   {
-  //     post_id: 11,
-  //     title: '',
-  //     creation_date: '',
-  //     thumbnail: '',
-  //     content: ``,
-  //   },
+  {
+    post_id: 10,
+    title: '구글 폰트 적용하기',
+    creation_date: '2024-03-29',
+    thumbnail: blogThumbnailImg.thumbnail10,
+    content: `
+    <p>오늘의 포스팅은 구글 폰트 적용입니다.</p>
+    
+    <p>기본 폰트가 불편한 것 보다는 조금 더 잘 보이는 폰트를 찾아서 적용 해야겠다는 생각에 바꾸게 되었습니다.</p>
+    
+    <p>폰트의 종류에도 여러가지가 있고 폰트 사이트에도 여러가지가 있는데 그 중 구글 폰트를 사용해보겠습니다.</p>
+    
+    <p>먼저 구글 폰트로 들어가 봅시다.</p>
+
+    <p><a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a></p>
+
+    <p>보시는 것처럼 굉장히 다양한 폰트가 있습니다.</p>
+    
+    <p>그 중 가장 무난하고 사람들이 많이 사용하는 Noto Sans Korean 을 사용 해 보겠습니다.</p>
+
+    <p>해당 화면에서 Get font 를 클릭하고</p>
+
+    <p>저는 html에 적용할 것이므로 Get embed code를 클릭해줍니다.</p>
+
+    <p>보이는 코드를 카피하여 html 파일의 &lt;head&gt; 태그 안에 넣어줍니다.</p>
+
+    <p>이렇게 하면 끝!</p>
+    <p>인 줄 알았으나... 아무리 해도 적용이 되질 않더라구요..</p>
+    <p>그런 관계로 가장 상위에 있는 index.css 파일에서</p>
+    <pre>
+      *{
+        font-family: 'Noto Sans KR', serif !important
+      }
+    </pre>
+    <p>를 사용하여 적용해줬습니다.</p>
+    <img src=${blogPostImg.post10Img1} alt="" />
+    <img src=${blogPostImg.post10Img2} alt="" />
+    <img src=${blogPostImg.post10Img3} alt="" />
+    <img src=${blogPostImg.post10Img4} alt="" />
+    <img src=${blogPostImg.post10Img5} alt="" />
+    <img src=${blogPostImg.post10Img6} alt="" />
+    <img src=${blogPostImg.post10Img7} alt="" />
+    <p>아래는 변경 후 모습입니다.</p>
+    <img src=${blogPostImg.post10Img8} alt="" />
+    <img src=${blogPostImg.post10Img9} alt="" />
+    <img src=${blogPostImg.post10Img10} alt="" />
+    <img src=${blogPostImg.post10Img11} alt="" />
+    <img src=${blogPostImg.post10Img12} alt="" />
+    <img src=${blogPostImg.post10Img13} alt="" />
+    <img src=${blogPostImg.post10Img14} alt="" />
+
+    <p>매우 큰 차이는 없지만 글씨체 자체가 좀 더 두께감이 생기고 알아보기 쉽게 변경이 잘 되었습니다.</p>
+    <p>오늘은 구글 폰트 적용에 대해 알아보았습니다.</p>
+
+    `,
+  },
+  // {
+  //   post_id: 11,
+  //   title: '',
+  //   creation_date: '',
+  //   thumbnail: '',
+  //   content: ``,
+  // },
   //   {
   //     post_id: 12,
   //     title: '',

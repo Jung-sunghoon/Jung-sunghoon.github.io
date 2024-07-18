@@ -18,6 +18,20 @@ import post9Img8 from '@src/assets/img/blogPostImg/postId9/8.png'
 import post9Img9 from '@src/assets/img/blogPostImg/postId9/9.png'
 import post9Img10 from '@src/assets/img/blogPostImg/postId9/10.png'
 import post9Img11 from '@src/assets/img/blogPostImg/postId9/11.png'
+import post10Img1 from '@src/assets/img/blogPostImg/postId10/1.png'
+import post10Img2 from '@src/assets/img/blogPostImg/postId10/2.png'
+import post10Img3 from '@src/assets/img/blogPostImg/postId10/3.png'
+import post10Img4 from '@src/assets/img/blogPostImg/postId10/4.png'
+import post10Img5 from '@src/assets/img/blogPostImg/postId10/5.png'
+import post10Img6 from '@src/assets/img/blogPostImg/postId10/6.png'
+import post10Img7 from '@src/assets/img/blogPostImg/postId10/7.png'
+import post10Img8 from '@src/assets/img/blogPostImg/postId10/8.png'
+import post10Img9 from '@src/assets/img/blogPostImg/postId10/9.png'
+import post10Img10 from '@src/assets/img/blogPostImg/postId10/10.png'
+import post10Img11 from '@src/assets/img/blogPostImg/postId10/11.png'
+import post10Img12 from '@src/assets/img/blogPostImg/postId10/12.png'
+import post10Img13 from '@src/assets/img/blogPostImg/postId10/13.png'
+import post10Img14 from '@src/assets/img/blogPostImg/postId10/14.png'
 
 export default {
   post1Img,
@@ -40,4 +54,18 @@ export default {
   post9Img9,
   post9Img10,
   post9Img11,
+  post10Img1,
+  post10Img2,
+  post10Img3,
+  post10Img4,
+  post10Img5,
+  post10Img6,
+  post10Img7,
+  post10Img8,
+  post10Img9,
+  post10Img10,
+  post10Img11,
+  post10Img12,
+  post10Img13,
+  post10Img14,
 }
