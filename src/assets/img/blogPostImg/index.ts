@@ -32,6 +32,15 @@ import post10Img11 from '@src/assets/img/blogPostImg/postId10/11.png'
 import post10Img12 from '@src/assets/img/blogPostImg/postId10/12.png'
 import post10Img13 from '@src/assets/img/blogPostImg/postId10/13.png'
 import post10Img14 from '@src/assets/img/blogPostImg/postId10/14.png'
+import post11Img1 from '@src/assets/img/blogPostImg/postId11/1.png'
+import post11Img2 from '@src/assets/img/blogPostImg/postId11/2.png'
+import post11Img3 from '@src/assets/img/blogPostImg/postId11/3.png'
+import post11Img4 from '@src/assets/img/blogPostImg/postId11/4.png'
+import post11Img5 from '@src/assets/img/blogPostImg/postId11/5.png'
+import post11Img6 from '@src/assets/img/blogPostImg/postId11/6.png'
+import post11Img7 from '@src/assets/img/blogPostImg/postId11/7.png'
+import post11Img8 from '@src/assets/img/blogPostImg/postId11/8.png'
+import post12Img1 from '@src/assets/img/blogPostImg/postId12/1.png'
 
 export default {
   post1Img,
@@ -68,4 +77,13 @@ export default {
   post10Img12,
   post10Img13,
   post10Img14,
+  post11Img1,
+  post11Img2,
+  post11Img3,
+  post11Img4,
+  post11Img5,
+  post11Img6,
+  post11Img7,
+  post11Img8,
+  post12Img1,
 }
