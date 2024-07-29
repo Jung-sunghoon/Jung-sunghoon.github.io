@@ -7,12 +7,12 @@
 
 /* 
 {
-    post_id: ,
-    title: '',
-    creation_date: '',
-    thumbnail: '',
-    content: ``,
-  },
+  post_id: ,
+  title: '',
+  creation_date: '',
+  thumbnail: '',
+  content: ``,
+},
 */
 
 import blogThumbnailImg from '@src/assets/img/blogThumbnailImg'
@@ -939,4 +939,112 @@ export const posts = [
     <p>열심히 해보겠습니다!</p>
     `,
   },
+  {
+    post_id: 14,
+    title: '부트캠프 6월 1주차 정리',
+    creation_date: '2024-06-07',
+    thumbnail: blogThumbnailImg.thumbnail14,
+    content: `
+    <h2>block / inline / inline-block</h2>
+
+    <h3>block</h3>
+    <ul style="margin-left: 25px">
+      <li>가능한 모든 너비 차지</li>
+      <li>항상 새로운 줄에서 시작</li>
+      <li>이전, 이후 요소 사이에 줄바꿈이 일어남</li>
+      <li>인라인 요소 안에 블록 요소는 중첩 가능하나 반대는 불가능</li>
+    </ul>
+
+    <h3>inline</h3>
+    <ul style="margin-left: 25px">
+      <li>항상 블록 레벨 요소 내부에 포함 됨</li>
+      <li>컨텐츠에 따라 너비가 달라짐</li>
+      <li>새로운 줄을 만들지 X</li>
+      <li>width, height 지정 X</li>
+      <li>padding/border/margin(좌우) 사용 O</li>
+    </ul>
+    
+    <h3>inline-block</h3>
+    <ul style="margin-left: 25px">
+      <li>인라인 속성을 따르지만 너비와 높이 조절 가능</li>
+      <li>margin, padding 상하 간격 지정 가능</li>
+      <li>button, input, select</li>
+    </ul>
+
+    <h2>div / span</h2>
+
+    <h3>div</h3>
+    <ul style="margin-left: 25px">
+      <li>block 요소</li>
+      <li>공간을 나누고 정리의 역할을 하는 광범위하게 사용되는 태그</li>
+      <li>지정된 기능은 영역을 구분 짓기</li>
+      <li>SEO, 코드가독성, 접근성 등에 도움을 주는 태그가 아니기 때문에 공간을 나누기 위한 용도로 사용을 권장함.</li>
+    </ul>
+
+    <h3>span</h3>
+    <ul style="margin-left: 25px">
+      <li>inline 요소</li>
+      <li>스타일 적용 시 인라인 요소 묶을 때 사용함(p,a 등)</li>
+    </ul>
+
+    <h2>실습</h2>
+
+    <h3>스크린샷</h3>
+    <img src=${blogPostImg.post14Img1} alt="로그인 페이지 실습 스크린샷" />
+
+    <h3>코드</h3>
+    <img src=${blogPostImg.post14Img2} alt="로그인 페이지 실습 코드" />
+
+    <img src=${blogPostImg.post14Img3} alt="로그인 페이지 실습 코드" />
+    `,
+  },
+  {
+    post_id: 15,
+    title: '',
+    creation_date: '',
+    thumbnail: '',
+    content: ``,
+  },
+  {
+    post_id: 16,
+    title: '',
+    creation_date: '',
+    thumbnail: '',
+    content: ``,
+  },
+  {
+    post_id: 17,
+    title: '',
+    creation_date: '',
+    thumbnail: '',
+    content: ``,
+  },
+  {
+    post_id: 18,
+    title: '',
+    creation_date: '',
+    thumbnail: '',
+    content: ``,
+  },
+  {
+    post_id: 19,
+    title: '',
+    creation_date: '',
+    thumbnail: '',
+    content: ``,
+  },
+  // {
+  //   post_id: ,
+  //   title: '',
+  //   creation_date: '',
+  //   thumbnail: '',
+  //   content: ``,
+  // },
+  // {
+  //   post_id: ,
+  //   title: '',
+  //   creation_date: '',
+  //   thumbnail: '',
+  //   content: ``,
+  // },
 ]

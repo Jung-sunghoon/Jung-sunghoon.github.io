@@ -41,6 +41,9 @@ import post11Img6 from '@src/assets/img/blogPostImg/postId11/6.png'
 import post11Img7 from '@src/assets/img/blogPostImg/postId11/7.png'
 import post11Img8 from '@src/assets/img/blogPostImg/postId11/8.png'
 import post12Img1 from '@src/assets/img/blogPostImg/postId12/1.png'
+import post14Img1 from '@src/assets/img/blogPostImg/postId14/1.png'
+import post14Img2 from '@src/assets/img/blogPostImg/postId14/2.png'
+import post14Img3 from '@src/assets/img/blogPostImg/postId14/3.png'
 
 export default {
   post1Img,
@@ -86,4 +89,7 @@ export default {
   post11Img7,
   post11Img8,
   post12Img1,
+  post14Img1,
+  post14Img2,
+  post14Img3,
 }

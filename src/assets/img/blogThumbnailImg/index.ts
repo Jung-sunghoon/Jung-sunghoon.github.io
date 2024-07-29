@@ -4,6 +4,7 @@ import thumbnail6 from '@src//assets/img/blogThumbnailImg/postId6/1.png'
 import thumbnail9 from '@src/assets/img/blogThumbnailImg/postId9/1.png'
 import thumbnail10 from '@src/assets/img/blogThumbnailImg/postId10/1.png'
 import thumbnail11 from '@src/assets/img/blogThumbnailImg/postId11/1.png'
+import thumbnail14 from '@src/assets/img/blogThumbnailImg/postId14/1.png'
 
 export default {
   thumbnail1,
@@ -12,4 +13,5 @@ export default {
   thumbnail9,
   thumbnail10,
   thumbnail11,
+  thumbnail14,
 }
