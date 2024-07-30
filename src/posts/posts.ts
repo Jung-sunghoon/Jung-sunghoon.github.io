@@ -1000,39 +1000,525 @@ export const posts = [
   },
   {
     post_id: 15,
-    title: '',
-    creation_date: '',
+    title: '6월 2주차 정리',
+    creation_date: '2024-06-14',
     thumbnail: '',
-    content: ``,
+    content: `
+    <h1>6월 2주차 정리</h1>
+
+    <h2>HTML</h2>
+
+    <h3>form</h3>
+
+    <ul style="margin-left:25px">
+      <li>
+        form은 사용자로부터 입력을 받기 위한 양식을 작성하는 태그들을 통틀어 부르는 말
+      </li>
+      <li>
+        입력한 데이터를 제출하는 데에 주 목적이 있음
+      </li>
+      <li>
+        예시: 로그인, 회원가입
+      </li>
+    </ul>
+
+    <h3>action</h3>
+
+    <ul style="margin-left:25px">
+      <li>
+        form 데이터를 처리할 URL 작성
+      </li>
+      <li>
+        데이터를 어디로 보낼 것인지 지정하며 값은 반드시 유효한 URL이어야 함
+      </li>
+      <li>
+        지정하지 않을 경우 데이터는 form이 있는 페이지의 URL로 보내짐
+      </li>
+    </ul>
+
+    <h3>method</h3>
+    <ul style="margin-left:25px">
+      <li>
+        양식을 제출하는 데에 사용(http 메소드)
+      </li>
+    </ul>
+
+    <h4>GET vs POST</h4>
+    
+    <img src=${blogPostImg.post15Img1} alt="GET vs POST 테이블" />
+
+
+    <h3>input</h3>
+
+    <h4>공통 속성</h4>
+
+    <ul style="margin-left:25px">
+      <li>
+        type: input 양식 컨트롤의 유형
+      </li>
+      <li>
+        name: input 양식 컨트롤의 이름
+      </li>
+      <li>
+        value: input 양식 컨트롤의 값
+      </li>
+      <li>
+        autocomplete: on / off 양식 자동완성 기능에 대한 힌트
+      </li>
+      <li>
+        placeholder: 양식 컨트롤이 비어있을 때 나타내는 내용(ex. 아이디를 입력하시오)
+      </li>
+      <li>
+        required: 전송을 위한 필수 입력 값
+      </li>
+      <li>
+        disabled: 비활성화
+      </li>
+      <li>
+        readonly: 수정불가(읽기 전용)
+      </li>
+    </ul>
+
+
+    <h3>SEO란?</h3>
+
+    <ul style="margin-left:25px">
+      <li>
+        Search Engine Optimization의 줄임말, 한국어로는 검색 엔진 최적화
+      </li>
+      <li>
+        사이트마다 정책과 적용 기법이 다름
+      </li>
+      <li>
+        검색엔진: 네이버, 다음, 구글 검색
+      </li>
+      <li>
+        SEO가 잘 되었을 때의 이점: 트래픽 증가, 신뢰성 구축, 비용 효율 증가
+      </li>
+    </ul>
+
+
+    <h2>CSS</h2>
+
+    <h3>CSS란?</h3>
+
+    <ul style="margin-left:25px">
+      <li>
+        Cascading Style Sheets의 약자
+      </li>
+      <li>
+        CSS에서 스타일이 적용될 때 우선순위를 가지고 적용되는데 그 과정이 폭포처럼 위에서 아래로 떨어지는 모양이기 때문
+      </li>
+      <li>
+        HTML의 스타일, 레이아웃 등을 꾸미는 역할
+      </li>
+      <li>
+        여러 HTML에 재사용하여 반복 작업을 줄일 수 있다.
+      </li>
+    </ul>
+
+
+    <h3>작성방법</h3>
+    <ul style="margin-left:25px">
+      <li>
+        인라인 적용
+      </li>
+      <li>
+        태그 선택자 적용
+      </li>
+      <li>
+        그룹 선택자 적용
+      </li>
+      <li>
+        상속 적용
+      </li>
+    </ul>
+
+
+    <h3>가상 클래스 선택자</h3>
+
+    <ul style="margin-left:25px">
+      <li>
+        선택한 요소가 특별한 상태여야 만족
+      </li>
+      <li>
+        : 를 사용함
+      </li>
+    </ul>
+
+    <h3>가상 요소</h3>
+    <ul style="margin-left:25px">
+      <li>
+        선택자에 추가하는 키워드
+      </li>
+      <li>
+        특정 요소의 일부분에만 스타일을 입힐 수 있음
+      </li>
+      <li>
+        :: 를 사용함
+      </li>
+    </ul>
+
+
+    <h3>CSS 선택자 우선순위</h3>
+    <ul style="margin-left:25px">
+      <li>
+        후자 우선의 원칙: 동일한 선택자에 동일한 속성이 사용되었을 경우 뒤에 적힌 속성을 따름
+      </li>
+      <li>
+        구체성의 원칙: inline-style / id(#)/ class(.), 가상 클래스, 속성 선택자/ type(tag), 가상 요소 선택자 순으로 우선순위가 낮아짐
+      </li>
+      <li>
+        중요성의 원칙: !important
+      </li>
+    </ul>
+    `,
   },
   {
     post_id: 16,
-    title: '',
-    creation_date: '',
+    title: '6월 3주차 정리',
+    creation_date: '2024-06-21',
     thumbnail: '',
-    content: ``,
+    content: `
+    <h1>6월 3주차 정리</h1>
+
+    <h2>Box Model</h2>
+
+    <h3>border-radius</h3>
+    <ul style="margin-left:25px">
+      <li>단축속성
+      <li>모서리를 설정하며 설정값이 높을수록 둥글어짐
+    </ul>
+
+
+    <h3>background</h3>
+
+    <ul style="margin-left:25px">
+      <li>color: 배경 색상 설정</li>
+      <li>image: 배경 이미지 설정</li>
+      <li>repeat: 배경 이미지 반복 여부 및 방식 설정</li>
+      <li>position: 배경 위치 설정</li>
+      <li>size: 배경 이미지 사이즈 설정</li>
+      <li>attachment: 고정 설정</li>
+      <li>clip: 요소의 배경이 어디까지 차지할지 지정</li>
+      <li>origin: 배경 위치 시작점 설정</li>
+    </ul>
+
+    <h3>box-shadow</h3>
+    <ul style="margin-left:25px">
+      <li>그림자 효과 추가</li>
+    </ul>
+
+    <h3>opacity</h3>
+
+    <ul style="margin-left:25px">
+      <li>0 ~ 1 사이의 숫자로 불투명도 설정</li>
+    </ul>
+
+
+    <h2>display</h2>
+
+    <ul style="margin-left:25px">
+      <li>박스의 유형을 지정하여 다른 박스들과 어떻게 배치될 지 레이아웃 설정</li>
+      <li>주의: CSS 속성으로 시각적인 부분이 바뀌었을 뿐 태그 자체의 요소가 블록 레벨로 바뀐 것은 아님</li>
+    </ul>
+
+    <ul style="margin-left:25px">
+      <li>block</li>
+      <li>inline</li>
+      <li>inline-block</li>
+      <li>flex</li>
+      <li>grid</li>
+      <li>none</li>
+    </ul>
+
+    <h2>reset.css</h2>
+    <ul style="margin-left:25px">
+      <li>각 브라우저마다 기본적으로 제공하는 스타일이 있으며 조금씩 다름</li>
+      <li>크로스 브라우징을 대비하여 CSS를 리셋시키는 것</li>
+    </ul>
+
+    <h3>크로스 브라우징</h3>
+    <ul style="margin-left:25px">
+      <li>어느 한 쪽 브라우저에 최적화되어 치우치지 않도록 공통 요소를 사용하여 웹 페이지를 제작하는 기법</li>
+      <li>다른 브라우저로 접속해도 거의 비슷한 사용자 경험을 할 수 있게 함</li>
+    </ul>
+
+    <h2>Position</h2>
+
+    <ul style="margin-left:25px">
+      <li>static(기본값)</li>
+      <li>relative</li>
+      <li>absolute</li>
+      <li>fixed</li>
+      <li>sticky</li>
+    </ul>
+
+
+    <h2>flex</h2>
+
+    <h3>flex-container</h3>
+
+    <ul style="margin-left:25px">
+      <li>flex가 적용된 부모요소를 flex-container, 자식요소를 flex-item이라고 부름</li>
+      <li>1차원적 레이아웃을 위해 주로 사용 됨</li>
+    </ul>
+
+    <h3>flex-direction</h3>
+    <ul style="margin-left:25px">
+      <li>컨테이너 내 아이템을 배치할 때 주축 및 방향 지정</li>
+    </ul>
+
+    <h3>justify-content</h3>
+    <ul style="margin-left:25px">
+      <li>주축을 기준으로 배열의 위치를 조절하거나 아이템 간의 설정 가능</li>
+    </ul>
+
+    <h3>align-items</h3>
+    <ul style="margin-left:25px">
+      <li>교차 축을 기준으로 정렬</li>
+    </ul>
+
+    <h3>align-content</h3>
+    <ul style="margin-left:25px">
+      <li>컨테이너의 교차 축의 아이템들이 여러 줄일 때 사용 가능(flex-wrap: wrap) 상태에서만 사용 가능</li>
+    </ul>
+
+
+    <h3>flex-basis</h3>
+    <ul style="margin-left:25px">
+      <li>flex-item의 초기 크기를 설정(축마다 달라지며 내부 콘텐츠에 따라 유연한 크기를 가짐)</li>
+    </ul>
+
+    <h3>flex-grow</h3>
+    <ul style="margin-left:25px">
+      <li>아이템이 컨테이너 내부에서 할당할 수 있는 공간의 정도 지정</li>
+      <li>0을 줄 경우 늘어나지 않으며 2 이상의 수를 줄 경우 다른 자식요소보다 2배 이상의 여백 공간을 할당 받음</li>
+    </ul>
+
+    ## grid
+    <ul style="margin-left:25px">
+      <li>웹 페이지를 위한 2차원 레이아웃</li>
+    </ul>
+
+    ## grid-container 속성
+
+    <h3>grid-template-columns</h3>
+    <ul style="margin-left:25px">
+      <li>열 방향 그리드 트랙의 사이즈를 설정</li>
+    </ul>
+
+    <h3>grid-template-rows</h3>
+    <ul style="margin-left:25px">
+      <li>행 방향 그리드 트랙의 사이즈를 설정</li>
+    </ul>
+
+    <h3>fr</h3>
+    <ul style="margin-left:25px">
+      <li>fraction(분수)의 약자</li>
+      <li>컨테이너 분할</li>
+      <li>트랙의 비율을 지정해주는 유연한 길이 단위</li>
+      <li>1fr 1fr 1fr은 1:1:1의 비율 의미</li>
+    </ul>
+
+    <h3>함수</h3>
+
+    <h4>1. repeat()</h4>
+    <ul style="margin-left:25px">
+      <li>grid-track의 사이즈를 더 간단한 형태로 표현하도록 도와줌</li>
+      <li>repeat(반복 횟수, 반복할 값)으로 사용</li>
+    </ul>
+
+    <h4>2. minmax()</h4>
+    <ul style="margin-left:25px">
+      <li>그리드에서 최소와 최대 사이의 범위를 설정하는 함수이며 최소값과 최대값을 의미하는 두 가지 인자를 가짐</li>
+    </ul>
+    
+    <h3>align-content</h3>
+    <ul style="margin-left:25px">
+      <li>그리드 콘텐츠의 수직 정렬</li>
+      <li>아이템의 세로 높이가 컨테이너 안에서 움직일 공간이 있어야 함</li>
+    </ul>
+
+    <h3>justify-content</h3>
+    <ul style="margin-left:25px">
+      <li>그리드 콘텐츠의 수평 정렬</li>
+      <li>아이템의 가로 높이가 컨테이너 안에서 움직일 공간이 있어야 함.</li>
+    </ul>
+
+    <h3>align-items</h3>
+    <ul style="margin-left:25px">
+      <li>직계 자식에 대한 수직 정렬을 동일하게 해줌</li>
+    </ul>
+
+    <h3>justify-items</h3>
+    <ul style="margin-left:25px">
+      <li>직계 자식에 대한 수평 정렬을 모두 동일하게 해줌</li>
+    </ul>
+
+
+    <h2>grid-item 속성</h2>
+
+    <h3>grid-area</h3>
+
+    <h3>grid-column-start, grid-column-end / grid-row-start, grid-row-end</h3>
+
+    <ul style="margin-left:25px">
+      <li>그리드 열방향 시작, 끝 / 그리드 행방향 시작, 끝</li>
+    </ul>
+
+    <h3>align-self</h3>
+    <ul style="margin-left:25px">
+      <li>아이템 개별로 수직 (열) 정렬을 지정</li>
+    </ul>
+
+    <h3>justify-self</h3>
+    <ul style="margin-left:25px">
+      <li>아이템 개별로 수평(행) 정렬을 지정</li>
+    </ul>
+
+    <h3>place-self</h3>
+    <ul style="margin-left:25px">
+      <li>align-self, justify-self 를 함께 적는 단축 속성</li>
+    </ul>
+
+    <h3>order</h3>
+
+    <ul style="margin-left:25px">
+      <li>(flex와 마찬가지로) 아이템의 배치 순서를 지정</li>
+    </ul>
+
+
+    <h2>transform</h2>
+    <ul style="margin-left:25px">
+      <li>요소에 다양한 변형을 줄 수 있음</li>
+    </ul>
+
+    <h3>scale</h3>
+    <ul style="margin-left:25px">
+      <li>요소의 크기 조절</li>
+      <li>자신의 가운데를 중심으로 크기 변경</li>
+      <li>transform-origin을 통해 기준점 변경 가능</li>
+      <li>scale(1.5) => 1.5배 커짐</li>
+    </ul>
+
+    <h3>rotate</h3>
+    <ul style="margin-left:25px">
+      <li>요소 회전</li>
+      <li>transform: rotate(180deg) / transform: rotate(0.5turn) 으로 사용</li>
+      <li>자신의 가운데를 중심으로 회전</li>
+      <li>transform-origin을 통해 기준점 변경 가능</li>
+    </ul>
+
+    <h3>translate</h3>
+    <ul style="margin-left:25px">
+      <li>자신의 위치에서 x, y축 이동</li>
+      <li>기준점: 왼쪽 상단</li>
+      <li>음수값 지정 가능</li>
+    </ul>
+
+    <h3>skew</h3>
+    <ul style="margin-left:25px">
+      <li>요소 왜곡</li>
+      <li>각도 단위 사용</li>
+    </ul>
+
+    <h2>transition</h2>
+    <ul style="margin-left:25px">
+      <li>CSS 속성값이 변할 때 값의 변화가 일정 시간에 걸쳐 일어나도록 하는 것</li>
+      <li>단축 속성</li>
+      <li>property: 전환 효과 속성 설정</li>
+      <li>duration: 완료까지 걸리는 시간</li>
+      <li>timing-function: 진행 속도 설정</li>
+    </ul>
+        
+        
+    <h2>animation</h2>
+    <ul style="margin-left:25px">
+      <li>스타일 전환</li>
+      <li>구성요소: CSS 스타일과 키프레임들</li>
+    </ul>
+
+    <h3>transition VS animation</h3>
+    <ul style="margin-left:25px">
+      <li>transition: 요소의 상태가 변경되어야 가능</li>
+      <li>animation: 요소의 상태 변화 관계 X</li>
+    </ul>
+
+    <h3>@keyframes</h3>
+    <ul style="margin-left:25px">
+      <li>두 개 이상의 애니메이션 중간 상태 설정</li>
+      <li>0%, from: 시작시점 / 100%, to: 종료시점</li>
+    </ul>
+
+    <h3>animation 속성</h3>
+
+    <h4>name</h4>
+    애니메이션
+    <ul style="margin-left:25px">
+      <li>animation-name의 시작에는 '영문 소문자,문자열, 언더바(_), 하이픈(-)'을 사용</li>
+      <li>사용할 수 없는 것:  영문 대문자, 숫자, 특수문자</li>
+      <li>여러 개의 animation-name을 동시에 나열할 경우: 쉼표(,)를 통해 구분</li>
+    </ul>
+
+    <h4>duration</h4>
+    <ul style="margin-left:25px">
+      <li>애니메이션 한 사이클 완료 시간</li>
+      <li>음수값이면 실행 X</li>
+    </ul>
+
+    <h4>timing-function</h4>
+    <ul style="margin-left:25px">
+      <li>애니메이션 진행 방식 설정</li>
+      <li>ease(기본값)</li>
+      <li>linear</li>
+      <li>steps(n)</li>
+    </ul>
+
+    <h4>delay</h4>
+    <ul style="margin-left:25px">
+      <li>애니메이션이 언제 시작할지 설정</li>
+      <li>음수값이면 도중에 시작</li>
+    </ul>
+
+    <h4>iteration-count</h4>
+    <ul style="margin-left:25px">
+      <li>재생 횟수 설정</li>
+      <li>infinite: 무한 반복</li>
+      <li>1: 한 사이클 재생</li>
+    </ul>
+
+    <h4>direction</h4>
+    <ul style="margin-left:25px">
+      <li>앞으로 뒤로 또는 앞뒤로 번갈아 재생 여부 설정</li>
+      <li>normal(기본값)</li>
+      <li>reverse</li>
+      <li>alternate</li>
+      <li>alternate-reverse</li>
+    </ul>
+  `,
   },
-  {
-    post_id: 17,
-    title: '',
-    creation_date: '',
-    thumbnail: '',
-    content: ``,
-  },
-  {
-    post_id: 18,
-    title: '',
-    creation_date: '',
-    thumbnail: '',
-    content: ``,
-  },
-  {
-    post_id: 19,
-    title: '',
-    creation_date: '',
-    thumbnail: '',
-    content: ``,
-  },
+  // {
+  //   post_id: 17,
+  //   title: '',
+  //   creation_date: '',
+  //   thumbnail: '',
+  //   content: ``,
+  // },
+  // {
+  //   post_id: 18,
+  //   title: '',
+  //   creation_date: '',
+  //   thumbnail: '',
+  //   content: ``,
+  // },
+  // {
+  //   post_id: 19,
+  //   title: '',
+  //   creation_date: '',
+  //   thumbnail: '',
+  //   content: ``,
+  // },
   // {
   //   post_id: ,
   //   title: '',
