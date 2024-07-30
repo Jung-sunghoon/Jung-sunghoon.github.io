@@ -1540,12 +1540,12 @@ html body {
       <li>0을 줄 경우 늘어나지 않으며 2 이상의 수를 줄 경우 다른 자식요소보다 2배 이상의 여백 공간을 할당 받음</li>
     </ul>
 
-    ## grid
+    <h2>grid</h2>
     <ul style="margin-left:25px">
       <li>웹 페이지를 위한 2차원 레이아웃</li>
     </ul>
 
-    ## grid-container 속성
+    <h2>grid-container 속성</h2>
 
     <h3>grid-template-columns</h3>
     <ul style="margin-left:25px">
@@ -1600,7 +1600,6 @@ html body {
       <li>직계 자식에 대한 수평 정렬을 모두 동일하게 해줌</li>
     </ul>
 
-
     <h2>grid-item 속성</h2>
 
     <h3>grid-area</h3>
@@ -1631,7 +1630,6 @@ html body {
     <ul style="margin-left:25px">
       <li>(flex와 마찬가지로) 아이템의 배치 순서를 지정</li>
     </ul>
-
 
     <h2>transform</h2>
     <ul style="margin-left:25px">
@@ -1675,8 +1673,7 @@ html body {
       <li>duration: 완료까지 걸리는 시간</li>
       <li>timing-function: 진행 속도 설정</li>
     </ul>
-        
-        
+
     <h2>animation</h2>
     <ul style="margin-left:25px">
       <li>스타일 전환</li>
