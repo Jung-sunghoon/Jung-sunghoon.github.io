@@ -45,6 +45,7 @@ import post14Img1 from '@src/assets/img/blogPostImg/postId14/1.png'
 import post14Img2 from '@src/assets/img/blogPostImg/postId14/2.png'
 import post14Img3 from '@src/assets/img/blogPostImg/postId14/3.png'
 import post15Img1 from '@src/assets/img/blogPostImg/postId15/1.png'
+import post16Img1 from '@src/assets/img/blogPostImg/postId16/1.png'
 
 export default {
   post1Img,
@@ -94,4 +95,5 @@ export default {
   post14Img2,
   post14Img3,
   post15Img1,
+  post16Img1,
 }

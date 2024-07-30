@@ -1454,7 +1454,7 @@ export const posts = [
     <h3>animation 속성</h3>
 
     <h4>name</h4>
-    애니메이션
+    <img src=${blogPostImg.post16Img1} alt="animation 코드" />
     <ul style="margin-left:25px">
       <li>animation-name의 시작에는 '영문 소문자,문자열, 언더바(_), 하이픈(-)'을 사용</li>
       <li>사용할 수 없는 것:  영문 대문자, 숫자, 특수문자</li>
