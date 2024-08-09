@@ -46,6 +46,32 @@ import post14Img2 from '@src/assets/img/blogPostImg/postId14/2.png'
 import post14Img3 from '@src/assets/img/blogPostImg/postId14/3.png'
 import post15Img1 from '@src/assets/img/blogPostImg/postId15/1.png'
 import post16Img1 from '@src/assets/img/blogPostImg/postId16/1.png'
+import post19Img1 from '@src/assets/img/blogPostImg/postId19/1.png'
+import post19Img2 from '@src/assets/img/blogPostImg/postId19/2.png'
+import post19Img3 from '@src/assets/img/blogPostImg/postId19/3.png'
+import post19Img4 from '@src/assets/img/blogPostImg/postId19/4.png'
+import post19Img5 from '@src/assets/img/blogPostImg/postId19/5.png'
+import post19Img6 from '@src/assets/img/blogPostImg/postId19/6.png'
+import post19Img7 from '@src/assets/img/blogPostImg/postId19/7.png'
+import post19Img8 from '@src/assets/img/blogPostImg/postId19/8.png'
+import post19Img9 from '@src/assets/img/blogPostImg/postId19/9.png'
+import post19Img10 from '@src/assets/img/blogPostImg/postId19/10.png'
+import post19Img11 from '@src/assets/img/blogPostImg/postId19/11.png'
+import post19Img12 from '@src/assets/img/blogPostImg/postId19/12.png'
+import post19Img13 from '@src/assets/img/blogPostImg/postId19/13.png'
+import post19Img14 from '@src/assets/img/blogPostImg/postId19/14.png'
+import post19Img15 from '@src/assets/img/blogPostImg/postId19/15.png'
+import post19Img16 from '@src/assets/img/blogPostImg/postId19/16.png'
+import post19Img17 from '@src/assets/img/blogPostImg/postId19/17.png'
+import post19Img18 from '@src/assets/img/blogPostImg/postId19/18.png'
+import post19Img19 from '@src/assets/img/blogPostImg/postId19/19.png'
+import post19Img20 from '@src/assets/img/blogPostImg/postId19/20.png'
+import post19Img21 from '@src/assets/img/blogPostImg/postId19/21.png'
+import post19Img22 from '@src/assets/img/blogPostImg/postId19/22.png'
+import post19Img23 from '@src/assets/img/blogPostImg/postId19/23.png'
+import post19Img24 from '@src/assets/img/blogPostImg/postId19/24.png'
+import post19Img25 from '@src/assets/img/blogPostImg/postId19/25.png'
+import post21Img1 from '@src/assets/img/blogPostImg/postId21/1.png'
 
 export default {
   post1Img,
@@ -96,4 +122,30 @@ export default {
   post14Img3,
   post15Img1,
   post16Img1,
+  post19Img1,
+  post19Img2,
+  post19Img3,
+  post19Img4,
+  post19Img5,
+  post19Img6,
+  post19Img7,
+  post19Img8,
+  post19Img9,
+  post19Img10,
+  post19Img11,
+  post19Img12,
+  post19Img13,
+  post19Img14,
+  post19Img15,
+  post19Img16,
+  post19Img17,
+  post19Img18,
+  post19Img19,
+  post19Img20,
+  post19Img21,
+  post19Img22,
+  post19Img23,
+  post19Img24,
+  post19Img25,
+  post21Img1,
 }

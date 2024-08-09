@@ -1495,22 +1495,1690 @@ export const posts = [
     </ul>
   `,
   },
+  {
+    post_id: 17,
+    title: '6월 4주차 정리',
+    creation_date: '2024-06-28',
+    thumbnail:
+      'https://velog.velcdn.com/images/jsh_0218/post/ff8299b1-5cee-4939-b01b-185ae12f417a/image.png',
+    content: `
+    <h1>6월 4주차 정리</h1>
+
+    <h2>CSS</h2>
+
+    <h3>Animation</h3>
+
+    <h4>animaion-fill-mode</h4>
+
+    <ul style="margin-left:25px">
+      <li>실행 전과 후에 대상에 스타일을 적용하는 방법을 지정</li>
+      <li>normal: 기본값</li>
+      <li>forwards: 요소의 기존 스타일로 시작하며 애니메이션 마지막 속성값 유지</li>
+      <li>backwards: 첫 번째 정의된 애니메이션 값으로 시작하며 요소의 기존 스타일로 돌아감</li>
+      <li>both: 첫 번째 정의된 값으로 시작하며 마지막 값 유지</li>
+    </ul>
+
+    <h4>animation-play-state</h4>
+
+    <ul style="margin-left:25px">
+      <li>애니메이션 재생 여부</li>
+      <li>paused / running: 정지 / 재생</li>
+    </ul>
+
+    <h4>animation</h4>
+
+    <ul style="margin-left:25px">
+      <li>단축속성</li>
+      <li>포함하는 속성: animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, animation-play-state</li>
+    </ul>
+
+    <h3>3d 관련 속성들</h3>
+
+    <h4>perspective</h4>
+
+    <ul style="margin-left:25px">
+      <li>3D 요소에 원근감을 주기위해 z축의 위치를 정함</li>
+      <li>값이 크면 변형이 작고 값이 작으면 변형이 큼</li>
+      <li>부모에게 사용하며 적용 범위는 직계자식만</li>
+      <li>음수 값 사용 X</li>
+    </ul>
+
+    <h4>perspective-origin</h4>
+
+    <ul style="margin-left:25px">
+      <li>소실점</li>
+      <li>사용자가 보고있는 위치(x, y)를 결정</li>
+      <li>부모에게 사용하며 기본값은 정 중앙</li>
+    </ul>
+
+    <h4>transform</h4>
+
+    <ul style="margin-left:25px">
+      <li>요소에 2D or 3D 변형을 적용</li>
+      <li>translate(), scale(), rotate()...</li>
+    </ul>
+
+    <h4>transform-style</h4>
+
+    <ul style="margin-left:25px">
+      <li>요소에 변형을 적용할 때 그 변환이 자식에게도 적용될지를 설정</li>
+      <li>부모요소에 작용</li>
+      <li>flat / preserved-3d: 평면 배치(기본값) / 3D 공간 배치</li>
+    </ul>
+
+    <h4>backface-visibility</h4>
+
+    <ul style="margin-left:25px">
+      <li>요소의 뒷면이 사용자를 향할 때 보이게 할지 설정</li>
+      <li>변형을 통해 3D 공간에서 회전되면 노출 될수 있습니다.</li>
+      <li>visible / hidden: (기본값) 뒷면을 보임 / 뒷면이 보이지 않음</li>
+    </ul>
+
+    <h3>미디어쿼리</h3>
+
+    <h4>미디어 유형</h4>
+
+    <ul style="margin-left:25px">
+      <li>all: 모든 장치를 대상으로 함(기본값)</li>
+      <li>print: 인쇄 결과물 및 출력 미리보기 화면에 표시하는 경우</li>
+      <li>screen: 모니터나 스크린이 있는 디바이스를 의미</li>
+      <li>speech: 텍스트를 음성으로 변환하는 음성 합성장치 대상</li>
+    </ul>
+
+    <h4>미디어 특성</h4>
+
+    <ul style="margin-left:25px">
+      <li>width: 스크롤바를 포함한 뷰포트의 너비</li>
+
+          <li style="margin-left:25px">min-width, max-width: 최소 / 최대 너비</li>
+
+      <li>height: 뷰포트의 높이</li>
+
+          <li style="margin-left:25px">min-height, max-height: 최소 / 최대 높이</li>
+
+      <li>orientation: 뷰포트의 방향</li>
+
+          <li style="margin-left:25px">portrait / landscape: 세로 / 가로</li>
+
+      <li>aspect-ratio: 뷰포트의 가로세로비</li>
+
+      <li>resolution: 출력장치의 픽셀 밀도 - 단위 dppx(Device pixel ratio).</li>
+
+    </ul>
+
+    <h4>min-, max-</h4>
+
+    <ul style="margin-left:25px">
+      <li>min- / max-: 최소 조건 / 최대 조건</li>
+    </ul>
+
+    <h4>논리연산자</h4>
+
+    <ul style="margin-left:25px">
+      <li>and: 조건을 모두 만족하는 경우에만 스타일을 적용</li>
+      <li>not: 조건을 반전하는 경우 스타일을 적용</li>
+
+          <li style="margin-left:25px">주의: 미디어 유형(all, screen, print..)을 지정한 경우에는 해당 미디어 유형일 경우를 의미하며 부정의 의미에 미디어 유형은 포함되지 않음</li>
+      
+      <li>,(쉼표): 조건중 하나라도 만족하는 경우 스타일을 적용</li>
+      <li>only: 미디어쿼리를 지원 하는 브라우저에서만 작동</li>
+    </ul>
+
+
+    <h3>반응형 이미지</h3>
+
+    <h4>반응형 이미지가 필요한 이유</h4>
+
+    <ul style="margin-left:25px">
+      <li>현재 다양한 디바이스가 있기 때문에 각 디바이스 환경을 고려하여 적절한 이미지를 제공해야하기 때문</li>
+    </ul>
+
+    <h4>해상도 전환</h4>
+
+    <ul style="margin-left:25px">
+      <li>사용할 때의 장점: 디바이스의 해상도 및 크기에 따라 적절한 이미지를 효율적으로 보여주는 방법</li>
+    </ul>
+
+    <h4>srcset</h4>
+
+    <ul style="margin-left:25px">
+      <li>브라우저가 네트워크, 메모리, 성능, 시간 등을 고려하여 최적의 이미지를 선택</li>
+      <li>w, x 서술자를 사용</li>
+
+          <li style="margin-left:25px">w: 이미지의 원본 넓이를 브라우저에게 알려줌</li>
+          <li style="margin-left:25px">x: 화소의 밀도. 디바이스 화소 밀도에 따른 이미지를 로딩하도록 브라우저에게 알려줌</li>
+
+      <li>사용 예시</li>
+
+          <li style="margin-left:25px">w: 이미지의 크기는 기본적으로 뷰포트의 100%를 차지(width, sizes 등의 속성으로 변경 가능)</li>
+          <li style="margin-left:25px">x: 화소밀도: 동일한 면적에 들어가는 화소의 수. 개발자 도구 콘솔창에서 window.devicePixelRatio 명령어를 입력하면 알 수 있음</li>
+
+    </ul>
+
+    <h4>sizes</h4>
+
+    <ul style="margin-left:25px">
+      <li>이미지가 차지하게 될 사이즈를 브라우저에게 알려줌</li>
+      <li>sizes와 width를 같이 작성할 경우 ⇒ width를 우선시 함</li>
+    </ul>
+
+    <h3>아트디렉션</h3>
+
+    <ul style="margin-left:25px">
+      <li>필요한 경우: 반응형 이미지에서 이미지의 의도가 제대로 전달되도록 기기에 따라 사진의 핵심을 확대해서 보여줌. 다른 비율, 다양한 크기의 이미지를 사용하고 싶을 때 사용.</li>
+      <li>picture 태그 사용</li>
+    </ul>
+
+    <h2>Figma</h2>
+
+    <h3>피그마란?</h3>
+
+    <ul style="margin-left:25px">
+      <li>UI/UX 디자인을 위한 클라우드 기반 협업 웹 어플리케이션</li>
+      <li>쉽게 말해 웹을 기반으로 디자인 편집 작업을 하고 웹 링크 공유를 통해 편리하게 협업하는 디자인 툴</li>
+    </ul>
+
+    <h3>주요기능</h3>
+
+    <ul style="margin-left:25px">
+      <li>협업</li>
+      <li>디자인 시스템</li>
+      <li>프로토타이핑</li>
+      <li>버전 관리</li>
+      <li>플러그인</li>
+      <li>내보내기 및 공유</li>
+      <li>레퍼런스</li>
+    </ul>
+
+    <h2>Figma 심화</h2>
+
+    <h3>오토레이아웃</h3>
+
+    <ul style="margin-left:25px">
+      <li>오토레이아웃이란?: 자동으로 레이아웃을 잡아주는 기능(ex. 내부 텍스트의 크기에 따라 버튼의 크기가 달라짐)</li>
+    </ul>
+
+    <h3>안경 꾸며주기 실습</h3>
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/ff8299b1-5cee-4939-b01b-185ae12f417a/image.png" alt="안경 꾸며주기 실습">
+
+    <h3>명함만들기 실습</h3>
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/48c107b1-05a4-40e7-a6b1-6c3bbbb19ec3/image.png" alt="명함 만들기 실습">
+
+
+    <h3>컴포넌트</h3>
+
+    <ul style="margin-left:25px">
+      <li>컴포넌트란?: 재사용 가능한 UI 요소. 일관성 유지, 효율성, 협업 용이 등의 장점이 있음</li>
+    </ul>
+
+    <h4>컴포넌트 용어</h4>
+
+    <ul style="margin-left:25px">
+      <li>메인 컴포넌트: 컴포넌트의 원본이자 ‘마스터’ 버전. 메인 컴포넌트를 수정하면 해당 컴포넌트를 기반으로 하는 모든 인스턴스 컴포넌트가 자동으로 업데이트 됨.</li>
+      <li>인스턴스 컴포넌트: 메인 컴포넌트의 복사본 여러 군데에 배치하여 일관된 디자인 유지 가능</li>
+      <li>오버라이드: 특정 인스턴스 컴포넌트에서 메인 컴포넌트와는 다른 속성이나 스타일을 적용하는 것. 개별 인스턴스를 메인 컴포넌트와 다르게 커스터마이징 하는 것을 의미</li>
+    </ul>
+
+    <h3>프로토타입</h3>
+
+    <ul style="margin-left:25px">
+      <li>프로토타입: 디자인한 UI를 실제로 작동하는 것처럼 시뮬레이션할 수 있게 해줌</li>
+      <li>프로토타입의 시작점을 만드는 방법: 프로토타입의 시작이 되는 지점을 Flow Starting Point로 설정</li>
+    </ul>
+    `,
+  },
+  {
+    post_id: 18,
+    title: '7월 1주차 정리',
+    creation_date: '2024-07-10',
+    thumbnail:
+      'https://velog.velcdn.com/images/jsh_0218/post/2bb8cd94-1735-4710-8aae-c57d63bef62e/image.png',
+    content: `
+    <h1>프로젝트 실습</h1>
+    <p>월요일(1일) ~ 목요일(5일)까지 Html, css, 아주 간단한 JS로만 구현하는 웹페이지 실습을 진행하였습니다.</p>
+
+    <h2>1만 시간의 법칙 실습</h2>
+
+    <h3>GitHub URL</h3>
+    <p><a href="https://github.com/Jung-sunghoon/frontend_test/tree/main/testFolder/10000hours">https://github.com/Jung-sunghoon/frontend_test/tree/main/testFolder/10000hours</a></p>
+
+    <h3>실행 URL</h3>
+    <p><a href="https://jung-sunghoon.github.io/frontend_test/testFolder/10000hours/10000hours.html">https://jung-sunghoon.github.io/frontend_test/testFolder/10000hours/10000hours.html</a></p>
+
+    <h3>스크린샷</h3>
+
+    <h4>PC 화면</h4>
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/208d07d6-29ce-4825-a2e8-c34db3b3d61b/image.png" alt="PC 화면">
+
+    <h4>모바일 화면</h4>
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/0d708f62-99fe-4696-9aa5-90a9532f5159/image.png" alt="모바일 화면">
+
+    <h2>랜딩페이지 실습</h2>
+
+    <h3>GitHub URL</h3>
+    <p><a href="https://github.com/Jung-sunghoon/frontend_test/tree/main/testFolder/landingPage">https://github.com/Jung-sunghoon/frontend_test/tree/main/testFolder/landingPage</a></p>
+
+    <h3>실행 URL</h3>
+    <p><a href="https://jung-sunghoon.github.io/frontend_test/testFolder/landingPage/landing.html">https://jung-sunghoon.github.io/frontend_test/testFolder/landingPage/landing.html</a></p>
+
+    <h3>스크린샷</h3>
+    <p>JS가 필요한 부분은 스크린 샷이 없습니다(모달, 모바일 메뉴 등)</p>
+
+    <h4>PC 화면</h4>
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/2bb8cd94-1735-4710-8aae-c57d63bef62e/image.png" alt="PC 화면 1">
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/4bfb5319-afd0-4ac6-8016-aa64d984f321/image.png" alt="PC 화면 2">
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/55f974db-7472-416f-8918-2b45470c9456/image.png" alt="PC 화면 3">
+
+    <h4>모바일 화면</h4>
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/76c0e567-c989-4fb7-a472-74d1e4729010/image.png" alt="모바일 화면 1">
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/e7db0d98-b8b7-425e-bb76-6ff85aa98e54/image.png" alt="모바일 화면 2">
+    <img src="https://velog.velcdn.com/images/jsh_0218/post/dc0ff8e5-4d84-444e-bda3-0f9274b84dff/image.png" alt="모바일 화면 3">
+
+    <h1>JavaScript</h1>
+
+    <h2>자바스크립트 기초</h2>
+
+    <h3>자바스크립트란?</h3>
+    <ul style="margin-left:25px">
+      <li>웹페이지에서 보조 기능을 위해 개발된 프로그래밍 언어</li>
+      <li>실행 주체: 웹 브라우저</li>
+      <li>점차 서버, 모바일 앱, 게임 프로그래밍 등에서 사용됨</li>
+    </ul>
+
+    <h3>자바스크립트로 할 수 있는 기능</h3>
+    <ul style="margin-left:25px">
+      <li>데이터 처리</li>
+      <li>사용자와 상호작용</li>
+      <li>화면 조작</li>
+      <li>다른 컴퓨터와 통신</li>
+    </ul>
+
+    <h2>자바스크립트 실행</h2>
+    <ul style="margin-left:25px">
+      <li>개발자 도구 콘솔 창에서 입력</li>
+      <li>VSCode를 통해 작성</li>
+      <li>코드 작성</li>
+
+          <li style="margin-left:25px">HTML 태그 내에 삽입</li>
+          <li style="margin-left:25px">script 태그 사용</li>
+          <li style="margin-left:25px">외부 js 파일 저장 후 로드</li>
+      
+    </ul>
+
+    <h2>변수</h2>
+
+    <h3>변수 선언과 사용</h3>
+    <ul style="margin-left:25px">
+      <li>변수란?: 변할 수 있는 수 혹은 정보</li>
+      <li>변수선언에 쓰이는 키워드는?: var, let, const</li>
+    </ul>
+
+    <h3>변수명 작성 규칙</h3>
+    <ul style="margin-left:25px">
+      <li>변수 이름에 사용할 수 있는 문자의 종류는?: 문자, 숫자, 언더스코어(_), 달러($)</li>
+      <li>사용 불가 법칙의 예시: 숫자로 시작 X, 예약어 사용 X</li>
+      <li>대소문자 구분, 한글이나 일본어도 변수명에 사용 가능(권장 X)</li>
+      <li>네이밍 규칙의 종류:</li>
+
+          <li style="margin-left:25px">카멜 케이스</li>
+
+              <li style="margin-left:50px">첫글자는 소문자, 이후 각 단어의 첫 글자는 대문자</li>
+              <li style="margin-left:50px">useName</li>
+          
+          <li style="margin-left:25px">스네이크 케이스</li>
+
+              <li style="margin-left:50px">각 단어를 언더스코어(_)로 연결</li>
+              <li style="margin-left:50px">user_name</li>
+
+          
+          <li style="margin-left:25px">파스칼 케이스</li>
+
+              <li style="margin-left:50px">단어의 첫 글자를 대문자</li>
+              <li style="margin-left:50px">UserName</li>
+          
+          <li style="margin-left:25px">헝가리안 케이스</li>
+
+              <li style="margin-left:50px">변수명에 타입 종류를 함께 작성</li>
+              <li style="margin-left:50px">strUserName</li>
+          
+    </ul>
+
+    <h3>변수 키워드와 특징</h3>
+    <ul style="margin-left:25px">
+      <li>var: 재선언, 재할당 가능</li>
+      <li>let: 재선언 불가능, 재할당 가능</li>
+      <li>const: 재선언, 재할당 불가능</li>
+    </ul>
+
+    <h3>스코프 (scope)</h3>
+    <ul style="margin-left:25px">
+      <li>스코프란: 변수의 접근성과 생존 기간을 제어하는 생존 범위</li>
+      <li>선언 키워드별로 각각 다른/같은 스코프를 가진다.</li>
+      <ul style="margin-left:25px">
+        <p>1. 전역 스코프: 어디서든 접근 가능한 변수 영역</p>
+        <p>2. 함수 스코프: 함수 내에서만 접근 가능한 변수 영역. var로 선언한 변수는 함수 스코프를 가짐</p>
+        <p>3. 블록 스코프: 중괄호로 감싸진 코드 블록 단위로 접근 가능한 변수 영역을 나타냄. let과 const로 선언한 변수는 블록 스코프를 가짐</p>
+      </ul>
+    </ul>
+
+    `,
+  },
+  {
+    post_id: 19,
+    title: '7월 2주차 정리',
+    creation_date: '2024-07-12',
+    thumbnail: '',
+    content: `
+    <h1>7월 2주차 정리</h1>
+
+    <h2>변수</h2>
+
+    <h3>호이스팅</h3>
+    <h4>호이스팅이란?</h4>
+    <ul style="margin-left:25px">
+      <li>변수의 선언문이 해당 스코프의 최상단으로 끌어올려지는 것처럼 보이는 현상</li>
+      <li>호이스팅에서 var, let, const의 차이점
+        <ul style="margin-left:25px">
+          <li>var는 호이스팅이 되지만 let, const는 TDZ로 인해 되지 않는 것처럼 보임</li>
+          <li>TDZ: Temporal Dead Zone(임시 접근 불가 구역)의 약자이며 let과 const는 TDZ에 배치되어 호이스팅이 발생하지 않는 것처럼 보임</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>객체</h2>
+
+    <h3>객체란?</h3>
+    <ul style="margin-left:25px">
+      <li>여러 개의 데이터를 한 변수에 저장할 수 있는 자료형</li>
+      <li>여러개의 키와 값의 쌍으로 이루어짐</li>
+      <li>이 쌍을 프로퍼티라고 함</li>
+    </ul>
+
+    <h3>객체 생성방법</h3>
+    <ul style="margin-left:25px">
+      <li>생성예시</li>
+      <img src=${blogPostImg.post19Img1} alt="" />
+      <li>객체에서 메서드 생성예시</li>
+      <img src=${blogPostImg.post19Img2} alt="" />
+    </ul>
+
+    <h3>객체 접근방법</h3>
+    <ul style="margin-left:25px">
+      <li>객체['키']</li>
+      <li>객체.키</li>
+    </ul>
+
+    <h3>객체 속성 추가/제거 방법</h3>
+    <ul style="margin-left:25px">
+      <li>추가방법
+        <ul style="margin-left:25px">
+          <li>객체['키'] = '값';</li>
+          <li>객체['키'] = ['값2','값2'];</li>
+          <li>객체.키 = '값';</li>
+        </ul>
+      </li>
+      <li>삭제방법
+        <ul style="margin-left:25px">
+          <li>delete 객체.키;</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>연산</h2>
+
+    <h3>산술 연산</h3>
+    <ul style="margin-left:25px">
+      <li>더하기 연산을 제외한 나머지 산술연산은 숫자형이 아닌 경우 자동으로 타입을 변환하여 연산을 수행</li>
+    </ul>
+
+    <h4>산술 할당 연산</h4>
+    <ul style="margin-left:25px">
+      <li>산술연산과 동시에 변수에 값을 할당하는 연산자</li>
+    </ul>
+
+    <h4>증감 연산자</h4>
+    <img src=${blogPostImg.post19Img3} alt="" />
+
+    <h3>비교 연산</h3>
+    <ul style="margin-left:25px">
+      <li>결과값은 항상 true 또는 false가 됩니다.</li>
+    </ul>
+
+    <h4>대소관계 연산자</h4>
+    <img src=${blogPostImg.post19Img4} alt="" />
+
+    <h4>동등 / 부등</h4>
+    <ul style="margin-left:25px">
+      <li>값을 비교</li>
+      <li>타입이 다른 경우: 타입 변환을 수행한 후 비교. 원시타입은 값이 같을 때, 객체 타입은 동일한 객체를 참조할 때만 true를 반환</li>
+    </ul>
+
+    <h4>자동 형 변환</h4>
+    <ul style="margin-left:25px">
+      <li>연산과 비교를 위하여 JS 엔진이 데이터 형을 자동으로 변환하는 것
+        <ul style="margin-left:25px">
+          <li>원시값끼리 비교할 때는 숫자로 변환</li>
+          <li>null과 undefined는 각자와 서로끼리 비교할 경우에는 true를 반환</li>
+          <li>객체와 원시타입 비교할 때는 객체를 원시타입에 맞춰 변환</li>
+          <li>NaN의 경우: false로 변환</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>일치 / 불일치</h4>
+    <ul style="margin-left:25px">
+      <li>값과 타입이 일치하는지 비교</li>
+      <li>타입변환을 하지 않고 엄격한 비교를 수행</li>
+    </ul>
+
+    <h3>논리연산</h3>
+
+    <h4>논리곱 AND(&&) / 논리합 OR(||) 의 비교</h4>
+    <ul style="margin-left:25px">
+      <li>논리곱 연산자: 두 개의 피연산자가 모두 true일 때만 true를 반환. 모든 값이 true라면 가장 마지막 값을, false 값이 있다면 가장 처음 만나는 false값을 반환하며 나머지 평가를 생략(단축 평가)</li>
+      <li>논리합 연산자: 두 개의 피연산자 중 적어도 한 개 이상이 true면 true를 반환. 즉 모두 false일 때만 false를 반환. 모든 피연산자가 false라면 마지막 값을, true값이 있으면 가장 처음 만나는 true값을 반환(단축 평가)</li>
+    </ul>
+
+    <h4>논리부정 NOT(!)</h4>
+    <ul style="margin-left:25px">
+      <li>true ⇒ false</li>
+      <li>false ⇒ true</li>
+    </ul>
+
+    <h4>nullish 연산자(??)</h4>
+    <ul style="margin-left:25px">
+      <li>왼쪽 피 연산자를 먼저 만나서 null도 아니고 undefined도 아니면 왼쪽, null이거나 undefined라면 오른쪽을 반환함. 즉, undefined나 null이 아닌 값을 반환</li>
+      <li>OR연산자와의 차이: OR 연산자는 첫 번째 true 값을 반환하고, nullish 연산자는 첫 번째로 값이 할당된 피연산자를 반환</li>
+    </ul>
+
+    <h4>옵셔널 체이닝(?.)</h4>
+    <ul style="margin-left:25px">
+      <li>객체의 속성값에 접근할 때 속성이 존재하지 않아도 오류가 발생하지 않게 해줌</li>
+      <li>객체의 속성값에 접근할 때 프로퍼티가 존재하지 않으면 undefined로 반환되며 오류를 발생함.</li>
+      <li>단축 평가를 이용해 오류가 나지 않고 undefined를 출력함.</li>
+      <li>그러한 단축 평가를 간결하게 표현하는 것이 옵셔널체이닝(?.)</li>
+      <li>ex. console.log(user?.address?.city)</li>
+    </ul>
+
+    <h3>형변환</h3>
+
+    <h4>문자로 변환 예시</h4>
+    <img src=${blogPostImg.post19Img5} alt="" />
+
+    <h4>숫자로 변환 예시</h4>
+    <img src=${blogPostImg.post19Img6} alt="" />
+
+    <h4>불리언으로 변환 예시</h4>
+    <img src=${blogPostImg.post19Img7} alt="" />
+
+    <h2>조건문</h2>
+
+    <h3>if문</h3>
+    <img src=${blogPostImg.post19Img8} alt="" />
+
+    <h3>else문</h3>
+    <img src=${blogPostImg.post19Img9} alt="" />
+
+    <h3>else if문</h3>
+    <img src=${blogPostImg.post19Img10} alt="" />
+
+    <h3>삼항연산자</h3>
+    <ul style="margin-left:25px">
+      <li>간단한 if-else문을 한 줄로 표현 가능한 연산자</li>
+      <img src=${blogPostImg.post19Img11} alt="" />
+      <li>너무 많이 중첩하면 가독성이 떨어질 수 있으므로 주의</li>
+    </ul>
+
+    <h3>switch문</h3>
+    <img src=${blogPostImg.post19Img12} alt="" />
+
+    <h3>fall through현상</h3>
+    <ul style="margin-left:25px">
+      <li>case 문의 끝에 break 문이 생략된 경우 값이 일치하는 case문 이후의 모든 case문이 실행되는 현상</li>
+    </ul>
+
+    <h2>반복문</h2>
+    <ul style="margin-left:25px">
+      <li>언제사용할까?: 동일한 작업을 여러번 반복해야 할 때</li>
+    </ul>
+
+    <h3>for</h3>
+    <ul style="margin-left:25px">
+      <li>for문의 구조:</li>
+      <img src=${blogPostImg.post19Img13} alt="" />
+      <li>for문으로 2차원 배열을 만들 수 있을까?: 이중 for문을 사용해서 만들 수 있음.</li>
+      <img src=${blogPostImg.post19Img14} alt="" />
+    </ul>
+
+    <h3>while</h3>
+    <ul style="margin-left:25px">
+      <li>while문의 구조:</li>
+      <img src=${blogPostImg.post19Img15} alt="" />
+    </ul>
+
+    <h4>do-while</h4>
+    <ul style="margin-left:25px">
+      <li>조건식의 평가 전 코드를 실행하는 반복문.</li>
+      <li>최소 1번의 실행이 보장됨</li>
+      <li>do-while문의 구조:</li>
+      <img src=${blogPostImg.post19Img16} alt="" />
+    </ul>
+
+    <h3>break와 continue</h3>
+    <ul style="margin-left:25px">
+      <li>반복문의 흐름을 제어함</li>
+      <li>특정조건에 따라서 반복문을 중단, 건너뛰게 하는 역할</li>
+    </ul>
+
+    <h4>break</h4>
+    <ul style="margin-left:25px">
+      <li>반복문 즉시 종료</li>
+    </ul>
+
+    <h4>continue</h4>
+    <ul style="margin-left:25px">
+      <li>반복문의 다음 반복으로 이동</li>
+    </ul>
+
+    <h3>label</h3>
+    <ul style="margin-left:25px">
+      <li>특정한 코드블록에 이름을 지정함</li>
+      <li>사용예시:</li>
+      <img src=${blogPostImg.post19Img17} alt="" />
+    </ul>
+
+    <h2>전개 구문과 구조분해할당</h2>
+
+    <h3>전개구문(Spread syntax)</h3>
+    <ul style="margin-left:25px">
+      <li>배열이나 객체와 같은 데이터 구조를 확장하기 위해 사용하는 문법 == 전개식</li>
+    </ul>
+
+    <h4>배열의 전개구문</h4>
+    <ul style="margin-left:25px">
+      <li>대괄호 안에서 세 개의 점(…)을 사용하여 배열을 확장</li>
+      <li>배열의 전개구문 사용한 예시:</li>
+      <img src=${blogPostImg.post19Img18} alt="" />
+    </ul>
+
+    <h4>객체의 전개구문</h4>
+    <ul style="margin-left:25px">
+      <li>중괄호 안에서 세 개의 점(…)을 사용하여 객체를 확장</li>
+      <li>객체의 전개구문 사용한 예시:</li>
+      <img src=${blogPostImg.post19Img19} alt="" />
+    </ul>
+
+    <h4>구조분해할당(destructuring)</h4>
+    <ul style="margin-left:25px">
+      <li>배열이나 객체와 같은 데이터 구조를 분해하여 변수에 할당하는 표현식</li>
+      <li>구조분해할당 사용시의 장점: 반복과 불필요한 변수 생성을 줄여 코드를 깔끔하게 작성 가능</li>
+      <li>구조분해할당의 기본 구조:</li>
+      <img src=${blogPostImg.post19Img20} alt="" />
+    </ul>
+
+    <h4>배열의 구조분해할당</h4>
+    <ul style="margin-left:25px">
+      <li>배열의 구조분해할당의 예시:</li>
+      <img src=${blogPostImg.post19Img21} alt="" />
+    </ul>
+
+    <h4>함수의 구조분해할당</h4>
+    <ul style="margin-left:25px">
+      <li>함수의 구조분해할당의 예시:</li>
+      <img src=${blogPostImg.post19Img22} alt="" />
+    </ul>
+
+    <h2>this</h2>
+    <ul style="margin-left:25px">
+      <li>this는 객체를 가리키는 참조 변수</li>
+      <li>호출되는 위치에 따라 다른 값을 출력함</li>
+    </ul>
+
+    <h3>호출되는 위치에 따른 this</h3>
+
+    <h4>전역 컨텍스트</h4>
+    <ul style="margin-left:25px">
+      <li>전역컨텍스트에서 this는 전역객체, 브라우저에서는 window를 가리킵니다.</li>
+    </ul>
+
+    <h4>함수 호출</h4>
+    <ul style="margin-left:25px">
+      <li>일반 함수 내부에서 this는 전역 객체를 가리킵니다.</li>
+    </ul>
+
+    <h4>메서드 호출</h4>
+    <ul style="margin-left:25px">
+      <li>객체의 메서드 내에서 this는 그 메서드를 호출한 객체를 가리킵니다.</li>
+    </ul>
+
+    <h4>이벤트 핸들러</h4>
+    <ul style="margin-left:25px">
+      <li>이벤트 핸들러 내에서 this는 이벤트가 발생한 DOM 요소를 가리킵니다.</li>
+    </ul>
+
+    <h3>this를 사용자 의도대로 값 조작하기</h3>
+
+    <h4>call()</h4>
+    <ul style="margin-left:25px">
+      <li>call메서드의 인수에 this로 사용할 값을 전달할 수 있습니다.</li>
+      <li>예시</li>
+      <img src=${blogPostImg.post19Img23} alt="" />
+    </ul>
+
+    <h4>apply()</h4>
+    <ul style="margin-left:25px">
+      <li>apply() 메서드의 인수에 this 로 사용할 값을 전달할 수 있습니다.</li>
+      <li>배열의 형태로 전달할 수 있습니다.</li>
+      <li>예시</li>
+      <img src=${blogPostImg.post19Img24} alt="" />
+    </ul>
+
+    <h4>bind()</h4>
+    <ul style="margin-left:25px">
+      <li>bind()는 this가 고정된 새 함수를 반환</li>
+      <li>예시</li>
+      <img src=${blogPostImg.post19Img25} alt="" />
+    </ul>
+
+    `,
+  },
+  {
+    post_id: 20,
+    title: '7월 3주차 정리 (1)',
+    creation_date: '2024-07-19',
+    thumbnail: '',
+    content: `
+    <h1>7월 3주차 정리 (1)</h1>
+
+    <h2>함수심화</h2>
+
+    <h3>자바스크립트 Scope</h3>
+    <ul style="margin-left:25px">
+        <li>스코프: 변수의 생존 범위를 의미함.</li>
+        <li>스코프의 종류
+            <ul style="margin-left:25px">
+                <li>전역스코프
+                    <ul style="margin-left:25px">
+                        <li>접근범위: 스크립트의 어디서든 접근 가능</li>
+                    </ul>
+                </li>
+                <li>함수스코프
+                    <ul style="margin-left:25px">
+                        <li>접근범위: 함수 내부에서 정의된 변수와 매개변수는 함수 외부에서 접근 X</li>
+                    </ul>
+                </li>
+                <li>블록스코프
+                    <ul style="margin-left:25px">
+                        <li>접근범위: 중괄호 안에서만 접근 가능</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>콜백함수</h3>
+    <ul style="margin-left:25px">
+        <li>함수에 매개변수로 전달되어 실행되는 함수를 의미함.</li>
+    </ul>
+
+    <h3>함수의 호이스팅</h3>
+    <ul style="margin-left:25px">
+        <li>호이스팅이란?: 변수나 함수 선언문이 해당 스코프의 최상단으로 끌어올려지는 현상. 즉 코드에서 변수나 함수를 선언하기 전에 해당 변수나 함수를 사용할 수 있는 것처럼 보이는 현상을 의미.(코드는 위에서 아래로, 좌에서 우로 순차적으로 읽어가기 때문)</li>
+        <li>TDZ란?: Temporal Dead Zone(임시 접근 불가구역)의 약자. 말 그대로 접근이 불가능한 구역이며 let, const, class를 사용한 선언문이 호이스팅이 되었지만 안된 것처럼 동작하게 함.</li>
+    </ul>
+    <pre>
+    console.log(x);
+    console.log(y);
+    console.log(z);
+    var x = 1;
+    let y = 2;
+    const z = 3;
+
+    // 각각
+    // undefined
+    // 실행오류
+    // 실행오류
+
+    sayHi();
+    function sayHi() {
+        console.log("Hello, lions!");
+    }
+
+    // Hello, lions!
+    </pre>
+    <ul style="margin-left:25px">
+        <li>실행결과와 그렇게 출력된 이유는?
+            <ul style="margin-left:25px">
+                <li>let, const는 호이스팅이 되지 않는 것처럼 동작하기 때문에 선언되지 않았으므로 오류, var는 호이스팅이 되었지만 할당은 호이스팅이 안되기 때문에 undefined</li>
+                <li>함수의 경우 함수 선언문 전체가 호이스팅 되기 때문에 sayHi()가 동작함.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>재귀함수</h3>
+    <ul style="margin-left:25px">
+        <li>재귀함수: 함수가 자기 자신을 호출하는 것</li>
+        <li>재귀함수는 무한히 반복될 수 있습니다.</li>
+        <li>무한 반복을 제한하기 위해 함수의 종료조건을 체크해야합니다.</li>
+        <li>반복문으로 구현할 수 있다면 재귀함수로도 구현이 모두 가능합니다. 반대로 재귀함수로 구현 가능한 것은 반복문으로 대부분 구현 가능(단 복잡도를 증가시켜야 함).</li>
+        <li>팩토리얼 재귀함수 예시:</li>
+    </ul>
+    <pre>
+    function factorial (n) {
+      if (n <= 1) {
+        return n
+      }
+      return n * factorial(n-1)
+    }
+
+    // n부터 1까지 전부 곱함
+    </pre>
+
+    <h3>즉시 실행함수</h3>
+    <ul style="margin-left:25px">
+        <li>즉시 실행함수: 즉시 실행하며 외부에서 컨트롤 할 필요가 없는 함수</li>
+        <li>장점: 함수 스코프를 사용하며 즉시 실행하기 때문에 메모리 효율적임.</li>
+    </ul>
+
+    <h3>클로저</h3>
+    <ul style="margin-left:25px">
+        <li>클로저란?: 폐쇄된 공간 안에 데이터에 접근하기 위한 테크닉(외부 함수와 내부 함수가 존재할 때 내부 함수가 외부 함수의 환경을 기억하는 것.)</li>
+        <li>클로저의 사용이유는?: 특정 변수나 함수를 외부에서 접근할 수 없도록 숨길 수 있음. private 변수와 메서드를 비슷하게 구현할 수도 있음.</li>
+    </ul>
+
+    <h3>생성자 함수</h3>
+    <ul style="margin-left:25px">
+        <li>생성자 함수란?: 사용자 정의 객체를 생성할 때 사용되는 함수</li>
+        <li>생성자 함수의 특징
+            <ul style="margin-left:25px">
+                <li>생성자 함수이름은 첫 글자를 대문자로 시작</li>
+                <li>new 연산자를 붙여 실행해야합니다.</li>
+            </ul>
+        </li>
+        <li>생성자 함수 사용의 예시:</li>
+    </ul>
+
+    <pre>
+    let book = {
+        책이름: '알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라',
+        책가격: 0,
+        저자: ['정성훈', '정승훈'],
+        출판일: '2022.08.12'
+    }
+
+    function Book(책이름, 책가격, 저자, 출판일){
+        this.책이름 = 책이름
+        this.책가격 = 책가격
+        this.저자 = 저자
+        this.출판일 = 출판일
+    }
+    
+    // new를 사용한 생성자 함수
+    let book1 = new Book('JS', 0, ['정성훈'], '2099.10.30')
+    let book2 = new Book('Python', 100000, ['정성훈'], '2099.11.30')
+    let book3 = new Book('React', 1000000, ['정성훈'], '2099.12.30')
+
+    console.log(book1, book2, book3)
+    </pre>
+
+    <h2>Map & Set</h2>
+
+    <h3>Map</h3>
+
+    <h4>Map이란?</h4>
+    <ul style="margin-left:25px">
+        <li>키-값 쌍을 가지는 객체 자료형의 한 종류</li>
+    </ul>
+
+    <h4>Map의 여러가지 활용법</h4>
+    <ul style="margin-left:25px">
+        <li>순회 예시:</li>
+    </ul>
+    <pre>
+    let m = new Map();
+
+    for (const variable of m) {
+      console.log(\`m을 순회 key : \${variable[0]}\`)
+      console.log(\`m을 순회 value : \${variable[1]}\`)
+    }
+    </pre>
+    <ul style="margin-left:25px">
+        <li>값에 접근하는 예시:</li>
+    </ul>
+    <pre>
+    console.log(m.keys());// 키 가져오기
+    console.log(m.values());// 값 가져오기
+    console.log(m.entries());// 키-값 쌍 가져오기
+    </pre>
+    <ul style="margin-left:25px">
+        <li>인덱스를 가지는 자료형을 맵핑하는 예시:</li>
+    </ul>
+    <pre>
+    let temp = new Map([[0, 1],
+    [1, 2],
+    [2, 3],
+    [3, 4]]);
+    </pre>
+
+    <h4>Map과 Object의 차이는?</h4>
+    <ul style="margin-left:25px">
+        <li>공통점: 키-값 쌍을 가짐</li>
+        <li>차이점
+            <ul style="margin-left:25px">
+                <li>Object의 키는 오직 문자열 타입 / Map의 키는 모든 값 가능</li>
+                <li>Object의 크기는 수동으로 / Map은 size 사용</li>
+            </ul>
+        </li>
+        <li>Map이 Object보다 나은 경우는?: 데이터를 추가하거나 제거하는 작업</li>
+    </ul>
+
+    <h3>Set</h3>
+
+    <h4>Set이란?</h4>
+    <ul style="margin-left:25px">
+        <li>모든 타입의 값을 저장하는 객체자료형의 한 종류. 중복 값을 허용하지 않음</li>
+    </ul>
+
+    <h4>Set의 여러가지 활용법</h4>
+    <ul style="margin-left:25px">
+        <li>값 추가 예시:</li>
+    </ul>
+    <pre>
+    let s = new Set('aaabbbccccdeeee');
+    console.log(s); // {'a','b','c','d','e'}
+
+    // 값이 배열인 경우
+    let ss = new Set('aaabbbccccdeeee'.split(''));
+
+    // 값 추가
+    s.add('f');
+    console.log(s); // {'a','b','c','d','e','f'}
+    </pre>
+    <ul style="margin-left:25px">
+        <li>순회 예시:</li>
+    </ul>
+    <pre>
+    for (let i of s) {
+      console.log(i);
+    }
+    </pre>
+    <ul style="margin-left:25px">
+        <li>값 제거 예시:</li>
+    </ul>
+    <pre>
+    s.delete('b');
+    </pre>
+    <ul style="margin-left:25px">
+        <li>값 찍어보는(확인) 예시:</li>
+    </ul>
+    <pre>
+    console.log(s.has('a'));
+    </pre>
+    <ul style="margin-left:25px">
+        <li>모든 값 제거 예시:</li>
+    </ul>
+    <pre>
+    s.clear();
+    </pre>
+
+    <h2>Json</h2>
+
+    <h3>Json이란</h3>
+    <ul style="margin-left:25px">
+        <li>JavaScript Object Notation의 약자</li>
+        <li>자바스크립트에서 객체를 표현하는 형식으로 데이터를 표현한 것</li>
+    </ul>
+
+    <h3>Json의 기본형태</h3>
+    <ul style="margin-left:25px">
+        <li>예시:</li>
+    </ul>
+    <pre>
+    {
+      "squadName": "슈퍼히어로",
+      "members": [
+        {
+          "name": "아이언맨",
+          "age": 29,
+          "본명": "토니 스타크"
+        },
+        {
+          "name": "헐크",
+          "age": 39,
+          "본명": "브루스 배너"
+        }
+      ]
+    }
+    </pre>
+
+    <h3>Json 메서드</h3>
+    <ul style="margin-left:25px">
+        <li>JSON.parse() : JSON 문자열을 자바스크립트 객체로 변환</li>
+        <li>JSON.stringfy() : 자바스크립트 객체를 JSON 문자열로 변환</li>
+    </ul>
+
+    <h2>DOM</h2>
+
+    <h3>DOM API</h3>
+    <ul style="margin-left:25px">
+        <li>DOM: Document Object Model, HTML 문서의 내용을 트리형태로 구조화하여 웹페이지와 프로그래밍 언어를 연결시켜주는 역할을 함</li>
+        <li>node: DOM에서 각각의 요소와 속성, 콘텐츠를 표현하는 단위</li>
+        <li>API: Application Programming Interface, 어플리케이션 프로그래밍 도구. 쉽게 주문서라고 이해하면 된다.</li>
+    </ul>
+
+    <h3>DOM 트리에 접근하기</h3>
+    <ul style="margin-left:25px">
+        <li>접근 예시:</li>
+    </ul>
+    <pre>
+    // 해당하는 Id를 가진 요소에 접근하기
+    document.getElementById();
+
+    // 해당하는 모든 요소에 접근하기
+    document.getElementsByTagName();
+
+    // 해당하는 클래스를 가진 모든 요소에 접근하기
+    document.getElementsByClassName();
+
+    // css 선택자로 단일 요소에 접근하기
+    document.querySelector("selector");
+
+    // css 선택자로 여러 요소에 접근하기
+    document.querySelectorAll("selector");
+    </pre>
+
+    <h3>DOM 제어 명령어</h3>
+
+    <h4>이벤트 삽입</h4>
+    <ul style="margin-left:25px">
+        <li>target.addEventListener(type, listener)</li>
+        <li>예시:</li>
+    </ul>
+    <pre>
+    const myBtn = document.querySelector("button");
+
+    myBtn.addEventListener('click', function(){
+      console.log("hello world");
+    })
+    </pre>
+
+    <h4>클래스 제어</h4>
+    <ul style="margin-left:25px">
+        <li>classList 객체를 통해 요소의 class 속성을 제어</li>
+        <li>예시:</li>
+    </ul>
+    <pre>
+    myBtn.addEventListener('click', function(){
+      myBtn.classList.add("red") // 클래스 추가
+      myBtn.classList.remove("blue"); // 클래스 제거
+      myBtn.classList.toggle("blue"); // 클래스 토글. 없으면 넣고 있으면 제거
+      myBtn.classList.contains("blue"); // 클래스 유무 확인
+    })
+    </pre>
+
+    <h4>요소 제어</h4>
+    <ul style="margin-left:25px">
+        <li>document.createElement(target): target 요소를 생성</li>
+        <li>document.createTextNode(target): target 텍스트를 생성합니다.</li>
+        <li>element.appendChild(target): target 요소를 element의 자식으로 위치합니다.</li>
+        <li>element.removeChild(target): element의 target 자식 요소를 제거</li>
+        <li>element.append(target) : target 요소를 element의 자식으로 위치(appendChild와의 차이는 노드 뿐만 아니라 여러 개의 노드를 한 번에, 텍스트도 자식 노드로 포함 가능)</li>
+        <li>target.remove() : target 요소 제거</li>
+    </ul>
+
+    <h4>JS 문자열을 사용해 element, text 노드 생성&추가</h4>
+    <ul style="margin-left:25px">
+      <li>innerHTML 사용 예시:</li>
+    </ul>
+    <pre>
+    text.innerHTML = "<strong>I'm Strong!!</strong>";
+    </pre>
+    <ul style="margin-left:25px">
+        <li>사용 시의 주의사항: innerHTML의 경우 마크업으로 변환할 수 있는 문자열이 있다면 마크업으로 만들어 보여준다는 점, 의도치 않게 자바스크립트 코드를 실행시킬 가능성이 있기 때문에 innerText, textContent 속성을 이용하는 것이 낫다.</li>
+    </ul>
+
+    <h4>속성 제어하기</h4>
+
+    <ul style="margin-left:25px">
+        <li>스타일 제어하기:</li>
+    </ul>
+    <pre>
+    const target = document.querySelector("p");
+    const txtColor = target.style.color; // 현재 스타일 정보를 가져옴
+    target.style.color = "red"; // 현재 스타일 정보를 변경
+    target.style.fontWeight = "bold"; // 현재 스타일 정보에 font-weight 속성이 없다면 추가
+    target.style.color = null; // 현재 스타일 정보를 제거(초기화)
+    </pre>
+    <ul style="margin-left:25px">
+        <li>Attribute 메서드로 속성값 접근&수정하기:</li>
+    </ul>
+    <pre>
+    const target = document.querySelector('p');
+    const myimg = document.querySelector('img');
+    const idAttr = target.getAttribute('id');
+    console.log(idAttr);
+    myimg.setAttribute("src", "https://img.wendybook.com/image_detail/img159/159599_01.jpg");
+    </pre>
+    <ul style="margin-left:25px">
+        <li>data 속성으로 요소에 데이터 저장하기:</li>
+    </ul>
+    <pre>
+    img
+          class="terran battle-cruiser"
+          src="battle-cruiser.png"
+          data-ship-id="324"
+          data-weapons="laser"
+          data-health="400"
+          data-mana="250"
+          data-skill="yamato-cannon"
+          
+        const img = document.querySelector('img')
+        console.log(img.dataset);
+        console.log(img.dataset.shipId);
+    </pre>
+
+    <h4>Adjacent로 더 인접한 곳에 정밀하게 배치하기</h4>
+    <ul style="margin-left:25px">
+        <li>insertAdjacentHTML : 요소 노드를 대상의 인접한 주변에 배치</li>
+    </ul>
+
+    <h4>DOM 안에서 노드 탐색하기</h4>
+    <pre>
+    const cont = document.querySelector(".cont");
+    console.log(cont.firstElementChild);  // 첫번째 자식 탐색
+    console.log(cont.lastElementChild);   // 마지막 자식 탐색
+    console.log(cont.nextElementSibling); // 다음 형제요소를 찾습니다.
+    console.log(cont.previousSibling);    // 이전 형제요소 탐색
+    console.log(cont.children);           // 모든 자식요소 탐색
+    console.log(cont.childNodes);         // 모든 자식노드 탐색
+    console.log(cont.parentElement);      // 부모 요소 탐색
+    </pre>
+    `,
+  },
+  {
+    post_id: 21,
+    title: '7월 3주차 정리 (2)',
+    creation_date: '2024-07-19',
+    thumbnail: '',
+    content: `
+    <h1>7월 3주차 정리 (2)</h1>
+
+    <h2>이벤트 흐름</h2>
+    <ul style="margin-left:25px">
+        <li>이벤트 대상을 찾아가는 단계
+            <ul style="margin-left:25px">
+                <li>캡처링 단계: 이벤트 대상을 찾아갈 때 가장 상위의 window부터 document, body 순으로 DOM 트리를 따라 내려가며 중간에 만나는 모든 캡처링 이벤트 리스너를 실행함</li>
+                <li>버블링 단계: 캡처링 이후 DOM 트리를 따라 올라가며 만나는 모든 버블링 이벤트 리스너를 실행함</li>
+                <li>이벤트 전파: 이벤트 리스너가 차례대로 실행되는 현상</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>이벤트 target, currentTarget</h2>
+    <ul style="margin-left:25px">
+        <li>target : 이벤트가 발생한 요소</li>
+        <li>currentTarget : 이벤트 리스너가 연결된 요소</li>
+    </ul>
+
+    <h2>이벤트 위임</h2>
+    <ul style="margin-left:25px">
+        <li>이벤트 리스너가 없어도 마치 리스너가 있는것처럼 사용할 수 있음</li>
+        <li>예시코드</li>
+        <img src=${blogPostImg.post21Img1} alt="이벤트 위임 예시 코드" />
+    </ul>
+
+    <h2>이벤트의 this</h2>
+    <ul style="margin-left:25px">
+        <li>이벤트 리스너 함수내부의 this 는 이벤트가 연결된 노드를 참조합니다.</li>
+    </ul>
+
+    <h2>이벤트 흐름 조작</h2>
+    <ul style="margin-left:25px">
+        <li>preventDefault()
+            <ul style="margin-left:25px">
+                <li>브라우저의 기본 이벤트 동작을 취소</li>
+            </ul>
+        </li>
+        <li>stopPropagation()
+            <ul style="margin-left:25px">
+                <li>이벤트 전파를 막음</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>실습 URL</h2>
+        <p>1. 셀렉트 박스 만들기
+            <br>
+            <a href="https://jung-sunghoon.github.io/frontend_test/js-test/240718/실습.html">https://jung-sunghoon.github.io/frontend_test/js-test/240718/실습.html</a>
+            <br>
+            <img src="https://velog.velcdn.com/images/jsh_0218/post/d06623d8-ce0b-4069-b595-3adfda11650a/image.png" alt="셀렉트 박스 실습">
+        </p>
+        <p>2. 브라우저의 우클릭 이벤트 제한
+            <br>
+            <a href="https://jung-sunghoon.github.io/frontend_test/js-test/240718/실습2.html">https://jung-sunghoon.github.io/frontend_test/js-test/240718/실습2.html</a>
+            <br>
+            <img src="https://velog.velcdn.com/images/jsh_0218/post/b5c0bcaa-5955-4db4-af42-8a41611072e5/image.png" alt="우클릭 이벤트 제한 실습">
+        </p>
+        <p>3. 리스트 삭제 및 이벤트 전파 막기
+            <br>
+            <a href="https://jung-sunghoon.github.io/frontend_test/js-test/240718/실습3.html">https://jung-sunghoon.github.io/frontend_test/js-test/240718/실습3.html</a>
+            <br>
+            <img src="https://velog.velcdn.com/images/jsh_0218/post/90e87d41-b964-40d8-accd-51e44164d38e/image.png" alt="리스트 삭제 및 이벤트 전파 막기 실습">
+        </p>
+
+
+    <h2>객체지향 프로그래밍</h2>
+
+    <h3>객체지향 프로그래밍이란?</h3>
+    <ul style="margin-left:25px">
+        <li>객체와 객체가 서로 메소드를 통해 상호작용하게 하는 것</li>
+    </ul>
+
+    <h4>생성자 사용이유</h4>
+    <ul style="margin-left:25px">
+        <li>생성자의 장점: 생성자를 통해 생성된 각 객체들은 같은 프로퍼티와 메서드를 공유할 수 있다는 것입니다.</li>
+    </ul>
+
+    <h4>커스텀 생성자 만들기</h4>
+    <ul style="margin-left:25px">
+        <li>생성자는 함수이다.</li>
+        <li>네이밍 규칙: 대문자로 시작함</li>
+        <li>생성자 함수에 new 키워드 사용시 일어나는 일:
+            <ul style="margin-left:25px">
+                <li>새로운 객체가 만들어짐</li>
+                <li>이 객체를 인스턴스(instance)라고 함</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>프로토 타입</h3>
+    <ul style="margin-left:25px">
+        <li>프로토 타입을 사용하는 이유: 객체의 메서드를 등록할 때 마다 새로운 함수를 생성하는데, 이러한 자원의 낭비를 해결하기 위해 프로토타입을 사용함</li>
+        <li>프로토 타입: 특정 객체에 대한 참조, 모든 인스턴스가 하나의 메서드를 공유하도록 만듦</li>
+    </ul>
+
+    <h4>객체상속</h4>
+    <ul style="margin-left:25px">
+        <li>프로토타입 체이닝: 자기 자신에게 존재하지 않는 프로퍼티나 메서드를 프로토타입을 통해 추적하는 과정</li>
+    </ul>
+
+    `,
+  },
+  {
+    post_id: 22,
+    title: '7월 4주차 정리',
+    creation_date: '2024-07-26',
+    thumbnail: '',
+    content: `
+
+    <h1>7월 4주차 정리</h1>
+
+    <h2>classes</h2>
+    <ul style="margin-left:25px">
+      <li>클래스란 객체를 생산하는 틀이다</li>
+    </ul>
+
+    <h3>class의 사용법</h3>
+
+    <ul style="margin-left:25px">
+    <li>클래스의 기본 형태</li>
+
+<pre>
+class Robot {
+    constructor(name) {
+        this.name = name;
+    }
+
+    sayYourName() {
+        console.log(\`삐리비리. 제 이름은 \${this.name}입니다. 주인님.\`);
+    }
+}
+</pre>
+
+    <h3>class 상속받기</h3>
+
+    <ul style="margin-left:25px">
+        <li>extend 키워드 사용</li>
+        <li>super: 상속을 받기 위해 사용하는 함수
+            <ul style="margin-left:25px">
+                <li>사용시 주의점
+                    <ul style="margin-left:25px">
+                        <li>파생 클래스에 생성자 함수를 사용하고 싶다면 반드시 super 함수 사용</li>
+                        <li>파생 클래스에 생성자 함수가 없다면 super 함수가 자동으로 호출되어 부모 클래스의 프로퍼티를 상속 받게 함</li>
+                        <li>생성자 함수에서 this 값을 사용할 경우 super 함수는 반드시 this보다 먼저 실행되어야 함</li>
+                        <li>파생 클래스가 아닌 클래스에서 사용하려고 해도 에러가 발생</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>비공개(Private) 프로퍼티</h3>
+
+    <ul style="margin-left:25px">
+        <li>사용하는 상황: 중요한 데이터를 외부에서 함부로 수정할 수 없게 만들고 싶을 때</li>
+        <li>비공개 프로퍼티의 역할: 객체 안의 중요한 정보를 안전하게 보호하여 프로그램이 뜻하지 않게 변경되는 것을 막는 역할</li>
+        <li>프로퍼티를 비공개로 전환할때에는 #키워드를 사용합니다.</li>
+        <li>비공개 프로퍼티에 접근/수정하기 위한 키워드
+            <ul style="margin-left:25px">
+                <li>get : 값을 불러옴</li>
+                <li>set : 값을 수정함</li>
+                <li>사용시 주의점: 협업 시에 주석이나 가이드 문서를 만들어 충분한 정보를 제공해주어 오해의 소지를 최대한 없애야 함</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>AJAX</h2>
+
+    <h3>AJAX란?</h3>
+
+    <ul style="margin-left:25px">
+        <li>Asynchronous Javascript And Xml의 약자</li>
+        <li>JS 기술을 이용해 비동기적으로 서버와 통신할 수 있는 방법들을 묶어 AJAX라고 명명함</li>
+    </ul>
+
+    <h3>동기 VS 비동기</h3>
+
+    <ul style="margin-left:25px">
+        <li>동기 실행방식: 코드를 순서대로 실행</li>
+        <li>비동기 실행방식: 코드를 순서대로 실행하지 않고 빠르게 실행되는 것 먼저 실행함</li>
+    </ul>
+
+    <h3>XMLHttpRequest</h3>
+
+    <ul style="margin-left:25px">
+        <li>어떤 기능을 가진 객체인가요?: 서버와의 비동기 통신을 가능하게 하는 여러 기능을 가짐</li>
+    </ul>
+
+    <h4>Call back지옥이란?</h4>
+
+    <ul style="margin-left:25px">
+        <li>비동기 코드가 끝나고 콜백으로 함수를 부르고, 다음 함수를 또 콜백으로 부르는 형태가 계속해서 이어지는, 콜백을 지속해서 부르는 것</li>
+    </ul>
+
+    <h3>fetch API</h3>
+
+    <ul style="margin-left:25px">
+        <li>fetch의 보편적 의미: 가져오다, 찾아내다</li>
+    </ul>
+
+    <h4>XHR과 fetch</h4>
+
+    <ul style="margin-left:25px">
+        <li>차이점은?: XHR은 통신의 기능을 수행하는 XMLHttpRequest 객체를 반환하는 인스턴스를 생성 / fetch는 인스턴스가 아닌 Promise를 반환</li>
+    </ul>
+
+    <h4>Promise</h4>
+
+    <ul style="margin-left:25px">
+        <li>Promise란?: 서버에 데이터를 호출하여 값을 받아오기 까지의 상태를 반환하는 객체 rejected, pending, fulfilled</li>
+        <li>통신 상태가 거절일때의 처리방법: catch 메소드를 통해 에러를 표시</li>
+    </ul>
+
+    <h3>fetch API 사용</h3>
+
+    <ul style="margin-left:25px">
+        <li>기본형태:
+<pre>
+const result = fetch('url');
+console.log(result);
+</pre>
+        </li>
+        <li>json을 받는 예시:</li>
+<pre>
+const result = fetch('url');
+result
+  .then((res)=>{
+    console.log(res);
+    return res.json();
+  })
+  .then((json)=>{
+    console.log(json);
+    return json;
+  })
+  .catch((error)=>{
+    console.error(error);
+  })
+</pre>
+    </ul>
+
+    <h2>실습</h2>
+
+    <h3>xhr</h3>
+
+<pre>
+const requestObj = new XMLHttpRequest();
+
+requestObj.open("GET", "https://test.api.weniv.co.kr/mall");
+
+requestObj.onreadystatechange = () => {
+  if (requestObj.readyState === 4 && requestObj.status === 200) {
+    const result = requestObj.responseText;
+    console.log(JSON.parse(result)[0]);
+  }
+};
+requestObj.send();
+</pre>
+
+    <h3>promise</h3>
+
+<pre>
+const req = new Promise((resolve, reject) => {
+  const requestObj = new XMLHttpRequest();
+  requestObj.open("GET", "https://test.api.weniv.co.kr/mall");
+  requestObj.onreadystatechange = () => {
+    if (requestObj.readyState === 4 && requestObj.status === 200) {
+      const result = JSON.parse(requestObj.responseText);
+      resolve(result);
+    } else if (requestObj.readyState === 4 && requestObj.status !== 200) {
+      reject(
+        new Error(
+          \`호출이 정상적으로 이뤄지지 않았습니다.: \${requestObj.status}\`
+        )
+      );
+    }
+  };
+  requestObj.send();
+});
+
+req
+  .then((resolveResult) => {
+    console.log(resolveResult);
+    const data = resolveResult;
+    const myOl = document.createElement("ol");
+
+    data.forEach((element) => {
+      const myLi = document.createElement("li");
+      const productName = document.createElement("p");
+      const price = document.createElement("p");
+
+      myLi.id = element.id;
+      productName.textContent = element.productName;
+      price.textContent = element.price;
+
+      myLi.append(productName);
+      myLi.append(price);
+
+      myOl.appendChild(myLi);
+    });
+    document.body.appendChild(myOl);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+</pre>
+
+    <h3>fetch</h3>
+
+<pre>
+const req = fetch("https://test.api.weniv.co.kr/mall");
+req
+  .then((res) => {
+    console.log(res.json);
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+    const myOl = document.createElement("ol");
+
+    data.forEach((element) => {
+      const myLi = document.createElement("li");
+      const productName = document.createElement("p");
+      const price = document.createElement("p");
+      const img = document.createElement("img");
+
+      myLi.id = element.id;
+      productName.textContent = element.productName;
+      price.textContent = element.price;
+      img.src = "https://test.api.weniv.co.kr/" + element.thumbnailImg;
+
+      myLi.append(productName);
+      myLi.append(price);
+      myLi.append(img);
+
+      myOl.appendChild(myLi);
+    });
+    document.body.appendChild(myOl);
+    return data;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+</pre>
+
+    <h2>async, await</h2>
+
+    <ul style="margin-left:25px">
+        <li>특징:
+            <ul style="margin-left:25px">
+                <li>async는 어떤 함수든 프로미스 객체를 반환하게 만들 수 있음.(return 키워드가 없어도)</li>
+                <li>await은 async 함수 안에서 promise 객체의 상태가 결정될 때 까지 다음 코드를 실행시키지 않고 기다리게 함. 그 promise 객체의 fulfilled 값을 반환</li>
+                <li>await은 무조건 async 함수 안에서만 사용 가능</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>실습 내용 정리</h2>
+
+    <h3>로컬에서 서버를 실행하기</h3>
+
+    <ul style="margin-left:25px">
+        <li>npm과 node 설치</li>
+        <li>전역으로 json-server 설치
+            <ul style="margin-left:25px">
+                <li>npm install -g json-server</li>
+            </ul>
+        </li>
+        <li>db/db.json 생성</li>
+        <li>터미널에서 json-server —watch db/db.json</li>
+    </ul>
+
+    <h3>API란?</h3>
+
+    <ul style="margin-left:25px">
+        <li>Application Programming Interface의 약자로 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스</li>
+    </ul>
+
+    <h3>서버 통신방식</h3>
+
+    <ul style="margin-left:25px">
+        <li>fetch
+<pre>
+//fetch로 get요청 보내기, 옵션을 넣지 않으면 get요청
+fetch("요청할주소")
+
+//fetch에 옵션을 넣어 POST요청
+fetch("요청할 주소",{
+  method: "POST",
+  header: {
+    "Content-Type":"application/json"
+  },
+  body: "{text:'안녕하세요'}"
+})
+</pre>
+        </li>
+    </ul>
+
+    <h3>동기와 비동기</h3>
+
+    <ul style="margin-left:25px">
+        <li>차이점은?: 동기 방식은 작업이 순차적으로 실행, 비동기는 작업의 완료를 기다리지 않고 다음 작업을 실행.</li>
+        <li>동기방식으로 처리되는 코드예시:
+<pre>
+출력1();//1을 출력하는 함수
+출력2();//2를 출력하는 함수
+출력3();//3을 출력하는 함수
+
+//출력
+// 1
+// 2
+// 3
+</pre>
+        </li>
+        <li>비동기방식으로 처리되는 코드예시:
+<pre>
+비동기출력1();//1을 출력하는 함수
+비동기출력2();//2를 출력하는 함수
+비동기출력3();//3을 출력하는 함수
+
+//출력
+// 3
+// 1
+// 2
+</pre>
+        </li>
+    </ul>
+
+    <h2>json-server를 이용해 간단한 서버구축 방법</h2>
+
+    <ul style="margin-left:25px">
+        <li>필요한 환경설정: node, npm(Node Package Manager)</li>
+        <li>서버 실행방법:
+<pre>
+json-server --watch db.json
+</pre>
+        </li>
+    </ul>
+
+    <h2>로컬스토리지</h2>
+
+    <ul style="margin-left:25px">
+        <li>로컬 스토리지란?: 만료기간이 존재하지 않으며 페이지를 변경하거나 브라우저를 닫아도 반 영구적으로 유지되는 저장소</li>
+        <li>로컬스토리지 이용하여 배열데이터 보관하는 방법
+<pre>
+// 로컬스토리지에 데이터 저장하기
+localStorage.setItem("key","value");
+
+// 로컬스토리지에서 데이터 꺼내오기
+localStorage.getItem("key");
+
+// 키는 "key"가 아니라 다른 문자열도 가능하다.
+</pre>
+        </li>
+    </ul>
+
+    <h2>알고리즘</h2>
+
+    <h3>알고리즘이란?</h3>
+
+    <ul style="margin-left:25px">
+        <li>문제를 어떻게 풀 것인가?에 대한 대답</li>
+    </ul>
+
+    <h3>알고리즘이 필요한 이유는?</h3>
+
+    <ul style="margin-left:25px">
+        <li>문제를 해결하고 효율성을 높이기 위해</li>
+    </ul>
+
+    <h3>오늘 배운 주요 알고리즘은?</h3>
+
+    <ul style="margin-left:25px">
+        <li>요구사항 구현 알고리즘</li>
+    </ul>
+
+    <h2>정규표현식</h2>
+
+    <ul style="margin-left:25px">
+        <li>정규표현식이란?:
+            <ul style="margin-left:25px">
+                <li>문자열의 특정한 패턴을 찾아내는데 활용하는 형식 언어</li>
+                <li>많은 프로그래밍 언어들이 공통으로 지원함</li>
+            </ul>
+        </li>
+        <li>정규표현식의 종류:</li>
+<pre>
+// 일반 문자열(V)
+// 대소문자를 구별
+
+// 처음과 끝(Anchors)
+/^hello/gm : 처음에 hello
+/hello$/gm : 끝에 hello
+
+
+// 모든 문자(V)
+
+/./gm : 모든 문자열(*과 같은 역할)
+/....../gm : 모든 6개의 문자열
+/h.llo/gm : h와 l 사이에 문자가 하나 있음(hallo, hello, hollo 등을 다 잡음)
+
+
+// 택1(V)
+
+/h[eay]llo/gm : 대괄호 안에 문자는 문자 1개에 해당!
+/h[ea]l../gm : 총 5개의 문자
+/h[a-f]llo/gm
+/[a-zA-Z0-9]/gm : 모든 알파뱃과 숫자를 찾음
+/[^a-zA-Z0-9]/gm : 나머지 문자열을 찾음
+
+/010-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/gm
+/010[- .][0-9][0-9][0-9][0-9][- .][0-9][0-9][0-9][0-9]/gm
+
+
+// 부정
+// 대괄호 안에서만 부정이고 대괄호 밖에서는 시작의 의미
+
+/h[^ae]llo/gm : 대괄호 안에 있다면 not에 의미
+
+
+// 서브패턴
+
+
+/(on|ues|rida)/gm : 그룹 1로 3개 중 매칭되는 패턴 찾음
+
+
+// 수량자(V)
+// 내가 찾을 패턴이 몇개 반복인지 찾는 방식
+
+/010-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/gm
+/010-[0-9]{4}-[0-9]{4}/gm
+/[0-9]{3}-[0-9]{3,4}-[0-9]{4}/gm
+/[0-9]{3}[- .][0-9]{3,4}[- .][0-9]{4}/gm
+/[0-9]{3}[- .]?[0-9]{3,4}[- .]?[0-9]{4}/gm
+/[0-9a-zA-Z]+@[0-9a-zA-Z]+.[a-zA-Z]+/gm
+/[0-9]*-[0-9]*-[0-9]*/gm
+
+_* : 앞에 있는 문자가 0개 ~ N개({0,})
+_+ : 앞에 있는 문자가 1개 ~ N개({1,})
+_? : 앞에 있는 문자가 0개 ~ 1개({0,1})
+
+{3} : 3개
+{3,} : 3개 이상
+{1,3} : 1개 ~ 3개
+
+
+
+// 캐릭터 클래스(V)
+// 빈도 매우 높음
+
+/\w/gm : 워드
+/\d/gm : 숫자
+
+/[0-9]{3}[- .]?[0-9]{3,4}[- .]?[0-9]{4}/gm
+/\d{3}[- .]?\d{3,4}[- .]?\d{4}/gm
+
+// 빈도 작음
+
+/\W/gm : not 워드
+/\D/gm : not 숫자
+/\s/gm : 스페이스
+/\S/gm : not 스페이스
+
+
+// 이스케이프 문자
+
+/\[.*]/gm : 대괄호([]) 안에 감싸여진 문자열
+/\[123\]/gm
+/./gm
+/\./gm
+</pre>
+    </ul>
+        `,
+  },
   // {
-  //   post_id: 17,
-  //   title: '',
-  //   creation_date: '',
-  //   thumbnail: '',
-  //   content: ``,
-  // },
-  // {
-  //   post_id: 18,
-  //   title: '',
-  //   creation_date: '',
-  //   thumbnail: '',
-  //   content: ``,
-  // },
-  // {
-  //   post_id: 19,
+  //   post_id: ,
   //   title: '',
   //   creation_date: '',
   //   thumbnail: '',

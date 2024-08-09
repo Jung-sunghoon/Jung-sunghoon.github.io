@@ -17,6 +17,10 @@
   font-family: inherit;
 }
 
+ul {
+  margin-left: 25px;
+}
+
 div,
 section {
   display: block;
