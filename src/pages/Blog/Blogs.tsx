@@ -14,7 +14,7 @@ const Blogs: React.FC = () => {
   const [blogs, setBlogs] = useState<BlogsType>([])
   const [filteredData, setFilteredData] = useState<BlogsType>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
-  const [pageSize] = useState<number>(20)
+  const [pageSize] = useState<number>(12)
   // const [hasCookie, setHasCookie] = useState<boolean>(false)
   const handlePageChange = (page: number) => setCurrentPage(page)
   // const navigate = useNavigate()
