@@ -1,6 +1,6 @@
 import styles from '@src/pages/Projects/projects.module.css'
 import { Button, Drawer } from 'antd'
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Readme from '../Readme/Readme'
 import './project.css'
 import Slider from 'react-slick' // react-slick 라이브러리 추가
@@ -42,6 +42,21 @@ export const Project: React.FC<
   const [open, setOpen] = useState(false)
   const [slideIndex, setSlideIndex] = useState(0)
 
+  const sliderRef = useRef<any>(null) // sliderRef 추가
+
+  useEffect(() => {
+    const arrowImg = sliderRef.current
+      .querySelector('div')
+      .querySelectorAll('span')
+    console.log(arrowImg, 'sliderRef')
+
+    if (imgs?.length === 0) {
+      arrowImg.forEach((arrow: any) => arrow.classList.add(styles.hidden))
+    } else {
+      arrowImg.forEach((arrow: any) => arrow.classList.remove(styles.hidden))
+    }
+  }, [imgs])
+
   console.log(slideIndex)
 
   const CustomNextArrow: React.FC<any> = props => {
@@ -73,7 +88,7 @@ export const Project: React.FC<
         <div className={styles.descriptionTitle}>{title}</div>
         <div className={styles.descriptionDate}>{date}</div>
         <div className={styles.descriptionContents}>
-          <div className={styles.descriptionImgSection}>
+          <div className={styles.descriptionImgSection} ref={sliderRef}>
             {/* 이미지 슬라이더 추가 */}
             <Slider {...sliderSettings}>
               {imgs?.map((img, index) => (

@@ -17,7 +17,7 @@ export const ArchiveData = [
     link: 'https://github.com/Jung-sunghoon',
     url: 'github.com/Jung-sunghoon',
     description:
-      '<p><b>소스 코드 저장소</b>입니다.</p><p>과거 프로젝트 및 코딩 학습을 위한 코드가 있습니다.</p>',
+      '<p><b>소스 코드 저장소</b>입니다.</p><p>프로젝트 및 코딩 학습을 위한 코드가 있습니다.</p>',
   },
 ]
 
