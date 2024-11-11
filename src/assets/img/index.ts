@@ -36,6 +36,18 @@ import pBlogCreate from '@src/assets/img/projectImg/portfolioImg/blogCreate.png'
 import pCalendarEvent from '@src/assets/img/projectImg/portfolioImg/calendarEvent.png'
 import lookgitMain1 from '@src/assets/img/projectImg/lookgitImg/lookgitMain1.png'
 import lookgitMain2 from '@src/assets/img/projectImg/lookgitImg/lookgitMain2.png'
+import jsNode1 from '@src/assets/img/projectImg/jsNodeImg/jsNode1.png'
+import jsNode2 from '@src/assets/img/projectImg/jsNodeImg/jsNode2.png'
+import jsNode3 from '@src/assets/img/projectImg/jsNodeImg/jsNode3.png'
+import jsNode4 from '@src/assets/img/projectImg/jsNodeImg/jsNode4.png'
+import pronend1 from '@src/assets/img/projectImg/pronendImg/pronend1.png'
+import pronend2 from '@src/assets/img/projectImg/pronendImg/pronend2.png'
+import recipeLab1 from '@src/assets/img/projectImg/recipeLabImg/recipeLab1.png'
+import recipeLab2 from '@src/assets/img/projectImg/recipeLabImg/recipeLab2.png'
+import recipeLab3 from '@src/assets/img/projectImg/recipeLabImg/recipeLab3.png'
+import recipeLab4 from '@src/assets/img/projectImg/recipeLabImg/recipeLab4.png'
+import recipeLab5 from '@src/assets/img/projectImg/recipeLabImg/recipeLab5.png'
+import recipeLab6 from '@src/assets/img/projectImg/recipeLabImg/recipeLab6.png'
 
 export default {
   cssimg,
@@ -75,5 +87,17 @@ export default {
   pBlogCreate,
   pCalendarEvent,
   lookgitMain1,
-  lookgitMain2
+  lookgitMain2,
+  jsNode1,
+  jsNode2,
+  jsNode3,
+  jsNode4,
+  pronend1,
+  pronend2,
+  recipeLab1,
+  recipeLab2,
+  recipeLab3,
+  recipeLab4,
+  recipeLab5,
+  recipeLab6,
 }
