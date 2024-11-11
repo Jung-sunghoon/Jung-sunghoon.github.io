@@ -6,7 +6,7 @@ import { List, Pagination } from 'antd'
 // import axios from 'axios'
 import Search from './Search'
 import { BlogType, BlogsType } from '@src/types/types'
-import BlogCard from '@src/Components/BlogCard/Blogcard'
+import BlogCard from '@src/Components/BlogCard/BlogCard'
 import { posts } from '@src/posts/posts'
 
 const Blogs: React.FC = () => {
