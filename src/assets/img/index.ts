@@ -34,7 +34,8 @@ import pCalendar from '@src/assets/img/projectImg/portfolioImg/calendar.png'
 import pAdmin from '@src/assets/img/projectImg/portfolioImg/Admin.png'
 import pBlogCreate from '@src/assets/img/projectImg/portfolioImg/blogCreate.png'
 import pCalendarEvent from '@src/assets/img/projectImg/portfolioImg/calendarEvent.png'
-import lookgitMain from '@src/assets/img/projectImg/lookgitImg/lookgitMain.png'
+import lookgitMain1 from '@src/assets/img/projectImg/lookgitImg/lookgitMain1.png'
+import lookgitMain2 from '@src/assets/img/projectImg/lookgitImg/lookgitMain2.png'
 
 export default {
   cssimg,
@@ -73,5 +74,6 @@ export default {
   pAdmin,
   pBlogCreate,
   pCalendarEvent,
-  lookgitMain,
+  lookgitMain1,
+  lookgitMain2
 }

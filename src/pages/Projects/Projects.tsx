@@ -234,7 +234,7 @@ export const ProjectsData = [
   {
     title: 'Lookgit',
     date: '2024-06 ~ 현재 진행 중',
-    imgs: [img['lookgitMain'], []],
+    imgs: [img['lookgitMain1'], img['lookgitMain2']],
     description: `
     <p>Git과 GitHub를 처음 배우는 사용자들이 버전 관리의 중요성을 이해하고, GitHub을 쉽게 활용할 수 있도록 돕기 위해 기획되었습니다.</p>
     <p>GitHub의 기본 프로세스를 시각화하여 사용자들이 직관적으로 이해할 수 있도록 했으며, 고급 명령어가 아닌 기초 명령어만 지원하여 초보자들이 복잡함 없이 GitHub의 기본 기능을 익힐 수 있도록 설계되었습니다.</p>
