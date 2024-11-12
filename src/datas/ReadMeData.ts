@@ -1,5 +1,36 @@
 export const ReadMeData = [
   {
+    readTitle: '깃허브 프로세스 시각화 프로젝트',
+    readDescription: `<div>
+    <h2>❗ 요약</h2>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <h3>※ 주요 기능</h3>
+    <ul>
+      <li>레시피 공유</li>
+      <li>레시피 제목, 태그, 재료 검색</li>
+      <li>Firebase로 관리하는 이메일 / 구글 로그인</li>
+      <li>AI 추천 레시피(BETA)</li>
+      <li></li>
+      <li>일정관리 앱</li>
+    </ul>
+    <br />
+    <h2>💡 프로젝트를 진행하면서 느낀 점</h2>
+    <p>
+      
+    </p>
+    <br />
+    <h2>💻 기술 스택</h2>
+    <ul>
+      <li>Frontend: React, Typescript</li>
+      <li>Database: Firebase firestore</li>
+    </ul>
+  </div>`,
+  },
+  {
     readTitle: '포트폴리오 웹사이트',
     readDescription: `<div>
     <h2>❗ 요약</h2>
