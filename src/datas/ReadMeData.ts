@@ -1,11 +1,15 @@
 export const ReadMeData = [
   {
-    readTitle: '깃허브 프로세스 시각화 프로젝트',
+    readTitle: 'Lookgit',
     readDescription: `<div>
     <h2>❗ 요약</h2>
     <br />
     <p>
-      
+      요리의 레시피를 공유하는 커뮤니티 웹사이트입니다.
+    </p>
+    <br />
+    <p>
+      서로의 레시피를 공유할 수 있고, 키워드를 통해 쉽게 검색이 가능하며 생성형 AI API를 통해 레시피 추천도 받을 수 있습니다.
     </p>
     <br />
     <h3>※ 주요 기능</h3>
@@ -14,8 +18,7 @@ export const ReadMeData = [
       <li>레시피 제목, 태그, 재료 검색</li>
       <li>Firebase로 관리하는 이메일 / 구글 로그인</li>
       <li>AI 추천 레시피(BETA)</li>
-      <li></li>
-      <li>일정관리 앱</li>
+      <li>게시물 갯수에 따른 등급 변화</li>
     </ul>
     <br />
     <h2>💡 프로젝트를 진행하면서 느낀 점</h2>
