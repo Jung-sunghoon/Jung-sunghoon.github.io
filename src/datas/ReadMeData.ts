@@ -9,7 +9,7 @@ export const ReadMeData = [
     </p>
     <br />
     <p>
-      깃허브를 처음 접하는 사람들에게 도움을 주기 위한 오픈소스 프로젝트입니다. 누군가를 도와준다는 
+      깃허브를 처음 접하는 사람들에게 도움을 주기 위한 오픈소스 프로젝트입니다.  
     </p>
     <br />
     <p>
@@ -18,11 +18,9 @@ export const ReadMeData = [
     <br />
     <h3>※ 주요 기능</h3>
     <ul>
-      <li>레시피 공유</li>
-      <li>레시피 제목, 태그, 재료 검색</li>
-      <li>Firebase로 관리하는 이메일 / 구글 로그인</li>
-      <li>AI 추천 레시피(BETA)</li>
-      <li>게시물 갯수에 따른 등급 변화</li>
+      <li>기초적인 Git 명령어 구현</li>
+      <li>GitHub 프로세스를 시각적으로 볼 수 있음</li>
+      <li>명령어 버튼 UI + CLI로도 구현 가능</li>
     </ul>
     <br />
     <h2>💡 프로젝트를 진행하면서 느낀 점</h2>
@@ -32,8 +30,10 @@ export const ReadMeData = [
     <br />
     <h2>💻 기술 스택</h2>
     <ul>
-      <li>Frontend: React, Typescript</li>
-      <li>Database: Firebase firestore</li>
+      <li>Html</li>
+      <li>JavaScript</li>
+      <li>CSS</li>
+      <li>d3.js</li>
     </ul>
   </div>`,
   },
