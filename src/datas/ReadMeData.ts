@@ -1,5 +1,48 @@
 export const ReadMeData = [
   {
+    readTitle: '이게되네? JS와 Node로 배포까지!',
+    readDescription: `<div>
+    <h2>❗ 요약</h2>
+    <br />
+    <p>
+      리디북스에 무료로 배포한 E-BOOK입니다.
+      부트캠프를 진행하면서 만난 인원들과 팀을 꾸려 프로젝트를 진행했습니다.
+    </p>
+    <br />
+    <p>
+      리액트나 뷰와 같은 프레임워크 사용을 지양하고 Vanilla JS로 작업하여 JavaScript라는 언어와 좀 더 친숙해지고,
+      Html과 css를 통해 기초적인 웹사이트를 만들 수 있도록 하는 것이 목적입니다.
+      또한, firebase를 통해 프론트엔드 뿐만 아니라 백엔드 개발도 경험해보며 프로젝트의 한 사이클을 체험할 수 있도록 합니다.
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <h2>💡 프로젝트를 진행하면서 느낀 점</h2>
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+  </div>`,
+  },
+  {
     readTitle: 'Lookgit',
     readDescription: `<div>
     <h2>❗ 요약</h2>
