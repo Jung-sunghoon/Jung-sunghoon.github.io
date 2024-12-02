@@ -1,5 +1,52 @@
 export const ReadMeData = [
   {
+    readTitle: 'PRONEND',
+    readDescription: `<div>
+    <h2>❗ 요약</h2>
+    <p>
+      팀원들의 프로젝트 경험을 위해 제작한 웹사이트입니다.
+    </p>
+    <br />
+    <p>
+      백엔드와의 REST API 통신, 프론트엔드에서 기본적으로 필요한 CRUD를 경험할 수 있도록 캘린더 웹사이트를 만들었습니다.
+    </p>
+    <br />
+    <h3>※ 주요 기능</h3>
+    <ul>
+      <li>day.js를 활용한 달력 기능</li>
+      <li>달력 일정 추가, 수정, 삭제, 보기 기능(CRUD)</li>
+      <li>사이드 바에서 일정 추가, 수정, 삭제, 보기 기능(CRUD)</li>
+      <li>사이드바에 현재 시간에 맞춰서 날씨 및 온도 표현 기능</li>
+      <li>달력 날짜 이동 기능</li>
+    </ul>
+    <br />
+    <h2>💡 프로젝트를 진행하면서 느낀 점</h2>
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <p>
+      
+    </p>
+    <br />
+    <h2>💻 기술 스택</h2>
+    <ul>
+      <li>Frontend: React, Typescript</li>
+      <li>Backend: Node.js</li>
+      <li>Database: MariaDB</li>
+      <li>Deployment: Docker</li>
+    </ul>
+  </div>`,
+  },
+  {
     readTitle: '이게되네? JS와 Node로 배포까지!',
     readDescription: `<div>
     <h2>❗ 요약</h2>
@@ -28,13 +75,8 @@ export const ReadMeData = [
     </p>
     <br />
     <p>
-      
+      JavaScript라는 언어를 좀 더 알게 되었고 firebase function을 통해 서버를 올려보기도 하며 개발에 대한 지식을 더 넓힐 수 있었던 뜻깊은 시간이었습니다.
     </p>
-    <br />
-    <p>
-      
-    </p>
-    <br />
   </div>`,
   },
   {
