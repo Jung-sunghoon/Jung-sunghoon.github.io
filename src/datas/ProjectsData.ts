@@ -22,7 +22,7 @@ export const ProjectsData = [
     skill: `firebase를 통한 사용자 및 데이터베이스 관리, 레시피 보기, 레시피 작성하기, AI 추천 레시피 생성(BETA)`,
     url: `<a href="https://recipeproject-theta.vercel.app/" target="_blank">https://recipeproject-theta.vercel.app/<a/>`,
     github: `
-    <p>프론트엔드 - <a href="https://github.com/Jung-sunghoon/recipe_project">https://github.com/Jung-sunghoon/recipe_project</a></p>
+    <p><a href="https://github.com/Jung-sunghoon/recipe_project">https://github.com/Jung-sunghoon/recipe_project</a></p>
     `,
     frontend: 'React,TypeScript',
     backend: '--',
