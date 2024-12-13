@@ -1009,9 +1009,9 @@ export const posts = [
     </pre>
     <br />
     <h2>최적화 시 주의사항</h2>
-    <ol>
+    <ol style="margin-left:25px;">
       <li>1. 과도한 사용 주의
-        <ul>
+        <ul style="margin-left:50px;">
           <li>불필요한 곳에 사용하면 성능 저하</li>
           <li>적절한 상황에서만 사용</li>
           <li>React DevTools로 확인</li>
