@@ -12,6 +12,7 @@ import Admin from './pages/Admin/Admin'
 import { useEffect } from 'react'
 // 구글 애널리틱스 사용
 import ReactGA from 'react-ga'
+import Resume from './pages/Resume/Resume'
 
 const googleTag = import.meta.env.VITE_GOOGLE_TAG // 환경 변수에 저장된 추적ID 가져오기
 if (googleTag) {
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/create/*" element={<Create />} />
           <Route path="/edit/*" element={<Create />} />
           <Route path="/aboutme/*" element={<Aboutme />} />
+          <Route path="/resume/*" element={<Resume />} />
           <Route path="/calendar/*" element={<Calendar />} />
           <Route path="/projects/*" element={<Projects />} />
           <Route path="/" element={<Comming />} />

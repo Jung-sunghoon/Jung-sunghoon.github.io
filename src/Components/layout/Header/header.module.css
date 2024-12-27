@@ -1,13 +1,10 @@
 a:hover {
   color: #3a59f4;
-  text-decoration: none;
-}
-#header a:focus {
-  text-decoration: none;
 }
 
 .styleHeader {
-  background-color: black;
+  background-color: transparent;
+  color: white;
   position: fixed;
   left: 0;
   top: 0;
@@ -18,6 +15,7 @@ a:hover {
 
 .mainHeader {
   background-color: transparent;
+  color: white;
   position: fixed;
   left: 0;
   top: 0;
@@ -31,6 +29,7 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 0 20px 0 20px;
+  color: white;
 }
 
 .headerMenuNav li {
@@ -86,7 +85,7 @@ a:hover {
 
 .selected {
   background-color: white;
-  color: black;
+  text-decoration: underline;
 }
 
 .headerMobileMenu {
@@ -96,7 +95,7 @@ a:hover {
 /* 모바일 화면을 위한 미디어 쿼리 */
 @media (max-width: 1360px) and (min-width: 901px) {
   #header {
-    background-color: black;
+    background-color: transparent;
     position: fixed;
     left: 0;
     top: 0;
