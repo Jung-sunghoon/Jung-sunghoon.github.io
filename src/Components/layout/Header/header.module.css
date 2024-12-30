@@ -1,27 +1,29 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0); /* 초기 배경 투명 */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.3); /* 스크롤 시 불투명 */
+}
+
 a:hover {
-  color: #3a59f4;
+  color: white;
+  text-decoration: underline;
 }
 
 .styleHeader {
-  background-color: transparent;
   color: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  height: 60px;
 }
 
 .mainHeader {
-  background-color: transparent;
   color: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  height: 60px;
 }
 
 .headerMenuNav {
@@ -56,7 +58,6 @@ a:hover {
 
 .headerLogo {
   margin-left: 150px;
-  padding: 20px;
   color: white;
   display: flex;
   width: 400px;
@@ -84,7 +85,6 @@ a:hover {
 }
 
 .selected {
-  background-color: white;
   text-decoration: underline;
 }
 
@@ -107,7 +107,6 @@ a:hover {
   .headerLogo {
     margin: 0;
     padding: 0;
-    margin-left: 50px;
   }
 
   .headerLink {
@@ -193,7 +192,6 @@ a:hover {
     display: none;
     height: 0;
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
     margin-right: 50px;
   }
 
@@ -209,14 +207,12 @@ a:hover {
     right: 0;
     margin: 0;
     padding: 0;
-    transition: height 0.5s ease-in-out;
   }
 
   .headerMenuInnerOpen .headerMenu {
     width: 100%;
     height: 50px;
     margin: 10px 0 10px 0;
-    transition: height 0.5s ease-in-out;
   }
 
   .headerMenuInnerOpen .headerLink {

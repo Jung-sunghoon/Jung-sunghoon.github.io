@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './header.module.css'
 import { Link, useLocation } from 'react-router-dom'
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons'
@@ -6,6 +6,7 @@ import { CloseOutlined, MenuOutlined } from '@ant-design/icons'
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false)
   const location = useLocation()
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const handleMenuClick = () => {
     setOpen(false)
@@ -23,12 +24,21 @@ const Header: React.FC = () => {
     { id: 3, path: '/projects', label: 'Projects' },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 5) // 50px 이상 스크롤 시 배경 투명도 조정
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <header
       id={styles.header}
-      className={`${
+      className={`${styles.header} ${
         location.pathname === '/' ? styles.mainHeader : styles.styleHeader
-      }`}
+      } ${isScrolled ? styles.scrolled : ''}`}
     >
       <div className={styles.headerMenuNav}>
         <div className={styles.headerLogo}>

@@ -1,7 +1,6 @@
 /* 공통 스타일 */
 #aboutMe {
-  color: #333;
-  background-color: #ffffff;
+  color: #ffffff;
   line-height: 1.6;
   margin: 60px 150px 0 150px;
 }
@@ -12,7 +11,6 @@
   padding-top: 10px;
   font-size: 36px;
   font-weight: 400;
-  color: #2a3042;
   text-align: center;
   justify-content: center;
   margin-bottom: 20px;
@@ -20,7 +18,6 @@
 
 /* 개인 정보 스타일 */
 .info {
-  background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
   margin: 10px;
@@ -29,7 +26,6 @@
 }
 
 .infoIcon {
-  color: #2a3042;
   font-size: 50px;
   margin-right: 15px;
 }
@@ -39,13 +35,11 @@
 }
 
 .infoValue {
-  color: #555;
 }
 
 /* 기술 스택 섹션 */
 .skillsContents {
   text-align: center;
-  background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -108,13 +102,11 @@
   flex-flow: column;
   justify-content: center;
   text-align: center;
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #cacaca;
   text-decoration: none;
   margin-bottom: 20px;
-  color: #333;
   transition: transform 0.3s ease;
 }
 
@@ -123,7 +115,7 @@
 }
 
 .archiveDescription {
-  color: black;
+  color: #f5f5f5;
 }
 
 .archiveDescription b {

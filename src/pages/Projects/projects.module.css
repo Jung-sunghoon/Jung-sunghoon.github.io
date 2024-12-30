@@ -2,8 +2,7 @@
   margin-top: 60px;
   padding: 20px;
   font-family: 'Arial', sans-serif;
-  color: #333;
-  background-color: #ffffff;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -17,10 +16,10 @@
 
 .descriptionTitle {
   padding-bottom: 10px;
-  font-family: Black Han Sans, sans-serif;
+  font-family: #ffffff Han Sans, sans-serif;
   font-weight: 400;
   font-size: 36px;
-  color: #222;
+  color: #ffffff;
   text-align: center;
   word-break: keep-all;
 }
@@ -29,7 +28,7 @@
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 16px;
-  color: #6c757d;
+  color: #ffffff;
   text-align: center;
   opacity: 0.8;
 }
@@ -72,7 +71,7 @@
   padding-top: 10px;
   font-size: 24px;
   font-weight: bold;
-  color: #2a3042;
+  color: #ffffff;
   text-align: center;
   justify-content: center;
   margin-bottom: 20px;
