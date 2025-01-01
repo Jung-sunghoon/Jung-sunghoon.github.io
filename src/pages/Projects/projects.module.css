@@ -85,10 +85,18 @@
 }
 
 .projectDescription {
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 20px;
   width: 1000px;
+  background-color: #31353a; /* 배경색 추가 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectDescription:hover {
+  transform: translateY(-10px); /* 호버 시 위로 떠오르는 효과 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* 그림자 강화 */
 }
 
 .projectInfo {
