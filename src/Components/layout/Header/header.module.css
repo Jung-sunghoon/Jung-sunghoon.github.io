@@ -10,7 +10,7 @@
 }
 
 .scrolled {
-  background-color: rgba(0, 0, 0, 0.3); /* 스크롤 시 불투명 */
+  background-color: rgba(0, 0, 0, 0.4); /* 스크롤 시 불투명 */
 }
 
 a:hover {
@@ -126,7 +126,6 @@ a:hover {
     position: fixed;
     width: 100%;
     height: auto;
-    background-color: black;
     z-index: 9;
     top: 60px;
     left: 0;
@@ -170,7 +169,6 @@ a:hover {
 }
 @media (max-width: 900px) {
   #header {
-    background-color: black;
     position: fixed;
     left: 0;
     top: 0;
@@ -200,7 +198,6 @@ a:hover {
     position: fixed;
     width: 100%;
     height: auto;
-    background-color: black;
     z-index: 9;
     top: 60px;
     left: 0;

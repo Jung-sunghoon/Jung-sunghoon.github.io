@@ -5,8 +5,8 @@ const Comming: React.FC = () => {
     <div id={styles.comming}>
       <div className={styles.commingContents}>
         <div className={styles.commingText}>
-          지속적인 성장을 꿈꾸는 <br />
-          프론트엔드 개발자 정성훈입니다.
+        오늘보다 더 나은 코드를 작성하는<br />
+        프론트엔드 개발자, 정성훈입니다.
         </div>
       </div>
       <div className={styles.recentBlogs}></div>

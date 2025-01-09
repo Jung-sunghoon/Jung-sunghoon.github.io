@@ -17,10 +17,7 @@ const Projects = () => {
                 description,
                 skill,
                 github,
-                frontend,
-                backend,
-                database,
-                deployment,
+                techstack,
                 date,
                 url,
               } = project
@@ -39,10 +36,7 @@ const Projects = () => {
                   skill={skill}
                   url={url}
                   github={github}
-                  frontend={frontend}
-                  backend={backend}
-                  database={database}
-                  deployment={deployment}
+                  techstack={techstack}
                   readTitle={readMeData?.readTitle || ''}
                   readDescription={readMeData?.readDescription || ''}
                 />

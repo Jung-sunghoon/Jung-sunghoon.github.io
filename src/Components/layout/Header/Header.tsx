@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 5) // 50px 이상 스크롤 시 배경 투명도 조정
+      setIsScrolled(window.scrollY > 200)
     }
 
     window.addEventListener('scroll', handleScroll)

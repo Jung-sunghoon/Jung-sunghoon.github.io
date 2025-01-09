@@ -16,10 +16,7 @@ export interface ProjectsProp {
   skill: string
   url: string
   github: string
-  frontend: string
-  backend: string
-  database: string
-  deployment?: string
+  techstack?: string
 }
 
 export const Project: React.FC<
@@ -32,10 +29,7 @@ export const Project: React.FC<
   date,
   skill,
   github,
-  frontend,
-  backend,
-  database,
-  deployment,
+  techstack,
   readTitle,
   readDescription,
 }) => {
@@ -123,36 +117,30 @@ export const Project: React.FC<
               <div className={styles.infoTitle}>주요 기능</div>
               <div className={styles.infoText}>{skill}</div>
             </div>
-            <div className={styles.projectInfo}>
-              <div className={styles.infoTitle}>URL</div>
-              <div
-                className={styles.infoText}
-                dangerouslySetInnerHTML={{ __html: url }}
-              ></div>
-            </div>
-            <div className={styles.projectInfo}>
-              <div className={styles.infoTitle}>Github</div>
-              <div
-                className={styles.infoText}
-                dangerouslySetInnerHTML={{ __html: github }}
-              ></div>
-            </div>
-            <div className={styles.projectInfo}>
-              <div className={styles.infoTitle}>Frontend</div>
-              <div className={styles.infoText}>{frontend}</div>
-            </div>
-            <div className={styles.projectInfo}>
-              <div className={styles.infoTitle}>Backend</div>
-              <div className={styles.infoText}>{backend}</div>
-            </div>
-            <div className={styles.projectInfo}>
-              <div className={styles.infoTitle}>Database</div>
-              <div className={styles.infoText}>{database}</div>
-            </div>
-            <div className={styles.projectInfo}>
-              <div className={styles.infoTitle}>Deployment</div>
-              <div className={styles.infoText}>{deployment}</div>
-            </div>
+            {url && (
+              <div className={styles.projectInfo}>
+                <div className={styles.infoTitle}>URL</div>
+                <div
+                  className={styles.infoText}
+                  dangerouslySetInnerHTML={{ __html: url }}
+                ></div>
+              </div>
+            )}
+            {github && (
+              <div className={styles.projectInfo}>
+                <div className={styles.infoTitle}>Github</div>
+                <div
+                  className={styles.infoText}
+                  dangerouslySetInnerHTML={{ __html: github }}
+                ></div>
+              </div>
+            )}            
+            {techstack && (
+              <div className={styles.projectInfo}>
+                <div className={styles.infoTitle}>Tech Stack</div>
+                <div className={styles.infoText}>{techstack}</div>
+              </div>
+            )}
           </div>
         </div>
       </div>

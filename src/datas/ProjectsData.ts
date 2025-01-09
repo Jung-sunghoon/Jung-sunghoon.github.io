@@ -24,10 +24,7 @@ export const ProjectsData = [
     github: `
     <p><a href="https://github.com/Jung-sunghoon/recipe_project">https://github.com/Jung-sunghoon/recipe_project</a></p>
     `,
-    frontend: 'React,TypeScript',
-    backend: '--',
-    database: 'firebase',
-    deployment: '',
+    techstack: 'React,TypeScript,firebase'
   },
   {
     title: 'PRONEND',
@@ -49,10 +46,7 @@ export const ProjectsData = [
     <p>프론트엔드 - <a href="https://github.com/Jung-sunghoon/calendarProject-fe">https://github.com/Jung-sunghoon/calendarProject-fe</a></p>
     <p>백엔드 - <a href="https://github.com/Jung-sunghoon/calendarProject-be">https://github.com/Jung-sunghoon/calendarProject-be</a></p>
     `,
-    frontend: 'HTML, CSS, JavaScript',
-    backend: 'Node.js',
-    database: 'mariaDB',
-    deployment: 'Docker',
+    techstack: 'HTML, CSS, JavaScript,Node.js,mariaDB,Docker',
   },
   {
     title: '이게되네? JS와 Node로 배포까지!',
@@ -66,11 +60,6 @@ export const ProjectsData = [
     `,
     skill: `HTML, CSS, JavaScript, Node.js를 활용하여 프로젝트 개발 하기`,
     url: `<a href="https://ridibooks.com/books/2773000103?_rdt_sid=category_free_books&_rdt_idx=1&_rdt_arg=2200" target="_blank">https://ridibooks.com/books/2773000103?_rdt_sid=category_free_books&_rdt_idx=1&_rdt_arg=2200</a>`,
-    github: '--',
-    frontend: '--',
-    backend: '--',
-    database: '--',
-    deployment: '--',
   },
   {
     title: 'Lookgit',
@@ -92,10 +81,7 @@ export const ProjectsData = [
     url: `<a href="https://lookgit.com/" target="_blank">https://lookgit.com/</a>`,
     github:
       '<a href="https://github.com/weniv/github_visualization" target="_blank">https://github.com/weniv/github_visualization</a>',
-    frontend: 'HTML, CSS, JavaScript',
-    backend: '위니브 제공',
-    database: '--',
-    deployment: '--',
+    techstack: 'HTML, CSS, JavaScript',
   },
   {
     title: '포트폴리오 웹사이트',
@@ -124,10 +110,7 @@ export const ProjectsData = [
     github: `프론트엔드 - <a href="https://github.com/Jung-sunghoon/jung-sunghoon.github.io" target="_blank">https://github.com/Jung-sunghoon/jung-sunghoon.github.io</a>, 
       <br/> 
       백엔드 - <a href="https://github.com/Jung-sunghoon/Portfolio_Be" target="_blank">https://github.com/Jung-sunghoon/Portfolio_Be</a>`,
-    frontend: 'React, TypeScript',
-    backend: 'node.js',
-    database: 'MariaDB',
-    deployment: 'Docker',
+    techstack: 'React, TypeScript,Node.js,MariaDB,Docker',
   },
   {
     title: 'Deople',
@@ -152,12 +135,8 @@ export const ProjectsData = [
     <b>Rest API</b> 통신에 대해 처음으로 알게 되어 백엔드와 프론트엔드 간의 통신을 경험해봤다는 것에 큰 의미가 있었습니다.</p>`,
     skill:
       '본인의 완성한 프로젝트 공유하기, 팀원을 구인하는 프로젝트 작성하기, 프로젝트 모집 신청하기, 신청자 프로필 확인하기, 활동으로 얻은 포인트를 활용한 랭킹 보기',
-    url: '--',
     github:
       '프론트엔드 - <a href="https://github.com/Jung-sunghoon/capstone_fe" target="_blank">https://github.com/Jung-sunghoon/capstone_fe</a>, <br/> 백엔드 - <a href="https://github.com/Jung-sunghoon/capstone_backend" target="_blank">https://github.com/Jung-sunghoon/capstone_backend</a>',
-    frontend: 'React, TypeScript',
-    backend: 'Java SpringBoot',
-    database: 'MySQL',
-    deployment: '--',
+    techstack: 'React, TypeScript,Java SpringBoot,MySQL',
   },
 ]
