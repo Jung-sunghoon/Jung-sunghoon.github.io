@@ -41,8 +41,8 @@ const App = () => {
           <Route path="/blogdetails/:post_id" element={<BlogDetails />} />
           <Route path="/create/*" element={<Create />} />
           <Route path="/edit/*" element={<Create />} />
-          <Route path="/aboutme/*" element={<Aboutme />} />
-          <Route path="/resume/*" element={<Resume />} />
+          {/* <Route path="/aboutme/*" element={<Aboutme />} /> */}
+          <Route path="/aboutme/*" element={<Resume />} />
           <Route path="/calendar/*" element={<Calendar />} />
           <Route path="/projects/*" element={<Projects />} />
           <Route path="/" element={<Comming />} />

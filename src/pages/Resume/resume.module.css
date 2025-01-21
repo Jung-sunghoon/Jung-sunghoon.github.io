@@ -1,0 +1,71 @@
+#resume {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-left: 180px;
+  padding-right: 180px;
+  color: white;
+  font-size: 20px;
+}
+
+.myInfo dl {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+.myInfo dl dd {
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.myInfo dl dd a {
+  color: white;
+}
+
+.infoImg {
+  width: 300px;
+}
+
+.resumeIntro {
+  display: flex;
+  gap: 60px;
+}
+
+.indentedText {
+  margin-left: 1em;
+}
+
+.introBlock {
+  margin-top: 20px;
+}
+
+.myIntro h1 {
+  margin: 0;
+}
+
+hr {
+  border: 1px solid white;
+}
+
+ul {
+  margin: 0;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+.techStack {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.techStack p {
+  width: 150px;
+}
+
+.timestamp {
+  color: #ccc;
+  font-size: 18px;
+}
