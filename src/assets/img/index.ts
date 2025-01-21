@@ -48,6 +48,7 @@ import recipeLab3 from '@src/assets/img/projectImg/recipeLabImg/recipeLab3.png'
 import recipeLab4 from '@src/assets/img/projectImg/recipeLabImg/recipeLab4.png'
 import recipeLab5 from '@src/assets/img/projectImg/recipeLabImg/recipeLab5.png'
 import recipeLab6 from '@src/assets/img/projectImg/recipeLabImg/recipeLab6.png'
+import resumeImg from '@src/assets/img/resumeImg.jpg'
 
 export default {
   cssimg,
@@ -100,4 +101,5 @@ export default {
   recipeLab4,
   recipeLab5,
   recipeLab6,
+  resumeImg
 }
