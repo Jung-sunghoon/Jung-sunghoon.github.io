@@ -4,7 +4,6 @@
   padding-left: 180px;
   padding-right: 180px;
   color: white;
-  font-size: 20px;
 }
 
 .myInfo dl {
@@ -41,6 +40,7 @@
 
 .myIntro h1 {
   margin: 0;
+  line-height: 1.2;
 }
 
 hr {
@@ -49,10 +49,8 @@ hr {
 
 ul {
   margin: 0;
-}
-
-h1 {
-  line-height: 1.2;
+  list-style: none;
+  padding: 0;
 }
 
 .techStack {
@@ -68,4 +66,57 @@ h1 {
 .timestamp {
   color: #ccc;
   font-size: 18px;
+}
+
+.projectList h4 {
+  color: #ccc;
+}
+
+.projectList p {
+  color: #ccc;
+  opacity: 0.5;
+}
+
+@media (max-width: 1360px) and (min-width: 901px) {
+  #resume {
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 16px;
+  }
+
+  .infoImg {
+    width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  #resume {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+  }
+
+  .myInfo dl {
+    font-size: 12px;
+  }
+
+  .myIntro h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .infoImg {
+    width: 150px;
+  }
 }

@@ -35,11 +35,7 @@ const Resume = () => {
           </div>
         </div>
         <div className={styles.myIntro}>
-          <h1>
-            지속적인 성장을 꿈꾸는 주니어
-            <br />
-            FE 개발자 정성훈입니다.
-          </h1>
+          <h1>지속적인 성장을 꿈꾸는 주니어 FE 개발자 정성훈입니다.</h1>
           <div className={styles.introBlock}>
             <strong>
               함께 성장하는 것이 더 좋은 결과물을 가져온다고 믿습니다.
@@ -85,34 +81,40 @@ const Resume = () => {
       <div>
         <h2>프로젝트</h2>
         <hr />
-        <ol>
+        <ul className={styles.projectList}>
           <h3>
             <li>레시피 연구소</li>
           </h3>
           <h4>레시피 공유 커뮤니티 웹 페이지</h4>
+          <p>상세정보</p>
+          <ul>
+            <li>React와 TypeScript를 활용하여 SPA로 개발</li>
+            <li>module css를 사용하여 개발</li>
+            <li>firebase를 활용하여 회원가입 및 로그인 관리</li>
+            <li>firestore와 storage를 활용하여 게시물 및 이미지 관리</li>
+            <li>팀장을 맡아 프로젝트 및 회의를 리드함</li>
+            <li>
+              검색 컴포넌트 및 메인화면 개발 + 레시피(게시물) 작성 및 수정 개발
+              및 게시물 정렬 기능 개발
+            </li>
+            <li>레시피(게시물) 제목, 재료, 태그 검색 기능 개발</li>
+          </ul>
           <h3>
             <li>이게 되네? JS와 Node로 배포까지!</li>
           </h3>
           <h4>무료 E-BOOK 집필 프로젝트</h4>
+          <p>상세정보</p>
           <h3>
             <li>Pronend</li>
           </h3>
           <h4>일정 관리를 위한 캘린더 웹 페이지</h4>
+          <p>상세정보</p>
           <h3>
             <li>Lookgit</li>
           </h3>
           <h4>깃헙 프로세스 시각화 학습 오픈소스 프로젝트</h4>
-          <h3>
-            <li>포트폴리오 웹사이트</li>
-          </h3>
-          <h4>나를 설명하기 위한 포트폴리오 웹 사이트 + 기술 블로그</h4>
-          <h3>
-            <li>Deople</li>
-          </h3>
-          <h4>
-            한신대학교 학생들을 위한 팀원 구인구직 및 프로젝트 공유 웹 사이트
-          </h4>
-        </ol>
+          <p>상세정보</p>
+        </ul>
       </div>
       <div>
         <h2>교육</h2>
