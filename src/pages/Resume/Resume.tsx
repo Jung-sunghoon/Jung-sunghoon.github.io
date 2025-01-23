@@ -104,16 +104,29 @@ const Resume = () => {
           </h3>
           <h4>무료 E-BOOK 집필 프로젝트</h4>
           <p>상세정보</p>
+          <li>js와 node.js로 실제 웹 프로젝트를 개발하는 과정을 담음</li>
+          <li>팀장을 맡아 프로젝트 및 회의를 리드함</li>
+          <li>백엔드 개발 부분 집필 및 전체 퇴고(편집)</li>
           <h3>
             <li>Pronend</li>
           </h3>
           <h4>일정 관리를 위한 캘린더 웹 페이지</h4>
           <p>상세정보</p>
+          <li>Vanilla JS를 활용하여 개발</li>
+          <li>node.js를 활용하여 api 개발</li>
+          <li>프론트엔드 배포는 vercel, 백엔드는 firebase function 활용</li>
+          <li>팀장을 맡아 프로젝트 및 회의를 리드함</li>
+          <li>
+            일정 전체 가져오기 로직 및 날씨 api를 연동하여 사이드 바에 날씨 표시
+            기능 개발
+          </li>
+          <li>일정 추가, 수정, 삭제, 조회 api 개발</li>
           <h3>
             <li>Lookgit</li>
           </h3>
           <h4>깃헙 프로세스 시각화 학습 오픈소스 프로젝트</h4>
           <p>상세정보</p>
+          <li></li>
         </ul>
       </div>
       <div>
