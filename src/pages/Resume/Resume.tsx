@@ -126,7 +126,11 @@ const Resume = () => {
           </h3>
           <h4>깃헙 프로세스 시각화 학습 오픈소스 프로젝트</h4>
           <p>상세정보</p>
-          <li></li>
+          <li>HTML,CSS,JavaScript로 개발</li>
+          <li>d3.js를 활용하여 시각화</li>
+          <li>
+            add, commit, push, pull 과정 시각화 기능 개발 및 pull 기능 개발
+          </li>
         </ul>
       </div>
       <div>
