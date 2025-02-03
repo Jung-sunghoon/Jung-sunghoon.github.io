@@ -101,10 +101,23 @@ const Blogs: React.FC = () => {
             marginLeft: '15px',
             marginRight: '15px',
           }}
-          grid={{ gutter: 12, xs: 1, sm: 2, md: 3, lg: 3, xl: 3, xxl: 4 }}
+          grid={{
+            gutter: 16,
+            xs: 1,
+            sm: 2,
+            md: 4,
+            lg: 4,
+            xl: 6,
+            xxl: 4,
+          }}
           dataSource={slicedData} // 페이지네이션에 따라 잘라낸 데이터를 사용
           renderItem={(item: BlogType) => (
-            <List.Item>
+            <List.Item
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
               <BlogCard blogData={item} />
             </List.Item>
           )}

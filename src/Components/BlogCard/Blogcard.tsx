@@ -25,8 +25,6 @@ const BlogCard: React.FC<BlogProps> = ({ blogData }) => {
           style={{
             cursor: 'pointer',
             height: '200px',
-            width: '100%',
-            objectFit: 'cover',
           }}
           alt="example"
           //@ts-ignore
@@ -35,8 +33,7 @@ const BlogCard: React.FC<BlogProps> = ({ blogData }) => {
       }
       style={{
         margin: '0 15px 30px',
-        maxWidth: '350px',
-        maxHeight: '500px',
+        width: '300px',
       }}
       onClick={() => {
         navigate(`/blogdetails/${blogInfo?.post_id}`)

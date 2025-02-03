@@ -1,9 +1,7 @@
 #resume {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding-left: 180px;
-  padding-right: 180px;
   color: white;
+  margin: 100px auto;
+  max-width: 1000px;
 }
 
 .myInfo dl {
@@ -22,7 +20,7 @@
 }
 
 .infoImg {
-  width: 300px;
+  width: 250px;
 }
 
 .resumeIntro {
@@ -53,16 +51,6 @@ ul {
   padding: 0;
 }
 
-.techStack {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.techStack p {
-  width: 150px;
-}
-
 .timestamp {
   color: #ccc;
   font-size: 18px;
@@ -77,6 +65,10 @@ ul {
   opacity: 0.5;
 }
 
+a {
+  color: #ccc;
+}
+
 @media (max-width: 1360px) and (min-width: 901px) {
   #resume {
     padding-left: 60px;
@@ -85,7 +77,7 @@ ul {
   }
 
   .infoImg {
-    width: 200px;
+    width: 150px;
   }
 }
 
@@ -117,6 +109,6 @@ ul {
   }
 
   .infoImg {
-    width: 150px;
+    width: 125px;
   }
 }

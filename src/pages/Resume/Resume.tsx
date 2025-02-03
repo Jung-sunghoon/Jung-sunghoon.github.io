@@ -35,7 +35,7 @@ const Resume = () => {
           </div>
         </div>
         <div className={styles.myIntro}>
-          <h1>지속적인 성장을 꿈꾸는 주니어 FE 개발자 정성훈입니다.</h1>
+          <h1>지속적인 성장을 꿈꾸는 주니어 프론트엔드 개발자 정성훈입니다.</h1>
           <div className={styles.introBlock}>
             <strong>
               함께 성장하는 것이 더 좋은 결과물을 가져온다고 믿습니다.
@@ -63,18 +63,26 @@ const Resume = () => {
       <div>
         <h2>기술스택</h2>
         <hr />
-        <div className={styles.techStack}>
-          <p>프론트엔드</p>
+        <div>
+          <h3>Frontend</h3>
           <ul>
+            <li>HTML, CSS3</li>
+            <li>TypeScript, JavaScript(ES6+)</li>
             <li>React</li>
-            <li>TypeScript</li>
-            <li>JavaScript</li>
           </ul>
         </div>
-        <div className={styles.techStack}>
-          <p>백엔드</p>
+        <div>
+          <h3>Backend & Database</h3>
           <ul>
             <li>Node.js</li>
+            <li>Firebase</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Build & Tools</h3>
+          <ul>
+            <li>Vite</li>
+            <li>Git, Github</li>
           </ul>
         </div>
       </div>
@@ -85,7 +93,11 @@ const Resume = () => {
           <h3>
             <li>레시피 연구소</li>
           </h3>
+          <p>2024.09 - 2024.10 (팀 프로젝트)</p>
           <h4>레시피 공유 커뮤니티 웹 페이지</h4>
+          <a href="https://recipeproject-theta.vercel.app/" target="_blank">
+            배포 링크
+          </a>
           <p>상세정보</p>
           <ul>
             <li>React와 TypeScript를 활용하여 SPA로 개발</li>

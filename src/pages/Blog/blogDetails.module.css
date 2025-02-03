@@ -61,6 +61,12 @@ button {
   margin: 0;
 }
 
+pre {
+  color: white;
+  background-color: #333;
+  border: none;
+}
+
 /* 블로그 내용을 감싸는 wrapper의 스타일 */
 .blogDeatilsWrapper {
   max-width: 1000px;
@@ -70,7 +76,8 @@ button {
   flex-direction: column;
   margin: 0 auto;
   padding: 20px 40px;
-  background-color: #fff;
+  background-color: #181818;
+  color: #fff;
 }
 
 /* 블로그 내용의 헤더 스타일 */
@@ -122,7 +129,7 @@ button {
 /* 블로그 내용의 댓글 article 스타일 */
 .blogDetailsCommmentsArticle {
   display: block;
-  color: black;
+  color: white;
 }
 
 /* 블로그 내용의 수정 및 삭제 버튼 스타일 */
