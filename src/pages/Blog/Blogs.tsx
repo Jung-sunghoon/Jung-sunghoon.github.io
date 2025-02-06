@@ -105,9 +105,9 @@ const Blogs: React.FC = () => {
             gutter: 16,
             xs: 1,
             sm: 2,
-            md: 4,
-            lg: 4,
-            xl: 6,
+            md: 3,
+            lg: 3,
+            xl: 3,
             xxl: 4,
           }}
           dataSource={slicedData} // 페이지네이션에 따라 잘라낸 데이터를 사용

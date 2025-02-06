@@ -7,7 +7,7 @@
 .myInfo dl {
   display: flex;
   align-items: center;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 .myInfo dl dd {
@@ -19,8 +19,13 @@
   color: white;
 }
 
+.myInfo {
+  margin-top: 20px;
+}
+
 .infoImg {
-  width: 250px;
+  object-fit: contain;
+  width: 300px;
 }
 
 .resumeIntro {
@@ -56,10 +61,6 @@ ul {
   font-size: 18px;
 }
 
-.projectList h4 {
-  color: #ccc;
-}
-
 .projectList p {
   color: #ccc;
   opacity: 0.5;
@@ -77,7 +78,7 @@ a {
   }
 
   .infoImg {
-    width: 150px;
+    width: 250px;
   }
 }
 
@@ -109,6 +110,6 @@ a {
   }
 
   .infoImg {
-    width: 125px;
+    width: 200px;
   }
 }

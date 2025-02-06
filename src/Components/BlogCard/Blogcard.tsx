@@ -25,6 +25,8 @@ const BlogCard: React.FC<BlogProps> = ({ blogData }) => {
           style={{
             cursor: 'pointer',
             height: '200px',
+            width: '300px',
+            objectFit: 'cover',
           }}
           alt="example"
           //@ts-ignore
