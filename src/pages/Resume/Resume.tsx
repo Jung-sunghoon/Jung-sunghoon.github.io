@@ -55,6 +55,25 @@ const Resume = () => {
                 </a>
               </dd>
             </dl>
+            <dl>
+              <dt>기술블로그: </dt>
+              <dd>
+                <a href="https://jung-sunghoon.github.io/blogs" target="_blank">
+                  https://jung-sunghoon.github.io/blogs
+                </a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>포트폴리오: </dt>
+              <dd>
+                <a
+                  href="https://jung-sunghoon.github.io/projects"
+                  target="_blank"
+                >
+                  https://jung-sunghoon.github.io/projects
+                </a>
+              </dd>
+            </dl>
           </div>
         </div>
       </div>
