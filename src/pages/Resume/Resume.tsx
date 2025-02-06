@@ -19,6 +19,7 @@ const Resume = () => {
               성장하는 개발자가 되고자 합니다.
             </div>
           </div>
+
           <div className={styles.introBlock}>
             <strong>
               누구나 알아보기 쉽고 효율적인 코드를 작성하고자 합니다.
@@ -30,6 +31,7 @@ const Resume = () => {
               노력해 왔습니다.
             </div>
           </div>
+
           <div className={styles.myInfo}>
             <dl>
               <dt>생년월일: </dt>
@@ -56,6 +58,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
+
       <div>
         <h2>기술스택</h2>
         <hr />
@@ -82,13 +85,14 @@ const Resume = () => {
           </ul>
         </div>
       </div>
+
       <div>
         <h2>프로젝트</h2>
         <hr />
         <ul className={styles.projectList}>
-          <h3>
-            <li>레시피 연구소</li>
-          </h3>
+          <li>
+            <h3>레시피 연구소</h3>
+          </li>
           <p>2024.09 - 2024.10 (팀 프로젝트)</p>
           <h4>레시피 공유 커뮤니티 웹 페이지</h4>
           <ul>
@@ -106,6 +110,7 @@ const Resume = () => {
               </a>
             </li>
           </ul>
+
           <p>프로젝트 개요</p>
           <ul>
             <li>
@@ -117,6 +122,7 @@ const Resume = () => {
             <li>firebase를 활용하여 회원가입 및 로그인 관리</li>
             <li>context API를 활용하여 로그인 상태 전역관리</li>
           </ul>
+
           <p>주요 기능 및 역할</p>
           <ul>
             <li>팀장을 맡아 프로젝트 및 회의를 리드함</li>
@@ -135,9 +141,10 @@ const Resume = () => {
               </ul>
             </li>
           </ul>
-          <h3>
-            <li>이게 되네? JS와 Node로 배포까지!</li>
-          </h3>
+
+          <li>
+            <h3>이게 되네? JS와 Node로 배포까지!</h3>
+          </li>
           <p>2024.07 - 2024.10 (팀 프로젝트)</p>
           <h4>무료 E-BOOK 집필 프로젝트</h4>
           <a
@@ -146,6 +153,7 @@ const Resume = () => {
           >
             리디북스 링크
           </a>
+
           <p>프로젝트 개요</p>
           <ul>
             <li>
@@ -153,11 +161,13 @@ const Resume = () => {
             </li>
             <li>책 발간 이후 1달간 컴퓨터/IT 무료 책 부문 1위</li>
           </ul>
+
           <p>주요 기능 및 역할</p>
           <ul>
             <li>팀장을 맡아 프로젝트 및 회의를 리드함</li>
             <li>백엔드 개발 부분 집필 및 전체 퇴고(편집)</li>
           </ul>
+
           <h3>
             <li>Pronend</li>
           </h3>
@@ -184,12 +194,14 @@ const Resume = () => {
               </ul>
             </li>
           </ul>
+
           <p>프로젝트 개요</p>
           <li>Vite를 활용하여 빠른 개발 세팅</li>
           <li>HTML,CSS,JavaScript로 개발</li>
           <li>Node.js와 Firebase를 활용하여 개발</li>
           <li>vercel을 활용하여 프론트엔드 배포</li>
           <li>Firebase functions를 활용하여 백엔드 배포</li>
+
           <p>주요 기능 및 역할</p>
           <ul>
             <li>팀장을 맡아 프로젝트 및 회의를 리드함</li>
@@ -203,6 +215,7 @@ const Resume = () => {
                 </li>
               </ul>
             </li>
+
             <li>
               백엔드
               <ul>
@@ -211,10 +224,12 @@ const Resume = () => {
               </ul>
             </li>
           </ul>
-          <h3>
-            <li>Lookgit</li>
-          </h3>
+
+          <li>
+            <h3>Lookgit</h3>
+          </li>
           <p>2024.06 ~ (현재 진행 중)</p>
+
           <h4>깃헙 프로세스 시각화 학습 오픈소스 프로젝트</h4>
           <ul>
             <li>
@@ -231,9 +246,11 @@ const Resume = () => {
               </a>
             </li>
           </ul>
+
           <p>프로젝트 개요</p>
           <li>HTML,CSS,JavaScript로 개발</li>
           <li>d3.js를 활용하여 시각화</li>
+
           <p>주요 기능 및 역할</p>
           <ul>
             <li>git 명령어 실행 시 사이드 바에 상태 텍스트 시각화 기능 개발</li>
@@ -241,16 +258,18 @@ const Resume = () => {
           </ul>
         </ul>
       </div>
+
       <div>
         <h2>교육</h2>
         <hr />
         <ul>
-          <h3>
-            <li>
+          <li>
+            <h3>
               EST 프론트엔드 오르미 부트캠프 1기{' '}
               <span className={styles.timestamp}>2024.06 - 2024.10</span>
-            </li>
-          </h3>
+            </h3>
+          </li>
+
           <h4>프론트엔드 기술 학습</h4>
           <ul>
             <li>HTML5 & CSS3: 웹 표준 및 반응형 웹 디자인, Flex / Grid 활용</li>
@@ -265,6 +284,7 @@ const Resume = () => {
             </li>
             <li>버전 관리: Git & Github를 활용한 협업과 코드 리뷰 경험</li>
           </ul>
+
           <h4>성과 및 성장</h4>
           <ul>
             <li>
@@ -274,20 +294,21 @@ const Resume = () => {
           </ul>
         </ul>
       </div>
+
       <div>
         <h2>자격증</h2>
         <hr />
         <ul>
-          <h3>
-            <li>
+          <li>
+            <h3>
               정보처리기사 <span className={styles.timestamp}>2024.06</span>
               <ul>
-                <h4>
-                  <li>발행처: 한국산업인력공단</li>
-                </h4>
+                <li>
+                  <h4>발행처: 한국산업인력공단</h4>
+                </li>
               </ul>
-            </li>
-          </h3>
+            </h3>
+          </li>
         </ul>
       </div>
     </div>
