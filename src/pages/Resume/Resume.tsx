@@ -248,6 +248,7 @@ const Resume = () => {
           </ul>
 
           <p>프로젝트 개요</p>
+          <li>Github 입문자를 위한 Github 프로세스 시각화 프로젝트</li>
           <li>HTML,CSS,JavaScript로 개발</li>
           <li>d3.js를 활용하여 시각화</li>
 
