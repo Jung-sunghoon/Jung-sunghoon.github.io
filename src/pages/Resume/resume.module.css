@@ -70,6 +70,10 @@ a {
   color: #ccc;
 }
 
+.ulStyle ul li {
+  margin-left: 25px;
+}
+
 @media (max-width: 1360px) and (min-width: 901px) {
   #resume {
     padding-left: 60px;
