@@ -7,7 +7,7 @@ const Resume = () => {
       <div className={styles.resumeIntro}>
         <img className={styles.infoImg} src={img.resumeImg} alt="정성훈 사진" />
         <div className={styles.myIntro}>
-          <h1>지속적인 성장을 꿈꾸는 주니어 프론트엔드 개발자 정성훈입니다.</h1>
+          <h1>함께하는 성장을 꿈꾸는 주니어 프론트엔드 개발자 정성훈입니다.</h1>
           <div className={styles.introBlock}>
             <strong>
               함께 성장하는 것이 더 좋은 결과물을 가져온다고 믿습니다.
